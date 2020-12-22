@@ -241,10 +241,6 @@ C - - - - - 0x01C10B 07:C0FB: 20 21 EA  JSR sub_EA21
 C - - - - - 0x01C10E 07:C0FE: 60        RTS
 
 
-; bzk unused
-- - - - - - 0x01C10F 07:C0FF: 60        RTS
-
-
 
 sub_C100:
 C - - - - - 0x01C110 07:C100: 20 5C F8  JSR sub_F85C
