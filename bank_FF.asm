@@ -3,19 +3,19 @@
 ; 0x01C010-0x02000F
 
 tbl_C000_prg_bank:
-- D 2 - - - 0x01C010 07:C000: 30        .byte $30   ; 00 0x000010
-- D 2 - - - 0x01C011 07:C001: 32        .byte $32   ; 01 0x004010
-- D 2 - - - 0x01C012 07:C002: 34        .byte $34   ; 02 0x008010
-- D 2 - - - 0x01C013 07:C003: 35        .byte $35   ; 03 0x00A010
-- D 2 - - - 0x01C014 07:C004: 31        .byte $31   ; 04 0x002010
-- - - - - - 0x01C015 07:C005: 32        .byte $32   ; 05 0x004010
-- D 2 - - - 0x01C016 07:C006: 33        .byte $33   ; 06 0x006010
-- D 2 - - - 0x01C017 07:C007: 36        .byte $36   ; 07 0x00C010
-- D 2 - - - 0x01C018 07:C008: 37        .byte $37   ; 08 0x00E010
+- D 2 - - - 0x01C010 07:C000: 30        .byte $00   ; 00 0x000010
+- D 2 - - - 0x01C011 07:C001: 32        .byte $02   ; 01 0x004010
+- D 2 - - - 0x01C012 07:C002: 34        .byte $04   ; 02 0x008010
+- D 2 - - - 0x01C013 07:C003: 35        .byte $05   ; 03 0x00A010
+- D 2 - - - 0x01C014 07:C004: 31        .byte $01   ; 04 0x002010
+- - - - - - 0x01C015 07:C005: 32        .byte $02   ; 05 0x004010
+- D 2 - - - 0x01C016 07:C006: 33        .byte $03   ; 06 0x006010
+- D 2 - - - 0x01C017 07:C007: 36        .byte $06   ; 07 0x00C010
+- D 2 - - - 0x01C018 07:C008: 37        .byte $07   ; 08 0x00E010
 
 ; bzk unused
-- - - - - - 0x01C019 07:C009: 3A        .byte $3A   ; 09 0x014010
-- - - - - - 0x01C01A 07:C00A: 3A        .byte $3A   ; 0A 0x014010
+- - - - - - 0x01C019 07:C009: 3A        .byte $0A   ; 09 0x014010
+- - - - - - 0x01C01A 07:C00A: 3A        .byte $0A   ; 0A 0x014010
 
 
 
@@ -165,7 +165,7 @@ con_chr_bank = $00
 
 sub_C076:
 C - - - - - 0x01C086 07:C076: 20 5C F8  JSR sub_F85C
-C - - - - - 0x01C089 07:C079: A9 3A     LDA #$3A    ; 0x014010
+C - - - - - 0x01C089 07:C079: A9 3A     LDA #$0A    ; 0x014010
 C - - - - - 0x01C08B 07:C07B: 8D 00 70  STA $7000
 C - - - - - 0x01C08E 07:C07E: A9 01     LDA #$01
 C - - - - - 0x01C090 07:C080: 20 25 FD  JSR sub_FD25
@@ -180,7 +180,7 @@ C - - - - - 0x01C0A1 07:C091: 60        RTS
 
 sub_C092:
 C - - - - - 0x01C0A2 07:C092: 20 5C F8  JSR sub_F85C
-C - - - - - 0x01C0A5 07:C095: A9 3A     LDA #$3A    ; 0x014010
+C - - - - - 0x01C0A5 07:C095: A9 3A     LDA #$0A    ; 0x014010
 C - - - - - 0x01C0A7 07:C097: 8D 00 70  STA $7000
 C - - - - - 0x01C0AA 07:C09A: A5 10     LDA ram_0010
 C - - - - - 0x01C0AC 07:C09C: D0 06     BNE bra_C0A4
@@ -248,7 +248,7 @@ C - - - - - 0x01C10E 07:C0FE: 60        RTS
 
 sub_C100:
 C - - - - - 0x01C110 07:C100: 20 5C F8  JSR sub_F85C
-C - - - - - 0x01C113 07:C103: A9 3A     LDA #$3A    ; 0x014010
+C - - - - - 0x01C113 07:C103: A9 3A     LDA #$0A    ; 0x014010
 C - - - - - 0x01C115 07:C105: 8D 00 70  STA $7000
 C - - - - - 0x01C118 07:C108: A5 FA     LDA ram_00FA
 C - - - - - 0x01C11A 07:C10A: F0 38     BEQ bra_C144
@@ -279,7 +279,7 @@ C - - - - - 0x01C144 07:C134: 79 B3 C9  ADC tbl_C9B3,Y
 C - - - - - 0x01C147 07:C137: 20 E0 EC  JSR sub_ECE0
 C - - - - - 0x01C14A 07:C13A: A9 1E     LDA #$1E
 C - - - - - 0x01C14C 07:C13C: 20 E9 F7  JSR sub_F7E9
-C - - - - - 0x01C14F 07:C13F: A9 3A     LDA #$3A    ; 0x014010
+C - - - - - 0x01C14F 07:C13F: A9 3A     LDA #$0A    ; 0x014010
 C - - - - - 0x01C151 07:C141: 8D 00 70  STA $7000
 bra_C144:
 C - - - - - 0x01C154 07:C144: A5 DF     LDA ram_00DF
@@ -1129,7 +1129,7 @@ C - - - - - 0x01C739 07:C729: 10 F7     BPL bra_C722
 C - - - - - 0x01C73B 07:C72B: E6 01     INC ram_0001
 C - - - - - 0x01C73D 07:C72D: 20 4A FB  JSR sub_FB4A
 C - - - - - 0x01C740 07:C730: 58        CLI
-C - - - - - 0x01C741 07:C731: A9 30     LDA #$30    ; 0x000010
+C - - - - - 0x01C741 07:C731: A9 30     LDA #$00    ; 0x000010
 C - - - - - 0x01C743 07:C733: 8D 00 70  STA $7000
 C - - - - - 0x01C746 07:C736: AD 00 80  LDA $8000
 C - - - - - 0x01C749 07:C739: 85 58     STA ram_0058
@@ -1161,7 +1161,7 @@ C - - - - - 0x01C780 07:C770: 20 E9 E7  JSR sub_E7E9_draw_screen
 C - - - - - 0x01C783 07:C773: 20 BC C9  JSR sub_C9BC
 C - - - - - 0x01C786 07:C776: A9 09     LDA #$09
 C - - - - - 0x01C788 07:C778: 20 FA F7  JSR sub_F7FA
-C - - - - - 0x01C78B 07:C77B: A9 3A     LDA #$3A    ; 0x014010
+C - - - - - 0x01C78B 07:C77B: A9 3A     LDA #$0A    ; 0x014010
 C - - - - - 0x01C78D 07:C77D: 8D 00 70  STA $7000
 C - - - - - 0x01C790 07:C780: A2 10     LDX #$10
 C - - - - - 0x01C792 07:C782: A9 09     LDA #$09
@@ -1174,7 +1174,7 @@ C - - - - - 0x01C7A2 07:C792: 85 C6     STA ram_00C6
 C - - - - - 0x01C7A4 07:C794: 9D 0D 05  STA ram_050D,X
 C - - - - - 0x01C7A7 07:C797: A9 C2     LDA #$C2
 C - - - - - 0x01C7A9 07:C799: 9D 04 03  STA ram_0304,X
-C - - - - - 0x01C7AC 07:C79C: A9 3A     LDA #$3A    ; 0x014010
+C - - - - - 0x01C7AC 07:C79C: A9 3A     LDA #$0A    ; 0x014010
 C - - - - - 0x01C7AE 07:C79E: 9D 0C 03  STA ram_030C,X
 C - - - - - 0x01C7B1 07:C7A1: A9 0A     LDA #$0A
 C - - - - - 0x01C7B3 07:C7A3: 85 C7     STA ram_timer_before_demo
@@ -1306,7 +1306,7 @@ C - - - - - 0x01C87A 07:C86A: 85 2E     STA ram_002E
 C - - - - - 0x01C87C 07:C86C: A2 0B     LDX #$0B    ; player select screen
 C - - - - - 0x01C87E 07:C86E: 20 E9 E7  JSR sub_E7E9_draw_screen
 C - - - - - 0x01C881 07:C871: 20 BC C9  JSR sub_C9BC
-C - - - - - 0x01C884 07:C874: A9 3A     LDA #$3A    ; 0x014010
+C - - - - - 0x01C884 07:C874: A9 3A     LDA #$0A    ; 0x014010
 C - - - - - 0x01C886 07:C876: 8D 00 70  STA $7000
 C - - - - - 0x01C889 07:C879: A2 10     LDX #$10
 loc_C87B:
@@ -1317,7 +1317,7 @@ C - - - - - 0x01C892 07:C882: 9D 03 03  STA ram_0303,X
 C - - - - - 0x01C895 07:C885: 9D 05 03  STA ram_0305,X
 C - - - - - 0x01C898 07:C888: 9D 01 03  STA ram_0301,X
 C - - - - - 0x01C89B 07:C88B: 9D 0D 05  STA ram_050D,X
-C - - - - - 0x01C89E 07:C88E: A9 3A     LDA #$3A    ; 0x014010
+C - - - - - 0x01C89E 07:C88E: A9 3A     LDA #$0A    ; 0x014010
 C - - - - - 0x01C8A0 07:C890: 9D 0C 03  STA ram_030C,X
 C - - - - - 0x01C8A3 07:C893: E0 10     CPX #$10
 C - - - - - 0x01C8A5 07:C895: D0 19     BNE bra_C8B0
@@ -3858,7 +3858,7 @@ C - - - - - 0x01DA33 07:DA23: 60        RTS
 
 
 sub_DA24:
-C - - - - - 0x01DA34 07:DA24: A9 3A     LDA #$3A    ; 0x014010
+C - - - - - 0x01DA34 07:DA24: A9 3A     LDA #$0A    ; 0x014010
 C - - - - - 0x01DA36 07:DA26: 8D 00 70  STA $7000
 C - - - - - 0x01DA39 07:DA29: BD 0F 05  LDA ram_050F,X
 C - - - - - 0x01DA3C 07:DA2C: D0 43     BNE bra_DA71_RTS
@@ -6140,7 +6140,7 @@ C - - - - - 0x01E7F9 07:E7E9: 48        PHA
 C - - - - - 0x01E7FA 07:E7EA: A9 00     LDA #$00
 C - - - - - 0x01E7FC 07:E7EC: 8D 00 20  STA $2000
 C - - - - - 0x01E7FF 07:E7EF: 8D 01 20  STA $2001
-C - - - - - 0x01E802 07:E7F2: A9 38     LDA #$38    ; 0x010010
+C - - - - - 0x01E802 07:E7F2: A9 38     LDA #$08    ; 0x010010
 C - - - - - 0x01E804 07:E7F4: 8D 00 70  STA $7000
 C - - - - - 0x01E807 07:E7F7: 8A        TXA
 C - - - - - 0x01E808 07:E7F8: 0A        ASL
@@ -6154,7 +6154,7 @@ C - - - - - 0x01E816 07:E806: 90 0A     BCC bra_E812
 C - - - - - 0x01E818 07:E808: 38        SEC
 C - - - - - 0x01E819 07:E809: E9 20     SBC #$20
 C - - - - - 0x01E81B 07:E80B: 85 01     STA ram_0001
-C - - - - - 0x01E81D 07:E80D: A9 39     LDA #$39    ; 0x012010
+C - - - - - 0x01E81D 07:E80D: A9 39     LDA #$09    ; 0x012010
 C - - - - - 0x01E81F 07:E80F: 8D 00 70  STA $7000
 bra_E812:
 C - - - - - 0x01E822 07:E812: 68        PLA
@@ -6177,13 +6177,13 @@ C - - - - - 0x01E835 07:E825: 60        RTS
 sub_E826_prg_banks_select:
 C - - - - - 0x01E836 07:E826: C9 04     CMP #$04
 C - - - - - 0x01E838 07:E828: 90 04     BCC bra_E82E_03_or_less
-C - - - - - 0x01E83A 07:E82A: A9 37     LDA #$37    ; 0x00E010
+C - - - - - 0x01E83A 07:E82A: A9 37     LDA #$07    ; 0x00E010
 C - - - - - 0x01E83C 07:E82C: D0 02     BNE bra_E830
 bra_E82E_03_or_less:
-C - - - - - 0x01E83E 07:E82E: A9 3D     LDA #$3D    ; 0x01A010
+C - - - - - 0x01E83E 07:E82E: A9 3D     LDA #$0D    ; 0x01A010
 bra_E830:
 C - - - - - 0x01E840 07:E830: 8D 01 70  STA $7001
-C - - - - - 0x01E843 07:E833: A9 3A     LDA #$3A    ; 0x014010
+C - - - - - 0x01E843 07:E833: A9 3A     LDA #$0A    ; 0x014010
 C - - - - - 0x01E845 07:E835: 8D 00 70  STA $7000
 C - - - - - 0x01E848 07:E838: 60        RTS
 
@@ -6831,7 +6831,7 @@ C - - - - - 0x01EBDD 07:EBCD: 8A        TXA
 C - - - - - 0x01EBDE 07:EBCE: 48        PHA
 C - - - - - 0x01EBDF 07:EBCF: 98        TYA
 C - - - - - 0x01EBE0 07:EBD0: 48        PHA
-C - - - - - 0x01EBE1 07:EBD1: A9 39     LDA #$39    ; 0x012010
+C - - - - - 0x01EBE1 07:EBD1: A9 39     LDA #$09    ; 0x012010
 C - - - - - 0x01EBE3 07:EBD3: 8D 00 70  STA $7000
 C - - - - - 0x01EBE6 07:EBD6: A6 1D     LDX ram_001D
 C - - - - - 0x01EBE8 07:EBD8: BD 0A 05  LDA ram_050A,X
@@ -8340,7 +8340,7 @@ C - - - - - 0x01F4D1 07:F4C1: A9 00     LDA #$00
 C - - - - - 0x01F4D3 07:F4C3: A2 0A     LDX #$0A    ; VS screen
 C - - - - - 0x01F4D5 07:F4C5: 20 E9 E7  JSR sub_E7E9_draw_screen
 bra_F4C8:
-C - - - - - 0x01F4D8 07:F4C8: A9 3A     LDA #$3A    ; 0x014010
+C - - - - - 0x01F4D8 07:F4C8: A9 3A     LDA #$0A    ; 0x014010
 C - - - - - 0x01F4DA 07:F4CA: 8D 00 70  STA $7000
 C - - - - - 0x01F4DD 07:F4CD: A2 10     LDX #$10
 C - - - - - 0x01F4DF 07:F4CF: 20 2C F5  JSR sub_F52C
@@ -8403,7 +8403,7 @@ C - - - - - 0x01F541 07:F531: A9 00     LDA #$00
 C - - - - - 0x01F543 07:F533: 9D 03 03  STA ram_0303,X
 C - - - - - 0x01F546 07:F536: 9D 05 03  STA ram_0305,X
 C - - - - - 0x01F549 07:F539: 9D 01 03  STA ram_0301,X
-C - - - - - 0x01F54C 07:F53C: A9 3A     LDA #$3A    ; 0x014010
+C - - - - - 0x01F54C 07:F53C: A9 3A     LDA #$0A    ; 0x014010
 C - - - - - 0x01F54E 07:F53E: 9D 0C 03  STA ram_030C,X
 C - - - - - 0x01F551 07:F541: A9 30     LDA #$30
 C - - - - - 0x01F553 07:F543: 9D 02 03  STA ram_0302,X
@@ -8450,7 +8450,7 @@ C - - - - - 0x01F5A2 07:F592: 85 AF     STA ram_00AF
 C - - - - - 0x01F5A4 07:F594: 20 9D FF  JSR sub_FF9D
 C - - - - - 0x01F5A7 07:F597: A9 0B     LDA #$0B
 C - - - - - 0x01F5A9 07:F599: 85 0C     STA ram_000C
-C - - - - - 0x01F5AB 07:F59B: A9 3A     LDA #$3A    ; 0x014010
+C - - - - - 0x01F5AB 07:F59B: A9 3A     LDA #$0A    ; 0x014010
 C - - - - - 0x01F5AD 07:F59D: 8D 00 70  STA $7000
 C - - - - - 0x01F5B0 07:F5A0: A2 10     LDX #$10
 C - - - - - 0x01F5B2 07:F5A2: 20 2C F5  JSR sub_F52C
@@ -8912,9 +8912,9 @@ C - - - - - 0x01F851 07:F841: 60        RTS
 
 
 sub_F842_bankswitch_to_music:
-C - - - - - 0x01F852 07:F842: A9 3B     LDA #$3B    ; 0x016010
+C - - - - - 0x01F852 07:F842: A9 3B     LDA #$0B    ; 0x016010
 C - - - - - 0x01F854 07:F844: 8D 00 70  STA $7000
-C - - - - - 0x01F857 07:F847: A9 3C     LDA #$3C    ; 0x018010
+C - - - - - 0x01F857 07:F847: A9 3C     LDA #$0C    ; 0x018010
 C - - - - - 0x01F859 07:F849: 8D 01 70  STA $7001
 C - - - - - 0x01F85C 07:F84C: 60        RTS
 
