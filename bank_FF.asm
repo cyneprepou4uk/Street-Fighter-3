@@ -9449,14 +9449,6 @@ C - - - - - 0x01FB53 07:FB43: A8        TAY
 C - - - - - 0x01FB54 07:FB44: 60        RTS
 
 
-; bzk unused
-- - - - - - 0x01FB55 07:FB45: 04        .byte $04   ; 
-- - - - - - 0x01FB56 07:FB46: 00        .byte $00   ; 
-- - - - - - 0x01FB57 07:FB47: 00        .byte $00   ; 
-- - - - - - 0x01FB58 07:FB48: 00        .byte $00   ; 
-- - - - - - 0x01FB59 07:FB49: 00        .byte $00   ; 
-
-
 
 sub_FB4A:
 C - - - - - 0x01FB5A 07:FB4A: A9 00     LDA #$00
