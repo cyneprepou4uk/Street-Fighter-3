@@ -532,7 +532,7 @@ C - - - - - 0x01C71F 07:C70F: 8D 17 40  STA $4017
                                         BPL @clear_battery_loop
 C - - - - - 0x01C72A 07:C71A: A9 07     LDA #$07
 C - - - - - 0x01C72C 07:C71C: 85 01     STA ram_0001
-C - - - - - 0x01C72E 07:C71E: 8A        TXA
+C - - - - - 0x01C72E 07:C71E: 8A        LDA #$00
 C - - - - - 0x01C72F 07:C71F: A8        TAY
 C - - - - - 0x01C730 07:C720: 85 00     STA ram_0000
 bra_C722:
