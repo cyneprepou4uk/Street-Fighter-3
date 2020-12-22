@@ -10396,10 +10396,6 @@ C - - - - - 0x020007 07:FFF7: AA        TAX
 C - - - - - 0x020008 07:FFF8: 60        RTS
 
 
-; bzk unused
-- - - - - - 0x020009 07:FFF9: 8C        .byte $8C   ; 
-
-
 
 .segment "VECTORS"
 - D 3 - - - 0x02000A 07:FFFA: 9C D6     .word vec_D69C_NMI_handler
