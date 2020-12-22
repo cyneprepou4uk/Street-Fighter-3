@@ -19,6 +19,7 @@ files_list = {
     "bank_0D.asm",
     "bank_FF.asm",
     "bank_ram.inc",
+    "bank_val.inc",
 }
 
 --конвертация испанских символов в английские

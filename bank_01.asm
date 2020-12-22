@@ -1,5 +1,6 @@
 .segment "BANK_01"
 .include "copy_bank_ram.inc"
+.include "copy_bank_val.inc"
 ; 0x002010-0x00400F
 
 ; reading from 0x01C746

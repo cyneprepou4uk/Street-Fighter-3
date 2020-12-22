@@ -1,3 +1,6 @@
+; this file is also used for creating <!sf3.nes.ram.nl> file for FCEUX
+; don't put any constant (con_) values here, use <bank_val.inc> file instead
+
 ; https://bootleggames.fandom.com/wiki/Super_Fighter_III
 
 ; fighters ID
