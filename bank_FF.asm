@@ -10250,12 +10250,6 @@ bra_FF35_RTS:
 C - - - - - 0x01FF45 07:FF35: 60        RTS
 
 
-; bzk unused
-- - - - - - 0x01FF46 07:FF36: 85 11     STA ram_0011
-- - - - - - 0x01FF48 07:FF38: A9 00     LDA #$00
-- - - - - - 0x01FF4A 07:FF3A: 85 10     STA ram_0010
-
-
 
 bra_FF3C:
 - - - - - - 0x01FF4C 07:FF3C: A5 14     LDA ram_0014
