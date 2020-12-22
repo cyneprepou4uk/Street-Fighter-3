@@ -202,7 +202,7 @@ C - - - - - 0x01C0CB 07:C0BB: A9 1A     LDA #$1A
 C - - - - - 0x01C0CD 07:C0BD: 20 E9 F7  JSR sub_F7E9
 bra_C0C0:
 C - - - - - 0x01C0D0 07:C0C0: A5 B4     LDA ram_00B4
-C - - - - - 0x01C0D2 07:C0C2: C9 00     CMP #$00
+C - - - - - 0x01C0D2 07:C0C2: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01C0D4 07:C0C4: F0 1B     BEQ bra_C0E1
 C - - - - - 0x01C0D6 07:C0C6: A9 0A     LDA #$0A
 C - - - - - 0x01C0D8 07:C0C8: 85 C7     STA ram_timer_before_demo
@@ -325,7 +325,7 @@ C - - - - - 0x01C1A2 07:C192: A9 1A     LDA #$1A
 C - - - - - 0x01C1A4 07:C194: 20 E9 F7  JSR sub_F7E9
 bra_C197:
 C - - - - - 0x01C1A7 07:C197: B9 B4 00  LDA a: ram_00B4,Y
-C - - - - - 0x01C1AA 07:C19A: C9 00     CMP #$00
+C - - - - - 0x01C1AA 07:C19A: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01C1AC 07:C19C: F0 31     BEQ bra_C1CF
 C - - - - - 0x01C1AE 07:C19E: B9 B6 00  LDA a: ram_00B6,Y
 C - - - - - 0x01C1B1 07:C1A1: 29 08     AND #$08
@@ -1814,7 +1814,7 @@ C - - - - - 0x01CBEA 07:CBDA: BD 01 03  LDA ram_0301,X
 C - - - - - 0x01CBED 07:CBDD: 29 08     AND #$08
 C - - - - - 0x01CBEF 07:CBDF: F0 0E     BEQ bra_CBEF
 C - - - - - 0x01CBF1 07:CBE1: 20 32 ED  JSR sub_ED32
-C - - - - - 0x01CBF4 07:CBE4: C9 00     CMP #$00
+C - - - - - 0x01CBF4 07:CBE4: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01CBF6 07:CBE6: F0 07     BEQ bra_CBEF
 C - - - - - 0x01CBF8 07:CBE8: A9 00     LDA #$00
 C - - - - - 0x01CBFA 07:CBEA: 9D 00 03  STA ram_0300,X
@@ -2255,7 +2255,7 @@ loc_CF20:
 C D 2 - - - 0x01CF30 07:CF20: BD 0F 05  LDA ram_050F,X
 C - - - - - 0x01CF33 07:CF23: D0 07     BNE bra_CF2C
 C - - - - - 0x01CF35 07:CF25: 20 42 F9  JSR sub_F942
-C - - - - - 0x01CF38 07:CF28: C9 00     CMP #$00
+C - - - - - 0x01CF38 07:CF28: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01CF3A 07:CF2A: D0 6E     BNE bra_CF9A_RTS
 bra_CF2C:
 C - - - - - 0x01CF3C 07:CF2C: BD 0C 05  LDA ram_050C,X
@@ -2337,7 +2337,7 @@ bra_CFB9:
 C - - - - - 0x01CFC9 07:CFB9: A2 20     LDX #$20
 C - - - - - 0x01CFCB 07:CFBB: A0 50     LDY #$50
 C - - - - - 0x01CFCD 07:CFBD: 20 BE EF  JSR sub_EFBE
-C - - - - - 0x01CFD0 07:CFC0: C9 00     CMP #$00
+C - - - - - 0x01CFD0 07:CFC0: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01CFD2 07:CFC2: F0 0F     BEQ bra_CFD3
 C - - - - - 0x01CFD4 07:CFC4: BD 0B 03  LDA ram_030B,X
 C - - - - - 0x01CFD7 07:CFC7: C9 41     CMP #$41
@@ -2568,7 +2568,7 @@ bra_D14B:
 C - - - - - 0x01D15B 07:D14B: A5 CC     LDA ram_00CC
 C - - - - - 0x01D15D 07:D14D: D0 2F     BNE bra_D17E
 C - - - - - 0x01D15F 07:D14F: 20 BE EF  JSR sub_EFBE
-C - - - - - 0x01D162 07:D152: C9 00     CMP #$00
+C - - - - - 0x01D162 07:D152: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01D164 07:D154: F0 25     BEQ bra_D17B
 C - - - - - 0x01D166 07:D156: B9 0F 05  LDA ram_050F,Y
 C - - - - - 0x01D169 07:D159: 29 08     AND #$08
@@ -2892,7 +2892,7 @@ C - - - - - 0x01D369 07:D359: 20 24 DA  JSR sub_DA24
 C - - - - - 0x01D36C 07:D35C: 60        RTS
 bra_D35D:
 C - - - - - 0x01D36D 07:D35D: 20 34 D1  JSR sub_D134
-C - - - - - 0x01D370 07:D360: C9 00     CMP #$00
+C - - - - - 0x01D370 07:D360: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01D372 07:D362: F0 03     BEQ bra_D367
 C - - - - - 0x01D374 07:D364: 4C 6B D4  JMP loc_D46B_RTS
 bra_D367:
@@ -3155,10 +3155,10 @@ C - - - - - 0x01D55B 07:D54B: 20 24 DA  JSR sub_DA24
 C - - - - - 0x01D55E 07:D54E: 60        RTS
 bra_D54F:
 C - - - - - 0x01D55F 07:D54F: BD 0A 05  LDA ram_050A,X
-C - - - - - 0x01D562 07:D552: C9 00     CMP #$00
+C - - - - - 0x01D562 07:D552: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01D564 07:D554: D0 2C     BNE bra_D582
 C - - - - - 0x01D566 07:D556: 20 49 FA  JSR sub_FA49
-C - - - - - 0x01D569 07:D559: C9 00     CMP #$00
+C - - - - - 0x01D569 07:D559: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01D56B 07:D55B: F0 03     BEQ bra_D560
 C - - - - - 0x01D56D 07:D55D: 4C 15 D6  JMP loc_D615_RTS
 bra_D560:
@@ -3208,7 +3208,7 @@ bra_D5B6:
 C - - - - - 0x01D5C6 07:D5B6: C9 06     CMP #$06
 C - - - - - 0x01D5C8 07:D5B8: D0 24     BNE bra_D5DE
 C - - - - - 0x01D5CA 07:D5BA: 20 49 FA  JSR sub_FA49
-C - - - - - 0x01D5CD 07:D5BD: C9 00     CMP #$00
+C - - - - - 0x01D5CD 07:D5BD: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01D5CF 07:D5BF: F0 03     BEQ bra_D5C4
 C - - - - - 0x01D5D1 07:D5C1: 4C 15 D6  JMP loc_D615_RTS
 bra_D5C4:
@@ -3994,7 +3994,7 @@ C - - - - - 0x01DB3E 07:DB2E: D9 74 DB  CMP tbl_DB74,Y
 C - - - - - 0x01DB41 07:DB31: B0 0A     BCS bra_DB3D
 C - - - - - 0x01DB43 07:DB33: 20 7C DB  JSR sub_DB7C
 C - - - - - 0x01DB46 07:DB36: A5 C8     LDA ram_00C8
-C - - - - - 0x01DB48 07:DB38: C9 00     CMP #$00
+C - - - - - 0x01DB48 07:DB38: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01DB4A 07:DB3A: F0 01     BEQ bra_DB3D
 C - - - - - 0x01DB4C 07:DB3C: 60        RTS
 bra_DB3D:
@@ -4316,7 +4316,7 @@ bra_DCDA:
 C - - - - - 0x01DCEA 07:DCDA: BD 01 05  LDA ram_0501,X
 C - - - - - 0x01DCED 07:DCDD: 20 43 DD  JSR sub_DD43
 C - - - - - 0x01DCF0 07:DCE0: BD 0A 05  LDA ram_050A,X
-C - - - - - 0x01DCF3 07:DCE3: C9 00     CMP #$00
+C - - - - - 0x01DCF3 07:DCE3: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01DCF5 07:DCE5: D0 07     BNE bra_DCEE
 C - - - - - 0x01DCF7 07:DCE7: BD 01 05  LDA ram_0501,X
 C - - - - - 0x01DCFA 07:DCEA: C9 40     CMP #$40
@@ -4919,7 +4919,7 @@ C - - - - - 0x01E094 07:E084: A9 00     LDA #$00
 C - - - - - 0x01E096 07:E086: 8D 06 20  STA $2006
 C - - - - - 0x01E099 07:E089: A9 55     LDA #$55
 C - - - - - 0x01E09B 07:E08B: 20 60 E1  JSR sub_E160
-C - - - - - 0x01E09E 07:E08E: C9 00     CMP #$00
+C - - - - - 0x01E09E 07:E08E: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01E0A0 07:E090: D0 32     BNE bra_E0C4
 C - - - - - 0x01E0A2 07:E092: A9 24     LDA #$24
 C - - - - - 0x01E0A4 07:E094: 8D 06 20  STA $2006
@@ -4927,7 +4927,7 @@ C - - - - - 0x01E0A7 07:E097: A9 00     LDA #$00
 C - - - - - 0x01E0A9 07:E099: 8D 06 20  STA $2006
 C - - - - - 0x01E0AC 07:E09C: A9 AA     LDA #$AA
 C - - - - - 0x01E0AE 07:E09E: 20 60 E1  JSR sub_E160
-C - - - - - 0x01E0B1 07:E0A1: C9 00     CMP #$00
+C - - - - - 0x01E0B1 07:E0A1: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01E0B3 07:E0A3: D0 1F     BNE bra_E0C4
 C - - - - - 0x01E0B5 07:E0A5: A9 00     LDA #$00
 C - - - - - 0x01E0B7 07:E0A7: 20 97 FB  JSR sub_FB97
@@ -5846,7 +5846,7 @@ C - - - - - 0x01E6A2 07:E692: 60        RTS
 
 
 sub_E693:
-C - - - - - 0x01E6A3 07:E693: C9 00     CMP #$00
+C - - - - - 0x01E6A3 07:E693: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01E6A5 07:E695: 30 08     BMI bra_E69F
 C - - - - - 0x01E6A7 07:E697: 48        PHA
 C - - - - - 0x01E6A8 07:E698: 29 03     AND #$03
@@ -5875,7 +5875,7 @@ C - - - - - 0x01E6C1 07:E6B1: 60        RTS
 
 
 sub_E6B2:
-C - - - - - 0x01E6C2 07:E6B2: C9 00     CMP #$00
+C - - - - - 0x01E6C2 07:E6B2: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01E6C4 07:E6B4: 30 09     BMI bra_E6BF
 C - - - - - 0x01E6C6 07:E6B6: 48        PHA
 C - - - - - 0x01E6C7 07:E6B7: 29 07     AND #$07
@@ -6231,7 +6231,7 @@ C - - - - - 0x01E894 07:E884: 60        RTS
 sub_E885:
 C - - - - - 0x01E895 07:E885: 48        PHA
 C - - - - - 0x01E896 07:E886: BD 0A 05  LDA ram_050A,X
-C - - - - - 0x01E899 07:E889: C9 00     CMP #$00
+C - - - - - 0x01E899 07:E889: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01E89B 07:E88B: D0 12     BNE bra_E89F
 C - - - - - 0x01E89D 07:E88D: 68        PLA
 C - - - - - 0x01E89E 07:E88E: C9 40     CMP #$40
@@ -6950,7 +6950,7 @@ sub_ECA7:
 C - - - - - 0x01ECB7 07:ECA7: B1 08     LDA (ram_0008),Y
 C - - - - - 0x01ECB9 07:ECA9: 85 1B     STA ram_001B
 C - - - - - 0x01ECBB 07:ECAB: C8        INY
-C - - - - - 0x01ECBC 07:ECAC: C9 00     CMP #$00
+C - - - - - 0x01ECBC 07:ECAC: C9 00     CMP #$00    ; bzk optimize, INY first
 C - - - - - 0x01ECBE 07:ECAE: F0 21     BEQ bra_ECD1_RTS
 bra_ECB0:
 C - - - - - 0x01ECC0 07:ECB0: A9 03     LDA #$03
@@ -7323,7 +7323,7 @@ off_EE42_08:
 
 sub_EE5B:
 C - - - - - 0x01EE6B 07:EE5B: 20 BE EF  JSR sub_EFBE
-C - - - - - 0x01EE6E 07:EE5E: C9 00     CMP #$00
+C - - - - - 0x01EE6E 07:EE5E: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01EE70 07:EE60: D0 03     BNE bra_EE65
 C - - - - - 0x01EE72 07:EE62: A9 00     LDA #$00
 C - - - - - 0x01EE74 07:EE64: 60        RTS
@@ -7346,7 +7346,7 @@ loc_EE82:
 C D 3 - - - 0x01EE92 07:EE82: C4 32     CPY ram_0032
 C - - - - - 0x01EE94 07:EE84: F0 0E     BEQ bra_EE94
 C - - - - - 0x01EE96 07:EE86: 20 A6 EE  JSR sub_EEA6
-C - - - - - 0x01EE99 07:EE89: C9 00     CMP #$00
+C - - - - - 0x01EE99 07:EE89: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01EE9B 07:EE8B: D0 0E     BNE bra_EE9B
 C - - - - - 0x01EE9D 07:EE8D: C8        INY
 C - - - - - 0x01EE9E 07:EE8E: C8        INY
@@ -7483,7 +7483,7 @@ C - - - - - 0x01EF7E 07:EF6E: 60        RTS
 
 
 sub_EF6F:
-C - - - - - 0x01EF7F 07:EF6F: C9 00     CMP #$00
+C - - - - - 0x01EF7F 07:EF6F: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01EF81 07:EF71: F0 24     BEQ bra_EF97
 C - - - - - 0x01EF83 07:EF73: BD 01 03  LDA ram_0301,X
 C - - - - - 0x01EF86 07:EF76: 29 40     AND #$40
@@ -7578,7 +7578,7 @@ C - - - - - 0x01F022 07:F012: B9 0C 05  LDA ram_050C,Y
 C - - - - - 0x01F025 07:F015: C9 51     CMP #$51
 C - - - - - 0x01F027 07:F017: F0 3E     BEQ bra_F057
 C - - - - - 0x01F029 07:F019: 20 BE EF  JSR sub_EFBE
-C - - - - - 0x01F02C 07:F01C: C9 00     CMP #$00
+C - - - - - 0x01F02C 07:F01C: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01F02E 07:F01E: F0 37     BEQ bra_F057
 C - - - - - 0x01F030 07:F020: BD 02 03  LDA ram_0302,X
 C - - - - - 0x01F033 07:F023: 38        SEC
@@ -8300,7 +8300,7 @@ C - - - - - 0x01F491 07:F481: F6 E6     INC ram_00E6,X
 C - - - - - 0x01F493 07:F483: 4C A0 F4  JMP loc_F4A0
 bra_F486:
 C - - - - - 0x01F496 07:F486: B5 E0     LDA ram_00E0,X
-C - - - - - 0x01F498 07:F488: C9 00     CMP #$00
+C - - - - - 0x01F498 07:F488: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01F49A 07:F48A: F0 10     BEQ bra_F49C
 C - - - - - 0x01F49C 07:F48C: B5 E2     LDA ram_00E2,X
 C - - - - - 0x01F49E 07:F48E: 95 E4     STA ram_00E4,X
@@ -9607,7 +9607,7 @@ C - - - - - 0x01FC2F 07:FC1F: 8D 06 20  STA $2006
 C - - - - - 0x01FC32 07:FC22: A8        TAY
 loc_FC23:
 C D 3 - - - 0x01FC33 07:FC23: B1 00     LDA (ram_0000),Y
-C - - - - - 0x01FC35 07:FC25: C9 00     CMP #$00
+C - - - - - 0x01FC35 07:FC25: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01FC37 07:FC27: D0 01     BNE bra_FC2A
 C - - - - - 0x01FC39 07:FC29: 60        RTS
 bra_FC2A:
