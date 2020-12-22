@@ -19,10 +19,13 @@ con_btn_Right                   = $01 ;
 con_btn_Left                    = $02 ; 
 con_btn_Down                    = $04 ; 
 con_btn_Up                      = $08 ; 
-con_btns_Dpad                   = $0F ; Right + Left + Down + Up
 con_btn_Start                   = $10 ; 
 con_btn_Select                  = $20 ; 
 con_btn_B                       = $40 ; 
 con_btn_A                       = $80 ; 
+
+con_btns_RLD                    = $07 ; Right + Left + Down
+con_btns_Dpad                   = $0F ; Right + Left + Down + Up
+con_btns_debug                  = $70 ; Start + Select + B
 
 
