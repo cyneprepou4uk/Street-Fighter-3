@@ -535,13 +535,13 @@ C - - - - - 0x01C72C 07:C71C: 85 01     STA ram_0001
 C - - - - - 0x01C72E 07:C71E: 8A        LDA #$00
 C - - - - - 0x01C72F 07:C71F: A8        TAY
 C - - - - - 0x01C730 07:C720: 85 00     STA ram_0000
-bra_C722:
+bra_C722_clear_ram_loop:
 C - - - - - 0x01C732 07:C722: 91 00     STA (ram_0000),Y
 C - - - - - 0x01C734 07:C724: 88        DEY
-C - - - - - 0x01C735 07:C725: D0 FB     BNE bra_C722
+C - - - - - 0x01C735 07:C725: D0 FB     BNE bra_C722_clear_ram_loop
 C - - - - - 0x01C737 07:C727: C6 01     DEC ram_0001
-C - - - - - 0x01C739 07:C729: 10 F7     BPL bra_C722
-C - - - - - 0x01C73B 07:C72B: E6 01     INC ram_0001
+C - - - - - 0x01C739 07:C729: 10 F7     BPL bra_C722_clear_ram_loop
+C - - - - - 0x01C73B 07:C72B: E6 01     INC ram_0001    ; because FF remains after loop
 C - - - - - 0x01C73D 07:C72D: 20 4A FB  JSR sub_FB4A
 C - - - - - 0x01C740 07:C730: 58        CLI
 C - - - - - 0x01C741 07:C731: A9 30     LDA #$80    ; 0x000010
