@@ -595,7 +595,7 @@ C - - - - - 0x01C7CC 07:C7BC: BD 0D 05  LDA ram_050D,X
 C - - - - - 0x01C7CF 07:C7BF: F0 F0     BEQ bra_C7B1
 loc_C7C1:
 C D 2 - - - 0x01C7D1 07:C7C1: A5 C9     LDA ram_00C9
-C - - - - - 0x01C7D3 07:C7C3: 85 CA     STA ram_00CA
+C - - - - - 0x01C7D3 07:C7C3: 85 CA     STA ram_difficulty
 C - - - - - 0x01C7D5 07:C7C5: 18        CLC
 C - - - - - 0x01C7D6 07:C7C6: 69 02     ADC #$02
 C - - - - - 0x01C7D8 07:C7C8: 85 CB     STA ram_credits
@@ -609,7 +609,7 @@ C - - - - - 0x01C7E9 07:C7D9: 85 2E     STA ram_002E
 C - - - - - 0x01C7EB 07:C7DB: 85 F8     STA ram_00F8
 C - - - - - 0x01C7ED 07:C7DD: 85 F9     STA ram_00F9
 C - - - - - 0x01C7EF 07:C7DF: A9 07     LDA #$07
-C - - - - - 0x01C7F1 07:C7E1: 85 CA     STA ram_00CA
+C - - - - - 0x01C7F1 07:C7E1: 85 CA     STA ram_difficulty
 C - - - - - 0x01C7F3 07:C7E3: A9 09     LDA #$09
 C - - - - - 0x01C7F5 07:C7E5: 85 A0     STA ram_00A0
 C - - - - - 0x01C7F7 07:C7E7: 20 95 FD  JSR sub_FD95
@@ -824,10 +824,10 @@ C - - - - - 0x01C97B 07:C96B: E6 0D     INC ram_000D
 C - - - - - 0x01C97D 07:C96D: A5 0D     LDA ram_000D
 C - - - - - 0x01C97F 07:C96F: 29 01     AND #$01
 C - - - - - 0x01C981 07:C971: D0 08     BNE bra_C97B
-C - - - - - 0x01C983 07:C973: A5 CA     LDA ram_00CA
+C - - - - - 0x01C983 07:C973: A5 CA     LDA ram_difficulty
 C - - - - - 0x01C985 07:C975: C9 05     CMP #$05
 C - - - - - 0x01C987 07:C977: B0 02     BCS bra_C97B
-C - - - - - 0x01C989 07:C979: E6 CA     INC ram_00CA
+C - - - - - 0x01C989 07:C979: E6 CA     INC ram_difficulty
 bra_C97B:
 C - - - - - 0x01C98B 07:C97B: A5 0D     LDA ram_000D
 C - - - - - 0x01C98D 07:C97D: C9 09     CMP #$09
@@ -3336,7 +3336,7 @@ C - - - - - 0x01DADC 07:DACC: A9 40     LDA #$40
 C - - - - - 0x01DADE 07:DACE: 85 A0     STA ram_00A0
 C - - - - - 0x01DAE0 07:DAD0: 20 95 FD  JSR sub_FD95
 C - - - - - 0x01DAE3 07:DAD3: A5 A1     LDA ram_00A1
-C - - - - - 0x01DAE5 07:DAD5: A4 CA     LDY ram_00CA
+C - - - - - 0x01DAE5 07:DAD5: A4 CA     LDY ram_difficulty
 C - - - - - 0x01DAE7 07:DAD7: D9 64 DB  CMP tbl_DB64,Y
 C - - - - - 0x01DAEA 07:DADA: B0 20     BCS bra_DAFC
 C - - - - - 0x01DAEC 07:DADC: BD 0A 05  LDA ram_050A,X
@@ -3359,7 +3359,7 @@ C - - - - - 0x01DB0C 07:DAFC: A9 40     LDA #$40
 C - - - - - 0x01DB0E 07:DAFE: 85 A0     STA ram_00A0
 C - - - - - 0x01DB10 07:DB00: 20 95 FD  JSR sub_FD95
 C - - - - - 0x01DB13 07:DB03: A5 A1     LDA ram_00A1
-C - - - - - 0x01DB15 07:DB05: A4 CA     LDY ram_00CA
+C - - - - - 0x01DB15 07:DB05: A4 CA     LDY ram_difficulty
 C - - - - - 0x01DB17 07:DB07: D9 6C DB  CMP tbl_DB6C,Y
 C - - - - - 0x01DB1A 07:DB0A: B0 17     BCS bra_DB23
 C - - - - - 0x01DB1C 07:DB0C: BD 0A 05  LDA ram_050A,X
@@ -3378,7 +3378,7 @@ C - - - - - 0x01DB33 07:DB23: A9 40     LDA #$40
 C - - - - - 0x01DB35 07:DB25: 85 A0     STA ram_00A0
 C - - - - - 0x01DB37 07:DB27: 20 95 FD  JSR sub_FD95
 C - - - - - 0x01DB3A 07:DB2A: A5 A1     LDA ram_00A1
-C - - - - - 0x01DB3C 07:DB2C: A4 CA     LDY ram_00CA
+C - - - - - 0x01DB3C 07:DB2C: A4 CA     LDY ram_difficulty
 C - - - - - 0x01DB3E 07:DB2E: D9 74 DB  CMP tbl_DB74,Y
 C - - - - - 0x01DB41 07:DB31: B0 0A     BCS bra_DB3D
 C - - - - - 0x01DB43 07:DB33: 20 7C DB  JSR sub_DB7C
