@@ -425,11 +425,11 @@ C - - - - - 0x01C683 07:C673: 48        PHA
 C - - - - - 0x01C684 07:C674: 8D 07 70  STA $7007
 C - - - - - 0x01C687 07:C677: A5 0F     LDA ram_irq_scanline_counter
 C - - - - - 0x01C689 07:C679: C9 1B     CMP #$1B
-C - - - - - 0x01C68B 07:C67B: 90 05     BCC bra_C682
+C - - - - - 0x01C68B 07:C67B: 90 05     BCC bra_C682_still_counting
 C - - - - - 0x01C68D 07:C67D: 8D 06 70  STA $7006
 C - - - - - 0x01C690 07:C680: B0 7A     JMP loc_C6FC_quit_irq
-bra_C682:
-C - - - - - 0x01C692 07:C682: A5 0E     LDA ram_000E
+bra_C682_still_counting:
+C - - - - - 0x01C692 07:C682: A5 0E     LDA ram_current_game_mode
 C - - - - - 0x01C694 07:C684: C9 03     CMP #$03
 C - - - - - 0x01C696 07:C686: F0 2B     BEQ bra_C6B3
 C - - - - - 0x01C698 07:C688: C9 04     CMP #$04
@@ -466,7 +466,7 @@ C - - - - - 0x01C6CE 07:C6BE: 85 38     STA ram_0038
 C - - - - - 0x01C6D0 07:C6C0: 4C C3 C6  JMP loc_C6C3    ; bzk optimize
 bra_C6C3:
 loc_C6C3:
-C D 2 - - - 0x01C6D3 07:C6C3: A5 0E     LDA ram_000E
+C D 2 - - - 0x01C6D3 07:C6C3: A5 0E     LDA ram_current_game_mode
 C - - - - - 0x01C6D5 07:C6C5: C9 01     CMP #$01
 C - - - - - 0x01C6D7 07:C6C7: D0 1A     BNE bra_C6E3
 C - - - - - 0x01C6D9 07:C6C9: A5 0F     LDA ram_irq_scanline_counter
@@ -568,7 +568,7 @@ C - - - - - 0x01C76F 07:C75F: 20 EE EF  JSR sub_EFEE_clear_0300_03CF
 C - - - - - 0x01C772 07:C762: A9 0A     LDA #$0A
 C - - - - - 0x01C774 07:C764: 85 0C     STA ram_000C
 C - - - - - 0x01C776 07:C766: A9 04     LDA #$04
-C - - - - - 0x01C778 07:C768: 85 0E     STA ram_000E
+C - - - - - 0x01C778 07:C768: 85 0E     STA ram_current_game_mode
 C - - - - - 0x01C77A 07:C76A: A9 00     LDA #$00
 C - - - - - 0x01C77C 07:C76C: 85 FC     STA ram_00FC
 C - - - - - 0x01C77E 07:C76E: A2 0C     LDX #$0C    ; title screen
@@ -711,7 +711,7 @@ C - - - - - 0x01C86D 07:C85D: 20 EE EF  JSR sub_EFEE_clear_0300_03CF
 C - - - - - 0x01C870 07:C860: A9 09     LDA #$09
 C - - - - - 0x01C872 07:C862: 85 0C     STA ram_000C
 C - - - - - 0x01C874 07:C864: A9 03     LDA #$03
-C - - - - - 0x01C876 07:C866: 85 0E     STA ram_000E
+C - - - - - 0x01C876 07:C866: 85 0E     STA ram_current_game_mode
 C - - - - - 0x01C878 07:C868: A9 00     LDA #$00
 C - - - - - 0x01C87A 07:C86A: 85 2E     STA ram_002E
 C - - - - - 0x01C87C 07:C86C: A2 0B     LDX #$0B    ; player select screen
@@ -929,7 +929,7 @@ sub_C9DE_select_final_cutscene:
 C - - - - - 0x01C9EE 07:C9DE: 20 4D F8  JSR sub_F84D
 C - - - - - 0x01C9F1 07:C9E1: 20 EE EF  JSR sub_EFEE_clear_0300_03CF
 C - - - - - 0x01C9F4 07:C9E4: A9 05     LDA #$05
-C - - - - - 0x01C9F6 07:C9E6: 85 0E     STA ram_000E
+C - - - - - 0x01C9F6 07:C9E6: 85 0E     STA ram_current_game_mode
 C - - - - - 0x01C9F8 07:C9E8: AD 1E 05  LDA ram_051E
 C - - - - - 0x01C9FB 07:C9EB: D0 05     BNE bra_C9F2
 C - - - - - 0x01C9FD 07:C9ED: A5 3B     LDA ram_p1_fighter
@@ -1092,7 +1092,7 @@ C - - - - - 0x01CB08 07:CAF8: 29 DF     AND #$DF
 C - - - - - 0x01CB0A 07:CAFA: 85 15     STA ram_0015
 C - - - - - 0x01CB0C 07:CAFC: 20 EE EF  JSR sub_EFEE_clear_0300_03CF
 C - - - - - 0x01CB0F 07:CAFF: A9 01     LDA #$01
-C - - - - - 0x01CB11 07:CB01: 85 0E     STA ram_000E
+C - - - - - 0x01CB11 07:CB01: 85 0E     STA ram_current_game_mode
 C - - - - - 0x01CB13 07:CB03: A2 10     LDX #$10
 loc_CB05:
 C D 2 - - - 0x01CB15 07:CB05: A9 00     LDA #$00
@@ -1163,7 +1163,7 @@ C - - - - - 0x01CB8F 07:CB7F: A5 B6     LDA ram_btn_hold
 C - - - - - 0x01CB91 07:CB81: C9 70     CMP #$70
 C - - - - - 0x01CB93 07:CB83: D0 07     BNE bra_CB8C
 C - - - - - 0x01CB95 07:CB85: A9 64     LDA #$64
-C - - - - - 0x01CB97 07:CB87: 85 0E     STA ram_000E
+C - - - - - 0x01CB97 07:CB87: 85 0E     STA ram_current_game_mode
 C - - - - - 0x01CB99 07:CB89: 20 AC DD  JSR sub_DDAC
 bra_CB8C:
 C - - - - - 0x01CB9C 07:CB8C: 8D 56 70  STA $7006
@@ -2778,7 +2778,7 @@ bra_D6D7:
 bra_D6DA:
 C - - - - - 0x01D6EA 07:D6DA: 20 96 FA  JSR sub_FA96
 C - - - - - 0x01D6ED 07:D6DD: C6 10     DEC ram_0010
-C - - - - - 0x01D6EF 07:D6DF: A5 0E     LDA ram_000E
+C - - - - - 0x01D6EF 07:D6DF: A5 0E     LDA ram_current_game_mode
 C - - - - - 0x01D6F1 07:D6E1: C9 01     CMP #$01
 C - - - - - 0x01D6F3 07:D6E3: D0 06     BNE bra_D6EB
 C - - - - - 0x01D6F5 07:D6E5: 20 24 D7  JSR sub_D724
@@ -4796,7 +4796,7 @@ C - - - - - 0x01E35D 07:E34D: BD 0C 03  LDA ram_030C,X
 C - - - - - 0x01E360 07:E350: 8D 00 70  STA $5114
 C - - - - - 0x01E363 07:E353: BD 01 03  LDA ram_0301,X
 C - - - - - 0x01E366 07:E356: 85 50     STA ram_0050
-C - - - - - 0x01E368 07:E358: A5 0E     LDA ram_000E
+C - - - - - 0x01E368 07:E358: A5 0E     LDA ram_current_game_mode
 C - - - - - 0x01E36A 07:E35A: C9 01     CMP #$01
 C - - - - - 0x01E36C 07:E35C: D0 10     BNE bra_E36E
 C - - - - - 0x01E36E 07:E35E: BD 0B 03  LDA ram_030B,X
@@ -4918,7 +4918,7 @@ loc_E446:
 C D 3 - - - 0x01E456 07:E446: BD 0B 03  LDA ram_030B,X
 C - - - - - 0x01E459 07:E449: C9 16     CMP #$16
 C - - - - - 0x01E45B 07:E44B: D0 26     BNE bra_E473
-C - - - - - 0x01E45D 07:E44D: A5 0E     LDA ram_000E
+C - - - - - 0x01E45D 07:E44D: A5 0E     LDA ram_current_game_mode
 C - - - - - 0x01E45F 07:E44F: C9 01     CMP #$01
 C - - - - - 0x01E461 07:E451: D0 20     BNE bra_E473
 C - - - - - 0x01E463 07:E453: BC 03 05  LDY ram_0503,X
@@ -7735,7 +7735,7 @@ C - - - - - 0x01F4BB 07:F4AB: 20 4D F8  JSR sub_F84D
 C - - - - - 0x01F4BE 07:F4AE: 20 3B F9  JSR sub_F93B
 C - - - - - 0x01F4C1 07:F4B1: 20 EE EF  JSR sub_EFEE_clear_0300_03CF
 C - - - - - 0x01F4C4 07:F4B4: A9 02     LDA #$02
-C - - - - - 0x01F4C6 07:F4B6: 85 0E     STA ram_000E
+C - - - - - 0x01F4C6 07:F4B6: 85 0E     STA ram_current_game_mode
 C - - - - - 0x01F4C8 07:F4B8: A9 00     LDA #$00
 C - - - - - 0x01F4CA 07:F4BA: 20 97 FB  JSR sub_FB97
 C - - - - - 0x01F4CD 07:F4BD: A5 2E     LDA ram_002E
@@ -7821,7 +7821,7 @@ C - - - - - 0x01F55A 07:F54A: 20 4D F8  JSR sub_F84D
 C - - - - - 0x01F55D 07:F54D: 20 3B F9  JSR sub_F93B
 C - - - - - 0x01F560 07:F550: 20 EE EF  JSR sub_EFEE_clear_0300_03CF
 C - - - - - 0x01F563 07:F553: A9 06     LDA #$06
-C - - - - - 0x01F565 07:F555: 85 0E     STA ram_000E
+C - - - - - 0x01F565 07:F555: 85 0E     STA ram_current_game_mode
 C - - - - - 0x01F567 07:F557: A9 00     LDA #$00
 C - - - - - 0x01F569 07:F559: A2 0D     LDX #$0D    ; continue screen
 C - - - - - 0x01F56B 07:F55B: 20 E9 E7  JSR sub_E7E9_draw_screen
