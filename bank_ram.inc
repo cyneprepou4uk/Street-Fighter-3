@@ -2067,16 +2067,18 @@ ram_07FF                        = $07FF ; N/A
 
 
 
-; SRAM (battery)
-; ram_6000                        = $6000 ; 6   
-; ram_6001                        = $6001 ; 5   
-; ram_6002                        = $6002 ; 1   
-; ram_6003                        = $6003 ; 1   
-; ram_7000                        = $7000 ; 20   
-; ram_7001                        = $7001 ; 2   
-; ram_7006                        = $7006 ; 5   
-; ram_7007                        = $7007 ; 2   
-; ram_7046                        = $7046 ; 1   
-; ram_7056                        = $7056 ; 2   
-; ram_7066                        = $7066 ; 1   
-; ram_7076                        = $7076 ; 1   
+; mapper 091 registers
+; https://wiki.nesdev.com/w/index.php/INES_Mapper_091
+
+; ram_6000                        = $6000 ; 6   CHR-ROM Bank Select
+; ram_6001                        = $6001 ; 5   CHR-ROM Bank Select
+; ram_6002                        = $6002 ; 1   CHR-ROM Bank Select
+; ram_6003                        = $6003 ; 1   CHR-ROM Bank Select
+; ram_7000                        = $7000 ; 20  PRG-ROM Bank Select
+; ram_7001                        = $7001 ; 2   PRG-ROM Bank Select
+; ram_7006                        = $7006 ; 5   IRQ Stop/Acknowledge
+; ram_7007                        = $7007 ; 2   IRQ Start/Reset
+; ram_7046                        = $7046 ; 1   IRQ Stop/Acknowledge?
+; ram_7056                        = $7056 ; 2   IRQ Stop/Acknowledge?
+; ram_7066                        = $7066 ; 1   IRQ Stop/Acknowledge?
+; ram_7076                        = $7076 ; 1   IRQ Stop/Acknowledge?

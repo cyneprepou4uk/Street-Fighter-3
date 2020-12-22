@@ -440,6 +440,7 @@ C - - - - - 0x01C6A0 07:C690: C9 01     CMP #$01
 C - - - - - 0x01C6A2 07:C692: F0 1F     BEQ bra_C6B3
 C - - - - - 0x01C6A4 07:C694: C9 64     CMP #$64
 C - - - - - 0x01C6A6 07:C696: D0 64     BNE bra_C6FC
+; debug mode
 C - - - - - 0x01C6A8 07:C698: A5 0F     LDA ram_000F
 C - - - - - 0x01C6AA 07:C69A: C9 12     CMP #$12
 C - - - - - 0x01C6AC 07:C69C: D0 5E     BNE bra_C6FC
@@ -2792,8 +2793,8 @@ C - - - - - 0x01D71E 07:D70E: 4C 1B D7  JMP loc_D71B
 bra_D711:
 C - - - - - 0x01D721 07:D711: C9 64     CMP #$64
 C - - - - - 0x01D723 07:D713: D0 06     BNE bra_D71B
-C - - - - - 0x01D725 07:D715: 20 F7 D8  JSR sub_D8F7
-C - - - - - 0x01D728 07:D718: 4C 1B D7  JMP loc_D71B
+C - - - - - 0x01D725 07:D715: 20 F7 D8  JSR sub_D8F7_debug_mode
+C - - - - - 0x01D728 07:D718: 4C 1B D7  JMP loc_D71B    ; bzk optimize
 bra_D71B:
 loc_D71B:
 C D 2 - - - 0x01D72B 07:D71B: 20 E2 F7  JSR sub_F7E2
@@ -3060,7 +3061,7 @@ C - - - - - 0x01D906 07:D8F6: 60        RTS
 
 
 
-sub_D8F7:
+sub_D8F7_debug_mode:
 C - - - - - 0x01D907 07:D8F7: 20 E8 D8  JSR sub_D8E8
 C - - - - - 0x01D90A 07:D8FA: A9 BE     LDA #$BE
 C - - - - - 0x01D90C 07:D8FC: 8D 00 60  STA $6000
