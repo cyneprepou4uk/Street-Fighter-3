@@ -1273,10 +1273,6 @@ tbl_C83A:
 - D 2 - - - 0x01C85A 07:C84A: 08        .byte $08   ; 
 
 
-; bzk unused
-- - - - - - 0x01C85B 07:C84B: BA        .byte $BA   ; 
-
-
 
 sub_C84C:
 C - - - - - 0x01C85C 07:C84C: A9 00     LDA #$00
