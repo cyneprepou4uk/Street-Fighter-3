@@ -636,10 +636,10 @@ C - - - - - 0x01C819 07:C809: A9 01     LDA #$01
 C - - - - - 0x01C81B 07:C80B: 8D 1E 05  STA ram_051E
 C - - - - - 0x01C81E 07:C80E: 8D 4E 05  STA ram_054E
 C - - - - - 0x01C821 07:C811: 20 69 CA  JSR sub_CA69
-bra_C814:
+bra_C814_infinite_loop:
 C - - - - - 0x01C824 07:C814: A5 72     LDA ram_0072
 C - - - - - 0x01C826 07:C816: C9 FF     CMP #$FF
-C - - - - - 0x01C828 07:C818: D0 FA     BNE bra_C814
+C - - - - - 0x01C828 07:C818: D0 FA     BNE bra_C814_infinite_loop
 C - - - - - 0x01C82A 07:C81A: 4C 59 C7  JMP loc_C759
 bra_C81D:
 C - - - - - 0x01C82D 07:C81D: A9 00     LDA #$00
@@ -950,10 +950,10 @@ C - - - - - 0x01CA2B 07:CA1B: 20 0B F8  JSR sub_F80B
 C - - - - - 0x01CA2E 07:CA1E: 20 F4 FA  JSR sub_FAF4
 bra_CA21:
 C - - - - - 0x01CA31 07:CA21: 20 69 CA  JSR sub_CA69
-bra_CA24:
+bra_CA24_infinite_loop:
 C - - - - - 0x01CA34 07:CA24: A5 72     LDA ram_0072
 C - - - - - 0x01CA36 07:CA26: C9 FF     CMP #$FF
-C - - - - - 0x01CA38 07:CA28: D0 FA     BNE bra_CA24
+C - - - - - 0x01CA38 07:CA28: D0 FA     BNE bra_CA24_infinite_loop
 C - - - - - 0x01CA3A 07:CA2A: A5 2E     LDA ram_002E
 C - - - - - 0x01CA3C 07:CA2C: F0 1D     BEQ bra_CA4B_RTS
 C - - - - - 0x01CA3E 07:CA2E: A9 78     LDA #$78
@@ -1045,12 +1045,12 @@ C - - - - - 0x01CAE1 07:CAD1: A9 B4     LDA #$B4
 C - - - - - 0x01CAE3 07:CAD3: 85 10     STA ram_0010
 C - - - - - 0x01CAE5 07:CAD5: A9 01     LDA #$01
 C - - - - - 0x01CAE7 07:CAD7: 85 C1     STA ram_00C1
-bra_CAD9:
+bra_CAD9_infinite_loop:
 C - - - - - 0x01CAE9 07:CAD9: A5 72     LDA ram_0072
 C - - - - - 0x01CAEB 07:CADB: C9 FF     CMP #$FF
 C - - - - - 0x01CAED 07:CADD: F0 04     BEQ bra_CAE3
 C - - - - - 0x01CAEF 07:CADF: A5 10     LDA ram_0010
-C - - - - - 0x01CAF1 07:CAE1: D0 F6     BNE bra_CAD9
+C - - - - - 0x01CAF1 07:CAE1: D0 F6     BNE bra_CAD9_infinite_loop
 bra_CAE3:
 C - - - - - 0x01CAF3 07:CAE3: A9 01     LDA #$01
 C - - - - - 0x01CAF5 07:CAE5: 85 2F     STA ram_002F
@@ -2745,7 +2745,7 @@ C - - - - - 0x01D6C1 07:D6B1: A9 00     LDA #$00
 C - - - - - 0x01D6C3 07:D6B3: 8D 03 20  STA $2003
 C - - - - - 0x01D6C6 07:D6B6: A9 02     LDA #$02    ; sprites at $0200-$02FF
 C - - - - - 0x01D6C8 07:D6B8: 8D 14 40  STA $4014
-C - - - - - 0x01D6CB 07:D6BB: 20 59 D9  JSR sub_D959
+C - - - - - 0x01D6CB 07:D6BB: 20 59 D9  JSR sub_D959_turn_IRQ_on
 C - - - - - 0x01D6CE 07:D6BE: A5 13     LDA ram_0013
 C - - - - - 0x01D6D0 07:D6C0: F0 09     BEQ bra_D6CB
 C - - - - - 0x01D6D2 07:D6C2: A5 16     LDA ram_0016
@@ -3125,7 +3125,7 @@ C - - - - - 0x01D968 07:D958: 60        RTS
 
 
 
-sub_D959:
+sub_D959_turn_IRQ_on:
 C - - - - - 0x01D969 07:D959: A9 00     LDA #$00
 C - - - - - 0x01D96B 07:D95B: 85 0F     STA ram_000F
 C - - - - - 0x01D96D 07:D95D: A9 09     LDA #$09
