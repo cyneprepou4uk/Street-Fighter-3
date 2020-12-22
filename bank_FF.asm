@@ -1505,10 +1505,6 @@ tbl_C9CE:
 - D 2 - I - 0x01C9E9 07:C9D9: 0F        .byte $0F, $11, $15, $30   ; 
 
 
-; bzk unused
-- - - - - - 0x01C9ED 07:C9DD: BA        .byte $BA   ; 
-
-
 
 sub_C9DE_select_final_cutscene:
 C - - - - - 0x01C9EE 07:C9DE: 20 4D F8  JSR sub_F84D
