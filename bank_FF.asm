@@ -6124,10 +6124,6 @@ tbl_E7A0_spr_colors:
 - D 3 - I - 0x01E7F4 07:E7E4: 0F        .byte $0F, $19, $26, $36   ; 11 (08)
 
 
-; bzk unused
-- - - - - - 0x01E7F8 07:E7E8: BA        .byte $BA   ; 
-
-
 
 sub_E7E9_draw_screen:
 ; bzk optimize, A always = 00 when jumped here
