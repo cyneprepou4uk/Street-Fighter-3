@@ -1666,10 +1666,6 @@ tbl_CAEC:
 - D 2 - - - 0x01CB04 07:CAF4: 28        .byte $28   ; 
 
 
-; bzk unused
-- - - - - - 0x01CB05 07:CAF5: BA        .byte $BA   ; 
-
-
 
 sub_CAF6:
 C - - - - - 0x01CB06 07:CAF6: A5 15     LDA ram_0015
