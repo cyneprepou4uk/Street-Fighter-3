@@ -160,7 +160,7 @@ con_chr_bank = $00
 
 
 sub_C076:
-C - - - - - 0x01C086 07:C076: 20 5C F8  JSR sub_F85C
+C - - - - - 0x01C086 07:C076: 20 5C F8  JSR sub_F85C_set_scroll_to_0
 C - - - - - 0x01C089 07:C079: A9 3A     LDA #$8A    ; 0x014010
 C - - - - - 0x01C08B 07:C07B: 8D 00 70  STA $5114
 C - - - - - 0x01C08E 07:C07E: A9 01     LDA #$01
@@ -175,7 +175,7 @@ C - - - - - 0x01C0A1 07:C091: 60        RTS
 
 
 sub_C092:
-C - - - - - 0x01C0A2 07:C092: 20 5C F8  JSR sub_F85C
+C - - - - - 0x01C0A2 07:C092: 20 5C F8  JSR sub_F85C_set_scroll_to_0
 C - - - - - 0x01C0A5 07:C095: A9 3A     LDA #$8A    ; 0x014010
 C - - - - - 0x01C0A7 07:C097: 8D 00 70  STA $5114
 C - - - - - 0x01C0AA 07:C09A: A5 10     LDA ram_0010
@@ -239,7 +239,7 @@ C - - - - - 0x01C10E 07:C0FE: 60        RTS
 
 
 sub_C100:
-C - - - - - 0x01C110 07:C100: 20 5C F8  JSR sub_F85C
+C - - - - - 0x01C110 07:C100: 20 5C F8  JSR sub_F85C_set_scroll_to_0
 C - - - - - 0x01C113 07:C103: A9 3A     LDA #$8A    ; 0x014010
 C - - - - - 0x01C115 07:C105: 8D 00 70  STA $5114
 C - - - - - 0x01C118 07:C108: A5 FA     LDA ram_00FA
@@ -2844,7 +2844,7 @@ bra_D743:
 C - - - - - 0x01D753 07:D743: A5 72     LDA ram_0072
 C - - - - - 0x01D755 07:D745: C9 FF     CMP #$FF
 C - - - - - 0x01D757 07:D747: D0 06     BNE bra_D74F
-C - - - - - 0x01D759 07:D749: 20 5C F8  JSR sub_F85C
+C - - - - - 0x01D759 07:D749: 20 5C F8  JSR sub_F85C_set_scroll_to_0
 C - - - - - 0x01D75C 07:D74C: 4C 68 D7  JMP loc_D768
 bra_D74F:
 C - - - - - 0x01D75F 07:D74F: C9 01     CMP #$01
@@ -2887,7 +2887,7 @@ loc_D793:
 C D 2 - - - 0x01D7A3 07:D793: A9 00     LDA #$00
 C - - - - - 0x01D7A5 07:D795: 8D 06 20  STA $2006
 C - - - - - 0x01D7A8 07:D798: 8D 06 20  STA $2006
-C - - - - - 0x01D7AB 07:D79B: 20 5C F8  JSR sub_F85C
+C - - - - - 0x01D7AB 07:D79B: 20 5C F8  JSR sub_F85C_set_scroll_to_0
 C - - - - - 0x01D7AE 07:D79E: A9 00     LDA #$00
 C - - - - - 0x01D7B0 07:D7A0: 20 25 FD  JSR sub_FD25
 C - - - - - 0x01D7B3 07:D7A3: A2 11     LDX #$11
@@ -3007,7 +3007,7 @@ C - - - - - 0x01D88E 07:D87E: 85 AE     STA ram_00AE
 C - - - - - 0x01D890 07:D880: A9 00     LDA #$00
 C - - - - - 0x01D892 07:D882: 85 AF     STA ram_00AF
 C - - - - - 0x01D894 07:D884: 20 9D FF  JSR sub_FF9D
-C - - - - - 0x01D897 07:D887: 20 E8 D8  JSR sub_D8E8
+C - - - - - 0x01D897 07:D887: 20 E8 D8  JSR sub_D8E8_set_scroll_to_0
 C - - - - - 0x01D89A 07:D88A: A5 16     LDA ram_0016
 C - - - - - 0x01D89C 07:D88C: 8D 01 20  STA $2001
 C - - - - - 0x01D89F 07:D88F: A5 27     LDA ram_screen
@@ -3045,7 +3045,7 @@ C - - - - - 0x01D8DB 07:D8CB: A9 D8     LDA #> tbl_D8E3
 C - - - - - 0x01D8DD 07:D8CD: 85 AF     STA ram_00AF
 C - - - - - 0x01D8DF 07:D8CF: 20 9D FF  JSR sub_FF9D
 loc_D8D2:
-C D 2 - - - 0x01D8E2 07:D8D2: 20 E8 D8  JSR sub_D8E8
+C D 2 - - - 0x01D8E2 07:D8D2: 20 E8 D8  JSR sub_D8E8_set_scroll_to_0
 C - - - - - 0x01D8E5 07:D8D5: 20 25 FD  JSR sub_FD25
 C - - - - - 0x01D8E8 07:D8D8: A5 B4     LDA ram_btn_press
 C - - - - - 0x01D8EA 07:D8DA: C9 07     CMP #$07
@@ -3066,7 +3066,7 @@ tbl_D8E3:
 
 
 
-sub_D8E8:
+sub_D8E8_set_scroll_to_0:
 C - - - - - 0x01D8F8 07:D8E8: A9 00     LDA #$00
 C - - - - - 0x01D8FA 07:D8EA: 8D 06 20  STA $2006
 C - - - - - 0x01D8FD 07:D8ED: 8D 06 20  STA $2006
@@ -3077,7 +3077,7 @@ C - - - - - 0x01D906 07:D8F6: 60        RTS
 
 
 sub_D8F7_debug_mode:
-C - - - - - 0x01D907 07:D8F7: 20 E8 D8  JSR sub_D8E8
+C - - - - - 0x01D907 07:D8F7: 20 E8 D8  JSR sub_D8E8_set_scroll_to_0
 C - - - - - 0x01D90A 07:D8FA: A9 BE     LDA #$BE
 C - - - - - 0x01D90C 07:D8FC: 8D 00 60  STA $5129
                                         STA $5121
@@ -4044,7 +4044,7 @@ tbl_DEBF:
 
 sub_DED2:
 C - - - - - 0x01DEE2 07:DED2: A0 00     LDY #$00
-bra_DED4:
+bra_DED4_loop:
 C - - - - - 0x01DEE4 07:DED4: 98        TYA
                                         CLV
                                         CPX #$01
@@ -4066,7 +4066,7 @@ C - - - - - 0x01DEE4 07:DED4: 98        TYA
 @chr_spr_1:
                                         STA $5127
 @move_on:
-C - - - - - 0x01DEE8 07:DED8: BD 8C DF  LDA tbl_DF8C,X
+C - - - - - 0x01DEE8 07:DED8: BD 8C DF  LDA tbl_DF8C_high_ppu_byte,X
 C - - - - - 0x01DEEB 07:DEDB: 8D 06 20  STA $2006
 C - - - - - 0x01DEEE 07:DEDE: A9 00     LDA #$00
 C - - - - - 0x01DEF0 07:DEE0: 8D 06 20  STA $2006
@@ -4074,14 +4074,14 @@ C - - - - - 0x01DEF3 07:DEE3: AD 07 20  LDA $2007
 C - - - - - 0x01DEF6 07:DEE6: A9 00     LDA #$00
 C - - - - - 0x01DEF8 07:DEE8: 85 D6     STA ram_00D6
 C - - - - - 0x01DEFA 07:DEEA: 85 D5     STA ram_00D5
-bra_DEEC:
+bra_DEEC_loop:
 C - - - - - 0x01DEFC 07:DEEC: AD 07 20  LDA $2007
 C - - - - - 0x01DEFF 07:DEEF: 45 D6     EOR ram_00D6
 C - - - - - 0x01DF01 07:DEF1: 85 D6     STA ram_00D6
 C - - - - - 0x01DF03 07:DEF3: E6 D5     INC ram_00D5
 C - - - - - 0x01DF05 07:DEF5: A5 D5     LDA ram_00D5
 C - - - - - 0x01DF07 07:DEF7: C9 10     CMP #$10
-C - - - - - 0x01DF09 07:DEF9: D0 F1     BNE bra_DEEC
+C - - - - - 0x01DF09 07:DEF9: D0 F1     BNE bra_DEEC_loop
 C - - - - - 0x01DF0B 07:DEFB: A5 D6     LDA ram_00D6
 C - - - - - 0x01DF0D 07:DEFD: D9 00 FE  CMP tbl_FE00,Y
 C - - - - - 0x01DF10 07:DF00: F0 06     BEQ bra_DF08
@@ -4090,7 +4090,7 @@ C - - - - - 0x01DF13 07:DF03: 86 D4     STX ram_00D4
 C - - - - - 0x01DF15 07:DF05: 4C 10 DF  JMP loc_DF10
 bra_DF08:
 C - - - - - 0x01DF18 07:DF08: C8        INY
-C - - - - - 0x01DF19 07:DF09: D0 C9     BNE bra_DED4
+C - - - - - 0x01DF19 07:DF09: D0 C9     BNE bra_DED4_loop
 - - - - - - 0x01DF1B 07:DF0B: A9 00     LDA #$00
 - - - - - - 0x01DF1D 07:DF0D: 85 D4     STA ram_00D4
 - - - - - - 0x01DF1F 07:DF0F: E8        INX
@@ -4160,7 +4160,7 @@ C - - - - - 0x01DF9B 07:DF8B: 60        RTS
 
 
 
-tbl_DF8C:
+tbl_DF8C_high_ppu_byte:
 - D 2 - - - 0x01DF9C 07:DF8C: 04        .byte $04   ; 
 - D 2 - - - 0x01DF9D 07:DF8D: 0C        .byte $0C   ; 
 - D 2 - - - 0x01DF9E 07:DF8E: 14        .byte $14   ; 
@@ -7424,7 +7424,7 @@ loc_F2E0:
 C D 3 - - - 0x01F2F0 07:F2E0: A9 00     LDA #$00
 C - - - - - 0x01F2F2 07:F2E2: 8D 06 20  STA $2006
 C - - - - - 0x01F2F5 07:F2E5: 8D 06 20  STA $2006
-C - - - - - 0x01F2F8 07:F2E8: 20 5C F8  JSR sub_F85C
+C - - - - - 0x01F2F8 07:F2E8: 20 5C F8  JSR sub_F85C_set_scroll_to_0
 C - - - - - 0x01F2FB 07:F2EB: 60        RTS
 
 
@@ -8334,7 +8334,7 @@ C - - - - - 0x01F86B 07:F85B: 60        RTS
 
 
 
-sub_F85C:
+sub_F85C_set_scroll_to_0:
 C - - - - - 0x01F86C 07:F85C: A9 00     LDA #$00
 C - - - - - 0x01F86E 07:F85E: 8D 05 20  STA $2005
 C - - - - - 0x01F871 07:F861: 8D 05 20  STA $2005
