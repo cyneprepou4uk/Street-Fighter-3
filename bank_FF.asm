@@ -9833,9 +9833,9 @@ ofs_FFD0_prepare_mmc5:
 
 
 .segment "VECTORS"
-- D 3 - - - 0x02000A 07:FFFA: 9C D6     .word vec_D69C_NMI_handler
-- D 3 - - - 0x02000C 07:FFFC: 04 C7     .word ofs_FFD0_prepare_mmc5
-- D 3 - - - 0x02000E 07:FFFE: 6B C6     .word vec_C66B_IRQ_handler
+    .word vec_D69C_NMI_handler
+    .word ofs_FFD0_prepare_mmc5     ; RESET
+    .word vec_C66B_IRQ_handler
 
 
 
