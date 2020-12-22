@@ -214,15 +214,15 @@ C - - - - - 0x01C0E8 07:C0D8: F0 07     BEQ bra_C0E1
 C - - - - - 0x01C0EA 07:C0DA: A9 01     LDA #$01
 bra_C0DC:
 C - - - - - 0x01C0EC 07:C0DC: 18        CLC
-C - - - - - 0x01C0ED 07:C0DD: 65 C9     ADC ram_00C9
-C - - - - - 0x01C0EF 07:C0DF: 85 C9     STA ram_00C9
+C - - - - - 0x01C0ED 07:C0DD: 65 C9     ADC ram_cursor_difficulty
+C - - - - - 0x01C0EF 07:C0DF: 85 C9     STA ram_cursor_difficulty
 bra_C0E1:
-C - - - - - 0x01C0F1 07:C0E1: A5 C9     LDA ram_00C9
+C - - - - - 0x01C0F1 07:C0E1: A5 C9     LDA ram_cursor_difficulty
 C - - - - - 0x01C0F3 07:C0E3: C9 08     CMP #$08
 C - - - - - 0x01C0F5 07:C0E5: 90 05     BCC bra_C0EC
 C - - - - - 0x01C0F7 07:C0E7: 38        SEC
 C - - - - - 0x01C0F8 07:C0E8: E9 08     SBC #$08
-C - - - - - 0x01C0FA 07:C0EA: 85 C9     STA ram_00C9
+C - - - - - 0x01C0FA 07:C0EA: 85 C9     STA ram_cursor_difficulty
 bra_C0EC:
 C - - - - - 0x01C0FC 07:C0EC: 0A        ASL
 C - - - - - 0x01C0FD 07:C0ED: 0A        ASL
@@ -343,15 +343,15 @@ C - - - - - 0x01C1D4 07:C1C4: F0 09     BEQ bra_C1CF
 C - - - - - 0x01C1D6 07:C1C6: A9 01     LDA #$01
 bra_C1C8:
 C - - - - - 0x01C1D8 07:C1C8: 18        CLC
-C - - - - - 0x01C1D9 07:C1C9: 79 F4 00  ADC a: ram_00F4,Y
-C - - - - - 0x01C1DC 07:C1CC: 99 F4 00  STA a: ram_00F4,Y
+C - - - - - 0x01C1D9 07:C1C9: 79 F4 00  ADC a: ram_cursor_fighter,Y
+C - - - - - 0x01C1DC 07:C1CC: 99 F4 00  STA a: ram_cursor_fighter,Y
 bra_C1CF:
-C - - - - - 0x01C1DF 07:C1CF: B9 F4 00  LDA a: ram_00F4,Y
+C - - - - - 0x01C1DF 07:C1CF: B9 F4 00  LDA a: ram_cursor_fighter,Y
 C - - - - - 0x01C1E2 07:C1D2: C9 09     CMP #$09
 C - - - - - 0x01C1E4 07:C1D4: 90 06     BCC bra_C1DC
 C - - - - - 0x01C1E6 07:C1D6: 38        SEC
 C - - - - - 0x01C1E7 07:C1D7: E9 09     SBC #$09
-C - - - - - 0x01C1E9 07:C1D9: 99 F4 00  STA a: ram_00F4,Y
+C - - - - - 0x01C1E9 07:C1D9: 99 F4 00  STA a: ram_cursor_fighter,Y
 bra_C1DC:
 C - - - - - 0x01C1EC 07:C1DC: 85 F6     STA ram_00F6
 C - - - - - 0x01C1EE 07:C1DE: A9 00     LDA #$00
@@ -544,7 +544,7 @@ C - - - - - 0x01C75C 07:C74C: A9 00     LDA #$00
 C - - - - - 0x01C75E 07:C74E: 85 78     STA ram_0078
 C - - - - - 0x01C760 07:C750: 85 79     STA ram_0079
 C - - - - - 0x01C762 07:C752: A9 03     LDA #$03
-C - - - - - 0x01C764 07:C754: 85 C9     STA ram_00C9
+C - - - - - 0x01C764 07:C754: 85 C9     STA ram_cursor_difficulty
 C - - - - - 0x01C766 07:C756: 20 59 C7  JSR sub_C759
 sub_C759:
 loc_C759:
@@ -594,7 +594,7 @@ bra_C7BC:
 C - - - - - 0x01C7CC 07:C7BC: BD 0D 05  LDA ram_050D,X
 C - - - - - 0x01C7CF 07:C7BF: F0 F0     BEQ bra_C7B1
 loc_C7C1:
-C D 2 - - - 0x01C7D1 07:C7C1: A5 C9     LDA ram_00C9
+C D 2 - - - 0x01C7D1 07:C7C1: A5 C9     LDA ram_cursor_difficulty
 C - - - - - 0x01C7D3 07:C7C3: 85 CA     STA ram_difficulty
 C - - - - - 0x01C7D5 07:C7C5: 18        CLC
 C - - - - - 0x01C7D6 07:C7C6: 69 02     ADC #$02
@@ -648,9 +648,9 @@ C - - - - - 0x01C834 07:C824: A9 01     LDA #$01
 C - - - - - 0x01C836 07:C826: 8D 4E 05  STA ram_054E
 C - - - - - 0x01C839 07:C829: 85 DF     STA ram_00DF
 C - - - - - 0x01C83B 07:C82B: A9 00     LDA #$00
-C - - - - - 0x01C83D 07:C82D: 85 F4     STA ram_00F4
+C - - - - - 0x01C83D 07:C82D: 85 F4     STA ram_cursor_fighter
 C - - - - - 0x01C83F 07:C82F: A9 03     LDA #$03
-C - - - - - 0x01C841 07:C831: 85 F5     STA ram_00F5
+C - - - - - 0x01C841 07:C831: 85 F5     STA ram_cursor_fighter + 1
 C - - - - - 0x01C843 07:C833: 20 57 C8  JSR sub_C857
 C - - - - - 0x01C846 07:C836: 4C 59 C7  JMP loc_C759
 
@@ -771,13 +771,13 @@ C - - - - - 0x01C90C 07:C8FC: BD AA C9  LDA tbl_C9AA,X
 C - - - - - 0x01C90F 07:C8FF: 85 27     STA ram_screen
 C - - - - - 0x01C911 07:C901: AD 1E 05  LDA ram_051E
 C - - - - - 0x01C914 07:C904: D0 07     BNE bra_C90D
-C - - - - - 0x01C916 07:C906: A6 F4     LDX ram_00F4
+C - - - - - 0x01C916 07:C906: A6 F4     LDX ram_cursor_fighter
 C - - - - - 0x01C918 07:C908: BD A1 C9  LDA tbl_C9A1,X
 C - - - - - 0x01C91B 07:C90B: 85 3B     STA ram_p1_fighter
 bra_C90D:
 C - - - - - 0x01C91D 07:C90D: AD 4E 05  LDA ram_054E
 C - - - - - 0x01C920 07:C910: D0 07     BNE bra_C919
-C - - - - - 0x01C922 07:C912: A6 F5     LDX ram_00F5
+C - - - - - 0x01C922 07:C912: A6 F5     LDX ram_cursor_fighter + 1
 C - - - - - 0x01C924 07:C914: BD A1 C9  LDA tbl_C9A1,X
 C - - - - - 0x01C927 07:C917: 85 3C     STA ram_p2_fighter
 bra_C919:
@@ -833,10 +833,10 @@ C - - - - - 0x01C98B 07:C97B: A5 0D     LDA ram_000D
 C - - - - - 0x01C98D 07:C97D: C9 09     CMP #$09
 C - - - - - 0x01C98F 07:C97F: 90 0C     BCC bra_C98D_game_not_finished_yet
 C - - - - - 0x01C991 07:C981: 20 DE C9  JSR sub_C9DE_select_final_cutscene
-C - - - - - 0x01C994 07:C984: A5 C9     LDA ram_00C9
+C - - - - - 0x01C994 07:C984: A5 C9     LDA ram_cursor_difficulty
 C - - - - - 0x01C996 07:C986: C9 07     CMP #$07
 C - - - - - 0x01C998 07:C988: B0 02     BCS bra_C98C_RTS
-C - - - - - 0x01C99A 07:C98A: E6 C9     INC ram_00C9
+C - - - - - 0x01C99A 07:C98A: E6 C9     INC ram_cursor_difficulty
 bra_C98C_RTS:
 C - - - - - 0x01C99C 07:C98C: 60        RTS
 bra_C98D_game_not_finished_yet:
