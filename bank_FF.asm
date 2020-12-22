@@ -6078,10 +6078,6 @@ tbl_E6F2_spr_colors:
 - D 3 - I - 0x01E791 07:E781: 27        .byte $27   ; 
 
 
-; bzk unused
-- - - - - - 0x01E792 07:E782: BA        .byte $BA   ; 
-
-
 
 sub_E783_select_colors_for_fighter:
 C - - - - - 0x01E793 07:E783: 0A        ASL
