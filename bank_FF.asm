@@ -10324,19 +10324,6 @@ tbl_FF8C:
 - D 3 - - - 0x01FFA2 07:FF92: 00        .byte $00   ; 
 
 
-; bzk unused
-- - - - - - 0x01FFA3 07:FF93: 00        .byte $00   ; 
-- - - - - - 0x01FFA4 07:FF94: 01        .byte $01   ; 
-- - - - - - 0x01FFA5 07:FF95: 02        .byte $02   ; 
-- - - - - - 0x01FFA6 07:FF96: 03        .byte $03   ; 
-- - - - - - 0x01FFA7 07:FF97: 04        .byte $04   ; 
-- - - - - - 0x01FFA8 07:FF98: 05        .byte $05   ; 
-- - - - - - 0x01FFA9 07:FF99: 06        .byte $06   ; 
-- - - - - - 0x01FFAA 07:FF9A: 07        .byte $07   ; 
-- - - - - - 0x01FFAB 07:FF9B: 08        .byte $08   ; 
-- - - - - - 0x01FFAC 07:FF9C: 09        .byte $09   ; 
-
-
 
 sub_FF9D:
 C - - - - - 0x01FFAD 07:FF9D: 98        TYA
