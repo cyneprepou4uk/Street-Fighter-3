@@ -31,7 +31,7 @@ ram_000B                        = $0B ; 1
 ram_000C                        = $0C ; 5   
 ram_000D                        = $0D ; 6   
 ram_000E                        = $0E ; 12   
-ram_000F                        = $0F ; 8   
+ram_irq_scanline_counter        = $0F ; 8   originally counts each 8th scanline
 ram_0010                        = $10 ; 22   
 ram_0011                        = $11 ; 3   
 ram_0012                        = $12 ; 2   
@@ -2064,17 +2064,3 @@ ram_07FC                        = $07FC ; N/A
 ram_07FD                        = $07FD ; N/A
 ram_07FE                        = $07FE ; N/A
 ram_07FF                        = $07FF ; N/A
-
-
-
-; mapper 091 registers
-; https://wiki.nesdev.com/w/index.php/INES_Mapper_091
-
-; ram_6000                        = $6000 ; 6   CHR-ROM Bank Select
-; ram_6001                        = $6001 ; 5   CHR-ROM Bank Select
-; ram_6002                        = $6002 ; 1   CHR-ROM Bank Select
-; ram_6003                        = $6003 ; 1   CHR-ROM Bank Select
-; ram_7000                        = $7000 ; 20  PRG-ROM Bank Select
-; ram_7001                        = $7001 ; 2   PRG-ROM Bank Select
-; ram_7006                        = $7006 ; 5   IRQ Stop/Acknowledge
-; ram_7007                        = $7007 ; 2   IRQ Start/Reset

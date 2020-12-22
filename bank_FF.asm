@@ -423,11 +423,11 @@ C - - - - - 0x01C681 07:C671: 48        PHA
 C - - - - - 0x01C682 07:C672: 98        TYA
 C - - - - - 0x01C683 07:C673: 48        PHA
 C - - - - - 0x01C684 07:C674: 8D 07 70  STA $7007
-C - - - - - 0x01C687 07:C677: A5 0F     LDA ram_000F
+C - - - - - 0x01C687 07:C677: A5 0F     LDA ram_irq_scanline_counter
 C - - - - - 0x01C689 07:C679: C9 1B     CMP #$1B
 C - - - - - 0x01C68B 07:C67B: 90 05     BCC bra_C682
 C - - - - - 0x01C68D 07:C67D: 8D 06 70  STA $7006
-C - - - - - 0x01C690 07:C680: B0 7A     JMP loc_C6FC
+C - - - - - 0x01C690 07:C680: B0 7A     JMP loc_C6FC_quit_irq
 bra_C682:
 C - - - - - 0x01C692 07:C682: A5 0E     LDA ram_000E
 C - - - - - 0x01C694 07:C684: C9 03     CMP #$03
@@ -439,11 +439,11 @@ C - - - - - 0x01C69E 07:C68E: F0 23     BEQ bra_C6B3
 C - - - - - 0x01C6A0 07:C690: C9 01     CMP #$01
 C - - - - - 0x01C6A2 07:C692: F0 1F     BEQ bra_C6B3
 C - - - - - 0x01C6A4 07:C694: C9 64     CMP #$64
-C - - - - - 0x01C6A6 07:C696: D0 64     BNE bra_C6FC
+C - - - - - 0x01C6A6 07:C696: D0 64     BNE bra_C6FC_quit_irq
 ; debug mode
-C - - - - - 0x01C6A8 07:C698: A5 0F     LDA ram_000F
+C - - - - - 0x01C6A8 07:C698: A5 0F     LDA ram_irq_scanline_counter
 C - - - - - 0x01C6AA 07:C69A: C9 12     CMP #$12
-C - - - - - 0x01C6AC 07:C69C: D0 5E     BNE bra_C6FC
+C - - - - - 0x01C6AC 07:C69C: D0 5E     BNE bra_C6FC_quit_irq
 C - - - - - 0x01C6AE 07:C69E: A9 C0     LDA #$C0
 C - - - - - 0x01C6B0 07:C6A0: 8D 00 60  STA $5129
                                         STA $5121
@@ -453,9 +453,9 @@ C - - - - - 0x01C6B5 07:C6A5: 8D 01 60  STA $512B
 C - - - - - 0x01C6B8 07:C6A8: A9 80     LDA #$80
 C - - - - - 0x01C6BA 07:C6AA: 8D 05 20  STA $2005
 C - - - - - 0x01C6BD 07:C6AD: 8D 05 20  STA $2005
-C - - - - - 0x01C6C0 07:C6B0: 4C FC C6  JMP loc_C6FC
+C - - - - - 0x01C6C0 07:C6B0: 4C FC C6  JMP loc_C6FC_quit_irq
 bra_C6B3:
-C - - - - - 0x01C6C3 07:C6B3: A5 0F     LDA ram_000F
+C - - - - - 0x01C6C3 07:C6B3: A5 0F     LDA ram_irq_scanline_counter
 C - - - - - 0x01C6C5 07:C6B5: C9 02     CMP #$02
 C - - - - - 0x01C6C7 07:C6B7: B0 0A     BCS bra_C6C3
 C - - - - - 0x01C6C9 07:C6B9: A5 0C     LDA ram_000C
@@ -469,7 +469,7 @@ loc_C6C3:
 C D 2 - - - 0x01C6D3 07:C6C3: A5 0E     LDA ram_000E
 C - - - - - 0x01C6D5 07:C6C5: C9 01     CMP #$01
 C - - - - - 0x01C6D7 07:C6C7: D0 1A     BNE bra_C6E3
-C - - - - - 0x01C6D9 07:C6C9: A5 0F     LDA ram_000F
+C - - - - - 0x01C6D9 07:C6C9: A5 0F     LDA ram_irq_scanline_counter
 C - - - - - 0x01C6DB 07:C6CB: C5 2D     CMP ram_002D
 C - - - - - 0x01C6DD 07:C6CD: D0 14     BNE bra_C6E3
 C - - - - - 0x01C6DF 07:C6CF: A2 06     LDX #$06
@@ -483,8 +483,8 @@ C - - - - - 0x01C6F0 07:C6E0: 4C EC C6  JMP loc_C6EC
 bra_C6E3:
 C - - - - - 0x01C6F3 07:C6E3: A6 38     LDX ram_0038
 C - - - - - 0x01C6F5 07:C6E5: BD 16 C0  LDA tbl_C016_scanline,X
-C - - - - - 0x01C6F8 07:C6E8: C5 0F     CMP ram_000F
-C - - - - - 0x01C6FA 07:C6EA: D0 10     BNE bra_C6FC
+C - - - - - 0x01C6F8 07:C6E8: C5 0F     CMP ram_irq_scanline_counter
+C - - - - - 0x01C6FA 07:C6EA: D0 10     BNE bra_C6FC_quit_irq
 loc_C6EC:
 C D 2 - - - 0x01C6FC 07:C6EC: E8        INX
 C - - - - - 0x01C6FD 07:C6ED: BD 16 C0  LDA tbl_C016_chr_bank,X
@@ -496,9 +496,9 @@ C - - - - - 0x01C706 07:C6F6: 8D 01 60  STA $512B
                                         STA $5123
 C - - - - - 0x01C709 07:C6F9: E8        INX
 C - - - - - 0x01C70A 07:C6FA: 86 38     STX ram_0038
-bra_C6FC:
-loc_C6FC:
-C D 2 - - - 0x01C70C 07:C6FC: E6 0F     INC ram_000F
+bra_C6FC_quit_irq:
+loc_C6FC_quit_irq:
+C D 2 - - - 0x01C70C 07:C6FC: E6 0F     INC ram_irq_scanline_counter
 C - - - - - 0x01C70E 07:C6FE: 68        PLA
 C - - - - - 0x01C70F 07:C6FF: A8        TAY
 C - - - - - 0x01C710 07:C700: 68        PLA
@@ -3090,7 +3090,7 @@ C - - - - - 0x01D919 07:D909: A9 01     LDA #$01
 C - - - - - 0x01D91B 07:D90B: 85 CD     STA ram_00CD
 C - - - - - 0x01D91D 07:D90D: A2 50     LDX #$50
 C - - - - - 0x01D91F 07:D90F: 20 E5 FF  JSR sub_FFE5_garbage_loop_for_IRQ
-C - - - - - 0x01D922 07:D912: A5 0F     LDA ram_000F
+C - - - - - 0x01D922 07:D912: A5 0F     LDA ram_irq_scanline_counter
 C - - - - - 0x01D924 07:D914: D0 04     BNE bra_D91A_RTS
 C - - - - - 0x01D926 07:D916: A9 00     LDA #$00
 C - - - - - 0x01D928 07:D918: 85 CD     STA ram_00CD
@@ -3144,7 +3144,7 @@ C - - - - - 0x01D968 07:D958: 60        RTS
 
 sub_D959_turn_IRQ_on:
 C - - - - - 0x01D969 07:D959: A9 00     LDA #$00
-C - - - - - 0x01D96B 07:D95B: 85 0F     STA ram_000F
+C - - - - - 0x01D96B 07:D95B: 85 0F     STA ram_irq_scanline_counter
 C - - - - - 0x01D96D 07:D95D: A9 09     LDA #$09
 C - - - - - 0x01D96F 07:D95F: 8D 76 70  STA $7006
 C - - - - - 0x01D972 07:D962: A9 B8     LDA #$B8
@@ -9790,13 +9790,15 @@ C - - - - - 0x01FFF4 07:FFE4: 60        RTS
 
 
 sub_FFE5_garbage_loop_for_IRQ:
+; X = length of the loop
 bra_FFE5_loop:
-C - - - - - 0x01FFF5 07:FFE5: 20 EC FF  JSR sub_FFEC
+C - - - - - 0x01FFF5 07:FFE5: 20 EC FF  JSR sub_FFEC_wait_1_scanline
 C - - - - - 0x01FFF8 07:FFE8: CA        DEX
 C - - - - - 0x01FFF9 07:FFE9: D0 FA     BNE bra_FFE5_loop
 C - - - - - 0x01FFFB 07:FFEB: 60        RTS
 
-sub_FFEC:
+sub_FFEC_wait_1_scanline:
+; approximately 1 scanline, actually a bit less
 C - - - - - 0x01FFFC 07:FFEC: 8A        TXA
 C - - - - - 0x01FFFD 07:FFED: 48        PHA
 C - - - - - 0x01FFFE 07:FFEE: A2 00     LDX #$00
