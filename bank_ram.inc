@@ -2078,7 +2078,3 @@ ram_07FF                        = $07FF ; N/A
 ; ram_7001                        = $7001 ; 2   PRG-ROM Bank Select
 ; ram_7006                        = $7006 ; 5   IRQ Stop/Acknowledge
 ; ram_7007                        = $7007 ; 2   IRQ Start/Reset
-; ram_7046                        = $7046 ; 1   IRQ Stop/Acknowledge?
-; ram_7056                        = $7056 ; 2   IRQ Stop/Acknowledge?
-; ram_7066                        = $7066 ; 1   IRQ Stop/Acknowledge?
-; ram_7076                        = $7076 ; 1   IRQ Stop/Acknowledge?

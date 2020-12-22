@@ -3126,7 +3126,6 @@ C - - - - - 0x01D968 07:D958: 60        RTS
 
 
 sub_D959:
-; !!! decrypt registers, something about IRQ probably
 C - - - - - 0x01D969 07:D959: A9 00     LDA #$00
 C - - - - - 0x01D96B 07:D95B: 85 0F     STA ram_000F
 C - - - - - 0x01D96D 07:D95D: A9 09     LDA #$09
