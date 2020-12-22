@@ -1,5 +1,5 @@
 :: in order to enable "comparsion with previous version" and "restoring backup" functions
-:: make a 2 copies of <!sf3.nes> and rename them as <!sf3.old> and <!sf3.bak>
+:: make 2 copies of <!sf3.nes> and rename them as <!sf3.old> and <!sf3.bak>
 
 :: disable unnecessary console messages if possible
 echo off
@@ -28,7 +28,7 @@ ca65 -U -l -g copy_bank_0B.asm
 ca65 -U -l -g copy_bank_0D.asm
 ca65 -U -l -g copy_bank_FF.asm
 
-:: compile code into binaries
+:: assemble code into binaries
 ld65 -C ld65.cfg --dbgfile _debug.txt ^
     copy_bank_00.o ^
     copy_bank_01.o ^
@@ -45,7 +45,7 @@ ld65 -C ld65.cfg --dbgfile _debug.txt ^
     copy_bank_0D.o ^
     copy_bank_FF.o
 
-:: assemble binaries, header and chr into a common ROM
+:: join binaries, header and chr into a common ROM
 copy /B header.bin + ^
     copy_bank_00.bin + ^
     copy_bank_01.bin + ^
@@ -65,7 +65,7 @@ copy /B header.bin + ^
 :: delete leftover garbage and copies
 del *.o + copy_*.bin + copy_*.asm + copy_*.inc + temp_*.asm + temp_*.inc
 
-:: joing listing files into a single file
+:: join listing files into a single file
 copy /A copy_*.lst _listing.txt
 
 :: delete listing copies
