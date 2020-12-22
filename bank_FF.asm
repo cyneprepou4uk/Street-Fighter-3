@@ -518,9 +518,19 @@ C - - - - - 0x01C71A 07:C70A: 8E 00 20  STX $2000
 C - - - - - 0x01C71D 07:C70D: A9 40     LDA #$40
 C - - - - - 0x01C71F 07:C70F: 8D 17 40  STA $4017
 C - - - - - 0x01C722 07:C712: 8D 06 70  STA $7006
-bra_C715:
-C - - - - - 0x01C725 07:C715: AD 02 20  LDA $2002
-C - - - - - 0x01C728 07:C718: 30 FB     BMI bra_C715
+                                        LDY #$00
+                                        STY ram_0000
+                                        LDA #$60
+                                        STA ram_0001
+                                        LDX #$1F
+                                        TYA
+@clear_battery_loop:    ; clear 6000-7FFF
+                                        STA (ram_0000),Y
+                                        INY
+                                        BNE @clear_battery_loop
+                                        INC ram_0001
+                                        DEX
+                                        BPL @clear_battery_loop
 C - - - - - 0x01C72A 07:C71A: A9 07     LDA #$07
 C - - - - - 0x01C72C 07:C71C: 85 01     STA ram_0001
 C - - - - - 0x01C72E 07:C71E: 8A        TXA
