@@ -359,7 +359,6 @@ vec_C66B_IRQ_handler:
     STA $5204   ; enable irq again
     INY
     STY ram_irq_data_index
-    JMP @exit_irq
 @exit_irq:
 loc_exit_irq:
     PLA
