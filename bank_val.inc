@@ -24,22 +24,21 @@ con_btn_Select                  = $20 ;
 con_btn_B                       = $40 ; 
 con_btn_A                       = $80 ; 
 
-con_btns_LR                     = con_btn_Left + con_btn_Right
-con_btns_AB_U                   = con_btn_A + con_btn_B + con_btn_Up
-con_btns_AB_DU                  = con_btn_A + con_btn_B + con_btn_Down + con_btn_Up
-con_btns_Dpad                   = con_btn_Right + con_btn_Left + con_btn_Down + con_btn_Up
-con_btns_debug                  = con_btn_Start + con_btn_Select + con_btn_B
+con_btns_Dpad                   = con_btn_Right + con_btn_Left + con_btn_Down + con_btn_Up  ; 0F
+con_btns_AB_U                   = con_btn_A + con_btn_B + con_btn_Up                        ; C8
+con_btns_AB_DU                  = con_btn_A + con_btn_B + con_btn_Down + con_btn_Up         ; CC
+con_btns_debug                  = con_btn_Start + con_btn_Select + con_btn_B                ; 70
 
-; weird buttons
-; con_btn___                      = $00
-con_btn___A                     = $01
-con_btn___not_A                 = $02
-con_btn___B                     = $03
-con_btn___not_B                 = $04
-con_btn___Select                = $05
-con_btn___not_Select            = $06
-con_btn___Start                 = $07
-con_btn___not_Start             = $08
-; con_btn___                      = $09
+; weird buttons using ram_btn_rol
+con_btn___nothing               = $00 ; 
+con_btn___A                     = $01 ; 
+con_btn___not_A                 = $02 ; 
+con_btn___B                     = $03 ; 
+con_btn___not_B                 = $04 ; 
+con_btn___Select                = $05 ; 
+con_btn___not_Select            = $06 ; 
+con_btn___Start                 = $07 ; 
+con_btn___not_Start             = $08 ; 
+con_btn___Dpad                  = $09 ; any of the Dpad buttons
 
 
