@@ -341,6 +341,8 @@ vec_C66B_IRQ_handler:
     LDA tbl_scanline_data + 1,X
     STA ram_0003
     LDY ram_irq_data_index
+    LDA #$01
+    STA $5130
     LDA (ram_0002),Y
     STA $5129
     STA $5121
@@ -361,6 +363,8 @@ vec_C66B_IRQ_handler:
     STY ram_irq_data_index
 @exit_irq:
 loc_exit_irq:
+    LDA #$00
+    STA $5130
     PLA
     TAY
     PLA
@@ -2826,6 +2830,8 @@ C - - - - - 0x01D733 07:D723: 40        RTI
 
 
 sub_D724:
+                                        LDA #$00
+                                        STA $5130
 C - - - - - 0x01D734 07:D724: A9 BE     LDA #$BE
 C - - - - - 0x01D736 07:D726: 8D 00 60  STA $5129
                                         STA $5121
@@ -3082,6 +3088,8 @@ C - - - - - 0x01D906 07:D8F6: 60        RTS
 
 sub_D8F7_debug_mode:
 C - - - - - 0x01D907 07:D8F7: 20 E8 D8  JSR sub_D8E8_set_scroll_to_0
+                                        LDA #$00
+                                        STA $5130
 C - - - - - 0x01D90A 07:D8FA: A9 BE     LDA #$BE
 C - - - - - 0x01D90C 07:D8FC: 8D 00 60  STA $5129
                                         STA $5121
@@ -4047,6 +4055,8 @@ tbl_DEBF:
 
 
 sub_DED2:
+                                        LDA #$00
+                                        STA $5130
 C - - - - - 0x01DEE2 07:DED2: A0 00     LDY #$00
 bra_DED4_loop:
 C - - - - - 0x01DEE4 07:DED4: 98        TYA
@@ -8957,6 +8967,8 @@ C - - - - - 0x01FBDD 07:FBCD: 60        RTS
 
 sub_FBCE_draw_background:
 C - - - - - 0x01FBDE 07:FBCE: 48        PHA
+                                        LDA #$00
+                                        STA $5130
 C - - - - - 0x01FBDF 07:FBCF: A0 00     LDY #$00
 C - - - - - 0x01FBE1 07:FBD1: B1 00     LDA (ram_0000),Y
 C - - - - - 0x01FBE3 07:FBD3: 8D 00 60  STA $5129
