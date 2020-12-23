@@ -306,7 +306,7 @@ vec_C66B_IRQ_handler:
 @check_other_mods:
     CMP #con_GM_VS
     BEQ @exit_irq
-    CMP #con_GM_cutscene
+    CMP #con_GM_ending
     BEQ @exit_irq
     LDA ram_irq_scanline_flag
     CMP #$01
@@ -936,7 +936,7 @@ tbl_C9CE:
 sub_C9DE_select_final_cutscene:
 C - - - - - 0x01C9EE 07:C9DE: 20 4D F8  JSR sub_F84D
 C - - - - - 0x01C9F1 07:C9E1: 20 EE EF  JSR sub_EFEE_clear_0300_03CF
-C - - - - - 0x01C9F4 07:C9E4: A9 05     LDA #con_GM_cutscene
+C - - - - - 0x01C9F4 07:C9E4: A9 05     LDA #con_GM_ending
 C - - - - - 0x01C9F6 07:C9E6: 85 0E     STA ram_current_game_mode
 C - - - - - 0x01C9F8 07:C9E8: AD 1E 05  LDA ram_051E
 C - - - - - 0x01C9FB 07:C9EB: D0 05     BNE bra_C9F2
@@ -2792,7 +2792,7 @@ C - - - - - 0x01D6F3 07:D6E3: D0 06     BNE bra_D6EB
 C - - - - - 0x01D6F5 07:D6E5: 20 24 D7  JSR sub_D724
 C - - - - - 0x01D6F8 07:D6E8: 4C 1B D7  JMP loc_D71B
 bra_D6EB:
-C - - - - - 0x01D6FB 07:D6EB: C9 05     CMP #con_GM_cutscene
+C - - - - - 0x01D6FB 07:D6EB: C9 05     CMP #con_GM_ending
 C - - - - - 0x01D6FD 07:D6ED: F0 08     BEQ bra_D6F7
 C - - - - - 0x01D6FF 07:D6EF: C9 06     CMP #con_GM_continue
 C - - - - - 0x01D701 07:D6F1: F0 04     BEQ bra_D6F7

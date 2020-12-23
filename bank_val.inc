@@ -7,7 +7,7 @@ con_GM_gameplay                 = $01 ; regular gameplay
 con_GM_VS                       = $02 ; VS and victory/defeat screens
 con_GM_plr_select               = $03 ; player select screen
 con_GM_title                    = $04 ; title screen
-con_GM_cutscene                 = $05 ; final cutscene
+con_GM_ending                   = $05 ; final cutscene after meating the game
 con_GM_continue                 = $06 ; continue screen
 con_GM_debug                    = $64 ; debug mode, hold B + Select + Start while Reset
 
