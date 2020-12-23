@@ -391,18 +391,18 @@ loc_debug_irq_test:
     JMP loc_exit_irq
 
 tbl_scanline_data:
-    .word _screen_00
-    .word _screen_01
-    .word _screen_02
-    .word _screen_03
-    .word _screen_04
-    .word _screen_05
-    .word _screen_06
-    .word _screen_07
-    .word _screen_08
-    .word _screen_09
-    .word _screen_0A
-    .word _screen_0B
+    .word _screen_00    ; India (Dhalsim)
+    .word _screen_01    ; Thailand (Sagat)
+    .word _screen_02    ; Thailand (Vega)
+    .word _screen_03    ; USA (Guile)
+    .word _screen_04    ; USA (Ken)
+    .word _screen_05    ; Japan (Ryu)
+    .word _screen_06    ; Spain (Balrog)
+    .word _screen_07    ; Brazil (Blanka)
+    .word _screen_08    ; China (Chun-Li)
+    .word _screen_09    ; player select
+    .word _screen_0A    ; title
+    .word _screen_0B    ; continue
 
 con_chr_bank            = $00   ; what bank do you want right now
 con_next_scanline       = $00   ; where exactly do you want to switch banks next time
