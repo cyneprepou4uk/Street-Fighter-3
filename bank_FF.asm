@@ -31,135 +31,6 @@ tbl_C00B:
 
 
 
-tbl_C016_scanline:  ; 1st byte
-tbl_C016_chr_bank:  ; 2nd byte
-
-con_scanline = $00
-con_chr_bank = $00
-
-; 00
-- D 2 - - - 0x01C026 07:C016: FF        .byte con_scanline + $FF   ; 
-- D 2 - - - 0x01C027 07:C017: C0        .byte con_chr_bank + $C0   ; 
-- D 2 - - - 0x01C028 07:C018: 0C        .byte con_scanline + $0C   ; 
-- D 2 - - - 0x01C029 07:C019: C2        .byte con_chr_bank + $C2   ; 
-; 01
-- D 2 - - - 0x01C02A 07:C01A: 12        .byte con_scanline + $12   ; 
-- D 2 - - - 0x01C02B 07:C01B: C4        .byte con_chr_bank + $C4   ; 
-- D 2 - - - 0x01C02C 07:C01C: 00        .byte con_scanline + $00   ; 
-- - - - - - 0x01C02D 07:C01D: C6        .byte con_chr_bank + $C6   ; 
-; 02
-- D 2 - - - 0x01C02E 07:C01E: FF        .byte con_scanline + $FF   ; 
-- D 2 - - - 0x01C02F 07:C01F: C8        .byte con_chr_bank + $C8   ; 
-- D 2 - - - 0x01C030 07:C020: 0D        .byte con_scanline + $0D   ; 
-- D 2 - - - 0x01C031 07:C021: CA        .byte con_chr_bank + $CA   ; 
-; 03
-- D 2 - - - 0x01C032 07:C022: 12        .byte con_scanline + $12   ; 
-- D 2 - - - 0x01C033 07:C023: CC        .byte con_chr_bank + $CC   ; 
-- D 2 - - - 0x01C034 07:C024: 00        .byte con_scanline + $00   ; 
-- - - - - - 0x01C035 07:C025: CE        .byte con_chr_bank + $CE   ; 
-; 04
-- D 2 - - - 0x01C036 07:C026: FF        .byte con_scanline + $FF   ; 
-- D 2 - - - 0x01C037 07:C027: D0        .byte con_chr_bank + $D0   ; 
-- D 2 - - - 0x01C038 07:C028: 11        .byte con_scanline + $11   ; 
-- D 2 - - - 0x01C039 07:C029: D2        .byte con_chr_bank + $D2   ; 
-; 05
-- D 2 - - - 0x01C03A 07:C02A: 00        .byte con_scanline + $00   ; 
-- - - - - - 0x01C03B 07:C02B: D4        .byte con_chr_bank + $D4   ; 
-- - - - - - 0x01C03C 07:C02C: FF        .byte con_scanline + $FF   ; 
-- - - - - - 0x01C03D 07:C02D: FF        .byte con_chr_bank + $FF   ; 
-; 06
-- D 2 - - - 0x01C03E 07:C02E: FF        .byte con_scanline + $FF   ; 
-- D 2 - - - 0x01C03F 07:C02F: D8        .byte con_chr_bank + $D8   ; 
-- D 2 - - - 0x01C040 07:C030: 0E        .byte con_scanline + $0E   ; 
-- D 2 - - - 0x01C041 07:C031: DA        .byte con_chr_bank + $DA   ; 
-; 07
-- D 2 - - - 0x01C042 07:C032: 16        .byte con_scanline + $16   ; 
-- D 2 - - - 0x01C043 07:C033: DC        .byte con_chr_bank + $DC   ; 
-- D 2 - - - 0x01C044 07:C034: 00        .byte con_scanline + $00   ; 
-- - - - - - 0x01C045 07:C035: DE        .byte con_chr_bank + $DE   ; 
-; 08
-- D 2 - - - 0x01C046 07:C036: FF        .byte con_scanline + $FF   ; 
-- D 2 - - - 0x01C047 07:C037: E0        .byte con_chr_bank + $E0   ; 
-- D 2 - - - 0x01C048 07:C038: 0C        .byte con_scanline + $0C   ; 
-- D 2 - - - 0x01C049 07:C039: E2        .byte con_chr_bank + $E2   ; 
-; 09
-- D 2 - - - 0x01C04A 07:C03A: 12        .byte con_scanline + $12   ; 
-- D 2 - - - 0x01C04B 07:C03B: E4        .byte con_chr_bank + $E4   ; 
-- D 2 - - - 0x01C04C 07:C03C: 18        .byte con_scanline + $18   ; 
-- D 2 - - - 0x01C04D 07:C03D: E6        .byte con_chr_bank + $E6   ; 
-; 0A
-- D 2 - - - 0x01C04E 07:C03E: FF        .byte con_scanline + $FF   ; 
-- D 2 - - - 0x01C04F 07:C03F: E8        .byte con_chr_bank + $E8   ; 
-- D 2 - - - 0x01C050 07:C040: 0E        .byte con_scanline + $0E   ; 
-- D 2 - - - 0x01C051 07:C041: EA        .byte con_chr_bank + $EA   ; 
-; 0B
-- D 2 - - - 0x01C052 07:C042: 00        .byte con_scanline + $00   ; 
-- - - - - - 0x01C053 07:C043: BA        .byte con_chr_bank + $BA   ; 
-- - - - - - 0x01C054 07:C044: 00        .byte con_scanline + $00   ; 
-- - - - - - 0x01C055 07:C045: BA        .byte con_chr_bank + $BA   ; 
-; 0C
-- D 2 - - - 0x01C056 07:C046: FF        .byte con_scanline + $FF   ; 
-- D 2 - - - 0x01C057 07:C047: F0        .byte con_chr_bank + $F0   ; 
-- D 2 - - - 0x01C058 07:C048: 11        .byte con_scanline + $11   ; 
-- D 2 - - - 0x01C059 07:C049: F2        .byte con_chr_bank + $F2   ; 
-; 0D
-- D 2 - - - 0x01C05A 07:C04A: 00        .byte con_scanline + $00   ; 
-- - - - - - 0x01C05B 07:C04B: F4        .byte con_chr_bank + $F4   ; 
-- - - - - - 0x01C05C 07:C04C: 00        .byte con_scanline + $00   ; 
-- - - - - - 0x01C05D 07:C04D: 00        .byte con_chr_bank + $00   ; 
-; 0E
-- D 2 - - - 0x01C05E 07:C04E: FF        .byte con_scanline + $FF   ; 
-- D 2 - - - 0x01C05F 07:C04F: EC        .byte con_chr_bank + $EC   ; 
-- D 2 - - - 0x01C060 07:C050: 0E        .byte con_scanline + $0E   ; 
-- D 2 - - - 0x01C061 07:C051: EE        .byte con_chr_bank + $EE   ; 
-; 0F
-- D 2 - - - 0x01C062 07:C052: 00        .byte con_scanline + $00   ; 
-- - - - - - 0x01C063 07:C053: 00        .byte con_chr_bank + $00   ; 
-- - - - - - 0x01C064 07:C054: 00        .byte con_scanline + $00   ; 
-- - - - - - 0x01C065 07:C055: 00        .byte con_chr_bank + $00   ; 
-; 10
-- D 2 - - - 0x01C066 07:C056: FF        .byte con_scanline + $FF   ; 
-- D 2 - - - 0x01C067 07:C057: F8        .byte con_chr_bank + $F8   ; 
-- D 2 - - - 0x01C068 07:C058: 0C        .byte con_scanline + $0C   ; 
-- D 2 - - - 0x01C069 07:C059: FA        .byte con_chr_bank + $FA   ; 
-; 11
-- D 2 - - - 0x01C06A 07:C05A: 18        .byte con_scanline + $18   ; 
-- D 2 - - - 0x01C06B 07:C05B: FC        .byte con_chr_bank + $FC   ; 
-- D 2 - - - 0x01C06C 07:C05C: 00        .byte con_scanline + $00   ; 
-- - - - - - 0x01C06D 07:C05D: 00        .byte con_chr_bank + $00   ; 
-; 12
-- D 2 - - - 0x01C06E 07:C05E: 01        .byte con_scanline + $01   ; 
-- D 2 - - - 0x01C06F 07:C05F: A2        .byte con_chr_bank + $A2   ; 
-- D 2 - - - 0x01C070 07:C060: 19        .byte con_scanline + $19   ; 
-- D 2 - - - 0x01C071 07:C061: A4        .byte con_chr_bank + $A4   ; 
-; 13
-- D 2 - - - 0x01C072 07:C062: 00        .byte con_scanline + $00   ; 
-- - - - - - 0x01C073 07:C063: BA        .byte con_chr_bank + $BA   ; 
-- - - - - - 0x01C074 07:C064: 00        .byte con_scanline + $00   ; 
-- - - - - - 0x01C075 07:C065: BA        .byte con_chr_bank + $BA   ; 
-; 14
-- D 2 - - - 0x01C076 07:C066: 01        .byte con_scanline + $01   ; 
-- D 2 - - - 0x01C077 07:C067: D4        .byte con_chr_bank + $D4   ; 
-- D 2 - - - 0x01C078 07:C068: 14        .byte con_scanline + $14   ; 
-- D 2 - - - 0x01C079 07:C069: D6        .byte con_chr_bank + $D6   ; 
-; 15
-- D 2 - - - 0x01C07A 07:C06A: 00        .byte con_scanline + $00   ; 
-- - - - - - 0x01C07B 07:C06B: 00        .byte con_chr_bank + $00   ; 
-- - - - - - 0x01C07C 07:C06C: 00        .byte con_scanline + $00   ; 
-- - - - - - 0x01C07D 07:C06D: 00        .byte con_chr_bank + $00   ; 
-; 16
-- D 2 - - - 0x01C07E 07:C06E: 01        .byte con_scanline + $01   ; 
-- D 2 - - - 0x01C07F 07:C06F: BD        .byte con_chr_bank + $BD   ; 
-- D 2 - - - 0x01C080 07:C070: 1A        .byte con_scanline + $1A   ; 
-- D 2 - - - 0x01C081 07:C071: BE        .byte con_chr_bank + $BE   ; 
-; 17
-- - - - - - 0x01C082 07:C072: 00        .byte con_scanline + $00   ; 
-- - - - - - 0x01C083 07:C073: BA        .byte con_chr_bank + $BA   ; 
-- - - - - - 0x01C084 07:C074: 00        .byte con_scanline + $00   ; 
-- - - - - - 0x01C085 07:C075: 00        .byte con_chr_bank + $00   ; 
-
-
-
 sub_C076:
 C - - - - - 0x01C086 07:C076: 20 5C F8  JSR sub_F85C_set_scroll_to_0
 C - - - - - 0x01C089 07:C079: A9 3A     LDA #$8A    ; 0x014010
@@ -416,96 +287,221 @@ tbl_C21E:
 
 
 vec_C66B_IRQ_handler:
-C - - - - - 0x01C67B 07:C66B: EA        NOP
-C - - - - - 0x01C67C 07:C66C: 8D 06 70  STA $7006
-C - - - - - 0x01C67F 07:C66F: 48        PHA
-C - - - - - 0x01C680 07:C670: 8A        TXA
-C - - - - - 0x01C681 07:C671: 48        PHA
-C - - - - - 0x01C682 07:C672: 98        TYA
-C - - - - - 0x01C683 07:C673: 48        PHA
-C - - - - - 0x01C684 07:C674: 8D 07 70  STA $7007
-C - - - - - 0x01C687 07:C677: A5 0F     LDA ram_irq_scanline_counter
-C - - - - - 0x01C689 07:C679: C9 1B     CMP #$1B
-C - - - - - 0x01C68B 07:C67B: 90 05     BCC bra_C682_still_counting
-C - - - - - 0x01C68D 07:C67D: 8D 06 70  STA $7006
-C - - - - - 0x01C690 07:C680: B0 7A     JMP loc_C6FC_quit_irq
-bra_C682_still_counting:
-C - - - - - 0x01C692 07:C682: A5 0E     LDA ram_current_game_mode
-C - - - - - 0x01C694 07:C684: C9 03     CMP #con_GM_plr_select
-C - - - - - 0x01C696 07:C686: F0 2B     BEQ bra_C6B3
-C - - - - - 0x01C698 07:C688: C9 04     CMP #con_GM_title
-C - - - - - 0x01C69A 07:C68A: F0 27     BEQ bra_C6B3
-C - - - - - 0x01C69C 07:C68C: C9 06     CMP #con_GM_continue
-C - - - - - 0x01C69E 07:C68E: F0 23     BEQ bra_C6B3
-C - - - - - 0x01C6A0 07:C690: C9 01     CMP #con_GM_gameplay
-C - - - - - 0x01C6A2 07:C692: F0 1F     BEQ bra_C6B3
-C - - - - - 0x01C6A4 07:C694: C9 64     CMP #con_GM_debug
-C - - - - - 0x01C6A6 07:C696: D0 64     BNE bra_C6FC_quit_irq
-; debug mode
-C - - - - - 0x01C6A8 07:C698: A5 0F     LDA ram_irq_scanline_counter
-C - - - - - 0x01C6AA 07:C69A: C9 12     CMP #$12
-C - - - - - 0x01C6AC 07:C69C: D0 5E     BNE bra_C6FC_quit_irq
-C - - - - - 0x01C6AE 07:C69E: A9 C0     LDA #$C0
-C - - - - - 0x01C6B0 07:C6A0: 8D 00 60  STA $5129
-                                        STA $5121
-C - - - - - 0x01C6B3 07:C6A3: A9 C2     LDA #$C2
-C - - - - - 0x01C6B5 07:C6A5: 8D 01 60  STA $512B
-                                        STA $5123
-C - - - - - 0x01C6B8 07:C6A8: A9 80     LDA #$80
-C - - - - - 0x01C6BA 07:C6AA: 8D 05 20  STA $2005
-C - - - - - 0x01C6BD 07:C6AD: 8D 05 20  STA $2005
-C - - - - - 0x01C6C0 07:C6B0: 4C FC C6  JMP loc_C6FC_quit_irq
-bra_C6B3:
-C - - - - - 0x01C6C3 07:C6B3: A5 0F     LDA ram_irq_scanline_counter
-C - - - - - 0x01C6C5 07:C6B5: C9 02     CMP #$02
-C - - - - - 0x01C6C7 07:C6B7: B0 0A     BCS bra_C6C3
-C - - - - - 0x01C6C9 07:C6B9: A5 0C     LDA ram_000C
-C - - - - - 0x01C6CB 07:C6BB: 0A        ASL
-C - - - - - 0x01C6CC 07:C6BC: 0A        ASL
-C - - - - - 0x01C6CD 07:C6BD: 0A        ASL
-C - - - - - 0x01C6CE 07:C6BE: 85 38     STA ram_0038
-C - - - - - 0x01C6D0 07:C6C0: 4C C3 C6  JMP loc_C6C3    ; bzk optimize
-bra_C6C3:
-loc_C6C3:
-C D 2 - - - 0x01C6D3 07:C6C3: A5 0E     LDA ram_current_game_mode
-C - - - - - 0x01C6D5 07:C6C5: C9 01     CMP #con_GM_gameplay
-C - - - - - 0x01C6D7 07:C6C7: D0 1A     BNE bra_C6E3
-C - - - - - 0x01C6D9 07:C6C9: A5 0F     LDA ram_irq_scanline_counter
-C - - - - - 0x01C6DB 07:C6CB: C5 2D     CMP ram_002D
-C - - - - - 0x01C6DD 07:C6CD: D0 14     BNE bra_C6E3
-C - - - - - 0x01C6DF 07:C6CF: A2 06     LDX #$06
-C - - - - - 0x01C6E1 07:C6D1: 20 E5 FF  JSR sub_FFE5_garbage_loop_for_IRQ
-C - - - - - 0x01C6E4 07:C6D4: A5 39     LDA ram_0039
-C - - - - - 0x01C6E6 07:C6D6: 8D 05 20  STA $2005
-C - - - - - 0x01C6E9 07:C6D9: A9 00     LDA #$00
-C - - - - - 0x01C6EB 07:C6DB: 8D 05 20  STA $2005
-C - - - - - 0x01C6EE 07:C6DE: A6 38     LDX ram_0038
-C - - - - - 0x01C6F0 07:C6E0: 4C EC C6  JMP loc_C6EC
-bra_C6E3:
-C - - - - - 0x01C6F3 07:C6E3: A6 38     LDX ram_0038
-C - - - - - 0x01C6F5 07:C6E5: BD 16 C0  LDA tbl_C016_scanline,X
-C - - - - - 0x01C6F8 07:C6E8: C5 0F     CMP ram_irq_scanline_counter
-C - - - - - 0x01C6FA 07:C6EA: D0 10     BNE bra_C6FC_quit_irq
-loc_C6EC:
-C D 2 - - - 0x01C6FC 07:C6EC: E8        INX
-C - - - - - 0x01C6FD 07:C6ED: BD 16 C0  LDA tbl_C016_chr_bank,X
-C - - - - - 0x01C700 07:C6F0: 8D 00 60  STA $5129
-                                        STA $5121
-C - - - - - 0x01C703 07:C6F3: 18        CLC
-C - - - - - 0x01C704 07:C6F4: 69 01     ADC #$01
-C - - - - - 0x01C706 07:C6F6: 8D 01 60  STA $512B
-                                        STA $5123
-C - - - - - 0x01C709 07:C6F9: E8        INX
-C - - - - - 0x01C70A 07:C6FA: 86 38     STX ram_0038
-bra_C6FC_quit_irq:
-loc_C6FC_quit_irq:
-C D 2 - - - 0x01C70C 07:C6FC: E6 0F     INC ram_irq_scanline_counter
-C - - - - - 0x01C70E 07:C6FE: 68        PLA
-C - - - - - 0x01C70F 07:C6FF: A8        TAY
-C - - - - - 0x01C710 07:C700: 68        PLA
-C - - - - - 0x01C711 07:C701: AA        TAX
-C - - - - - 0x01C712 07:C702: 68        PLA
-C - - - - - 0x01C713 07:C703: 40        RTI
+.scope
+    BIT $5204   ; acknowledging irq has triggered, and disabling it
+    PHA
+    TXA
+    PHA
+    TYA
+    PHA
+    LDX #$12
+@garbage_loop:  ; for getting rid of artifacts
+    DEX
+    BNE @garbage_loop
+    INC ram_irq_scanline_flag
+    LDA ram_current_game_mode
+    CMP #con_GM_debug
+    BNE @check_other_mods
+    JMP loc_debug_irq_test
+@check_other_mods:
+    CMP #con_GM_VS
+    BEQ @exit_irq
+    CMP #con_GM_cutscene
+    BEQ @exit_irq
+    LDA ram_irq_scanline_flag
+    CMP #$01
+    BNE @skip
+    LDA ram_current_game_mode
+    CMP #con_GM_gameplay
+    BNE @skip
+    LDA ram_statusbar_height
+    ASL
+    ASL
+    ASL
+    CLC
+    ADC #$06
+    STA $5203   ; set scanline
+    LDA #$80
+    STA $5204   ; enable irq again
+    BNE @exit_irq
+@skip:
+    LDA ram_current_game_mode
+    CMP #con_GM_gameplay
+    BNE @do_not_scroll
+    LDA ram_0039
+    STA $2005
+    LDA #$00
+    STA $2005
+@do_not_scroll:
+    LDA ram_irq_screen
+    ASL
+    TAX
+    LDA tbl_scanline_data,X
+    STA ram_0002
+    LDA tbl_scanline_data + 1,X
+    STA ram_0003
+    LDY ram_irq_data_index
+    LDA (ram_0002),Y
+    STA $5129
+    STA $5121
+    CLC
+    ADC #$01
+    STA $512B
+    STA $5123
+    INY
+    LDA (ram_0002),Y
+    CMP #$FF
+    BEQ @exit_irq
+    SEC
+    SBC #$02
+    STA $5203   ; set scanline
+    LDA #$80
+    STA $5204   ; enable irq again
+    INY
+    STY ram_irq_data_index
+    JMP @exit_irq
+@exit_irq:
+loc_exit_irq:
+    PLA
+    TAY
+    PLA
+    TAX
+    PLA
+    RTI
+
+loc_debug_irq_test:
+    LDA ram_irq_scanline_flag
+    CMP #$01
+    BNE @its_time
+    LDA #$98
+    STA $5203
+    LDA #$80
+    STA $5204
+    JMP loc_exit_irq
+@its_time:
+    LDA #$C0
+    STA $5129
+    STA $5121
+    LDA #$C2
+    STA $512B
+    STA $5123
+    LDA #$80
+    STA $2005
+    STA $2005
+    JMP loc_exit_irq
+
+tbl_scanline_data:
+    .word _screen_00
+    .word _screen_01
+    .word _screen_02
+    .word _screen_03
+    .word _screen_04
+    .word _screen_05
+    .word _screen_06
+    .word _screen_07
+    .word _screen_08
+    .word _screen_09
+    .word _screen_0A
+
+con_chr_bank            = $00   ; what bank do you want right now
+con_next_scanline       = $00   ; where exactly do you want to switch banks next time
+con_enough_for_now      = $FF   ; final bankswitching until the next frame
+
+_screen_00:
+    .byte con_chr_bank + $C0
+    .byte con_next_scanline + $68
+    
+    .byte con_chr_bank + $C2
+    .byte con_next_scanline + $98
+    
+    .byte con_chr_bank + $C4
+    .byte con_enough_for_now
+
+_screen_01:
+    .byte con_chr_bank + $C8
+    .byte con_next_scanline + $70
+    
+    .byte con_chr_bank + $CA
+    .byte con_next_scanline + $98
+    
+    .byte con_chr_bank + $CC
+    .byte con_enough_for_now
+
+_screen_02:
+    .byte con_chr_bank + $D0
+    .byte con_next_scanline + $90
+    
+    .byte con_chr_bank + $D2
+    .byte con_enough_for_now
+
+_screen_03:
+    .byte con_chr_bank + $D8
+    .byte con_next_scanline + $78
+    
+    .byte con_chr_bank + $DA
+    .byte con_next_scanline + $B8
+    
+    .byte con_chr_bank + $DC
+    .byte con_enough_for_now
+
+_screen_04:
+    .byte con_chr_bank + $E0
+    .byte con_next_scanline + $68
+    
+    .byte con_chr_bank + $E2
+    .byte con_next_scanline + $98
+    
+    .byte con_chr_bank + $E4
+    .byte con_next_scanline + $C8
+    
+    .byte con_chr_bank + $E6
+    .byte con_enough_for_now
+
+_screen_05:
+    .byte con_chr_bank + $E8
+    .byte con_next_scanline + $78
+    
+    .byte con_chr_bank + $EA
+    .byte con_enough_for_now
+
+_screen_06:
+    .byte con_chr_bank + $F0
+    .byte con_next_scanline + $90
+    
+    .byte con_chr_bank + $F2
+    .byte con_enough_for_now
+
+_screen_07:
+    .byte con_chr_bank + $EC
+    .byte con_next_scanline + $78
+    
+    .byte con_chr_bank + $EE
+    .byte con_enough_for_now
+
+_screen_08:
+    .byte con_chr_bank + $F8
+    .byte con_next_scanline + $68
+    
+    .byte con_chr_bank + $FA
+    .byte con_next_scanline + $C8
+    
+    .byte con_chr_bank + $FC
+    .byte con_enough_for_now
+
+_screen_09:
+    .byte con_chr_bank + $A2
+    .byte con_next_scanline + $D0
+    
+    .byte con_chr_bank + $A4
+    .byte con_enough_for_now
+
+_screen_0A:
+    .byte con_chr_bank + $D4
+    .byte con_next_scanline + $A8
+    
+    .byte con_chr_bank + $D6
+    .byte con_enough_for_now
+.endscope
 
 
 
@@ -567,7 +563,7 @@ C D 2 - - - 0x01C769 07:C759: 20 4D F8  JSR sub_F84D
 C - - - - - 0x01C76C 07:C75C: 20 3B F9  JSR sub_F93B
 C - - - - - 0x01C76F 07:C75F: 20 EE EF  JSR sub_EFEE_clear_0300_03CF
 C - - - - - 0x01C772 07:C762: A9 0A     LDA #$0A
-C - - - - - 0x01C774 07:C764: 85 0C     STA ram_000C
+C - - - - - 0x01C774 07:C764: 85 0C     STA ram_irq_screen
 C - - - - - 0x01C776 07:C766: A9 04     LDA #con_GM_title
 C - - - - - 0x01C778 07:C768: 85 0E     STA ram_current_game_mode
 C - - - - - 0x01C77A 07:C76A: A9 00     LDA #$00
@@ -710,7 +706,7 @@ C D 2 - - - 0x01C867 07:C857: 20 4D F8  JSR sub_F84D
 C - - - - - 0x01C86A 07:C85A: 20 3B F9  JSR sub_F93B
 C - - - - - 0x01C86D 07:C85D: 20 EE EF  JSR sub_EFEE_clear_0300_03CF
 C - - - - - 0x01C870 07:C860: A9 09     LDA #$09
-C - - - - - 0x01C872 07:C862: 85 0C     STA ram_000C
+C - - - - - 0x01C872 07:C862: 85 0C     STA ram_irq_screen
 C - - - - - 0x01C874 07:C864: A9 03     LDA #con_GM_plr_select
 C - - - - - 0x01C876 07:C866: 85 0E     STA ram_current_game_mode
 C - - - - - 0x01C878 07:C868: A9 00     LDA #$00
@@ -1011,7 +1007,7 @@ C - - - - - 0x01CA78 07:CA68: 60        RTS
 sub_CA69:
 C - - - - - 0x01CA79 07:CA69: 20 4D F8  JSR sub_F84D
 C - - - - - 0x01CA7C 07:CA6C: A5 27     LDA ram_screen
-C - - - - - 0x01CA7E 07:CA6E: 85 0C     STA ram_000C
+C - - - - - 0x01CA7E 07:CA6E: 85 0C     STA ram_irq_screen
 C - - - - - 0x01CA80 07:CA70: 20 17 E8  JSR sub_E817
 C - - - - - 0x01CA83 07:CA73: A5 27     LDA ram_screen
 C - - - - - 0x01CA85 07:CA75: 20 FA F7  JSR sub_F7FA
@@ -1046,7 +1042,7 @@ C - - - - - 0x01CAC5 07:CAB5: 85 FB     STA ram_00FB
 C - - - - - 0x01CAC7 07:CAB7: 85 BF     STA ram_00BF
 C - - - - - 0x01CAC9 07:CAB9: 85 2F     STA ram_002F
 C - - - - - 0x01CACB 07:CABB: A9 03     LDA #$03
-C - - - - - 0x01CACD 07:CABD: 85 2D     STA ram_002D
+C - - - - - 0x01CACD 07:CABD: 85 2D     STA ram_statusbar_height
 C - - - - - 0x01CACF 07:CABF: A9 1E     LDA #$1E
 C - - - - - 0x01CAD1 07:CAC1: 85 3D     STA ram_003D
 C - - - - - 0x01CAD3 07:CAC3: A9 63     LDA #$63
@@ -3091,7 +3087,7 @@ C - - - - - 0x01D919 07:D909: A9 01     LDA #$01
 C - - - - - 0x01D91B 07:D90B: 85 CD     STA ram_00CD
 C - - - - - 0x01D91D 07:D90D: A2 50     LDX #$50
 C - - - - - 0x01D91F 07:D90F: 20 E5 FF  JSR sub_FFE5_garbage_loop_for_IRQ
-C - - - - - 0x01D922 07:D912: A5 0F     LDA ram_irq_scanline_counter
+C - - - - - 0x01D922 07:D912: A5 0F     LDA ram_irq_scanline_flag
 C - - - - - 0x01D924 07:D914: D0 04     BNE bra_D91A_RTS
 C - - - - - 0x01D926 07:D916: A9 00     LDA #$00
 C - - - - - 0x01D928 07:D918: 85 CD     STA ram_00CD
@@ -3145,12 +3141,12 @@ C - - - - - 0x01D968 07:D958: 60        RTS
 
 sub_D959_turn_IRQ_on:
 C - - - - - 0x01D969 07:D959: A9 00     LDA #$00
-C - - - - - 0x01D96B 07:D95B: 85 0F     STA ram_irq_scanline_counter
-C - - - - - 0x01D96D 07:D95D: A9 09     LDA #$09
-C - - - - - 0x01D96F 07:D95F: 8D 76 70  STA $7006
-C - - - - - 0x01D972 07:D962: A9 B8     LDA #$B8
-C - - - - - 0x01D974 07:D964: 8D 66 70  STA $7006
-C - - - - - 0x01D977 07:D967: 8D 07 70  STA $7007
+C - - - - - 0x01D96B 07:D95B: 85 0F     STA ram_irq_scanline_flag
+                                        STA ram_irq_data_index
+                                        LDA #$80
+                                        STA $5204   ; enable irq for this frame
+                                        LDA #$04
+                                        STA $5203   ; first irq trigger will happen at 4th scanline
 C - - - - - 0x01D97A 07:D96A: 58        CLI
 C - - - - - 0x01D97B 07:D96B: 60        RTS
 
@@ -7234,11 +7230,11 @@ C - - - - - 0x01F179 07:F169: D0 1F     BNE bra_F18A
 C - - - - - 0x01F17B 07:F16B: A6 2E     LDX ram_002E
 C - - - - - 0x01F17D 07:F16D: BD 0E 05  LDA ram_050E,X
 C - - - - - 0x01F180 07:F170: D0 18     BNE bra_F18A
-C - - - - - 0x01F182 07:F172: A5 2D     LDA ram_002D
+C - - - - - 0x01F182 07:F172: A5 2D     LDA ram_statusbar_height
 C - - - - - 0x01F184 07:F174: C9 08     CMP #$08
 C - - - - - 0x01F186 07:F176: B0 12     BCS bra_F18A
-C - - - - - 0x01F188 07:F178: E6 2D     INC ram_002D
-C - - - - - 0x01F18A 07:F17A: A5 2D     LDA ram_002D
+C - - - - - 0x01F188 07:F178: E6 2D     INC ram_statusbar_height
+C - - - - - 0x01F18A 07:F17A: A5 2D     LDA ram_statusbar_height
 C - - - - - 0x01F18C 07:F17C: 48        PHA
 C - - - - - 0x01F18D 07:F17D: 20 7D F0  JSR sub_F07D
 C - - - - - 0x01F190 07:F180: 68        PLA
@@ -7268,7 +7264,7 @@ C - - - - - 0x01F1BB 07:F1AB: D0 1D     BNE bra_F1CA
 bra_F1AD:
 C - - - - - 0x01F1BD 07:F1AD: C9 04     CMP #$04
 C - - - - - 0x01F1BF 07:F1AF: D0 1C     BNE bra_F1CD
-C - - - - - 0x01F1C1 07:F1B1: C6 2D     DEC ram_002D
+C - - - - - 0x01F1C1 07:F1B1: C6 2D     DEC ram_statusbar_height
 C - - - - - 0x01F1C3 07:F1B3: A9 1E     LDA #$1E
 C - - - - - 0x01F1C5 07:F1B5: 85 B0     STA ram_00B0
 C - - - - - 0x01F1C7 07:F1B7: A9 00     LDA #$00
@@ -7854,7 +7850,7 @@ C - - - - - 0x01F5A0 07:F590: A9 00     LDA #$00
 C - - - - - 0x01F5A2 07:F592: 85 AF     STA ram_00AF
 C - - - - - 0x01F5A4 07:F594: 20 9D FF  JSR sub_FF9D
 C - - - - - 0x01F5A7 07:F597: A9 0B     LDA #$0B
-C - - - - - 0x01F5A9 07:F599: 85 0C     STA ram_000C
+C - - - - - 0x01F5A9 07:F599: 85 0C     STA ram_irq_screen
 C - - - - - 0x01F5AB 07:F59B: A9 3A     LDA #$8A    ; 0x014010
 C - - - - - 0x01F5AD 07:F59D: 8D 00 70  STA $5114
 C - - - - - 0x01F5B0 07:F5A0: A2 10     LDX #$10
