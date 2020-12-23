@@ -402,6 +402,7 @@ tbl_scanline_data:
     .word _screen_08
     .word _screen_09
     .word _screen_0A
+    .word _screen_0B
 
 con_chr_bank            = $00   ; what bank do you want right now
 con_next_scanline       = $00   ; where exactly do you want to switch banks next time
@@ -500,6 +501,13 @@ _screen_0A:
     .byte con_next_scanline + $A8
     
     .byte con_chr_bank + $D6
+    .byte con_enough_for_now
+
+_screen_0B:
+    .byte con_chr_bank + $BD
+    .byte con_next_scanline + $D8
+    
+    .byte con_chr_bank + $BE
     .byte con_enough_for_now
 .endscope
 
