@@ -74,7 +74,7 @@ del copy_*.lst
 :: check file size and display corresponding message
 setlocal enableextensions
 FOR %%A IN ("!sf3.nes") DO set "size=%%~zA"
-if %size% EQU 655376 (
+if %size% EQU 1179664 (
     echo.
     echo ----------------------------------------------
     echo Done! Look for !sf3.nes file in your folder.
