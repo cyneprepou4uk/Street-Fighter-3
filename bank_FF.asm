@@ -314,7 +314,7 @@ vec_C66B_IRQ_handler:
     LDA ram_current_game_mode
     CMP #con_GM_gameplay
     BNE @skip
-    LDA ram_statusbar_height
+    LDA ram_hud_height
     ASL
     ASL
     ASL
@@ -1049,7 +1049,7 @@ C - - - - - 0x01CAC5 07:CAB5: 85 FB     STA ram_00FB
 C - - - - - 0x01CAC7 07:CAB7: 85 BF     STA ram_00BF
 C - - - - - 0x01CAC9 07:CAB9: 85 2F     STA ram_002F
 C - - - - - 0x01CACB 07:CABB: A9 03     LDA #$03
-C - - - - - 0x01CACD 07:CABD: 85 2D     STA ram_statusbar_height
+C - - - - - 0x01CACD 07:CABD: 85 2D     STA ram_hud_height
 C - - - - - 0x01CACF 07:CABF: A9 1E     LDA #$1E
 C - - - - - 0x01CAD1 07:CAC1: 85 3D     STA ram_003D
 C - - - - - 0x01CAD3 07:CAC3: A9 63     LDA #$63
@@ -1142,8 +1142,8 @@ C - - - - - 0x01CB6E 07:CB5E: A2 40     LDX #$40
 C - - - - - 0x01CB70 07:CB60: 4C 05 CB  JMP loc_CB05
 bra_CB63:
 C - - - - - 0x01CB73 07:CB63: A9 58     LDA #$58
-C - - - - - 0x01CB75 07:CB65: 85 62     STA ram_p1_bar_hp
-C - - - - - 0x01CB77 07:CB67: 85 63     STA ram_p2_bar_hp
+C - - - - - 0x01CB75 07:CB65: 85 62     STA ram_p1_hud_hp
+C - - - - - 0x01CB77 07:CB67: 85 63     STA ram_p2_hud_hp
 C - - - - - 0x01CB79 07:CB69: 60        RTS
 
 
@@ -6045,19 +6045,19 @@ C - - - - - 0x01EA92 07:EA82: 29 01     AND #$01
 C - - - - - 0x01EA94 07:EA84: F0 01     BEQ bra_EA87
 C - - - - - 0x01EA96 07:EA86: 60        RTS
 bra_EA87:
-C - - - - - 0x01EA97 07:EA87: A5 62     LDA ram_p1_bar_hp
+C - - - - - 0x01EA97 07:EA87: A5 62     LDA ram_p1_hud_hp
 C - - - - - 0x01EA99 07:EA89: F0 48     BEQ bra_EAD3_check_p2
 C - - - - - 0x01EA9B 07:EA8B: CD 10 05  CMP ram_p1_hp
 C - - - - - 0x01EA9E 07:EA8E: F0 43     BEQ bra_EAD3_check_p2
 C - - - - - 0x01EAA0 07:EA90: 30 41     BMI bra_EAD3_check_p2
-C - - - - - 0x01EAA2 07:EA92: C6 62     DEC ram_p1_bar_hp
+C - - - - - 0x01EAA2 07:EA92: C6 62     DEC ram_p1_hud_hp
 C - - - - - 0x01EAA4 07:EA94: A9 20     LDA #$20
 C - - - - - 0x01EAA6 07:EA96: 8D 06 20  STA $2006
 C - - - - - 0x01EAA9 07:EA99: A9 44     LDA #$44
 C - - - - - 0x01EAAB 07:EA9B: 8D 06 20  STA $2006
 C - - - - - 0x01EAAE 07:EA9E: A9 58     LDA #$58
 C - - - - - 0x01EAB0 07:EAA0: 38        SEC
-C - - - - - 0x01EAB1 07:EAA1: E5 62     SBC ram_p1_bar_hp
+C - - - - - 0x01EAB1 07:EAA1: E5 62     SBC ram_p1_hud_hp
 C - - - - - 0x01EAB3 07:EAA3: 4A        LSR
 C - - - - - 0x01EAB4 07:EAA4: 4A        LSR
 C - - - - - 0x01EAB5 07:EAA5: 4A        LSR
@@ -6070,14 +6070,14 @@ C - - - - - 0x01EABD 07:EAAD: 8D 07 20  STA $2007
 C - - - - - 0x01EAC0 07:EAB0: CA        DEX
 C - - - - - 0x01EAC1 07:EAB1: 4C A9 EA  JMP loc_EAA9
 bra_EAB4:
-C - - - - - 0x01EAC4 07:EAB4: A5 62     LDA ram_p1_bar_hp
+C - - - - - 0x01EAC4 07:EAB4: A5 62     LDA ram_p1_hud_hp
 C - - - - - 0x01EAC6 07:EAB6: 29 07     AND #$07
 C - - - - - 0x01EAC8 07:EAB8: F0 06     BEQ bra_EAC0
 C - - - - - 0x01EACA 07:EABA: 18        CLC
 C - - - - - 0x01EACB 07:EABB: 69 82     ADC #$82
 C - - - - - 0x01EACD 07:EABD: 8D 07 20  STA $2007
 bra_EAC0:
-C - - - - - 0x01EAD0 07:EAC0: A5 62     LDA ram_p1_bar_hp
+C - - - - - 0x01EAD0 07:EAC0: A5 62     LDA ram_p1_hud_hp
 C - - - - - 0x01EAD2 07:EAC2: 4A        LSR
 C - - - - - 0x01EAD3 07:EAC3: 4A        LSR
 C - - - - - 0x01EAD4 07:EAC4: 4A        LSR
@@ -6090,17 +6090,17 @@ C - - - - - 0x01EADC 07:EACC: 8D 07 20  STA $2007
 C - - - - - 0x01EADF 07:EACF: CA        DEX
 C - - - - - 0x01EAE0 07:EAD0: 4C C8 EA  JMP loc_EAC8
 bra_EAD3_check_p2:
-C - - - - - 0x01EAE3 07:EAD3: A5 63     LDA ram_p2_bar_hp
+C - - - - - 0x01EAE3 07:EAD3: A5 63     LDA ram_p2_hud_hp
 C - - - - - 0x01EAE5 07:EAD5: F0 48     BEQ bra_EB1F
 C - - - - - 0x01EAE7 07:EAD7: CD 40 05  CMP ram_p2_hp
 C - - - - - 0x01EAEA 07:EADA: 30 43     BMI bra_EB1F
 C - - - - - 0x01EAEC 07:EADC: F0 41     BEQ bra_EB1F
-C - - - - - 0x01EAEE 07:EADE: C6 63     DEC ram_p2_bar_hp
+C - - - - - 0x01EAEE 07:EADE: C6 63     DEC ram_p2_hud_hp
 C - - - - - 0x01EAF0 07:EAE0: A9 20     LDA #$20
 C - - - - - 0x01EAF2 07:EAE2: 8D 06 20  STA $2006
 C - - - - - 0x01EAF5 07:EAE5: A9 51     LDA #$51
 C - - - - - 0x01EAF7 07:EAE7: 8D 06 20  STA $2006
-C - - - - - 0x01EAFA 07:EAEA: A5 63     LDA ram_p2_bar_hp
+C - - - - - 0x01EAFA 07:EAEA: A5 63     LDA ram_p2_hud_hp
 C - - - - - 0x01EAFC 07:EAEC: 4A        LSR
 C - - - - - 0x01EAFD 07:EAED: 4A        LSR
 C - - - - - 0x01EAFE 07:EAEE: 4A        LSR
@@ -6113,7 +6113,7 @@ C - - - - - 0x01EB06 07:EAF6: 8D 07 20  STA $2007
 C - - - - - 0x01EB09 07:EAF9: CA        DEX
 C - - - - - 0x01EB0A 07:EAFA: 4C F2 EA  JMP loc_EAF2
 bra_EAFD:
-C - - - - - 0x01EB0D 07:EAFD: A5 63     LDA ram_p2_bar_hp
+C - - - - - 0x01EB0D 07:EAFD: A5 63     LDA ram_p2_hud_hp
 C - - - - - 0x01EB0F 07:EAFF: 29 07     AND #$07
 C - - - - - 0x01EB11 07:EB01: F0 06     BEQ bra_EB09
 C - - - - - 0x01EB13 07:EB03: 18        CLC
@@ -6122,7 +6122,7 @@ C - - - - - 0x01EB16 07:EB06: 8D 07 20  STA $2007
 bra_EB09:
 C - - - - - 0x01EB19 07:EB09: A9 58     LDA #$58
 C - - - - - 0x01EB1B 07:EB0B: 38        SEC
-C - - - - - 0x01EB1C 07:EB0C: E5 63     SBC ram_p2_bar_hp
+C - - - - - 0x01EB1C 07:EB0C: E5 63     SBC ram_p2_hud_hp
 C - - - - - 0x01EB1E 07:EB0E: 4A        LSR
 C - - - - - 0x01EB1F 07:EB0F: 4A        LSR
 C - - - - - 0x01EB20 07:EB10: 4A        LSR
@@ -7237,11 +7237,11 @@ C - - - - - 0x01F179 07:F169: D0 1F     BNE bra_F18A
 C - - - - - 0x01F17B 07:F16B: A6 2E     LDX ram_002E
 C - - - - - 0x01F17D 07:F16D: BD 0E 05  LDA ram_050E,X
 C - - - - - 0x01F180 07:F170: D0 18     BNE bra_F18A
-C - - - - - 0x01F182 07:F172: A5 2D     LDA ram_statusbar_height
+C - - - - - 0x01F182 07:F172: A5 2D     LDA ram_hud_height
 C - - - - - 0x01F184 07:F174: C9 08     CMP #$08
 C - - - - - 0x01F186 07:F176: B0 12     BCS bra_F18A
-C - - - - - 0x01F188 07:F178: E6 2D     INC ram_statusbar_height
-C - - - - - 0x01F18A 07:F17A: A5 2D     LDA ram_statusbar_height
+C - - - - - 0x01F188 07:F178: E6 2D     INC ram_hud_height
+C - - - - - 0x01F18A 07:F17A: A5 2D     LDA ram_hud_height
 C - - - - - 0x01F18C 07:F17C: 48        PHA
 C - - - - - 0x01F18D 07:F17D: 20 7D F0  JSR sub_F07D
 C - - - - - 0x01F190 07:F180: 68        PLA
@@ -7271,7 +7271,7 @@ C - - - - - 0x01F1BB 07:F1AB: D0 1D     BNE bra_F1CA
 bra_F1AD:
 C - - - - - 0x01F1BD 07:F1AD: C9 04     CMP #$04
 C - - - - - 0x01F1BF 07:F1AF: D0 1C     BNE bra_F1CD
-C - - - - - 0x01F1C1 07:F1B1: C6 2D     DEC ram_statusbar_height
+C - - - - - 0x01F1C1 07:F1B1: C6 2D     DEC ram_hud_height
 C - - - - - 0x01F1C3 07:F1B3: A9 1E     LDA #$1E
 C - - - - - 0x01F1C5 07:F1B5: 85 B0     STA ram_00B0
 C - - - - - 0x01F1C7 07:F1B7: A9 00     LDA #$00
