@@ -166,7 +166,7 @@ bra_C166:
 C - - - - - 0x01C176 07:C166: B9 B4 00  LDA a: ram_btn_press,Y
 C - - - - - 0x01C179 07:C169: C9 01     CMP #con_btn_Right
 C - - - - - 0x01C17B 07:C16B: F0 04     BEQ bra_C171
-C - - - - - 0x01C17D 07:C16D: C9 03     CMP #con_btn_Right + con_btn_Left
+C - - - - - 0x01C17D 07:C16D: C9 03     CMP #con_btns_LR
 C - - - - - 0x01C17F 07:C16F: D0 26     BNE bra_C197
 bra_C171:
 C - - - - - 0x01C181 07:C171: BD 0E 05  LDA ram_050E,X
@@ -1629,9 +1629,9 @@ sub_CED8:
 C - - - - - 0x01CEE8 07:CED8: 85 BE     STA ram_00BE
 C - - - - - 0x01CEEA 07:CEDA: AA        TAX
 C - - - - - 0x01CEEB 07:CEDB: B5 B4     LDA ram_btn_press,X
-C - - - - - 0x01CEED 07:CEDD: 85 21     STA ram_0021
+C - - - - - 0x01CEED 07:CEDD: 85 21     STA ram_copy_btn_press
 C - - - - - 0x01CEEF 07:CEDF: B5 B6     LDA ram_btn_hold,X
-C - - - - - 0x01CEF1 07:CEE1: 85 22     STA ram_0022
+C - - - - - 0x01CEF1 07:CEE1: 85 22     STA ram_copy_btn_hold
 C - - - - - 0x01CEF3 07:CEE3: E0 00     CPX #$00
 C - - - - - 0x01CEF5 07:CEE5: D0 07     BNE bra_CEEE
 C - - - - - 0x01CEF7 07:CEE7: A0 40     LDY #$40
@@ -1966,14 +1966,14 @@ C - - - - - 0x01D143 07:D133: 60        RTS
 sub_D134:
 C - - - - - 0x01D144 07:D134: BD 0E 05  LDA ram_050E,X
 C - - - - - 0x01D147 07:D137: D0 12     BNE bra_D14B
-C - - - - - 0x01D149 07:D139: A5 21     LDA ram_0021
-C - - - - - 0x01D14B 07:D13B: C9 01     CMP #$01
+C - - - - - 0x01D149 07:D139: A5 21     LDA ram_copy_btn_press
+C - - - - - 0x01D14B 07:D13B: C9 01     CMP #con_btn_Right
 C - - - - - 0x01D14D 07:D13D: D0 3C     BNE bra_D17B
-C - - - - - 0x01D14F 07:D13F: A5 22     LDA ram_0022
-C - - - - - 0x01D151 07:D141: 29 0F     AND #$0F
-C - - - - - 0x01D153 07:D143: C9 01     CMP #$01
+C - - - - - 0x01D14F 07:D13F: A5 22     LDA ram_copy_btn_hold
+C - - - - - 0x01D151 07:D141: 29 0F     AND #con_btns_Dpad
+C - - - - - 0x01D153 07:D143: C9 01     CMP #con_btn_Right
 C - - - - - 0x01D155 07:D145: F0 04     BEQ bra_D14B
-C - - - - - 0x01D157 07:D147: C9 02     CMP #$02
+C - - - - - 0x01D157 07:D147: C9 02     CMP #con_btn_Left
 C - - - - - 0x01D159 07:D149: D0 30     BNE bra_D17B
 bra_D14B:
 C - - - - - 0x01D15B 07:D14B: A5 CC     LDA ram_00CC
@@ -2026,8 +2026,8 @@ C - - - - - 0x01D1B6 07:D1A6: A8        TAY
 C - - - - - 0x01D1B7 07:D1A7: B9 24 D2  LDA tbl_D224,Y
 C - - - - - 0x01D1BA 07:D1AA: 85 BD     STA ram_00BD
 bra_D1AC:
-C - - - - - 0x01D1BC 07:D1AC: A5 22     LDA ram_0022
-C - - - - - 0x01D1BE 07:D1AE: 29 01     AND #$01
+C - - - - - 0x01D1BC 07:D1AC: A5 22     LDA ram_copy_btn_hold
+C - - - - - 0x01D1BE 07:D1AE: 29 01     AND #con_btn_Right
 C - - - - - 0x01D1C0 07:D1B0: D0 0C     BNE bra_D1BE
 C - - - - - 0x01D1C2 07:D1B2: A9 40     LDA #$40
 C - - - - - 0x01D1C4 07:D1B4: 45 BC     EOR ram_00BC
@@ -2161,8 +2161,8 @@ tbl_D224:
 sub_D26C:
 C - - - - - 0x01D27C 07:D26C: BD 0E 05  LDA ram_050E,X
 C - - - - - 0x01D27F 07:D26F: D0 0E     BNE bra_D27F
-C - - - - - 0x01D281 07:D271: A5 22     LDA ram_0022
-C - - - - - 0x01D283 07:D273: 29 CC     AND #$CC
+C - - - - - 0x01D281 07:D271: A5 22     LDA ram_copy_btn_hold
+C - - - - - 0x01D283 07:D273: 29 CC     AND #con_btns_AB_DU
 C - - - - - 0x01D285 07:D275: D0 3D     BNE bra_D2B4
 C - - - - - 0x01D287 07:D277: BD 00 03  LDA ram_0300,X
 C - - - - - 0x01D28A 07:D27A: 29 40     AND #$40
@@ -2184,13 +2184,13 @@ bra_D297:
 C - - - - - 0x01D2A7 07:D297: BD 01 03  LDA ram_0301,X
 C - - - - - 0x01D2AA 07:D29A: 29 40     AND #$40
 C - - - - - 0x01D2AC 07:D29C: D0 08     BNE bra_D2A6
-C - - - - - 0x01D2AE 07:D29E: A5 22     LDA ram_0022
-C - - - - - 0x01D2B0 07:D2A0: C9 02     CMP #$02
+C - - - - - 0x01D2AE 07:D29E: A5 22     LDA ram_copy_btn_hold
+C - - - - - 0x01D2B0 07:D2A0: C9 02     CMP #con_btn_Left
 C - - - - - 0x01D2B2 07:D2A2: F0 0A     BEQ bra_D2AE
 C - - - - - 0x01D2B4 07:D2A4: D0 0E     BNE bra_D2B4
 bra_D2A6:
-C - - - - - 0x01D2B6 07:D2A6: A5 22     LDA ram_0022
-C - - - - - 0x01D2B8 07:D2A8: C9 01     CMP #$01
+C - - - - - 0x01D2B6 07:D2A6: A5 22     LDA ram_copy_btn_hold
+C - - - - - 0x01D2B8 07:D2A8: C9 01     CMP #con_btn_Right
 C - - - - - 0x01D2BA 07:D2AA: F0 02     BEQ bra_D2AE
 C - - - - - 0x01D2BC 07:D2AC: D0 06     BNE bra_D2B4
 bra_D2AE:
@@ -2240,8 +2240,8 @@ C - - - - - 0x01D2FD 07:D2ED: 60        RTS
 sub_D2EE:
 C - - - - - 0x01D2FE 07:D2EE: BD 0E 05  LDA ram_050E,X
 C - - - - - 0x01D301 07:D2F1: D0 0E     BNE bra_D301
-C - - - - - 0x01D303 07:D2F3: A5 22     LDA ram_0022
-C - - - - - 0x01D305 07:D2F5: 29 C8     AND #$C8
+C - - - - - 0x01D303 07:D2F3: A5 22     LDA ram_copy_btn_hold
+C - - - - - 0x01D305 07:D2F5: 29 C8     AND #con_btns_AB_U
 C - - - - - 0x01D307 07:D2F7: D0 3D     BNE bra_D336
 C - - - - - 0x01D309 07:D2F9: BD 00 03  LDA ram_0300,X
 C - - - - - 0x01D30C 07:D2FC: 29 40     AND #$40
@@ -2263,13 +2263,13 @@ bra_D319:
 C - - - - - 0x01D329 07:D319: BD 01 03  LDA ram_0301,X
 C - - - - - 0x01D32C 07:D31C: 29 40     AND #$40
 C - - - - - 0x01D32E 07:D31E: D0 08     BNE bra_D328
-C - - - - - 0x01D330 07:D320: A5 22     LDA ram_0022
-C - - - - - 0x01D332 07:D322: C9 06     CMP #$06
+C - - - - - 0x01D330 07:D320: A5 22     LDA ram_copy_btn_hold
+C - - - - - 0x01D332 07:D322: C9 06     CMP #con_btn_Left + con_btn_Down
 C - - - - - 0x01D334 07:D324: F0 0A     BEQ bra_D330
 C - - - - - 0x01D336 07:D326: D0 0E     BNE bra_D336
 bra_D328:
-C - - - - - 0x01D338 07:D328: A5 22     LDA ram_0022
-C - - - - - 0x01D33A 07:D32A: C9 05     CMP #$05
+C - - - - - 0x01D338 07:D328: A5 22     LDA ram_copy_btn_hold
+C - - - - - 0x01D33A 07:D32A: C9 05     CMP #con_btn_Right + con_btn_Down
 C - - - - - 0x01D33C 07:D32C: F0 02     BEQ bra_D330
 C - - - - - 0x01D33E 07:D32E: D0 06     BNE bra_D336
 bra_D330:
@@ -2311,8 +2311,8 @@ C - - - - - 0x01D377 07:D367: A5 23     LDA ram_0023
 C - - - - - 0x01D379 07:D369: F0 03     BEQ bra_D36E
 C - - - - - 0x01D37B 07:D36B: 4C 0D D4  JMP loc_D40D
 bra_D36E:
-C - - - - - 0x01D37E 07:D36E: A5 22     LDA ram_0022
-C - - - - - 0x01D380 07:D370: 29 04     AND #$04
+C - - - - - 0x01D37E 07:D36E: A5 22     LDA ram_copy_btn_hold
+C - - - - - 0x01D380 07:D370: 29 04     AND #con_btn_Down
 C - - - - - 0x01D382 07:D372: F0 0D     BEQ bra_D381
 C - - - - - 0x01D384 07:D374: A9 00     LDA #$00
 C - - - - - 0x01D386 07:D376: 9D 00 04  STA ram_0400,X
@@ -2320,14 +2320,14 @@ C - - - - - 0x01D389 07:D379: 20 F1 F0  JSR sub_F0F1
 C - - - - - 0x01D38C 07:D37C: A9 01     LDA #$01
 C - - - - - 0x01D38E 07:D37E: 4C 68 D4  JMP loc_D468
 bra_D381:
-C - - - - - 0x01D391 07:D381: A5 22     LDA ram_0022
-C - - - - - 0x01D393 07:D383: 29 08     AND #$08
+C - - - - - 0x01D391 07:D381: A5 22     LDA ram_copy_btn_hold
+C - - - - - 0x01D393 07:D383: 29 08     AND #con_btn_Up
 C - - - - - 0x01D395 07:D385: F0 2E     BEQ bra_D3B5
 C - - - - - 0x01D397 07:D387: 20 F1 F0  JSR sub_F0F1
-C - - - - - 0x01D39A 07:D38A: A5 22     LDA ram_0022
-C - - - - - 0x01D39C 07:D38C: 29 03     AND #$03
+C - - - - - 0x01D39A 07:D38A: A5 22     LDA ram_copy_btn_hold
+C - - - - - 0x01D39C 07:D38C: 29 03     AND #con_btns_LR
 C - - - - - 0x01D39E 07:D38E: F0 20     BEQ bra_D3B0
-C - - - - - 0x01D3A0 07:D390: 29 02     AND #$02
+C - - - - - 0x01D3A0 07:D390: 29 02     AND #con_btn_Left
 C - - - - - 0x01D3A2 07:D392: F0 09     BEQ bra_D39D
 C - - - - - 0x01D3A4 07:D394: BD 01 03  LDA ram_0301,X
 C - - - - - 0x01D3A7 07:D397: 29 40     AND #$40
@@ -2350,10 +2350,10 @@ C - - - - - 0x01D3C2 07:D3B2: 4C 68 D4  JMP loc_D468
 bra_D3B5:
 C - - - - - 0x01D3C5 07:D3B5: BD 0F 05  LDA ram_050F,X
 C - - - - - 0x01D3C8 07:D3B8: D0 53     BNE bra_D40D
-C - - - - - 0x01D3CA 07:D3BA: A5 22     LDA ram_0022
-C - - - - - 0x01D3CC 07:D3BC: 29 03     AND #$03
+C - - - - - 0x01D3CA 07:D3BA: A5 22     LDA ram_copy_btn_hold
+C - - - - - 0x01D3CC 07:D3BC: 29 03     AND #con_btns_LR
 C - - - - - 0x01D3CE 07:D3BE: F0 4D     BEQ bra_D40D
-C - - - - - 0x01D3D0 07:D3C0: 29 02     AND #$02
+C - - - - - 0x01D3D0 07:D3C0: 29 02     AND #con_btn_Left
 C - - - - - 0x01D3D2 07:D3C2: F0 09     BEQ bra_D3CD
 C - - - - - 0x01D3D4 07:D3C4: BD 01 03  LDA ram_0301,X
 C - - - - - 0x01D3D7 07:D3C7: 29 40     AND #$40
@@ -2377,8 +2377,8 @@ C - - - - - 0x01D3F8 07:D3E8: B9 0F 05  LDA ram_050F,Y
 C - - - - - 0x01D3FB 07:D3EB: 29 04     AND #$04
 C - - - - - 0x01D3FD 07:D3ED: F0 11     BEQ bra_D400
 bra_D3EF:
-C - - - - - 0x01D3FF 07:D3EF: A5 22     LDA ram_0022
-C - - - - - 0x01D401 07:D3F1: 29 CC     AND #$CC
+C - - - - - 0x01D3FF 07:D3EF: A5 22     LDA ram_copy_btn_hold
+C - - - - - 0x01D401 07:D3F1: 29 CC     AND #con_btns_AB_DU
 C - - - - - 0x01D403 07:D3F3: D0 18     BNE bra_D40D
 C - - - - - 0x01D405 07:D3F5: 20 F1 F0  JSR sub_F0F1
 C - - - - - 0x01D408 07:D3F8: 20 22 EF  JSR sub_EF22
@@ -2413,7 +2413,7 @@ C - - - - - 0x01D43C 07:D42C: D0 05     BNE bra_D433
 C - - - - - 0x01D43E 07:D42E: A9 29     LDA #$29
 C - - - - - 0x01D440 07:D430: 4C 50 D4  JMP loc_D450
 bra_D433:
-C - - - - - 0x01D443 07:D433: A5 22     LDA ram_0022
+C - - - - - 0x01D443 07:D433: A5 22     LDA ram_copy_btn_hold
 C - - - - - 0x01D445 07:D435: D0 34     BNE bra_D46B_RTS
 C - - - - - 0x01D447 07:D437: BD 0F 05  LDA ram_050F,X
 C - - - - - 0x01D44A 07:D43A: 29 08     AND #$08
@@ -2497,8 +2497,8 @@ C - - - - - 0x01D4D8 07:D4C8: B0 BF     BCS bra_D489_RTS
 C - - - - - 0x01D4DA 07:D4CA: A9 39     LDA #$39
 C - - - - - 0x01D4DC 07:D4CC: 4C 12 D6  JMP loc_D612
 bra_D4CF:
-C - - - - - 0x01D4DF 07:D4CF: A5 21     LDA ram_0021
-C - - - - - 0x01D4E1 07:D4D1: C9 01     CMP #$01
+C - - - - - 0x01D4DF 07:D4CF: A5 21     LDA ram_copy_btn_press
+C - - - - - 0x01D4E1 07:D4D1: C9 01     CMP #con_btn_Right
 C - - - - - 0x01D4E3 07:D4D3: D0 B4     BNE bra_D489_RTS
 C - - - - - 0x01D4E5 07:D4D5: BD 00 03  LDA ram_0300,X
 C - - - - - 0x01D4E8 07:D4D8: 29 DF     AND #$DF
@@ -2573,12 +2573,12 @@ C - - - - - 0x01D569 07:D559: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01D56B 07:D55B: F0 03     BEQ bra_D560
 C - - - - - 0x01D56D 07:D55D: 4C 15 D6  JMP loc_D615_RTS
 bra_D560:
-C - - - - - 0x01D570 07:D560: A5 22     LDA ram_0022
-C - - - - - 0x01D572 07:D562: 29 04     AND #$04
-C - - - - - 0x01D574 07:D564: C9 04     CMP #$04
+C - - - - - 0x01D570 07:D560: A5 22     LDA ram_copy_btn_hold
+C - - - - - 0x01D572 07:D562: 29 04     AND #con_btn_Down   ; bzk optimize
+C - - - - - 0x01D574 07:D564: C9 04     CMP #con_btn_Down
 C - - - - - 0x01D576 07:D566: D0 76     BNE bra_D5DE
-C - - - - - 0x01D578 07:D568: A5 21     LDA ram_0021
-C - - - - - 0x01D57A 07:D56A: C9 03     CMP #$03
+C - - - - - 0x01D578 07:D568: A5 21     LDA ram_copy_btn_press
+C - - - - - 0x01D57A 07:D56A: C9 03     CMP #con_btns_LR
 C - - - - - 0x01D57C 07:D56C: D0 70     BNE bra_D5DE
 C - - - - - 0x01D57E 07:D56E: BD 01 04  LDA ram_0401,X
 C - - - - - 0x01D581 07:D571: D0 05     BNE bra_D578
@@ -2626,8 +2626,8 @@ bra_D5C4:
 C - - - - - 0x01D5D4 07:D5C4: BD 0B 03  LDA ram_030B,X
 C - - - - - 0x01D5D7 07:D5C7: C9 3D     CMP #$3D
 C - - - - - 0x01D5D9 07:D5C9: D0 13     BNE bra_D5DE
-C - - - - - 0x01D5DB 07:D5CB: A5 21     LDA ram_0021
-C - - - - - 0x01D5DD 07:D5CD: C9 01     CMP #$01
+C - - - - - 0x01D5DB 07:D5CB: A5 21     LDA ram_copy_btn_press
+C - - - - - 0x01D5DD 07:D5CD: C9 01     CMP #con_btn_Right
 C - - - - - 0x01D5DF 07:D5CF: D0 44     BNE bra_D615_RTS
 C - - - - - 0x01D5E1 07:D5D1: BD 00 03  LDA ram_0300,X
 C - - - - - 0x01D5E4 07:D5D4: 29 DF     AND #$DF
@@ -2686,8 +2686,8 @@ C - - - - - 0x01D639 07:D629: 60        RTS
 bra_D62A:
 C - - - - - 0x01D63A 07:D62A: A5 23     LDA ram_0023
 C - - - - - 0x01D63C 07:D62C: D0 3F     BNE bra_D66D
-C - - - - - 0x01D63E 07:D62E: A5 22     LDA ram_0022
-C - - - - - 0x01D640 07:D630: 29 04     AND #$04
+C - - - - - 0x01D63E 07:D62E: A5 22     LDA ram_copy_btn_hold
+C - - - - - 0x01D640 07:D630: 29 04     AND #con_btn_Down
 C - - - - - 0x01D642 07:D632: D0 05     BNE bra_D639
 C - - - - - 0x01D644 07:D634: A9 00     LDA #$00
 C - - - - - 0x01D646 07:D636: 4C 98 D6  JMP loc_D698
@@ -2698,10 +2698,10 @@ C - - - - - 0x01D64E 07:D63E: B9 0F 05  LDA ram_050F,Y
 C - - - - - 0x01D651 07:D641: 29 04     AND #$04
 C - - - - - 0x01D653 07:D643: F0 28     BEQ bra_D66D
 bra_D645:
-C - - - - - 0x01D655 07:D645: A5 22     LDA ram_0022
-C - - - - - 0x01D657 07:D647: 29 03     AND #$03
+C - - - - - 0x01D655 07:D645: A5 22     LDA ram_copy_btn_hold
+C - - - - - 0x01D657 07:D647: 29 03     AND #con_btns_LR
 C - - - - - 0x01D659 07:D649: F0 22     BEQ bra_D66D
-C - - - - - 0x01D65B 07:D64B: 29 02     AND #$02
+C - - - - - 0x01D65B 07:D64B: 29 02     AND #con_btn_Left
 C - - - - - 0x01D65D 07:D64D: F0 09     BEQ bra_D658
 C - - - - - 0x01D65F 07:D64F: BD 01 03  LDA ram_0301,X
 C - - - - - 0x01D662 07:D652: 29 40     AND #$40
@@ -2712,8 +2712,8 @@ C - - - - - 0x01D668 07:D658: BD 01 03  LDA ram_0301,X
 C - - - - - 0x01D66B 07:D65B: 29 40     AND #$40
 C - - - - - 0x01D66D 07:D65D: F0 0E     BEQ bra_D66D
 bra_D65F:
-C - - - - - 0x01D66F 07:D65F: A5 22     LDA ram_0022
-C - - - - - 0x01D671 07:D661: 29 C8     AND #$C8
+C - - - - - 0x01D66F 07:D65F: A5 22     LDA ram_copy_btn_hold
+C - - - - - 0x01D671 07:D661: 29 C8     AND #con_btns_AB_U
 C - - - - - 0x01D673 07:D663: D0 08     BNE bra_D66D
 C - - - - - 0x01D675 07:D665: 20 05 F1  JSR sub_F105
 C - - - - - 0x01D678 07:D668: A9 0A     LDA #$0A
@@ -7686,7 +7686,7 @@ bra_F44B:
 C - - - - - 0x01F45B 07:F44B: B5 B4     LDA ram_btn_press,X
 C - - - - - 0x01F45D 07:F44D: C9 01     CMP #con_btn_Right
 C - - - - - 0x01F45F 07:F44F: F0 04     BEQ bra_F455
-C - - - - - 0x01F461 07:F451: C9 03     CMP #con_btn_Right + con_btn_Left
+C - - - - - 0x01F461 07:F451: C9 03     CMP #con_btns_LR
 C - - - - - 0x01F463 07:F453: D0 17     BNE bra_F46C
 bra_F455:
 C - - - - - 0x01F465 07:F455: D5 F2     CMP ram_00F2,X
@@ -7940,10 +7940,10 @@ sub_F60F:
 C - - - - - 0x01F61F 07:F60F: FE 0B 05  INC ram_050B,X
 C - - - - - 0x01F622 07:F612: A9 00     LDA #$00
 C - - - - - 0x01F624 07:F614: 85 24     STA ram_0024
-C - - - - - 0x01F626 07:F616: A5 21     LDA ram_0021
-C - - - - - 0x01F628 07:F618: C9 01     CMP #$01
+C - - - - - 0x01F626 07:F616: A5 21     LDA ram_copy_btn_press
+C - - - - - 0x01F628 07:F618: C9 01     CMP #con_btn_Right
 C - - - - - 0x01F62A 07:F61A: F0 04     BEQ bra_F620
-C - - - - - 0x01F62C 07:F61C: C9 03     CMP #$03
+C - - - - - 0x01F62C 07:F61C: C9 03     CMP #con_btns_LR
 C - - - - - 0x01F62E 07:F61E: D0 10     BNE bra_F630
 bra_F620:
 C - - - - - 0x01F630 07:F620: 20 77 F6  JSR sub_F677
@@ -7958,13 +7958,13 @@ C - - - - - 0x01F643 07:F633: D0 32     BNE bra_F667
 C - - - - - 0x01F645 07:F635: BD 00 03  LDA ram_0300,X
 C - - - - - 0x01F648 07:F638: 29 20     AND #$20
 C - - - - - 0x01F64A 07:F63A: F0 2B     BEQ bra_F667
-C - - - - - 0x01F64C 07:F63C: A5 21     LDA ram_0021
-C - - - - - 0x01F64E 07:F63E: C9 02     CMP #$02
+C - - - - - 0x01F64C 07:F63C: A5 21     LDA ram_copy_btn_press
+C - - - - - 0x01F64E 07:F63E: C9 02     CMP #con_btn_Left
 C - - - - - 0x01F650 07:F640: D0 05     BNE bra_F647
 C - - - - - 0x01F652 07:F642: A9 01     LDA #$01
 C - - - - - 0x01F654 07:F644: 4C 6C F6  JMP loc_F66C
 bra_F647:
-C - - - - - 0x01F657 07:F647: C9 04     CMP #$04
+C - - - - - 0x01F657 07:F647: C9 04     CMP #con_btn_Down
 C - - - - - 0x01F659 07:F649: D0 05     BNE bra_F650
 C - - - - - 0x01F65B 07:F64B: A9 02     LDA #$02
 C - - - - - 0x01F65D 07:F64D: 4C 6C F6  JMP loc_F66C
@@ -7972,7 +7972,7 @@ bra_F650:
 C - - - - - 0x01F660 07:F650: BD 0B 05  LDA ram_050B,X
 C - - - - - 0x01F663 07:F653: C9 08     CMP #$08
 C - - - - - 0x01F665 07:F655: 90 10     BCC bra_F667
-C - - - - - 0x01F667 07:F657: 24 22     BIT ram_0022
+C - - - - - 0x01F667 07:F657: 24 22     BIT ram_copy_btn_hold
 C - - - - - 0x01F669 07:F659: 10 05     BPL bra_F660
 C - - - - - 0x01F66B 07:F65B: A9 03     LDA #$03
 C - - - - - 0x01F66D 07:F65D: 4C 6C F6  JMP loc_F66C    ; bzk optimize
@@ -8015,8 +8015,8 @@ C - - - - - 0x01F6A7 07:F697: F0 14     BEQ bra_F6AD
 C - - - - - 0x01F6A9 07:F699: B9 E0 00  LDA a: ram_00E0,Y
 C - - - - - 0x01F6AC 07:F69C: C9 08     CMP #$08
 C - - - - - 0x01F6AE 07:F69E: 90 0D     BCC bra_F6AD
-C - - - - - 0x01F6B0 07:F6A0: A5 21     LDA ram_0021
-C - - - - - 0x01F6B2 07:F6A2: C9 03     CMP #$03
+C - - - - - 0x01F6B0 07:F6A0: A5 21     LDA ram_copy_btn_press
+C - - - - - 0x01F6B2 07:F6A2: C9 03     CMP #con_btns_LR
 C - - - - - 0x01F6B4 07:F6A4: D0 07     BNE bra_F6AD
 C - - - - - 0x01F6B6 07:F6A6: A9 01     LDA #$01
 C - - - - - 0x01F6B8 07:F6A8: 85 24     STA ram_0024
@@ -8039,14 +8039,14 @@ C - - - - - 0x01F6D9 07:F6C9: B9 E0 00  LDA a: ram_00E0,Y
 C - - - - - 0x01F6DC 07:F6CC: C9 02     CMP #$02
 C - - - - - 0x01F6DE 07:F6CE: D0 18     BNE bra_F6E8
 bra_F6D0:
-C - - - - - 0x01F6E0 07:F6D0: A5 21     LDA ram_0021
-C - - - - - 0x01F6E2 07:F6D2: C9 01     CMP #$01
+C - - - - - 0x01F6E0 07:F6D0: A5 21     LDA ram_copy_btn_press
+C - - - - - 0x01F6E2 07:F6D2: C9 01     CMP #con_btn_Right
 C - - - - - 0x01F6E4 07:F6D4: D0 07     BNE bra_F6DD
 C - - - - - 0x01F6E6 07:F6D6: A9 04     LDA #$04
 C - - - - - 0x01F6E8 07:F6D8: 85 24     STA ram_0024
 C - - - - - 0x01F6EA 07:F6DA: 4C 0A F7  JMP loc_F70A
 bra_F6DD:
-C - - - - - 0x01F6ED 07:F6DD: C9 03     CMP #$03
+C - - - - - 0x01F6ED 07:F6DD: C9 03     CMP #con_btns_LR
 C - - - - - 0x01F6EF 07:F6DF: D0 07     BNE bra_F6E8
 C - - - - - 0x01F6F1 07:F6E1: A9 03     LDA #$03
 C - - - - - 0x01F6F3 07:F6E3: 85 24     STA ram_0024
@@ -8058,14 +8058,14 @@ C - - - - - 0x01F6FD 07:F6ED: D0 1B     BNE bra_F70A
 C - - - - - 0x01F6FF 07:F6EF: B9 F0 00  LDA a: ram_00F0,Y
 C - - - - - 0x01F702 07:F6F2: C9 0A     CMP #$0A
 C - - - - - 0x01F704 07:F6F4: 90 14     BCC bra_F70A
-C - - - - - 0x01F706 07:F6F6: A5 21     LDA ram_0021
-C - - - - - 0x01F708 07:F6F8: C9 01     CMP #$01
+C - - - - - 0x01F706 07:F6F6: A5 21     LDA ram_copy_btn_press
+C - - - - - 0x01F708 07:F6F8: C9 01     CMP #con_btn_Right
 C - - - - - 0x01F70A 07:F6FA: D0 04     BNE bra_F700
 C - - - - - 0x01F70C 07:F6FC: A9 0A     LDA #$0A
 C - - - - - 0x01F70E 07:F6FE: D0 08     BNE bra_F708
 bra_F700:
-C - - - - - 0x01F710 07:F700: A5 21     LDA ram_0021
-C - - - - - 0x01F712 07:F702: C9 03     CMP #$03
+C - - - - - 0x01F710 07:F700: A5 21     LDA ram_copy_btn_press
+C - - - - - 0x01F712 07:F702: C9 03     CMP #con_btns_LR
 C - - - - - 0x01F714 07:F704: D0 04     BNE bra_F70A
 C - - - - - 0x01F716 07:F706: A9 0B     LDA #$0B
 bra_F708:
@@ -8121,7 +8121,7 @@ C - - - - - 0x01F75B 07:F74B: D5 E0     CMP ram_00E0,X
 C - - - - - 0x01F75D 07:F74D: D0 0F     BNE bra_F75E
 C - - - - - 0x01F75F 07:F74F: C8        INY
 C - - - - - 0x01F760 07:F750: B1 00     LDA (ram_0000),Y
-C - - - - - 0x01F762 07:F752: C5 21     CMP ram_0021
+C - - - - - 0x01F762 07:F752: C5 21     CMP ram_copy_btn_press
 C - - - - - 0x01F764 07:F754: D0 09     BNE bra_F75F
 C - - - - - 0x01F766 07:F756: C8        INY
 C - - - - - 0x01F767 07:F757: B1 00     LDA (ram_0000),Y
@@ -8726,8 +8726,8 @@ sub_FA49:
 C - - - - - 0x01FA59 07:FA49: BD 00 03  LDA ram_0300,X
 C - - - - - 0x01FA5C 07:FA4C: 29 02     AND #$02
 C - - - - - 0x01FA5E 07:FA4E: F0 43     BEQ bra_FA93
-C - - - - - 0x01FA60 07:FA50: A5 22     LDA ram_0022
-C - - - - - 0x01FA62 07:FA52: C9 09     CMP #$09
+C - - - - - 0x01FA60 07:FA50: A5 22     LDA ram_copy_btn_hold
+C - - - - - 0x01FA62 07:FA52: C9 09     CMP #con_btn_Up + con_btn_Right
 C - - - - - 0x01FA64 07:FA54: D0 1B     BNE bra_FA71
 C - - - - - 0x01FA66 07:FA56: BD 02 03  LDA ram_0302,X
 C - - - - - 0x01FA69 07:FA59: C9 80     CMP #$80

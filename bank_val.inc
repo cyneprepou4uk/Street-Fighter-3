@@ -24,8 +24,11 @@ con_btn_Select                  = $20 ;
 con_btn_B                       = $40 ; 
 con_btn_A                       = $80 ; 
 
-con_btns_RLD                    = $07 ; Right + Left + Down
-con_btns_Dpad                   = $0F ; Right + Left + Down + Up
-con_btns_debug                  = $70 ; Start + Select + B
+con_btns_LR                     = con_btn_Left + con_btn_Right
+con_btns_RLD                    = con_btn_Right + con_btn_Left + con_btn_Down
+con_btns_AB_U                   = con_btn_A + con_btn_B + con_btn_Up
+con_btns_AB_DU                  = con_btn_A + con_btn_B + con_btn_Down + con_btn_Up
+con_btns_Dpad                   = con_btn_Right + con_btn_Left + con_btn_Down + con_btn_Up
+con_btns_debug                  = con_btn_Start + con_btn_Select + con_btn_B
 
 
