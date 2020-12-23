@@ -319,7 +319,7 @@ vec_C66B_IRQ_handler:
     ASL
     ASL
     CLC
-    ADC #$06
+    ADC #$07
     STA $5203   ; set scanline
     LDA #$80
     STA $5204   ; enable irq again
