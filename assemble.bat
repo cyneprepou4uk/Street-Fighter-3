@@ -71,6 +71,9 @@ copy /A copy_*.lst _listing.txt
 :: delete listing copies
 del copy_*.lst
 
+:: create a copy of .nl file for original ROM
+if exist SF3_original.nes (copy !sf3.nes.ram.nl SF3_original.nes.ram.nl)
+
 :: check file size and display corresponding message
 setlocal enableextensions
 FOR %%A IN ("!sf3.nes") DO set "size=%%~zA"
