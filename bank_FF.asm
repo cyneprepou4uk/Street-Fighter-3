@@ -1019,7 +1019,7 @@ sub_CA69:
 C - - - - - 0x01CA79 07:CA69: 20 4D F8  JSR sub_F84D
 C - - - - - 0x01CA7C 07:CA6C: A5 27     LDA ram_screen
 C - - - - - 0x01CA7E 07:CA6E: 85 0C     STA ram_irq_screen
-C - - - - - 0x01CA80 07:CA70: 20 17 E8  JSR sub_E817
+C - - - - - 0x01CA80 07:CA70: 20 17 E8  JSR sub_E817_draw_stage_and_hud     ; bzk optimize
 C - - - - - 0x01CA83 07:CA73: A5 27     LDA ram_screen
 C - - - - - 0x01CA85 07:CA75: 20 FA F7  JSR sub_F7FA
 C - - - - - 0x01CA88 07:CA78: A4 3B     LDY ram_p1_fighter
@@ -1082,15 +1082,15 @@ C - - - - - 0x01CAFB 07:CAEB: 60        RTS
 
 
 tbl_CAEC:
-- D 2 - - - 0x01CAFC 07:CAEC: 18        .byte $18   ; 
-- D 2 - - - 0x01CAFD 07:CAED: 14        .byte $14   ; 
-- D 2 - - - 0x01CAFE 07:CAEE: 1E        .byte $1E   ; 
-- D 2 - - - 0x01CAFF 07:CAEF: 1E        .byte $1E   ; 
-- D 2 - - - 0x01CB00 07:CAF0: 1A        .byte $1A   ; 
-- D 2 - - - 0x01CB01 07:CAF1: 16        .byte $16   ; 
-- D 2 - - - 0x01CB02 07:CAF2: 16        .byte $16   ; 
-- D 2 - - - 0x01CB03 07:CAF3: 18        .byte $18   ; 
-- D 2 - - - 0x01CB04 07:CAF4: 28        .byte $28   ; 
+- D 2 - - - 0x01CAFC 07:CAEC: 18        .byte $18   ; 00
+- D 2 - - - 0x01CAFD 07:CAED: 14        .byte $14   ; 01
+- D 2 - - - 0x01CAFE 07:CAEE: 1E        .byte $1E   ; 02
+- D 2 - - - 0x01CAFF 07:CAEF: 1E        .byte $1E   ; 03
+- D 2 - - - 0x01CB00 07:CAF0: 1A        .byte $1A   ; 04
+- D 2 - - - 0x01CB01 07:CAF1: 16        .byte $16   ; 05
+- D 2 - - - 0x01CB02 07:CAF2: 16        .byte $16   ; 06
+- D 2 - - - 0x01CB03 07:CAF3: 18        .byte $18   ; 07
+- D 2 - - - 0x01CB04 07:CAF4: 28        .byte $28   ; 08
 
 
 
@@ -5592,7 +5592,7 @@ C - - - - - 0x01E826 07:E816: 60        RTS
 
 
 
-sub_E817:
+sub_E817_draw_stage_and_hud:
 C - - - - - 0x01E827 07:E817: A6 27     LDX ram_screen
 C - - - - - 0x01E829 07:E819: A9 00     LDA #$00
 C - - - - - 0x01E82B 07:E81B: 20 E9 E7  JSR sub_E7E9_draw_screen
