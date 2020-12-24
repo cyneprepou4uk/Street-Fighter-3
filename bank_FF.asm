@@ -5051,17 +5051,17 @@ C - - - - - 0x01E517 07:E507: 18        CLC
 C - - - - - 0x01E518 07:E508: 69 01     ADC #$01
 C - - - - - 0x01E51A 07:E50A: 4C 12 E5  JMP loc_E512
 bra_E50D:
-C D 3 - - - 0x01E51D 07:E50D: BD 0C 03  LDA ram_030C,X
-C D 3 - - - 0x01E520 07:E510: 29 FE     AND #$FE
+C - - - - - 0x01E51D 07:E50D: BD 0C 03  LDA ram_030C,X
+C - - - - - 0x01E520 07:E510: 29 FE     AND #$FE
 loc_E512:
 C D 3 - - - 0x01E522 07:E512: 8D 00 70  STA $5114
-C D 3 - - - 0x01E525 07:E515: A0 00     LDY #$00
-C D 3 - - - 0x01E527 07:E517: B1 00     LDA (ram_0000),Y
-C D 3 - - - 0x01E529 07:E519: 9D 0E 03  STA ram_030E,X
-C D 3 - - - 0x01E52C 07:E51C: C8        INY
-C D 3 - - - 0x01E52D 07:E51D: B1 00     LDA (ram_0000),Y
-C D 3 - - - 0x01E52F 07:E51F: 9D 0F 03  STA ram_030F,X
-C D 3 - - - 0x01E532 07:E522: A0 03     LDY #$03
+C - - - - - 0x01E525 07:E515: A0 00     LDY #$00
+C - - - - - 0x01E527 07:E517: B1 00     LDA (ram_0000),Y
+C - - - - - 0x01E529 07:E519: 9D 0E 03  STA ram_030E,X
+C - - - - - 0x01E52C 07:E51C: C8        INY
+C - - - - - 0x01E52D 07:E51D: B1 00     LDA (ram_0000),Y
+C - - - - - 0x01E52F 07:E51F: 9D 0F 03  STA ram_030F,X
+C - - - - - 0x01E532 07:E522: A0 03     LDY #$03
 C - - - - - 0x01E534 07:E524: B1 00     LDA (ram_0000),Y
 C - - - - - 0x01E536 07:E526: 85 5D     STA ram_005D
 C - - - - - 0x01E538 07:E528: C8        INY
