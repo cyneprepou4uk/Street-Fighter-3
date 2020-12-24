@@ -34,7 +34,7 @@ sub_0x010010_draw_screen:
     TAX
     LDA tbl_attributes,X
     STA ram_0002
-    LDA tbl_attributes,X
+    LDA tbl_attributes + 1,X
     STA ram_0003
     LDA #$23
     STA $2006
@@ -63,7 +63,7 @@ loc_write_palette:
     TAX
     LDA tbl_palette,X
     STA ram_0000
-    LDA tbl_palette,X
+    LDA tbl_palette + 1,X
     STA ram_0001
     LDA #$00
     LDX #$10
@@ -90,7 +90,7 @@ sub_draw_small_screen:
     TAX
     LDA tbl_attributes,X
     STA ram_0002
-    LDA tbl_attributes,X
+    LDA tbl_attributes + 1,X
     STA ram_0003
     LDA #$23
     STA $2006
