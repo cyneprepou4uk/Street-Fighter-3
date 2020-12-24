@@ -1184,7 +1184,7 @@ C - - - - - 0x01CBA0 07:CB90: 20 C8 EB  JSR sub_EBC8    ; bzk optimize
 C - - - - - 0x01CBA3 07:CB93: A2 14     LDX #$14
 C - - - - - 0x01CBA5 07:CB95: 18        CLC
 bra_CB96:
-C - - - - - 0x01CBA6 07:CB96: 7D 0F E5  ADC tbl_E510 - 1,X
+C - - - - - 0x01CBA6 07:CB96: 7D 0F E5  ADC tbl_0000_antihacking_crc,X
 C - - - - - 0x01CBA9 07:CB99: CA        DEX
 C - - - - - 0x01CBAA 07:CB9A: D0 FA     BNE bra_CB96
 C - - - - - 0x01CBAC 07:CB9C: 48        PHA
@@ -1308,7 +1308,7 @@ C - - - - - 0x01CC96 07:CC86: 18        CLC
 C - - - - - 0x01CC97 07:CC87: F0 03     BEQ bra_CC8C
 C - - - - - 0x01CC99 07:CC89: 4C A4 CB  JMP loc_CBA4
 bra_CC8C:
-C - - - - - 0x01CC9C 07:CC8C: 7D 10 E5  ADC tbl_E510,X
+C - - - - - 0x01CC9C 07:CC8C: 7D 10 E5  ADC tbl_0000_antihacking_crc + 1,X
 C - - - - - 0x01CC9F 07:CC8F: CA        DEX
 C - - - - - 0x01CCA0 07:CC90: D0 FA     BNE bra_CC8C
 C - - - - - 0x01CCA2 07:CC92: 48        PHA
@@ -2903,7 +2903,7 @@ C - - - - - 0x01D7B0 07:D7A0: 20 25 FD  JSR sub_FD25
 C - - - - - 0x01D7B3 07:D7A3: A2 11     LDX #$11
 C - - - - - 0x01D7B5 07:D7A5: 18        CLC
 bra_D7A6:
-C - - - - - 0x01D7B6 07:D7A6: 7D 0F E5  ADC tbl_E510 - 1,X
+C - - - - - 0x01D7B6 07:D7A6: 7D 0F E5  ADC tbl_0000_antihacking_crc,X
 C - - - - - 0x01D7B9 07:D7A9: CA        DEX
 C - - - - - 0x01D7BA 07:D7AA: D0 FA     BNE bra_D7A6
 C - - - - - 0x01D7BC 07:D7AC: 48        PHA
@@ -5051,9 +5051,7 @@ C - - - - - 0x01E517 07:E507: 18        CLC
 C - - - - - 0x01E518 07:E508: 69 01     ADC #$01
 C - - - - - 0x01E51A 07:E50A: 4C 12 E5  JMP loc_E512
 bra_E50D:
-C - - - - - 0x01E51D 07:E50D: BD 0C 03  LDA ram_030C,X
-; !!! possible hacking protection table reading
-tbl_E510:
+C D 3 - - - 0x01E51D 07:E50D: BD 0C 03  LDA ram_030C,X
 C D 3 - - - 0x01E520 07:E510: 29 FE     AND #$FE
 loc_E512:
 C D 3 - - - 0x01E522 07:E512: 8D 00 70  STA $5114
@@ -6148,7 +6146,7 @@ bra_EB1F:
 C - - - - - 0x01EB2F 07:EB1F: A2 0F     LDX #$0F
 C - - - - - 0x01EB31 07:EB21: 18        CLC
 bra_EB22_loop:
-C - - - - - 0x01EB32 07:EB22: 7D 10 E5  ADC tbl_E510,X
+C - - - - - 0x01EB32 07:EB22: 7D 10 E5  ADC tbl_0000_antihacking_crc + 1,X
 C - - - - - 0x01EB35 07:EB25: CA        DEX
 C - - - - - 0x01EB36 07:EB26: D0 FA     BNE bra_EB22_loop
 C - - - - - 0x01EB38 07:EB28: 48        PHA
@@ -6285,8 +6283,8 @@ C - - - - - 0x01EC07 07:EBF7: BA        TSX
 C - - - - - 0x01EC08 07:EBF8: BD 07 01  LDA ram_0107,X
 C - - - - - 0x01EC0B 07:EBFB: 38        SEC
 C - - - - - 0x01EC0C 07:EBFC: E5 B6     SBC ram_btn_hold
-C - - - - - 0x01EC0E 07:EBFE: C9 4E     CMP #$4E        ; !!! hacking protection, if not 4E then ???
-; C - - - - - 0x01EC10 07:EC00: D0 08     BNE bra_EC0A
+C - - - - - 0x01EC0E 07:EBFE: C9 4E     CMP #$4E        ; !!! hacking protection, if A not 4E then ???
+C - - - - - 0x01EC10 07:EC00: D0 08     BNE bra_EC0A
 C - - - - - 0x01EC12 07:EC02: A0 00     LDY #$00
 C - - - - - 0x01EC14 07:EC04: B1 08     LDA (ram_0008),Y
 C - - - - - 0x01EC16 07:EC06: 85 1C     STA ram_001C
@@ -6416,9 +6414,8 @@ C - - - - - 0x01ECE3 07:ECD3: 48        PHA
 C - - - - - 0x01ECE4 07:ECD4: BA        TSX
 C - - - - - 0x01ECE5 07:ECD5: BD 08 01  LDA ram_0108,X
 C - - - - - 0x01ECE8 07:ECD8: 38        SEC
-; C - - - - - 0x01ECE9 07:ECD9: E9 18     SBC #$18
-; !!! hacking protection, if not 0C then Chun-Li will wipe the floor with your ass
-                                        LDA #$0C
+C - - - - - 0x01ECE9 07:ECD9: E9 18     SBC #$18
+; !!! hacking protection, if A is not 0C then Chun-Li will wipe the floor with your ass
 C - - - - - 0x01ECEB 07:ECDB: 85 45     STA ram_0045
 C - - - - - 0x01ECED 07:ECDD: 68        PLA
 C - - - - - 0x01ECEE 07:ECDE: AA        TAX
@@ -6999,7 +6996,7 @@ sub_EFFD:
 C - - - - - 0x01F00D 07:EFFD: A2 12     LDX #$12
 C - - - - - 0x01F00F 07:EFFF: 18        CLC
 bra_F000:
-C - - - - - 0x01F010 07:F000: 7D 0F E5  ADC tbl_E510 - 1,X
+C - - - - - 0x01F010 07:F000: 7D 0F E5  ADC tbl_0000_antihacking_crc,X
 C - - - - - 0x01F013 07:F003: CA        DEX
 C - - - - - 0x01F014 07:F004: D0 FA     BNE bra_F000
 C - - - - - 0x01F016 07:F006: 48        PHA
@@ -8359,7 +8356,7 @@ C - - - - - 0x01F874 07:F864: 60        RTS
 sub_F865:
 C - - - - - 0x01F875 07:F865: A2 11     LDX #$11
 bra_F867:
-C - - - - - 0x01F877 07:F867: 7D 10 E5  ADC tbl_E510,X
+C - - - - - 0x01F877 07:F867: 7D 10 E5  ADC tbl_0000_antihacking_crc + 1,X
 C - - - - - 0x01F87A 07:F86A: CA        DEX
 C - - - - - 0x01F87B 07:F86B: D0 FA     BNE bra_F867
 C - - - - - 0x01F87D 07:F86D: 48        PHA
@@ -9826,6 +9823,15 @@ C - - - - - 0x020005 07:FFF5: EA        NOP
 C - - - - - 0x020006 07:FFF6: 68        PLA
 C - - - - - 0x020007 07:FFF7: AA        TAX
 C - - - - - 0x020008 07:FFF8: 60        RTS
+
+
+
+tbl_0000_antihacking_crc:
+; originally table at 0x01E51D
+; bzk need to deal with it someday
+    .byte $03, $29, $FE, $8D, $00, $70, $A0
+    .byte $00, $B1, $00, $9D, $0E, $03, $C8
+    .byte $B1, $00, $9D, $0F, $03, $A0, $03
 
 
 
