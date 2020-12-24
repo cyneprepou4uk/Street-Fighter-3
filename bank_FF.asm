@@ -948,7 +948,6 @@ loc_C9F4:
 C D 2 - - - 0x01CA04 07:C9F4: 18        CLC
 C - - - - - 0x01CA05 07:C9F5: 69 0E     ADC #$0E
 C - - - - - 0x01CA07 07:C9F7: AA        TAX
-C - - - - - 0x01CA08 07:C9F8: A9 00     LDA #$00
 C - - - - - 0x01CA0A 07:C9FA: 20 E9 E7  JSR sub_E7E9_draw_screen
 C - - - - - 0x01CA0D 07:C9FD: A9 0D     LDA #$0D
 C - - - - - 0x01CA0F 07:C9FF: 20 E9 F7  JSR sub_F7E9
@@ -5563,8 +5562,6 @@ tbl_E7A0_spr_colors:
 
 
 sub_E7E9_draw_screen:
-; bzk optimize, A always = 00 when jumped here
-; same optimize goes for internal subroutines
     STX ram_0000
     LDA #$88    ; 0x010010
     STA $5114
@@ -5602,10 +5599,8 @@ C - - - - - 0x01E826 07:E816: 60        RTS
 
 sub_E817_draw_stage_and_hud:
 C - - - - - 0x01E827 07:E817: A6 27     LDX ram_screen
-C - - - - - 0x01E829 07:E819: A9 00     LDA #$00
 C - - - - - 0x01E82B 07:E81B: 20 E9 E7  JSR sub_E7E9_draw_screen
 C - - - - - 0x01E82E 07:E81E: A2 09     LDX #$09
-C - - - - - 0x01E830 07:E820: A9 00     LDA #$00
 C - - - - - 0x01E832 07:E822: 20 E9 E7  JSR sub_E7E9_draw_screen
 C - - - - - 0x01E835 07:E825: 60        RTS
 
@@ -7759,7 +7754,6 @@ C - - - - - 0x01F4C8 07:F4B8: A9 00     LDA #$00
 C - - - - - 0x01F4CA 07:F4BA: 20 97 FB  JSR sub_FB97
 C - - - - - 0x01F4CD 07:F4BD: A5 2E     LDA ram_002E
 C - - - - - 0x01F4CF 07:F4BF: D0 07     BNE bra_F4C8
-C - - - - - 0x01F4D1 07:F4C1: A9 00     LDA #$00
 C - - - - - 0x01F4D3 07:F4C3: A2 0A     LDX #$0A    ; VS screen
 C - - - - - 0x01F4D5 07:F4C5: 20 E9 E7  JSR sub_E7E9_draw_screen
 bra_F4C8:
@@ -7841,7 +7835,6 @@ C - - - - - 0x01F55D 07:F54D: 20 3B F9  JSR sub_F93B
 C - - - - - 0x01F560 07:F550: 20 EE EF  JSR sub_EFEE_clear_0300_03CF
 C - - - - - 0x01F563 07:F553: A9 06     LDA #con_GM_continue
 C - - - - - 0x01F565 07:F555: 85 0E     STA ram_current_game_mode
-C - - - - - 0x01F567 07:F557: A9 00     LDA #$00
 C - - - - - 0x01F569 07:F559: A2 0D     LDX #$0D    ; continue screen
 C - - - - - 0x01F56B 07:F55B: 20 E9 E7  JSR sub_E7E9_draw_screen
 C - - - - - 0x01F56E 07:F55E: A9 1B     LDA #$1B
