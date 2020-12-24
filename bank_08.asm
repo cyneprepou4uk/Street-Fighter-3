@@ -66,7 +66,7 @@ loc_write_palette:
     LDA tbl_palette + 1,X
     STA ram_0001
     LDA #$00
-    LDX #$10
+    LDX #$11
     LDY #$00
     JSR sub_0x01FBC2_write_palette_to_ppu
     RTS
@@ -216,15 +216,15 @@ _attributes_16:
 .export tbl_palette
 tbl_palette:
 ; stages
-    .word _palette_00     ; 
-    .word _palette_01     ; 
-    .word _palette_02     ; 
-    .word _palette_03     ; 
-    .word _palette_04     ; 
-    .word _palette_05     ; 
-    .word _palette_06     ; 
-    .word _palette_07     ; 
-    .word _palette_08     ; 
+    .word _palette_00     ; 4
+    .word _palette_01     ; 8
+    .word _palette_02     ; 9
+    .word _palette_03     ; 3
+    .word _palette_04     ; 6
+    .word _palette_05     ; 2
+    .word _palette_06     ; 7
+    .word _palette_07     ; 5
+    .word _palette_08     ; 1
 ; misc
     .word _palette_09     ; HUD (unused)
     .word _palette_0A     ; VS
@@ -232,146 +232,167 @@ tbl_palette:
     .word _palette_0C     ; title
     .word _palette_0D     ; continue
 ; endings
-    .word _palette_0E     ; 
-    .word _palette_0F     ; 
-    .word _palette_10     ; 
-    .word _palette_11     ; 
-    .word _palette_12     ; 
-    .word _palette_13     ; 
-    .word _palette_14     ; 
-    .word _palette_15     ; 
-    .word _palette_16     ; 
+    .word _palette_0E     ; Chun-Li
+    .word _palette_0F     ; Ryu
+    .word _palette_10     ; Guile
+    .word _palette_11     ; Blanka
+    .word _palette_12     ; Dhalsim
+    .word _palette_13     ; Ken
+    .word _palette_14     ; Balrog
+    .word _palette_15     ; Sagat
+    .word _palette_16     ; Vega
 
 _palette_00:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+    .byte $0C, $05, $27, $30
+    .byte $0C, $1C, $2C, $28
+    .byte $0C, $05, $15, $28
+    .byte $0C, $1C, $2C, $0F
+    .byte $0C
 
 _palette_01:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+    .byte $0F, $05, $28, $30
+    .byte $0F, $0A, $2C, $1C
+    .byte $0F, $06, $16, $1C
+    .byte $0F, $16, $2C, $1C
+    .byte $0F
 
 _palette_02:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+    .byte $0F, $05, $28, $30
+    .byte $0F, $0A, $19, $16
+    .byte $0F, $11, $16, $27
+    .byte $0F, $11, $00, $10
+    .byte $0F
 
 _palette_03:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+    .byte $0F, $05, $27, $30
+    .byte $0F, $02, $00, $10
+    .byte $0F, $30, $1C, $2C
+    .byte $0F, $0C, $1C, $2C
+    .byte $0F
 
 _palette_04:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+    .byte $0F, $05, $28, $30
+    .byte $0F, $14, $25, $35
+    .byte $0F, $1B, $2B, $14
+    .byte $0F, $11, $21, $31
+    .byte $0F
 
 _palette_05:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+    .byte $0F, $05, $27, $30
+    .byte $0F, $06, $16, $26
+    .byte $0F, $0C, $1C, $2C
+    .byte $0F, $08, $18, $28
+    .byte $0F
 
 _palette_06:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+    .byte $0F, $05, $27, $30
+    .byte $0F, $0B, $1B, $2C
+    .byte $0F, $07, $16, $26
+    .byte $0F, $0C, $1C, $2C
+    .byte $0F
 
 _palette_07:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+    .byte $0F, $06, $27, $30
+    .byte $0F, $08, $18, $11
+    .byte $0F, $0B, $1B, $11
+    .byte $0F, $08, $18, $28
+    .byte $0F
 
 _palette_08:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+    .byte $0F, $05, $27, $30
+    .byte $0F, $0B, $1B, $3B
+    .byte $0F, $00, $10, $20
+    .byte $0F, $06, $16, $26
+    .byte $0F
 
 _palette_09:
 _palette_0A:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+    .byte $0F, $08, $28, $15
+    .byte $0F, $00, $00, $00
+    .byte $0F, $00, $00, $00
+    .byte $0F, $00, $00, $00
+    .byte $0F
 
 _palette_0B:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+    .byte $0F, $08, $17, $30
+    .byte $0F, $07, $16, $26
+    .byte $0F, $06, $17, $28
+    .byte $0F, $16, $27, $11
+    .byte $0F
 
 _palette_0C:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+    .byte $0E, $30, $17, $00
+    .byte $0E, $30, $37, $00
+    .byte $0E, $27, $37, $00
+    .byte $0E, $27, $17, $00
+    .byte $3F
 
 _palette_0D:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+    .byte $0F, $06, $16, $26
+    .byte $0F, $00, $00, $00
+    .byte $0F, $00, $00, $00
+    .byte $0F, $00, $00, $00
+    .byte $0F
 
 _palette_0E:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+    .byte $0F, $11, $21, $31
+    .byte $0F, $16, $26, $30
+    .byte $0F, $11, $26, $16
+    .byte $0F, $11, $26, $30
+    .byte $0F
 
 _palette_0F:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+    .byte $0F, $1B, $06, $16
+    .byte $0F, $06, $16, $26
+    .byte $0F, $1B, $16, $26
+    .byte $0F, $06, $0A, $1B
+    .byte $0F
 
 _palette_10:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+    .byte $0F, $11, $28, $16
+    .byte $0F, $28, $26, $16
+    .byte $0F, $11, $28, $26
+    .byte $0F, $11, $26, $16
+    .byte $0F
 
 _palette_11:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+    .byte $0F, $11, $21, $31
+    .byte $0F, $16, $27, $38
+    .byte $0F, $23, $27, $16
+    .byte $0F, $23, $27, $16
+    .byte $0F
 
 _palette_12:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+    .byte $0F, $11, $21, $30
+    .byte $0F, $14, $25, $36
+    .byte $0F, $26, $28, $30
+    .byte $0F, $16, $26, $30
+    .byte $0F
 
 _palette_13:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+    .byte $0F, $11, $28, $16
+    .byte $0F, $28, $26, $16
+    .byte $0F, $11, $28, $26
+    .byte $0F, $11, $26, $16
+    .byte $0F
 
 _palette_14:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+    .byte $0F, $07, $17, $27
+    .byte $0F, $3F, $3F, $3F
+    .byte $0F, $3F, $3F, $3F
+    .byte $0F, $3F, $3F, $3F
+    .byte $0F
 
-_palette_15:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
+_palette_15:    
+    .byte $0F, $08, $26, $30
+    .byte $0F, $00, $0B, $2D
+    .byte $0F, $02, $12, $30
+    .byte $0F, $06, $16, $26
+    .byte $0F
 
 _palette_16:
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-    .byte $00, $00, $00, $00
-
+    .byte $0F, $08, $26, $30
+    .byte $0F, $01, $11, $30
+    .byte $0F, $05, $15, $26
+    .byte $0F, $06, $16, $26
+    .byte $0F
