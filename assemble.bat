@@ -79,7 +79,7 @@ setlocal enableextensions
 FOR %%A IN ("!sf3.nes") DO set "size=%%~zA"
 if %size% EQU 1179664 (
     echo.
-    echo ----------------------------------------------
+    echo --------------------------------------------
     echo Done! Look for !sf3.nes file in your folder.
     if exist !sf3.bak (
         echo.
@@ -88,12 +88,12 @@ if %size% EQU 1179664 (
         copy !sf3.nes !sf3.bak
         echo Backup created
     )
-    echo ----------------------------------------------
+    echo --------------------------------------------
     C:\windows\system32\timeout /T 10
 ) else (
     echo.
     echo --------------------------------------------------
-    echo Something's wrong, check log for more information.
+    echo Something's wrong, check log for more information. 
     if exist !sf3.bak (
         echo.
         copy !sf3.bak !sf3.nes
