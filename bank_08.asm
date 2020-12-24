@@ -108,10 +108,10 @@ sub_draw_small_screen:
 
 
 
-tbl_tiles_screen_big:
+tbl_tiles_screen_big:       ; stages
     .incbin "nametable\screen_big.bin"
 
-tbl_tiles_screen_small:
+tbl_tiles_screen_small:     ; other screens
     .incbin "nametable\screen_small.bin"
 
 
@@ -145,31 +145,31 @@ tbl_attributes:
     .word _attributes_16     ; 
 
 _attributes_00:
-    .incbin "nametable\attributes_stage_1.bin"
+    .incbin "nametable\attributes_stage_Dhalsim.bin"
 
 _attributes_01:
-    .incbin "nametable\attributes_stage_2.bin"
+    .incbin "nametable\attributes_stage_Sagat.bin"
 
 _attributes_02:
-    .incbin "nametable\attributes_stage_3.bin"
+    .incbin "nametable\attributes_stage_Vega.bin"
 
 _attributes_03:
-    .incbin "nametable\attributes_stage_4.bin"
+    .incbin "nametable\attributes_stage_Guile.bin"
 
 _attributes_04:
-    .incbin "nametable\attributes_stage_5.bin"
+    .incbin "nametable\attributes_stage_Ken.bin"
 
 _attributes_05:
-    .incbin "nametable\attributes_stage_6.bin"
+    .incbin "nametable\attributes_stage_Ryu.bin"
 
 _attributes_06:
-    .incbin "nametable\attributes_stage_7.bin"
+    .incbin "nametable\attributes_stage_Balrog.bin"
 
 _attributes_07:
-    .incbin "nametable\attributes_stage_8.bin"
+    .incbin "nametable\attributes_stage_Blanka.bin"
 
 _attributes_08:
-    .incbin "nametable\attributes_stage_9.bin"
+    .incbin "nametable\attributes_stage_Chun_Li.bin"
 
 _attributes_09:
 _attributes_0A:
@@ -185,46 +185,46 @@ _attributes_0D:
     .incbin "nametable\attributes_screen_continue.bin"
 
 _attributes_0E:
-    .incbin "nametable\attributes_ending_1.bin"
+    .incbin "nametable\attributes_ending_Chun_Li.bin"
 
 _attributes_0F:
-    .incbin "nametable\attributes_ending_2.bin"
+    .incbin "nametable\attributes_ending_Ryu.bin"
 
 _attributes_10:
-    .incbin "nametable\attributes_ending_3.bin"
+    .incbin "nametable\attributes_ending_Guile.bin"
 
 _attributes_11:
-    .incbin "nametable\attributes_ending_4.bin"
+    .incbin "nametable\attributes_ending_Blanka.bin"
 
 _attributes_12:
-    .incbin "nametable\attributes_ending_5.bin"
+    .incbin "nametable\attributes_ending_Dhalsim.bin"
 
 _attributes_13:
-    .incbin "nametable\attributes_ending_6.bin"
+    .incbin "nametable\attributes_ending_Ken.bin"
 
 _attributes_14:
-    .incbin "nametable\attributes_ending_7.bin"
+    .incbin "nametable\attributes_ending_Balrog.bin"
 
 _attributes_15:
-    .incbin "nametable\attributes_ending_8.bin"
+    .incbin "nametable\attributes_ending_Sagat.bin"
 
 _attributes_16:
-    .incbin "nametable\attributes_ending_9.bin"
+    .incbin "nametable\attributes_ending_Vega.bin"
 
 
 
 .export tbl_palette
 tbl_palette:
 ; stages
-    .word _palette_00     ; 4
-    .word _palette_01     ; 8
-    .word _palette_02     ; 9
-    .word _palette_03     ; 3
-    .word _palette_04     ; 6
-    .word _palette_05     ; 2
-    .word _palette_06     ; 7
-    .word _palette_07     ; 5
-    .word _palette_08     ; 1
+    .word _palette_00     ; 03 Dhalsim
+    .word _palette_01     ; 07 Sagat
+    .word _palette_02     ; 08 Vega
+    .word _palette_03     ; 02 Guile
+    .word _palette_04     ; 05 Ken
+    .word _palette_05     ; 01 Ryu
+    .word _palette_06     ; 06 Balrog
+    .word _palette_07     ; 04 Blanka
+    .word _palette_08     ; 00 Chun-Li
 ; misc
     .word _palette_09     ; HUD (unused)
     .word _palette_0A     ; VS
