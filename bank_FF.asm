@@ -5570,33 +5570,6 @@ sub_E7E9_draw_screen:
 
 
 
-C - - - - - 0x01E7F9 07:E7E9: 48        PHA
-C - - - - - 0x01E7FA 07:E7EA: A9 00     LDA #$00
-C - - - - - 0x01E7FC 07:E7EC: 8D 00 20  STA $2000
-C - - - - - 0x01E7FF 07:E7EF: 8D 01 20  STA $2001
-C - - - - - 0x01E802 07:E7F2: A9 38     LDA #$88    ; 0x010010
-C - - - - - 0x01E804 07:E7F4: 8D 00 70  STA $5114
-C - - - - - 0x01E807 07:E7F7: 8A        TXA
-C - - - - - 0x01E808 07:E7F8: 0A        ASL
-C - - - - - 0x01E809 07:E7F9: AA        TAX
-C - - - - - 0x01E80A 07:E7FA: BD 00 80  LDA tbl_0x010010_screens,X
-C - - - - - 0x01E80D 07:E7FD: 85 00     STA ram_0000
-C - - - - - 0x01E80F 07:E7FF: BD 01 80  LDA tbl_0x010010_screens + 1,X
-C - - - - - 0x01E812 07:E802: 85 01     STA ram_0001
-C - - - - - 0x01E814 07:E804: C9 A0     CMP #$A0
-C - - - - - 0x01E816 07:E806: 90 0A     BCC bra_E812
-C - - - - - 0x01E818 07:E808: 38        SEC
-C - - - - - 0x01E819 07:E809: E9 20     SBC #$20
-C - - - - - 0x01E81B 07:E80B: 85 01     STA ram_0001
-C - - - - - 0x01E81D 07:E80D: A9 39     LDA #$89    ; 0x012010
-C - - - - - 0x01E81F 07:E80F: 8D 00 70  STA $5114
-bra_E812:
-C - - - - - 0x01E822 07:E812: 68        PLA
-C - - - - - 0x01E823 07:E813: 20 CE FB  JSR sub_FBCE_draw_background
-C - - - - - 0x01E826 07:E816: 60        RTS
-
-
-
 sub_E826_prg_banks_select:
 C - - - - - 0x01E836 07:E826: C9 04     CMP #$04
 C - - - - - 0x01E838 07:E828: 90 04     BCC bra_E82E_03_or_less
@@ -8955,174 +8928,6 @@ C - - - - - 0x01FBDD 07:FBCD: 60        RTS
 
 
 
-sub_FBCE_draw_background:
-C - - - - - 0x01FBDE 07:FBCE: 48        PHA
-                                        LDA #$00
-                                        STA $5130
-C - - - - - 0x01FBDF 07:FBCF: A0 00     LDY #$00
-C - - - - - 0x01FBE1 07:FBD1: B1 00     LDA (ram_0000),Y
-C - - - - - 0x01FBE3 07:FBD3: 8D 00 60  STA $5129
-                                        STA $5121
-C - - - - - 0x01FBE6 07:FBD6: 18        CLC
-C - - - - - 0x01FBE7 07:FBD7: 69 01     ADC #$01
-C - - - - - 0x01FBE9 07:FBD9: 8D 01 60  STA $512B
-                                        STA $5123
-C - - - - - 0x01FBEC 07:FBDC: 20 E5 FC  JSR sub_FCE5_wait_for_vblank
-C - - - - - 0x01FBEF 07:FBDF: A0 01     LDY #$01
-C - - - - - 0x01FBF1 07:FBE1: B1 00     LDA (ram_0000),Y
-C - - - - - 0x01FBF3 07:FBE3: C9 FF     CMP #$FF
-C - - - - - 0x01FBF5 07:FBE5: D0 0E     BNE bra_FBF5_write_palette
-C - - - - - 0x01FBF7 07:FBE7: A5 00     LDA ram_0000
-C - - - - - 0x01FBF9 07:FBE9: 18        CLC
-C - - - - - 0x01FBFA 07:FBEA: 69 02     ADC #$02
-C - - - - - 0x01FBFC 07:FBEC: 85 00     STA ram_0000
-C - - - - - 0x01FBFE 07:FBEE: 90 19     BCC bra_FC09_no_overflow
-- - - - - - 0x01FC00 07:FBF0: E6 01     INC ram_0001
-- - - - - - 0x01FC02 07:FBF2: 4C 09 FC  JMP loc_FC09_decompress_data
-bra_FBF5_write_palette:
-C - - - - - 0x01FC05 07:FBF5: A9 00     LDA #$00
-C - - - - - 0x01FC07 07:FBF7: A0 01     LDY #$01
-C - - - - - 0x01FC09 07:FBF9: A2 11     LDX #$11
-C - - - - - 0x01FC0B 07:FBFB: 20 B2 FB  JSR sub_FBB2_write_palette_to_ppu
-C - - - - - 0x01FC0E 07:FBFE: A5 00     LDA ram_0000
-C - - - - - 0x01FC10 07:FC00: 18        CLC
-C - - - - - 0x01FC11 07:FC01: 69 12     ADC #$12
-C - - - - - 0x01FC13 07:FC03: 85 00     STA ram_0000
-C - - - - - 0x01FC15 07:FC05: 90 02     BCC bra_FC09_no_overflow
-C - - - - - 0x01FC17 07:FC07: E6 01     INC ram_0001
-bra_FC09_no_overflow:
-loc_FC09_decompress_data:
-C - - - - - 0x01FC19 07:FC09: 68        PLA
-C - - - - - 0x01FC1A 07:FC0A: 20 16 FC  JSR sub_FC16_write_compressed_tiles_to_ppu
-C - - - - - 0x01FC1D 07:FC0D: A9 00     LDA #$00
-C - - - - - 0x01FC1F 07:FC0F: 8D 06 20  STA $2006
-C - - - - - 0x01FC22 07:FC12: 8D 06 20  STA $2006
-C - - - - - 0x01FC25 07:FC15: 60        RTS
-
-
-
-sub_FC16_write_compressed_tiles_to_ppu:
-C - - - - - 0x01FC26 07:FC16: 0A        ASL
-C - - - - - 0x01FC27 07:FC17: 0A        ASL
-C - - - - - 0x01FC28 07:FC18: 09 20     ORA #$20
-C - - - - - 0x01FC2A 07:FC1A: 8D 06 20  STA $2006
-C - - - - - 0x01FC2D 07:FC1D: A9 00     LDA #$00
-C - - - - - 0x01FC2F 07:FC1F: 8D 06 20  STA $2006
-C - - - - - 0x01FC32 07:FC22: A8        TAY
-loc_FC23_main_loop:
-C D 3 - - - 0x01FC33 07:FC23: B1 00     LDA (ram_0000),Y
-C - - - - - 0x01FC35 07:FC25: C9 00     CMP #$00    ; bzk optimize
-C - - - - - 0x01FC37 07:FC27: D0 01     BNE bra_FC2A
-C - - - - - 0x01FC39 07:FC29: 60        RTS
-bra_FC2A:
-C - - - - - 0x01FC3A 07:FC2A: B1 00     LDA (ram_0000),Y
-C - - - - - 0x01FC3C 07:FC2C: 10 2D     BPL bra_FC5B
-C - - - - - 0x01FC3E 07:FC2E: 29 40     AND #$40
-C - - - - - 0x01FC40 07:FC30: D0 17     BNE bra_FC49
-C - - - - - 0x01FC42 07:FC32: A9 3F     LDA #$3F
-C - - - - - 0x01FC44 07:FC34: 31 00     AND (ram_0000),Y
-C - - - - - 0x01FC46 07:FC36: D0 02     BNE bra_FC3A
-C - - - - - 0x01FC48 07:FC38: A9 40     LDA #$40
-bra_FC3A:
-C - - - - - 0x01FC4A 07:FC3A: AA        TAX
-C - - - - - 0x01FC4B 07:FC3B: 20 BA FC  JSR sub_FCBA_increase_index
-C - - - - - 0x01FC4E 07:FC3E: B1 00     LDA (ram_0000),Y
-bra_FC40:
-C - - - - - 0x01FC50 07:FC40: 8D 07 20  STA $2007
-C - - - - - 0x01FC53 07:FC43: CA        DEX
-C - - - - - 0x01FC54 07:FC44: D0 FA     BNE bra_FC40
-C - - - - - 0x01FC56 07:FC46: 4C B4 FC  JMP loc_FCB4_increase_index_and_continue_loop
-bra_FC49:
-C - - - - - 0x01FC59 07:FC49: A9 3F     LDA #$3F
-C - - - - - 0x01FC5B 07:FC4B: 31 00     AND (ram_0000),Y
-C - - - - - 0x01FC5D 07:FC4D: D0 02     BNE bra_FC51
-- - - - - - 0x01FC5F 07:FC4F: A9 40     LDA #$40
-bra_FC51:
-C - - - - - 0x01FC61 07:FC51: AA        TAX
-C - - - - - 0x01FC62 07:FC52: 20 BA FC  JSR sub_FCBA_increase_index
-C - - - - - 0x01FC65 07:FC55: 20 C0 FC  JSR sub_FCC0_write_to_ppu_X_times
-C - - - - - 0x01FC68 07:FC58: 4C B4 FC  JMP loc_FCB4_increase_index_and_continue_loop
-bra_FC5B:
-C - - - - - 0x01FC6B 07:FC5B: C9 7F     CMP #$7F
-C - - - - - 0x01FC6D 07:FC5D: D0 22     BNE bra_FC81
-C - - - - - 0x01FC6F 07:FC5F: 20 BA FC  JSR sub_FCBA_increase_index
-C - - - - - 0x01FC72 07:FC62: B1 00     LDA (ram_0000),Y
-C - - - - - 0x01FC74 07:FC64: 29 0F     AND #$0F
-C - - - - - 0x01FC76 07:FC66: D0 02     BNE bra_FC6A
-- - - - - - 0x01FC78 07:FC68: A9 10     LDA #$10
-bra_FC6A:
-C - - - - - 0x01FC7A 07:FC6A: AA        TAX
-C - - - - - 0x01FC7B 07:FC6B: B1 00     LDA (ram_0000),Y
-C - - - - - 0x01FC7D 07:FC6D: 29 F0     AND #$F0
-C - - - - - 0x01FC7F 07:FC6F: 4A        LSR
-C - - - - - 0x01FC80 07:FC70: 48        PHA
-C - - - - - 0x01FC81 07:FC71: 20 BA FC  JSR sub_FCBA_increase_index
-loc_FC74:
-C D 3 - - - 0x01FC84 07:FC74: 20 C0 FC  JSR sub_FCC0_write_to_ppu_X_times
-C - - - - - 0x01FC87 07:FC77: 68        PLA
-C - - - - - 0x01FC88 07:FC78: 38        SEC
-C - - - - - 0x01FC89 07:FC79: E9 08     SBC #$08
-C - - - - - 0x01FC8B 07:FC7B: 30 37     BMI bra_FCB4
-C - - - - - 0x01FC8D 07:FC7D: 48        PHA
-C - - - - - 0x01FC8E 07:FC7E: 4C 74 FC  JMP loc_FC74
-bra_FC81:
-C - - - - - 0x01FC91 07:FC81: C9 7E     CMP #$7E
-C - - - - - 0x01FC93 07:FC83: D0 21     BNE bra_FCA6
-C - - - - - 0x01FC95 07:FC85: 20 BA FC  JSR sub_FCBA_increase_index
-C - - - - - 0x01FC98 07:FC88: B1 00     LDA (ram_0000),Y
-C - - - - - 0x01FC9A 07:FC8A: 48        PHA
-C - - - - - 0x01FC9B 07:FC8B: 20 BA FC  JSR sub_FCBA_increase_index
-C - - - - - 0x01FC9E 07:FC8E: B1 00     LDA (ram_0000),Y
-C - - - - - 0x01FCA0 07:FC90: AA        TAX
-C - - - - - 0x01FCA1 07:FC91: 20 BA FC  JSR sub_FCBA_increase_index
-loc_FC94_loop:
-C D 3 - - - 0x01FCA4 07:FC94: 8E 07 20  STX $2007
-C - - - - - 0x01FCA7 07:FC97: B1 00     LDA (ram_0000),Y
-C - - - - - 0x01FCA9 07:FC99: 8D 07 20  STA $2007
-C - - - - - 0x01FCAC 07:FC9C: 68        PLA
-C - - - - - 0x01FCAD 07:FC9D: 38        SEC
-C - - - - - 0x01FCAE 07:FC9E: E9 01     SBC #$01
-C - - - - - 0x01FCB0 07:FCA0: F0 12     BEQ bra_FCB4
-C - - - - - 0x01FCB2 07:FCA2: 48        PHA
-C - - - - - 0x01FCB3 07:FCA3: 4C 94 FC  JMP loc_FC94_loop
-bra_FCA6:
-C - - - - - 0x01FCB6 07:FCA6: B1 00     LDA (ram_0000),Y
-C - - - - - 0x01FCB8 07:FCA8: AA        TAX
-bra_FCA9:
-C - - - - - 0x01FCB9 07:FCA9: 20 BA FC  JSR sub_FCBA_increase_index
-C - - - - - 0x01FCBC 07:FCAC: B1 00     LDA (ram_0000),Y
-C - - - - - 0x01FCBE 07:FCAE: 8D 07 20  STA $2007
-C - - - - - 0x01FCC1 07:FCB1: CA        DEX
-C - - - - - 0x01FCC2 07:FCB2: D0 F5     BNE bra_FCA9
-bra_FCB4:
-loc_FCB4_increase_index_and_continue_loop:
-C D 3 - - - 0x01FCC4 07:FCB4: 20 BA FC  JSR sub_FCBA_increase_index
-C - - - - - 0x01FCC7 07:FCB7: 4C 23 FC  JMP loc_FC23_main_loop
-sub_FCBA_increase_index:
-C - - - - - 0x01FCCA 07:FCBA: C8        INY
-C - - - - - 0x01FCCB 07:FCBB: D0 02     BNE bra_FCBF_RTS
-C - - - - - 0x01FCCD 07:FCBD: E6 01     INC ram_0001
-bra_FCBF_RTS:
-C - - - - - 0x01FCCF 07:FCBF: 60        RTS
-
-
-
-sub_FCC0_write_to_ppu_X_times:
-C - - - - - 0x01FCD0 07:FCC0: 8A        TXA
-C - - - - - 0x01FCD1 07:FCC1: 48        PHA
-C - - - - - 0x01FCD2 07:FCC2: B1 00     LDA (ram_0000),Y
-bra_FCC4_loop:
-C - - - - - 0x01FCD4 07:FCC4: 8D 07 20  STA $2007
-C - - - - - 0x01FCD7 07:FCC7: 18        CLC
-C - - - - - 0x01FCD8 07:FCC8: 69 01     ADC #$01
-C - - - - - 0x01FCDA 07:FCCA: CA        DEX
-C - - - - - 0x01FCDB 07:FCCB: D0 F7     BNE bra_FCC4_loop
-C - - - - - 0x01FCDD 07:FCCD: 68        PLA
-C - - - - - 0x01FCDE 07:FCCE: AA        TAX
-C - - - - - 0x01FCDF 07:FCCF: 60        RTS
-
-
-
 sub_FCD0:
 C - - - - - 0x01FCE0 07:FCD0: A9 00     LDA #$00
 C - - - - - 0x01FCE2 07:FCD2: 85 12     STA ram_0012
@@ -9137,6 +8942,8 @@ C - - - - - 0x01FCF4 07:FCE4: 60        RTS
 
 
 
+.export sub_0x01FCF5_wait_for_vblank
+sub_0x01FCF5_wait_for_vblank:
 sub_FCE5_wait_for_vblank:
 ; bzk optimize, BIT
 C - - - - - 0x01FCF5 07:FCE5: 48        PHA

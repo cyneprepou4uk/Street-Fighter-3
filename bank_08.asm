@@ -6,7 +6,7 @@
 .export sub_0x010010_draw_screen
 sub_0x010010_draw_screen:
 .scope
-    BIT $2002
+    JSR sub_0x01FCF5_wait_for_vblank
     LDA #$20
     STA $2006
     LDA #$00
@@ -106,8 +106,7 @@ sub_draw_small_screen:
     RTS
 .endscope
 
-.export tbl_0x010010_screens
-tbl_0x010010_screens:
+
 
 tbl_tiles_screen_big:
     .incbin "nametable\screen_big.bin"
