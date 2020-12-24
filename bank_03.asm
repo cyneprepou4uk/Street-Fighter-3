@@ -127,7 +127,8 @@ tbl_8070_chr_bank:
 
 con_attribute_1                 = $00   ; 
 con_attribute_2                 = $00   ; 
-con_spr_cnt                     = $00   ; 
+con_attribute_3                 = $00   ; 
+con_spr_counter                 = $00   ; 
 con_spr_X                       = $00   ; 
 con_spr_Y                       = $00   ; 
 con_spr_T                       = $00   ; tile
@@ -135,10 +136,10 @@ con_spr_T                       = $00   ; tile
 
 
 off_80A6_00:
-- D 0 - I - 0x0060B6 01:80A6: 24        .byte $24   ; 
-- D 0 - I - 0x0060B7 01:80A7: 2F        .byte $2F   ; 
-- D 0 - I - 0x0060B8 01:80A8: 10        .byte $10   ; 
-- D 0 - I - 0x0060B9 01:80A9: 17        .byte $17   ; 
+- D 0 - I - 0x0060B6 01:80A6: 24        .byte con_attribute_1 + $24   ; 
+- D 0 - I - 0x0060B7 01:80A7: 2F        .byte con_attribute_2 + $2F   ; 
+- D 0 - I - 0x0060B8 01:80A8: 10        .byte con_attribute_3 + $10   ; 
+- D 0 - I - 0x0060B9 01:80A9: 17        .byte con_spr_counter + $17   ; 
 
 - D 0 - I - 0x0060BA 01:80AA: 0D        .byte con_spr_X + $0D   ; 
 - D 0 - I - 0x0060BB 01:80AB: 10        .byte con_spr_Y + $10   ; 
@@ -235,10 +236,10 @@ off_80A6_00:
 
 
 off_80EF_01:
-- D 0 - I - 0x0060FF 01:80EF: 24        .byte $24   ; 
-- D 0 - I - 0x006100 01:80F0: 47        .byte $47   ; 
-- D 0 - I - 0x006101 01:80F1: 0E        .byte $0E   ; 
-- D 0 - I - 0x006102 01:80F2: 1C        .byte $1C   ; 
+- D 0 - I - 0x0060FF 01:80EF: 24        .byte con_attribute_1 + $24   ; 
+- D 0 - I - 0x006100 01:80F0: 47        .byte con_attribute_2 + $47   ; 
+- D 0 - I - 0x006101 01:80F1: 0E        .byte con_attribute_3 + $0E   ; 
+- D 0 - I - 0x006102 01:80F2: 1C        .byte con_spr_counter + $1C   ; 
 
 - D 0 - I - 0x006103 01:80F3: 05        .byte con_spr_X + $05   ; 
 - D 0 - I - 0x006104 01:80F4: 10        .byte con_spr_Y + $10   ; 
@@ -355,10 +356,10 @@ off_80EF_01:
 
 
 off_8147_02:
-- D 0 - I - 0x006157 01:8147: 24        .byte $24   ; 
-- D 0 - I - 0x006158 01:8148: 47        .byte $47   ; 
-- - - - - - 0x006159 01:8149: 0E        .byte $0E   ; 
-- D 0 - I - 0x00615A 01:814A: 1E        .byte $1E   ; 
+- D 0 - I - 0x006157 01:8147: 24        .byte con_attribute_1 + $24   ; 
+- D 0 - I - 0x006158 01:8148: 47        .byte con_attribute_2 + $47   ; 
+- - - - - - 0x006159 01:8149: 0E        .byte con_attribute_3 + $0E   ; 
+- D 0 - I - 0x00615A 01:814A: 1E        .byte con_spr_counter + $1E   ; 
 
 - D 0 - I - 0x00615B 01:814B: 05        .byte con_spr_X + $05   ; 
 - D 0 - I - 0x00615C 01:814C: 10        .byte con_spr_Y + $10   ; 
@@ -483,10 +484,10 @@ off_8147_02:
 
 
 off_81A5_03:
-- D 0 - I - 0x0061B5 01:81A5: 23        .byte $23   ; 
-- D 0 - I - 0x0061B6 01:81A6: 47        .byte $47   ; 
-- - - - - - 0x0061B7 01:81A7: 0D        .byte $0D   ; 
-- D 0 - I - 0x0061B8 01:81A8: 1D        .byte $1D   ; 
+- D 0 - I - 0x0061B5 01:81A5: 23        .byte con_attribute_1 + $23   ; 
+- D 0 - I - 0x0061B6 01:81A6: 47        .byte con_attribute_2 + $47   ; 
+- - - - - - 0x0061B7 01:81A7: 0D        .byte con_attribute_3 + $0D   ; 
+- D 0 - I - 0x0061B8 01:81A8: 1D        .byte con_spr_counter + $1D   ; 
 
 - D 0 - I - 0x0061B9 01:81A9: 04        .byte con_spr_X + $04   ; 
 - D 0 - I - 0x0061BA 01:81AA: 10        .byte con_spr_Y + $10   ; 
@@ -607,10 +608,10 @@ off_81A5_03:
 
 
 off_8200_04:
-- D 0 - I - 0x006210 01:8200: 20        .byte $20   ; 
-- D 0 - I - 0x006211 01:8201: 47        .byte $47   ; 
-- - - - - - 0x006212 01:8202: 0A        .byte $0A   ; 
-- D 0 - I - 0x006213 01:8203: 1B        .byte $1B   ; 
+- D 0 - I - 0x006210 01:8200: 20        .byte con_attribute_1 + $20   ; 
+- D 0 - I - 0x006211 01:8201: 47        .byte con_attribute_2 + $47   ; 
+- - - - - - 0x006212 01:8202: 0A        .byte con_attribute_3 + $0A   ; 
+- D 0 - I - 0x006213 01:8203: 1B        .byte con_spr_counter + $1B   ; 
 
 - D 0 - I - 0x006214 01:8204: 01        .byte con_spr_X + $01   ; 
 - D 0 - I - 0x006215 01:8205: 10        .byte con_spr_Y + $10   ; 
@@ -723,10 +724,10 @@ off_8200_04:
 
 
 off_8255_05:
-- D 0 - I - 0x006265 01:8255: 21        .byte $21   ; 
-- D 0 - I - 0x006266 01:8256: 47        .byte $47   ; 
-- - - - - - 0x006267 01:8257: 0B        .byte $0B   ; 
-- D 0 - I - 0x006268 01:8258: 1A        .byte $1A   ; 
+- D 0 - I - 0x006265 01:8255: 21        .byte con_attribute_1 + $21   ; 
+- D 0 - I - 0x006266 01:8256: 47        .byte con_attribute_2 + $47   ; 
+- - - - - - 0x006267 01:8257: 0B        .byte con_attribute_3 + $0B   ; 
+- D 0 - I - 0x006268 01:8258: 1A        .byte con_spr_counter + $1A   ; 
 
 - D 0 - I - 0x006269 01:8259: 02        .byte con_spr_X + $02   ; 
 - D 0 - I - 0x00626A 01:825A: 10        .byte con_spr_Y + $10   ; 
@@ -835,10 +836,10 @@ off_8255_05:
 
 
 off_82A7_06:
-- D 0 - I - 0x0062B7 01:82A7: 1C        .byte $1C   ; 
-- D 0 - I - 0x0062B8 01:82A8: 47        .byte $47   ; 
-- - - - - - 0x0062B9 01:82A9: 0C        .byte $0C   ; 
-- D 0 - I - 0x0062BA 01:82AA: 1C        .byte $1C   ; 
+- D 0 - I - 0x0062B7 01:82A7: 1C        .byte con_attribute_1 + $1C   ; 
+- D 0 - I - 0x0062B8 01:82A8: 47        .byte con_attribute_2 + $47   ; 
+- - - - - - 0x0062B9 01:82A9: 0C        .byte con_attribute_3 + $0C   ; 
+- D 0 - I - 0x0062BA 01:82AA: 1C        .byte con_spr_counter + $1C   ; 
 
 - D 0 - I - 0x0062BB 01:82AB: 08        .byte con_spr_X + $08   ; 
 - D 0 - I - 0x0062BC 01:82AC: 08        .byte con_spr_Y + $08   ; 
@@ -955,10 +956,10 @@ off_82A7_06:
 
 
 off_82FF_07:
-- - - - - - 0x00630F 01:82FF: 15        .byte $15   ; 
-- - - - - - 0x006310 01:8300: 47        .byte $47   ; 
-- - - - - - 0x006311 01:8301: 0A        .byte $0A   ; 
-- - - - - - 0x006312 01:8302: 17        .byte $17   ; 
+- - - - - - 0x00630F 01:82FF: 15        .byte con_attribute_1 + $15   ; 
+- - - - - - 0x006310 01:8300: 47        .byte con_attribute_2 + $47   ; 
+- - - - - - 0x006311 01:8301: 0A        .byte con_attribute_3 + $0A   ; 
+- - - - - - 0x006312 01:8302: 17        .byte con_spr_counter + $17   ; 
 
 - - - - - - 0x006313 01:8303: 08        .byte con_spr_X + $08   ; 
 - - - - - - 0x006314 01:8304: 10        .byte con_spr_Y + $10   ; 
@@ -1055,10 +1056,10 @@ off_82FF_07:
 
 
 off_8348_08:
-- D 0 - I - 0x006358 01:8348: 24        .byte $24   ; 
-- D 0 - I - 0x006359 01:8349: 36        .byte $36   ; 
-- - - - - - 0x00635A 01:834A: 0F        .byte $0F   ; 
-- D 0 - I - 0x00635B 01:834B: 1D        .byte $1D   ; 
+- D 0 - I - 0x006358 01:8348: 24        .byte con_attribute_1 + $24   ; 
+- D 0 - I - 0x006359 01:8349: 36        .byte con_attribute_2 + $36   ; 
+- - - - - - 0x00635A 01:834A: 0F        .byte con_attribute_3 + $0F   ; 
+- D 0 - I - 0x00635B 01:834B: 1D        .byte con_spr_counter + $1D   ; 
 
 - D 0 - I - 0x00635C 01:834C: 08        .byte con_spr_X + $08   ; 
 - D 0 - I - 0x00635D 01:834D: 08        .byte con_spr_Y + $08   ; 
@@ -1179,10 +1180,10 @@ off_8348_08:
 
 
 off_83A3_09:
-- D 0 - I - 0x0063B3 01:83A3: 20        .byte $20   ; 
-- D 0 - I - 0x0063B4 01:83A4: 37        .byte $37   ; 
-- - - - - - 0x0063B5 01:83A5: 0B        .byte $0B   ; 
-- D 0 - I - 0x0063B6 01:83A6: 1B        .byte $1B   ; 
+- D 0 - I - 0x0063B3 01:83A3: 20        .byte con_attribute_1 + $20   ; 
+- D 0 - I - 0x0063B4 01:83A4: 37        .byte con_attribute_2 + $37   ; 
+- - - - - - 0x0063B5 01:83A5: 0B        .byte con_attribute_3 + $0B   ; 
+- D 0 - I - 0x0063B6 01:83A6: 1B        .byte con_spr_counter + $1B   ; 
 
 - D 0 - I - 0x0063B7 01:83A7: 09        .byte con_spr_X + $09   ; 
 - D 0 - I - 0x0063B8 01:83A8: 10        .byte con_spr_Y + $10   ; 
@@ -1295,10 +1296,10 @@ off_83A3_09:
 
 
 off_83F8_0A:
-- D 0 - I - 0x006408 01:83F8: 23        .byte $23   ; 
-- D 0 - I - 0x006409 01:83F9: 3F        .byte $3F   ; 
-- - - - - - 0x00640A 01:83FA: 10        .byte $10   ; 
-- D 0 - I - 0x00640B 01:83FB: 1C        .byte $1C   ; 
+- D 0 - I - 0x006408 01:83F8: 23        .byte con_attribute_1 + $23   ; 
+- D 0 - I - 0x006409 01:83F9: 3F        .byte con_attribute_2 + $3F   ; 
+- - - - - - 0x00640A 01:83FA: 10        .byte con_attribute_3 + $10   ; 
+- D 0 - I - 0x00640B 01:83FB: 1C        .byte con_spr_counter + $1C   ; 
 
 - D 0 - I - 0x00640C 01:83FC: 06        .byte con_spr_X + $06   ; 
 - D 0 - I - 0x00640D 01:83FD: 10        .byte con_spr_Y + $10   ; 
@@ -1415,10 +1416,10 @@ off_83F8_0A:
 
 
 off_8450_0B:
-- D 0 - I - 0x006460 01:8450: 21        .byte $21   ; 
-- D 0 - I - 0x006461 01:8451: 27        .byte $27   ; 
-- - - - - - 0x006462 01:8452: 0F        .byte $0F   ; 
-- D 0 - I - 0x006463 01:8453: 14        .byte $14   ; 
+- D 0 - I - 0x006460 01:8450: 21        .byte con_attribute_1 + $21   ; 
+- D 0 - I - 0x006461 01:8451: 27        .byte con_attribute_2 + $27   ; 
+- - - - - - 0x006462 01:8452: 0F        .byte con_attribute_3 + $0F   ; 
+- D 0 - I - 0x006463 01:8453: 14        .byte con_spr_counter + $14   ; 
 
 - D 0 - I - 0x006464 01:8454: 16        .byte con_spr_X + $16   ; 
 - D 0 - I - 0x006465 01:8455: 10        .byte con_spr_Y + $10   ; 
@@ -1503,10 +1504,10 @@ off_8450_0B:
 
 
 off_8490_0C:
-- D 0 - I - 0x0064A0 01:8490: 16        .byte $16   ; 
-- D 0 - I - 0x0064A1 01:8491: 27        .byte $27   ; 
-- - - - - - 0x0064A2 01:8492: 0B        .byte $0B   ; 
-- D 0 - I - 0x0064A3 01:8493: 12        .byte $12   ; 
+- D 0 - I - 0x0064A0 01:8490: 16        .byte con_attribute_1 + $16   ; 
+- D 0 - I - 0x0064A1 01:8491: 27        .byte con_attribute_2 + $27   ; 
+- - - - - - 0x0064A2 01:8492: 0B        .byte con_attribute_3 + $0B   ; 
+- D 0 - I - 0x0064A3 01:8493: 12        .byte con_spr_counter + $12   ; 
 
 - D 0 - I - 0x0064A4 01:8494: 08        .byte con_spr_X + $08   ; 
 - D 0 - I - 0x0064A5 01:8495: 20        .byte con_spr_Y + $20   ; 
@@ -1583,10 +1584,10 @@ off_8490_0C:
 
 
 off_84CA_0D:
-- D 0 - I - 0x0064DA 01:84CA: 21        .byte $21   ; 
-- D 0 - I - 0x0064DB 01:84CB: 22        .byte $22   ; 
-- - - - - - 0x0064DC 01:84CC: 10        .byte $10   ; 
-- D 0 - I - 0x0064DD 01:84CD: 14        .byte $14   ; 
+- D 0 - I - 0x0064DA 01:84CA: 21        .byte con_attribute_1 + $21   ; 
+- D 0 - I - 0x0064DB 01:84CB: 22        .byte con_attribute_2 + $22   ; 
+- - - - - - 0x0064DC 01:84CC: 10        .byte con_attribute_3 + $10   ; 
+- D 0 - I - 0x0064DD 01:84CD: 14        .byte con_spr_counter + $14   ; 
 
 - D 0 - I - 0x0064DE 01:84CE: 09        .byte con_spr_X + $09   ; 
 - D 0 - I - 0x0064DF 01:84CF: 10        .byte con_spr_Y + $10   ; 
@@ -1671,10 +1672,10 @@ off_84CA_0D:
 
 
 off_850A_0E:
-- D 0 - I - 0x00651A 01:850A: 22        .byte $22   ; 
-- D 0 - I - 0x00651B 01:850B: 25        .byte $25   ; 
-- - - - - - 0x00651C 01:850C: 10        .byte $10   ; 
-- D 0 - I - 0x00651D 01:850D: 18        .byte $18   ; 
+- D 0 - I - 0x00651A 01:850A: 22        .byte con_attribute_1 + $22   ; 
+- D 0 - I - 0x00651B 01:850B: 25        .byte con_attribute_2 + $25   ; 
+- - - - - - 0x00651C 01:850C: 10        .byte con_attribute_3 + $10   ; 
+- D 0 - I - 0x00651D 01:850D: 18        .byte con_spr_counter + $18   ; 
 
 - D 0 - I - 0x00651E 01:850E: 12        .byte con_spr_X + $12   ; 
 - D 0 - I - 0x00651F 01:850F: 90        .byte con_spr_Y + $90   ; 
@@ -1775,10 +1776,10 @@ off_850A_0E:
 
 
 off_8556_0F:
-- D 0 - I - 0x006566 01:8556: 19        .byte $19   ; 
-- D 0 - I - 0x006567 01:8557: 27        .byte $27   ; 
-- - - - - - 0x006568 01:8558: 0C        .byte $0C   ; 
-- D 0 - I - 0x006569 01:8559: 16        .byte $16   ; 
+- D 0 - I - 0x006566 01:8556: 19        .byte con_attribute_1 + $19   ; 
+- D 0 - I - 0x006567 01:8557: 27        .byte con_attribute_2 + $27   ; 
+- - - - - - 0x006568 01:8558: 0C        .byte con_attribute_3 + $0C   ; 
+- D 0 - I - 0x006569 01:8559: 16        .byte con_spr_counter + $16   ; 
 
 - D 0 - I - 0x00656A 01:855A: 0A        .byte con_spr_X + $0A   ; 
 - D 0 - I - 0x00656B 01:855B: 00        .byte con_spr_Y + $00   ; 
@@ -1871,10 +1872,10 @@ off_8556_0F:
 
 
 off_859C_10:
-- D 0 - I - 0x0065AC 01:859C: 24        .byte $24   ; 
-- D 0 - I - 0x0065AD 01:859D: 47        .byte $47   ; 
-- - - - - - 0x0065AE 01:859E: 17        .byte $17   ; 
-- D 0 - I - 0x0065AF 01:859F: 1B        .byte $1B   ; 
+- D 0 - I - 0x0065AC 01:859C: 24        .byte con_attribute_1 + $24   ; 
+- D 0 - I - 0x0065AD 01:859D: 47        .byte con_attribute_2 + $47   ; 
+- - - - - - 0x0065AE 01:859E: 17        .byte con_attribute_3 + $17   ; 
+- D 0 - I - 0x0065AF 01:859F: 1B        .byte con_spr_counter + $1B   ; 
 
 - D 0 - I - 0x0065B0 01:85A0: 19        .byte con_spr_X + $19   ; 
 - D 0 - I - 0x0065B1 01:85A1: A8        .byte con_spr_Y + $A8   ; 
@@ -1987,10 +1988,10 @@ off_859C_10:
 
 
 off_85F1_11:
-- D 0 - I - 0x006601 01:85F1: 2F        .byte $2F   ; 
-- D 0 - I - 0x006602 01:85F2: 2F        .byte $2F   ; 
-- - - - - - 0x006603 01:85F3: 17        .byte $17   ; 
-- D 0 - I - 0x006604 01:85F4: 1D        .byte $1D   ; 
+- D 0 - I - 0x006601 01:85F1: 2F        .byte con_attribute_1 + $2F   ; 
+- D 0 - I - 0x006602 01:85F2: 2F        .byte con_attribute_2 + $2F   ; 
+- - - - - - 0x006603 01:85F3: 17        .byte con_attribute_3 + $17   ; 
+- D 0 - I - 0x006604 01:85F4: 1D        .byte con_spr_counter + $1D   ; 
 
 - D 0 - I - 0x006605 01:85F5: 1F        .byte con_spr_X + $1F   ; 
 - D 0 - I - 0x006606 01:85F6: 88        .byte con_spr_Y + $88   ; 
@@ -2111,10 +2112,10 @@ off_85F1_11:
 
 
 off_864C_12:
-- D 0 - I - 0x00665C 01:864C: 27        .byte $27   ; 
-- D 0 - I - 0x00665D 01:864D: 34        .byte $34   ; 
-- - - - - - 0x00665E 01:864E: 16        .byte $16   ; 
-- D 0 - I - 0x00665F 01:864F: 15        .byte $15   ; 
+- D 0 - I - 0x00665C 01:864C: 27        .byte con_attribute_1 + $27   ; 
+- D 0 - I - 0x00665D 01:864D: 34        .byte con_attribute_2 + $34   ; 
+- - - - - - 0x00665E 01:864E: 16        .byte con_attribute_3 + $16   ; 
+- D 0 - I - 0x00665F 01:864F: 15        .byte con_spr_counter + $15   ; 
 
 - D 0 - I - 0x006660 01:8650: 1C        .byte con_spr_X + $1C   ; 
 - D 0 - I - 0x006661 01:8651: 98        .byte con_spr_Y + $98   ; 
@@ -2203,10 +2204,10 @@ off_864C_12:
 
 
 off_868F_13:
-- D 0 - I - 0x00669F 01:868F: 2F        .byte $2F   ; 
-- D 0 - I - 0x0066A0 01:8690: 37        .byte $37   ; 
-- - - - - - 0x0066A1 01:8691: 12        .byte $12   ; 
-- D 0 - I - 0x0066A2 01:8692: 19        .byte $19   ; 
+- D 0 - I - 0x00669F 01:868F: 2F        .byte con_attribute_1 + $2F   ; 
+- D 0 - I - 0x0066A0 01:8690: 37        .byte con_attribute_2 + $37   ; 
+- - - - - - 0x0066A1 01:8691: 12        .byte con_attribute_3 + $12   ; 
+- D 0 - I - 0x0066A2 01:8692: 19        .byte con_spr_counter + $19   ; 
 
 - D 0 - I - 0x0066A3 01:8693: 04        .byte con_spr_X + $04   ; 
 - D 0 - I - 0x0066A4 01:8694: 20        .byte con_spr_Y + $20   ; 
@@ -2311,10 +2312,10 @@ off_868F_13:
 
 
 off_86DE_14:
-- D 0 - I - 0x0066EE 01:86DE: 37        .byte $37   ; 
-- D 0 - I - 0x0066EF 01:86DF: 47        .byte $47   ; 
-- - - - - - 0x0066F0 01:86E0: 1E        .byte $1E   ; 
-- D 0 - I - 0x0066F1 01:86E1: 1A        .byte $1A   ; 
+- D 0 - I - 0x0066EE 01:86DE: 37        .byte con_attribute_1 + $37   ; 
+- D 0 - I - 0x0066EF 01:86DF: 47        .byte con_attribute_2 + $47   ; 
+- - - - - - 0x0066F0 01:86E0: 1E        .byte con_attribute_3 + $1E   ; 
+- D 0 - I - 0x0066F1 01:86E1: 1A        .byte con_spr_counter + $1A   ; 
 
 - D 0 - I - 0x0066F2 01:86E2: 22        .byte con_spr_X + $22   ; 
 - D 0 - I - 0x0066F3 01:86E3: 28        .byte con_spr_Y + $28   ; 
@@ -2423,10 +2424,10 @@ off_86DE_14:
 
 
 off_8730_15:
-- D 0 - I - 0x006740 01:8730: 37        .byte $37   ; 
-- D 0 - I - 0x006741 01:8731: 2D        .byte $2D   ; 
-- - - - - - 0x006742 01:8732: 1B        .byte $1B   ; 
-- D 0 - I - 0x006743 01:8733: 20        .byte $20   ; 
+- D 0 - I - 0x006740 01:8730: 37        .byte con_attribute_1 + $37   ; 
+- D 0 - I - 0x006741 01:8731: 2D        .byte con_attribute_2 + $2D   ; 
+- - - - - - 0x006742 01:8732: 1B        .byte con_attribute_3 + $1B   ; 
+- D 0 - I - 0x006743 01:8733: 20        .byte con_spr_counter + $20   ; 
 
 - D 0 - I - 0x006744 01:8734: 23        .byte con_spr_X + $23   ; 
 - D 0 - I - 0x006745 01:8735: 10        .byte con_spr_Y + $10   ; 
@@ -2559,10 +2560,10 @@ off_8730_15:
 
 
 off_8794_16:
-- D 0 - I - 0x0067A4 01:8794: 1B        .byte $1B   ; 
-- D 0 - I - 0x0067A5 01:8795: 37        .byte $37   ; 
-- - - - - - 0x0067A6 01:8796: 0F        .byte $0F   ; 
-- D 0 - I - 0x0067A7 01:8797: 15        .byte $15   ; 
+- D 0 - I - 0x0067A4 01:8794: 1B        .byte con_attribute_1 + $1B   ; 
+- D 0 - I - 0x0067A5 01:8795: 37        .byte con_attribute_2 + $37   ; 
+- - - - - - 0x0067A6 01:8796: 0F        .byte con_attribute_3 + $0F   ; 
+- D 0 - I - 0x0067A7 01:8797: 15        .byte con_spr_counter + $15   ; 
 
 - D 0 - I - 0x0067A8 01:8798: 0F        .byte con_spr_X + $0F   ; 
 - D 0 - I - 0x0067A9 01:8799: 18        .byte con_spr_Y + $18   ; 
@@ -2651,10 +2652,10 @@ off_8794_16:
 
 
 off_87D7_17:
-- D 0 - I - 0x0067E7 01:87D7: 1E        .byte $1E   ; 
-- D 0 - I - 0x0067E8 01:87D8: 47        .byte $47   ; 
-- - - - - - 0x0067E9 01:87D9: 0F        .byte $0F   ; 
-- D 0 - I - 0x0067EA 01:87DA: 17        .byte $17   ; 
+- D 0 - I - 0x0067E7 01:87D7: 1E        .byte con_attribute_1 + $1E   ; 
+- D 0 - I - 0x0067E8 01:87D8: 47        .byte con_attribute_2 + $47   ; 
+- - - - - - 0x0067E9 01:87D9: 0F        .byte con_attribute_3 + $0F   ; 
+- D 0 - I - 0x0067EA 01:87DA: 17        .byte con_spr_counter + $17   ; 
 
 - D 0 - I - 0x0067EB 01:87DB: 0E        .byte con_spr_X + $0E   ; 
 - D 0 - I - 0x0067EC 01:87DC: 18        .byte con_spr_Y + $18   ; 
@@ -2751,10 +2752,10 @@ off_87D7_17:
 
 
 off_8820_18:
-- D 0 - I - 0x006830 01:8820: 23        .byte $23   ; 
-- D 0 - I - 0x006831 01:8821: 3F        .byte $3F   ; 
-- - - - - - 0x006832 01:8822: 10        .byte $10   ; 
-- D 0 - I - 0x006833 01:8823: 1A        .byte $1A   ; 
+- D 0 - I - 0x006830 01:8820: 23        .byte con_attribute_1 + $23   ; 
+- D 0 - I - 0x006831 01:8821: 3F        .byte con_attribute_2 + $3F   ; 
+- - - - - - 0x006832 01:8822: 10        .byte con_attribute_3 + $10   ; 
+- D 0 - I - 0x006833 01:8823: 1A        .byte con_spr_counter + $1A   ; 
 
 - D 0 - I - 0x006834 01:8824: 08        .byte con_spr_X + $08   ; 
 - D 0 - I - 0x006835 01:8825: 10        .byte con_spr_Y + $10   ; 
@@ -2863,10 +2864,10 @@ off_8820_18:
 
 
 off_8872_19:
-- D 0 - I - 0x006882 01:8872: 23        .byte $23   ; 
-- D 0 - I - 0x006883 01:8873: 3F        .byte $3F   ; 
-- - - - - - 0x006884 01:8874: 10        .byte $10   ; 
-- D 0 - I - 0x006885 01:8875: 1B        .byte $1B   ; 
+- D 0 - I - 0x006882 01:8872: 23        .byte con_attribute_1 + $23   ; 
+- D 0 - I - 0x006883 01:8873: 3F        .byte con_attribute_2 + $3F   ; 
+- - - - - - 0x006884 01:8874: 10        .byte con_attribute_3 + $10   ; 
+- D 0 - I - 0x006885 01:8875: 1B        .byte con_spr_counter + $1B   ; 
 
 - D 0 - I - 0x006886 01:8876: 08        .byte con_spr_X + $08   ; 
 - D 0 - I - 0x006887 01:8877: 10        .byte con_spr_Y + $10   ; 
@@ -2979,10 +2980,10 @@ off_8872_19:
 
 
 off_88C7_1A:
-- D 0 - I - 0x0068D7 01:88C7: 23        .byte $23   ; 
-- D 0 - I - 0x0068D8 01:88C8: 37        .byte $37   ; 
-- - - - - - 0x0068D9 01:88C9: 0D        .byte $0D   ; 
-- D 0 - I - 0x0068DA 01:88CA: 15        .byte $15   ; 
+- D 0 - I - 0x0068D7 01:88C7: 23        .byte con_attribute_1 + $23   ; 
+- D 0 - I - 0x0068D8 01:88C8: 37        .byte con_attribute_2 + $37   ; 
+- - - - - - 0x0068D9 01:88C9: 0D        .byte con_attribute_3 + $0D   ; 
+- D 0 - I - 0x0068DA 01:88CA: 15        .byte con_spr_counter + $15   ; 
 
 - D 0 - I - 0x0068DB 01:88CB: 0E        .byte con_spr_X + $0E   ; 
 - D 0 - I - 0x0068DC 01:88CC: 08        .byte con_spr_Y + $08   ; 
@@ -3071,10 +3072,10 @@ off_88C7_1A:
 
 
 off_890A_1B:
-- D 0 - I - 0x00691A 01:890A: 2A        .byte $2A   ; 
-- D 0 - I - 0x00691B 01:890B: 27        .byte $27   ; 
-- - - - - - 0x00691C 01:890C: 13        .byte $13   ; 
-- D 0 - I - 0x00691D 01:890D: 18        .byte $18   ; 
+- D 0 - I - 0x00691A 01:890A: 2A        .byte con_attribute_1 + $2A   ; 
+- D 0 - I - 0x00691B 01:890B: 27        .byte con_attribute_2 + $27   ; 
+- - - - - - 0x00691C 01:890C: 13        .byte con_attribute_3 + $13   ; 
+- D 0 - I - 0x00691D 01:890D: 18        .byte con_spr_counter + $18   ; 
 
 - D 0 - I - 0x00691E 01:890E: 08        .byte con_spr_X + $08   ; 
 - D 0 - I - 0x00691F 01:890F: 14        .byte con_spr_Y + $14   ; 
@@ -3175,10 +3176,10 @@ off_890A_1B:
 
 
 off_8956_1C:
-- D 0 - I - 0x006966 01:8956: 27        .byte $27   ; 
-- D 0 - I - 0x006967 01:8957: 17        .byte $17   ; 
-- - - - - - 0x006968 01:8958: 12        .byte $12   ; 
-- D 0 - I - 0x006969 01:8959: 0F        .byte $0F   ; 
+- D 0 - I - 0x006966 01:8956: 27        .byte con_attribute_1 + $27   ; 
+- D 0 - I - 0x006967 01:8957: 17        .byte con_attribute_2 + $17   ; 
+- - - - - - 0x006968 01:8958: 12        .byte con_attribute_3 + $12   ; 
+- D 0 - I - 0x006969 01:8959: 0F        .byte con_spr_counter + $0F   ; 
 
 - D 0 - I - 0x00696A 01:895A: 19        .byte con_spr_X + $19   ; 
 - D 0 - I - 0x00696B 01:895B: 84        .byte con_spr_Y + $84   ; 
@@ -3243,10 +3244,10 @@ off_8956_1C:
 
 
 off_8987_1D:
-- D 0 - I - 0x006997 01:8987: 1E        .byte $1E   ; 
-- D 0 - I - 0x006998 01:8988: 3F        .byte $3F   ; 
-- - - - - - 0x006999 01:8989: 0C        .byte $0C   ; 
-- D 0 - I - 0x00699A 01:898A: 1B        .byte $1B   ; 
+- D 0 - I - 0x006997 01:8987: 1E        .byte con_attribute_1 + $1E   ; 
+- D 0 - I - 0x006998 01:8988: 3F        .byte con_attribute_2 + $3F   ; 
+- - - - - - 0x006999 01:8989: 0C        .byte con_attribute_3 + $0C   ; 
+- D 0 - I - 0x00699A 01:898A: 1B        .byte con_spr_counter + $1B   ; 
 
 - D 0 - I - 0x00699B 01:898B: 01        .byte con_spr_X + $01   ; 
 - D 0 - I - 0x00699C 01:898C: 10        .byte con_spr_Y + $10   ; 
@@ -3359,10 +3360,10 @@ off_8987_1D:
 
 
 off_89DC_1E:
-- D 0 - I - 0x0069EC 01:89DC: 23        .byte $23   ; 
-- D 0 - I - 0x0069ED 01:89DD: 47        .byte $47   ; 
-- - - - - - 0x0069EE 01:89DE: 0D        .byte $0D   ; 
-- D 0 - I - 0x0069EF 01:89DF: 1D        .byte $1D   ; 
+- D 0 - I - 0x0069EC 01:89DC: 23        .byte con_attribute_1 + $23   ; 
+- D 0 - I - 0x0069ED 01:89DD: 47        .byte con_attribute_2 + $47   ; 
+- - - - - - 0x0069EE 01:89DE: 0D        .byte con_attribute_3 + $0D   ; 
+- D 0 - I - 0x0069EF 01:89DF: 1D        .byte con_spr_counter + $1D   ; 
 
 - D 0 - I - 0x0069F0 01:89E0: 04        .byte con_spr_X + $04   ; 
 - D 0 - I - 0x0069F1 01:89E1: 10        .byte con_spr_Y + $10   ; 
@@ -3483,10 +3484,10 @@ off_89DC_1E:
 
 
 off_8A37_1F:
-- D 0 - I - 0x006A47 01:8A37: 29        .byte $29   ; 
-- D 0 - I - 0x006A48 01:8A38: 37        .byte $37   ; 
-- - - - - - 0x006A49 01:8A39: 12        .byte $12   ; 
-- D 0 - I - 0x006A4A 01:8A3A: 14        .byte $14   ; 
+- D 0 - I - 0x006A47 01:8A37: 29        .byte con_attribute_1 + $29   ; 
+- D 0 - I - 0x006A48 01:8A38: 37        .byte con_attribute_2 + $37   ; 
+- - - - - - 0x006A49 01:8A39: 12        .byte con_attribute_3 + $12   ; 
+- D 0 - I - 0x006A4A 01:8A3A: 14        .byte con_spr_counter + $14   ; 
 
 - D 0 - I - 0x006A4B 01:8A3B: 12        .byte con_spr_X + $12   ; 
 - D 0 - I - 0x006A4C 01:8A3C: 10        .byte con_spr_Y + $10   ; 
@@ -3571,10 +3572,10 @@ off_8A37_1F:
 
 
 off_8A77_20:
-- D 0 - I - 0x006A87 01:8A77: 06        .byte $06   ; 
-- D 0 - I - 0x006A88 01:8A78: 06        .byte $06   ; 
-- - - - - - 0x006A89 01:8A79: 03        .byte $03   ; 
-- D 0 - I - 0x006A8A 01:8A7A: 01        .byte $01   ; 
+- D 0 - I - 0x006A87 01:8A77: 06        .byte con_attribute_1 + $06   ; 
+- D 0 - I - 0x006A88 01:8A78: 06        .byte con_attribute_2 + $06   ; 
+- - - - - - 0x006A89 01:8A79: 03        .byte con_attribute_3 + $03   ; 
+- D 0 - I - 0x006A8A 01:8A7A: 01        .byte con_spr_counter + $01   ; 
 
 - D 0 - I - 0x006A8B 01:8A7B: 02        .byte con_spr_X + $02   ; 
 - D 0 - I - 0x006A8C 01:8A7C: 00        .byte con_spr_Y + $00   ; 
@@ -3583,10 +3584,10 @@ off_8A77_20:
 
 
 off_8A7E_21:
-- D 0 - I - 0x006A8E 01:8A7E: 06        .byte $06   ; 
-- D 0 - I - 0x006A8F 01:8A7F: 07        .byte $07   ; 
-- - - - - - 0x006A90 01:8A80: 03        .byte $03   ; 
-- D 0 - I - 0x006A91 01:8A81: 01        .byte $01   ; 
+- D 0 - I - 0x006A8E 01:8A7E: 06        .byte con_attribute_1 + $06   ; 
+- D 0 - I - 0x006A8F 01:8A7F: 07        .byte con_attribute_2 + $07   ; 
+- - - - - - 0x006A90 01:8A80: 03        .byte con_attribute_3 + $03   ; 
+- D 0 - I - 0x006A91 01:8A81: 01        .byte con_spr_counter + $01   ; 
 
 - D 0 - I - 0x006A92 01:8A82: 02        .byte con_spr_X + $02   ; 
 - D 0 - I - 0x006A93 01:8A83: 00        .byte con_spr_Y + $00   ; 
@@ -3595,10 +3596,10 @@ off_8A7E_21:
 
 
 off_8A85_22:
-- D 0 - I - 0x006A95 01:8A85: 07        .byte $07   ; 
-- D 0 - I - 0x006A96 01:8A86: 07        .byte $07   ; 
-- - - - - - 0x006A97 01:8A87: 02        .byte $02   ; 
-- D 0 - I - 0x006A98 01:8A88: 01        .byte $01   ; 
+- D 0 - I - 0x006A95 01:8A85: 07        .byte con_attribute_1 + $07   ; 
+- D 0 - I - 0x006A96 01:8A86: 07        .byte con_attribute_2 + $07   ; 
+- - - - - - 0x006A97 01:8A87: 02        .byte con_attribute_3 + $02   ; 
+- D 0 - I - 0x006A98 01:8A88: 01        .byte con_spr_counter + $01   ; 
 
 - D 0 - I - 0x006A99 01:8A89: 00        .byte con_spr_X + $00   ; 
 - D 0 - I - 0x006A9A 01:8A8A: 00        .byte con_spr_Y + $00   ; 
@@ -3607,10 +3608,10 @@ off_8A85_22:
 
 
 off_8A8C_23:
-- D 0 - I - 0x006A9C 01:8A8C: 26        .byte $26   ; 
-- D 0 - I - 0x006A9D 01:8A8D: 3F        .byte $3F   ; 
-- - - - - - 0x006A9E 01:8A8E: 13        .byte $13   ; 
-- D 0 - I - 0x006A9F 01:8A8F: 1C        .byte $1C   ; 
+- D 0 - I - 0x006A9C 01:8A8C: 26        .byte con_attribute_1 + $26   ; 
+- D 0 - I - 0x006A9D 01:8A8D: 3F        .byte con_attribute_2 + $3F   ; 
+- - - - - - 0x006A9E 01:8A8E: 13        .byte con_attribute_3 + $13   ; 
+- D 0 - I - 0x006A9F 01:8A8F: 1C        .byte con_spr_counter + $1C   ; 
 
 - D 0 - I - 0x006AA0 01:8A90: 03        .byte con_spr_X + $03   ; 
 - D 0 - I - 0x006AA1 01:8A91: 10        .byte con_spr_Y + $10   ; 
@@ -3727,10 +3728,10 @@ off_8A8C_23:
 
 
 off_8AE4_24:
-- D 0 - I - 0x006AF4 01:8AE4: 15        .byte $15   ; 
-- D 0 - I - 0x006AF5 01:8AE5: 5F        .byte $5F   ; 
-- - - - - - 0x006AF6 01:8AE6: 0B        .byte $0B   ; 
-- D 0 - I - 0x006AF7 01:8AE7: 1A        .byte $1A   ; 
+- D 0 - I - 0x006AF4 01:8AE4: 15        .byte con_attribute_1 + $15   ; 
+- D 0 - I - 0x006AF5 01:8AE5: 5F        .byte con_attribute_2 + $5F   ; 
+- - - - - - 0x006AF6 01:8AE6: 0B        .byte con_attribute_3 + $0B   ; 
+- D 0 - I - 0x006AF7 01:8AE7: 1A        .byte con_spr_counter + $1A   ; 
 
 - D 0 - I - 0x006AF8 01:8AE8: 04        .byte con_spr_X + $04   ; 
 - D 0 - I - 0x006AF9 01:8AE9: 20        .byte con_spr_Y + $20   ; 
@@ -3839,10 +3840,10 @@ off_8AE4_24:
 
 
 off_8B36_25:
-- D 0 - I - 0x006B46 01:8B36: 1F        .byte $1F   ; 
-- D 0 - I - 0x006B47 01:8B37: 47        .byte $47   ; 
-- - - - - - 0x006B48 01:8B38: 0F        .byte $0F   ; 
-- D 0 - I - 0x006B49 01:8B39: 17        .byte $17   ; 
+- D 0 - I - 0x006B46 01:8B36: 1F        .byte con_attribute_1 + $1F   ; 
+- D 0 - I - 0x006B47 01:8B37: 47        .byte con_attribute_2 + $47   ; 
+- - - - - - 0x006B48 01:8B38: 0F        .byte con_attribute_3 + $0F   ; 
+- D 0 - I - 0x006B49 01:8B39: 17        .byte con_spr_counter + $17   ; 
 
 - D 0 - I - 0x006B4A 01:8B3A: 0E        .byte con_spr_X + $0E   ; 
 - D 0 - I - 0x006B4B 01:8B3B: 18        .byte con_spr_Y + $18   ; 
@@ -3939,10 +3940,10 @@ off_8B36_25:
 
 
 off_8B7F_26:
-- D 0 - I - 0x006B8F 01:8B7F: 19        .byte $19   ; 
-- D 0 - I - 0x006B90 01:8B80: 37        .byte $37   ; 
-- - - - - - 0x006B91 01:8B81: 0D        .byte $0D   ; 
-- D 0 - I - 0x006B92 01:8B82: 17        .byte $17   ; 
+- D 0 - I - 0x006B8F 01:8B7F: 19        .byte con_attribute_1 + $19   ; 
+- D 0 - I - 0x006B90 01:8B80: 37        .byte con_attribute_2 + $37   ; 
+- - - - - - 0x006B91 01:8B81: 0D        .byte con_attribute_3 + $0D   ; 
+- D 0 - I - 0x006B92 01:8B82: 17        .byte con_spr_counter + $17   ; 
 
 - D 0 - I - 0x006B93 01:8B83: 05        .byte con_spr_X + $05   ; 
 - D 0 - I - 0x006B94 01:8B84: A0        .byte con_spr_Y + $A0   ; 
@@ -4039,10 +4040,10 @@ off_8B7F_26:
 
 
 off_8BC8_27:
-- D 0 - I - 0x006BD8 01:8BC8: 1A        .byte $1A   ; 
-- D 0 - I - 0x006BD9 01:8BC9: 2F        .byte $2F   ; 
-- - - - - - 0x006BDA 01:8BCA: 0E        .byte $0E   ; 
-- D 0 - I - 0x006BDB 01:8BCB: 15        .byte $15   ; 
+- D 0 - I - 0x006BD8 01:8BC8: 1A        .byte con_attribute_1 + $1A   ; 
+- D 0 - I - 0x006BD9 01:8BC9: 2F        .byte con_attribute_2 + $2F   ; 
+- - - - - - 0x006BDA 01:8BCA: 0E        .byte con_attribute_3 + $0E   ; 
+- D 0 - I - 0x006BDB 01:8BCB: 15        .byte con_spr_counter + $15   ; 
 
 - D 0 - I - 0x006BDC 01:8BCC: 0E        .byte con_spr_X + $0E   ; 
 - D 0 - I - 0x006BDD 01:8BCD: 10        .byte con_spr_Y + $10   ; 
@@ -4131,10 +4132,10 @@ off_8BC8_27:
 
 
 off_8C0B_28:
-- D 0 - I - 0x006C1B 01:8C0B: 42        .byte $42   ; 
-- D 0 - I - 0x006C1C 01:8C0C: 37        .byte $37   ; 
-- - - - - - 0x006C1D 01:8C0D: 1D        .byte $1D   ; 
-- D 0 - I - 0x006C1E 01:8C0E: 1D        .byte $1D   ; 
+- D 0 - I - 0x006C1B 01:8C0B: 42        .byte con_attribute_1 + $42   ; 
+- D 0 - I - 0x006C1C 01:8C0C: 37        .byte con_attribute_2 + $37   ; 
+- - - - - - 0x006C1D 01:8C0D: 1D        .byte con_attribute_3 + $1D   ; 
+- D 0 - I - 0x006C1E 01:8C0E: 1D        .byte con_spr_counter + $1D   ; 
 
 - D 0 - I - 0x006C1F 01:8C0F: 1A        .byte con_spr_X + $1A   ; 
 - D 0 - I - 0x006C20 01:8C10: 10        .byte con_spr_Y + $10   ; 
@@ -4255,10 +4256,10 @@ off_8C0B_28:
 
 
 off_8C66_29:
-- D 0 - I - 0x006C76 01:8C66: 46        .byte $46   ; 
-- D 0 - I - 0x006C77 01:8C67: 2F        .byte $2F   ; 
-- - - - - - 0x006C78 01:8C68: 1E        .byte $1E   ; 
-- D 0 - I - 0x006C79 01:8C69: 1D        .byte $1D   ; 
+- D 0 - I - 0x006C76 01:8C66: 46        .byte con_attribute_1 + $46   ; 
+- D 0 - I - 0x006C77 01:8C67: 2F        .byte con_attribute_2 + $2F   ; 
+- - - - - - 0x006C78 01:8C68: 1E        .byte con_attribute_3 + $1E   ; 
+- D 0 - I - 0x006C79 01:8C69: 1D        .byte con_spr_counter + $1D   ; 
 
 - D 0 - I - 0x006C7A 01:8C6A: 1A        .byte con_spr_X + $1A   ; 
 - D 0 - I - 0x006C7B 01:8C6B: 08        .byte con_spr_Y + $08   ; 
@@ -4379,10 +4380,10 @@ off_8C66_29:
 
 
 off_8CC1_2A:
-- D 0 - I - 0x006CD1 01:8CC1: 46        .byte $46   ; 
-- D 0 - I - 0x006CD2 01:8CC2: 2C        .byte $2C   ; 
-- - - - - - 0x006CD3 01:8CC3: 1F        .byte $1F   ; 
-- D 0 - I - 0x006CD4 01:8CC4: 1C        .byte $1C   ; 
+- D 0 - I - 0x006CD1 01:8CC1: 46        .byte con_attribute_1 + $46   ; 
+- D 0 - I - 0x006CD2 01:8CC2: 2C        .byte con_attribute_2 + $2C   ; 
+- - - - - - 0x006CD3 01:8CC3: 1F        .byte con_attribute_3 + $1F   ; 
+- D 0 - I - 0x006CD4 01:8CC4: 1C        .byte con_spr_counter + $1C   ; 
 
 - D 0 - I - 0x006CD5 01:8CC5: 1A        .byte con_spr_X + $1A   ; 
 - D 0 - I - 0x006CD6 01:8CC6: 08        .byte con_spr_Y + $08   ; 
@@ -4499,10 +4500,10 @@ off_8CC1_2A:
 
 
 off_8D19_2B:
-- D 0 - I - 0x006D29 01:8D19: 1F        .byte $1F   ; 
-- D 0 - I - 0x006D2A 01:8D1A: 27        .byte $27   ; 
-- - - - - - 0x006D2B 01:8D1B: 11        .byte $11   ; 
-- D 0 - I - 0x006D2C 01:8D1C: 15        .byte $15   ; 
+- D 0 - I - 0x006D29 01:8D19: 1F        .byte con_attribute_1 + $1F   ; 
+- D 0 - I - 0x006D2A 01:8D1A: 27        .byte con_attribute_2 + $27   ; 
+- - - - - - 0x006D2B 01:8D1B: 11        .byte con_attribute_3 + $11   ; 
+- D 0 - I - 0x006D2C 01:8D1C: 15        .byte con_spr_counter + $15   ; 
 
 - D 0 - I - 0x006D2D 01:8D1D: 11        .byte con_spr_X + $11   ; 
 - D 0 - I - 0x006D2E 01:8D1E: 08        .byte con_spr_Y + $08   ; 
@@ -4591,10 +4592,10 @@ off_8D19_2B:
 
 
 off_8D5C_2C:
-- D 0 - I - 0x006D6C 01:8D5C: 33        .byte $33   ; 
-- D 0 - I - 0x006D6D 01:8D5D: 1F        .byte $1F   ; 
-- - - - - - 0x006D6E 01:8D5E: 11        .byte $11   ; 
-- D 0 - I - 0x006D6F 01:8D5F: 18        .byte $18   ; 
+- D 0 - I - 0x006D6C 01:8D5C: 33        .byte con_attribute_1 + $33   ; 
+- D 0 - I - 0x006D6D 01:8D5D: 1F        .byte con_attribute_2 + $1F   ; 
+- - - - - - 0x006D6E 01:8D5E: 11        .byte con_attribute_3 + $11   ; 
+- D 0 - I - 0x006D6F 01:8D5F: 18        .byte con_spr_counter + $18   ; 
 
 - D 0 - I - 0x006D70 01:8D60: 0A        .byte con_spr_X + $0A   ; 
 - D 0 - I - 0x006D71 01:8D61: 90        .byte con_spr_Y + $90   ; 
@@ -4695,10 +4696,10 @@ off_8D5C_2C:
 
 
 off_8DA8_2D:
-- D 0 - I - 0x006DB8 01:8DA8: 2E        .byte $2E   ; 
-- D 0 - I - 0x006DB9 01:8DA9: 2F        .byte $2F   ; 
-- - - - - - 0x006DBA 01:8DAA: 10        .byte $10   ; 
-- D 0 - I - 0x006DBB 01:8DAB: 16        .byte $16   ; 
+- D 0 - I - 0x006DB8 01:8DA8: 2E        .byte con_attribute_1 + $2E   ; 
+- D 0 - I - 0x006DB9 01:8DA9: 2F        .byte con_attribute_2 + $2F   ; 
+- - - - - - 0x006DBA 01:8DAA: 10        .byte con_attribute_3 + $10   ; 
+- D 0 - I - 0x006DBB 01:8DAB: 16        .byte con_spr_counter + $16   ; 
 
 - D 0 - I - 0x006DBC 01:8DAC: 08        .byte con_spr_X + $08   ; 
 - D 0 - I - 0x006DBD 01:8DAD: 08        .byte con_spr_Y + $08   ; 
@@ -4791,10 +4792,10 @@ off_8DA8_2D:
 
 
 off_8DEE_2E:
-- D 0 - I - 0x006DFE 01:8DEE: 2F        .byte $2F   ; 
-- D 0 - I - 0x006DFF 01:8DEF: 37        .byte $37   ; 
-- - - - - - 0x006E00 01:8DF0: 13        .byte $13   ; 
-- D 0 - I - 0x006E01 01:8DF1: 1B        .byte $1B   ; 
+- D 0 - I - 0x006DFE 01:8DEE: 2F        .byte con_attribute_1 + $2F   ; 
+- D 0 - I - 0x006DFF 01:8DEF: 37        .byte con_attribute_2 + $37   ; 
+- - - - - - 0x006E00 01:8DF0: 13        .byte con_attribute_3 + $13   ; 
+- D 0 - I - 0x006E01 01:8DF1: 1B        .byte con_spr_counter + $1B   ; 
 
 - D 0 - I - 0x006E02 01:8DF2: 07        .byte con_spr_X + $07   ; 
 - D 0 - I - 0x006E03 01:8DF3: 10        .byte con_spr_Y + $10   ; 
@@ -4907,10 +4908,10 @@ off_8DEE_2E:
 
 
 off_8E43_2F:
-- D 0 - I - 0x006E53 01:8E43: 47        .byte $47   ; 
-- D 0 - I - 0x006E54 01:8E44: 27        .byte $27   ; 
-- - - - - - 0x006E55 01:8E45: 22        .byte $22   ; 
-- D 0 - I - 0x006E56 01:8E46: 15        .byte $15   ; 
+- D 0 - I - 0x006E53 01:8E43: 47        .byte con_attribute_1 + $47   ; 
+- D 0 - I - 0x006E54 01:8E44: 27        .byte con_attribute_2 + $27   ; 
+- - - - - - 0x006E55 01:8E45: 22        .byte con_attribute_3 + $22   ; 
+- D 0 - I - 0x006E56 01:8E46: 15        .byte con_spr_counter + $15   ; 
 
 - D 0 - I - 0x006E57 01:8E47: 1F        .byte con_spr_X + $1F   ; 
 - D 0 - I - 0x006E58 01:8E48: 08        .byte con_spr_Y + $08   ; 
@@ -4999,10 +5000,10 @@ off_8E43_2F:
 
 
 off_8E86_30:
-- D 0 - I - 0x006E96 01:8E86: 07        .byte $07   ; 
-- D 0 - I - 0x006E97 01:8E87: 07        .byte $07   ; 
-- - - - - - 0x006E98 01:8E88: 03        .byte $03   ; 
-- D 0 - I - 0x006E99 01:8E89: 01        .byte $01   ; 
+- D 0 - I - 0x006E96 01:8E86: 07        .byte con_attribute_1 + $07   ; 
+- D 0 - I - 0x006E97 01:8E87: 07        .byte con_attribute_2 + $07   ; 
+- - - - - - 0x006E98 01:8E88: 03        .byte con_attribute_3 + $03   ; 
+- D 0 - I - 0x006E99 01:8E89: 01        .byte con_spr_counter + $01   ; 
 
 - D 0 - I - 0x006E9A 01:8E8A: 00        .byte con_spr_X + $00   ; 
 - D 0 - I - 0x006E9B 01:8E8B: 00        .byte con_spr_Y + $00   ; 
@@ -5011,10 +5012,10 @@ off_8E86_30:
 
 
 off_8E8D_31:
-- D 0 - I - 0x006E9D 01:8E8D: 0F        .byte $0F   ; 
-- D 0 - I - 0x006E9E 01:8E8E: 0F        .byte $0F   ; 
-- - - - - - 0x006E9F 01:8E8F: 07        .byte $07   ; 
-- D 0 - I - 0x006EA0 01:8E90: 04        .byte $04   ; 
+- D 0 - I - 0x006E9D 01:8E8D: 0F        .byte con_attribute_1 + $0F   ; 
+- D 0 - I - 0x006E9E 01:8E8E: 0F        .byte con_attribute_2 + $0F   ; 
+- - - - - - 0x006E9F 01:8E8F: 07        .byte con_attribute_3 + $07   ; 
+- D 0 - I - 0x006EA0 01:8E90: 04        .byte con_spr_counter + $04   ; 
 
 - D 0 - I - 0x006EA1 01:8E91: 00        .byte con_spr_X + $00   ; 
 - D 0 - I - 0x006EA2 01:8E92: 08        .byte con_spr_Y + $08   ; 
@@ -5035,10 +5036,10 @@ off_8E8D_31:
 
 
 off_8E9D_32:
-- D 0 - I - 0x006EAD 01:8E9D: 23        .byte $23   ; 
-- D 0 - I - 0x006EAE 01:8E9E: 33        .byte $33   ; 
-- - - - - - 0x006EAF 01:8E9F: 0D        .byte $0D   ; 
-- D 0 - I - 0x006EB0 01:8EA0: 15        .byte $15   ; 
+- D 0 - I - 0x006EAD 01:8E9D: 23        .byte con_attribute_1 + $23   ; 
+- D 0 - I - 0x006EAE 01:8E9E: 33        .byte con_attribute_2 + $33   ; 
+- - - - - - 0x006EAF 01:8E9F: 0D        .byte con_attribute_3 + $0D   ; 
+- D 0 - I - 0x006EB0 01:8EA0: 15        .byte con_spr_counter + $15   ; 
 
 - D 0 - I - 0x006EB1 01:8EA1: 0C        .byte con_spr_X + $0C   ; 
 - D 0 - I - 0x006EB2 01:8EA2: 20        .byte con_spr_Y + $20   ; 
@@ -5127,10 +5128,10 @@ off_8E9D_32:
 
 
 off_8EE0_33:
-- D 0 - I - 0x006EF0 01:8EE0: 2F        .byte $2F   ; 
-- D 0 - I - 0x006EF1 01:8EE1: 47        .byte $47   ; 
-- - - - - - 0x006EF2 01:8EE2: 1F        .byte $1F   ; 
-- D 0 - I - 0x006EF3 01:8EE3: 1D        .byte $1D   ; 
+- D 0 - I - 0x006EF0 01:8EE0: 2F        .byte con_attribute_1 + $2F   ; 
+- D 0 - I - 0x006EF1 01:8EE1: 47        .byte con_attribute_2 + $47   ; 
+- - - - - - 0x006EF2 01:8EE2: 1F        .byte con_attribute_3 + $1F   ; 
+- D 0 - I - 0x006EF3 01:8EE3: 1D        .byte con_spr_counter + $1D   ; 
 
 - D 0 - I - 0x006EF4 01:8EE4: 16        .byte con_spr_X + $16   ; 
 - D 0 - I - 0x006EF5 01:8EE5: 08        .byte con_spr_Y + $08   ; 
@@ -5251,10 +5252,10 @@ off_8EE0_33:
 
 
 off_8F3B_34:
-- D 0 - I - 0x006F4B 01:8F3B: 2F        .byte $2F   ; 
-- D 0 - I - 0x006F4C 01:8F3C: 47        .byte $47   ; 
-- - - - - - 0x006F4D 01:8F3D: 14        .byte $14   ; 
-- D 0 - I - 0x006F4E 01:8F3E: 20        .byte $20   ; 
+- D 0 - I - 0x006F4B 01:8F3B: 2F        .byte con_attribute_1 + $2F   ; 
+- D 0 - I - 0x006F4C 01:8F3C: 47        .byte con_attribute_2 + $47   ; 
+- - - - - - 0x006F4D 01:8F3D: 14        .byte con_attribute_3 + $14   ; 
+- D 0 - I - 0x006F4E 01:8F3E: 20        .byte con_spr_counter + $20   ; 
 
 - D 0 - I - 0x006F4F 01:8F3F: 16        .byte con_spr_X + $16   ; 
 - D 0 - I - 0x006F50 01:8F40: 10        .byte con_spr_Y + $10   ; 
@@ -5387,10 +5388,10 @@ off_8F3B_34:
 
 
 off_8F9F_35:
-- D 0 - I - 0x006FAF 01:8F9F: 46        .byte $46   ; 
-- D 0 - I - 0x006FB0 01:8FA0: 47        .byte $47   ; 
-- - - - - - 0x006FB1 01:8FA1: 1A        .byte $1A   ; 
-- D 0 - I - 0x006FB2 01:8FA2: 1F        .byte $1F   ; 
+- D 0 - I - 0x006FAF 01:8F9F: 46        .byte con_attribute_1 + $46   ; 
+- D 0 - I - 0x006FB0 01:8FA0: 47        .byte con_attribute_2 + $47   ; 
+- - - - - - 0x006FB1 01:8FA1: 1A        .byte con_attribute_3 + $1A   ; 
+- D 0 - I - 0x006FB2 01:8FA2: 1F        .byte con_spr_counter + $1F   ; 
 
 - D 0 - I - 0x006FB3 01:8FA3: 0A        .byte con_spr_X + $0A   ; 
 - D 0 - I - 0x006FB4 01:8FA4: A9        .byte con_spr_Y + $A9   ; 
@@ -5520,10 +5521,10 @@ off_8F9F_35:
 
 .export off_0x007010_5A
 off_0x007010_5A:
-- D 0 - I - 0x007010 01:9000: 07        .byte $07   ; 
-- D 0 - I - 0x007011 01:9001: 07        .byte $07   ; 
-- - - - - - 0x007012 01:9002: 03        .byte $03   ; 
-- D 0 - I - 0x007013 01:9003: 01        .byte $01   ; 
+- D 0 - I - 0x007010 01:9000: 07        .byte con_attribute_1 + $07   ; 
+- D 0 - I - 0x007011 01:9001: 07        .byte con_attribute_2 + $07   ; 
+- - - - - - 0x007012 01:9002: 03        .byte con_attribute_3 + $03   ; 
+- D 0 - I - 0x007013 01:9003: 01        .byte con_spr_counter + $01   ; 
 
 - D 0 - I - 0x007014 01:9004: 00        .byte con_spr_X + $00   ; 
 - D 0 - I - 0x007015 01:9005: 00        .byte con_spr_Y + $00   ; 
@@ -5533,10 +5534,10 @@ off_0x007010_5A:
 
 .export off_0x007017_5B
 off_0x007017_5B:
-- D 0 - I - 0x007017 01:9007: 0F        .byte $0F   ; 
-- D 0 - I - 0x007018 01:9008: 0F        .byte $0F   ; 
-- - - - - - 0x007019 01:9009: 07        .byte $07   ; 
-- D 0 - I - 0x00701A 01:900A: 04        .byte $04   ; 
+- D 0 - I - 0x007017 01:9007: 0F        .byte con_attribute_1 + $0F   ; 
+- D 0 - I - 0x007018 01:9008: 0F        .byte con_attribute_2 + $0F   ; 
+- - - - - - 0x007019 01:9009: 07        .byte con_attribute_3 + $07   ; 
+- D 0 - I - 0x00701A 01:900A: 04        .byte con_spr_counter + $04   ; 
 
 - D 0 - I - 0x00701B 01:900B: 00        .byte con_spr_X + $00   ; 
 - D 0 - I - 0x00701C 01:900C: 08        .byte con_spr_Y + $08   ; 
@@ -5558,10 +5559,10 @@ off_0x007017_5B:
 
 .export off_0x007027_5C
 off_0x007027_5C:
-- D 0 - I - 0x007027 01:9017: 0E        .byte $0E   ; 
-- D 0 - I - 0x007028 01:9018: 0F        .byte $0F   ; 
-- - - - - - 0x007029 01:9019: 07        .byte $07   ; 
-- D 0 - I - 0x00702A 01:901A: 04        .byte $04   ; 
+- D 0 - I - 0x007027 01:9017: 0E        .byte con_attribute_1 + $0E   ; 
+- D 0 - I - 0x007028 01:9018: 0F        .byte con_attribute_2 + $0F   ; 
+- - - - - - 0x007029 01:9019: 07        .byte con_attribute_3 + $07   ; 
+- D 0 - I - 0x00702A 01:901A: 04        .byte con_spr_counter + $04   ; 
 
 - D 0 - I - 0x00702B 01:901B: 01        .byte con_spr_X + $01   ; 
 - D 0 - I - 0x00702C 01:901C: 00        .byte con_spr_Y + $00   ; 
@@ -5583,10 +5584,10 @@ off_0x007027_5C:
 
 .export off_0x007037_5D
 off_0x007037_5D:
-- D 0 - I - 0x007037 01:9027: 0F        .byte $0F   ; 
-- D 0 - I - 0x007038 01:9028: 0F        .byte $0F   ; 
-- - - - - - 0x007039 01:9029: 09        .byte $09   ; 
-- D 0 - I - 0x00703A 01:902A: 04        .byte $04   ; 
+- D 0 - I - 0x007037 01:9027: 0F        .byte con_attribute_1 + $0F   ; 
+- D 0 - I - 0x007038 01:9028: 0F        .byte con_attribute_2 + $0F   ; 
+- - - - - - 0x007039 01:9029: 09        .byte con_attribute_3 + $09   ; 
+- D 0 - I - 0x00703A 01:902A: 04        .byte con_spr_counter + $04   ; 
 
 - D 0 - I - 0x00703B 01:902B: 04        .byte con_spr_X + $04   ; 
 - D 0 - I - 0x00703C 01:902C: 08        .byte con_spr_Y + $08   ; 
@@ -5608,10 +5609,10 @@ off_0x007037_5D:
 
 .export off_0x007047_5E
 off_0x007047_5E:
-- D 0 - I - 0x007047 01:9037: 25        .byte $25   ; 
-- D 0 - I - 0x007048 01:9038: 35        .byte $35   ; 
-- - - - - - 0x007049 01:9039: 14        .byte $14   ; 
-- D 0 - I - 0x00704A 01:903A: 1E        .byte $1E   ; 
+- D 0 - I - 0x007047 01:9037: 25        .byte con_attribute_1 + $25   ; 
+- D 0 - I - 0x007048 01:9038: 35        .byte con_attribute_2 + $35   ; 
+- - - - - - 0x007049 01:9039: 14        .byte con_attribute_3 + $14   ; 
+- D 0 - I - 0x00704A 01:903A: 1E        .byte con_spr_counter + $1E   ; 
 
 - D 0 - I - 0x00704B 01:903B: 16        .byte con_spr_X + $16   ; 
 - D 0 - I - 0x00704C 01:903C: 98        .byte con_spr_Y + $98   ; 
@@ -5737,10 +5738,10 @@ off_0x007047_5E:
 
 .export off_0x0070A5_5F
 off_0x0070A5_5F:
-- D 0 - I - 0x0070A5 01:9095: 1B        .byte $1B   ; 
-- D 0 - I - 0x0070A6 01:9096: 3A        .byte $3A   ; 
-- - - - - - 0x0070A7 01:9097: 0D        .byte $0D   ; 
-- D 0 - I - 0x0070A8 01:9098: 1E        .byte $1E   ; 
+- D 0 - I - 0x0070A5 01:9095: 1B        .byte con_attribute_1 + $1B   ; 
+- D 0 - I - 0x0070A6 01:9096: 3A        .byte con_attribute_2 + $3A   ; 
+- - - - - - 0x0070A7 01:9097: 0D        .byte con_attribute_3 + $0D   ; 
+- D 0 - I - 0x0070A8 01:9098: 1E        .byte con_spr_counter + $1E   ; 
 
 - D 0 - I - 0x0070A9 01:9099: 0B        .byte con_spr_X + $0B   ; 
 - D 0 - I - 0x0070AA 01:909A: A0        .byte con_spr_Y + $A0   ; 
@@ -5866,10 +5867,10 @@ off_0x0070A5_5F:
 
 .export off_0x007103_60
 off_0x007103_60:
-- D 0 - I - 0x007103 01:90F3: 1F        .byte $1F   ; 
-- D 0 - I - 0x007104 01:90F4: 34        .byte $34   ; 
-- - - - - - 0x007105 01:90F5: 0F        .byte $0F   ; 
-- D 0 - I - 0x007106 01:90F6: 1E        .byte $1E   ; 
+- D 0 - I - 0x007103 01:90F3: 1F        .byte con_attribute_1 + $1F   ; 
+- D 0 - I - 0x007104 01:90F4: 34        .byte con_attribute_2 + $34   ; 
+- - - - - - 0x007105 01:90F5: 0F        .byte con_attribute_3 + $0F   ; 
+- D 0 - I - 0x007106 01:90F6: 1E        .byte con_spr_counter + $1E   ; 
 
 - D 0 - I - 0x007107 01:90F7: 0E        .byte con_spr_X + $0E   ; 
 - D 0 - I - 0x007108 01:90F8: 98        .byte con_spr_Y + $98   ; 
@@ -5995,10 +5996,10 @@ off_0x007103_60:
 
 .export off_0x007161_61
 off_0x007161_61:
-- D 0 - I - 0x007161 01:9151: 1F        .byte $1F   ; 
-- D 0 - I - 0x007162 01:9152: 24        .byte $24   ; 
-- - - - - - 0x007163 01:9153: 0E        .byte $0E   ; 
-- D 0 - I - 0x007164 01:9154: 17        .byte $17   ; 
+- D 0 - I - 0x007161 01:9151: 1F        .byte con_attribute_1 + $1F   ; 
+- D 0 - I - 0x007162 01:9152: 24        .byte con_attribute_2 + $24   ; 
+- - - - - - 0x007163 01:9153: 0E        .byte con_attribute_3 + $0E   ; 
+- D 0 - I - 0x007164 01:9154: 17        .byte con_spr_counter + $17   ; 
 
 - D 0 - I - 0x007165 01:9155: 09        .byte con_spr_X + $09   ; 
 - D 0 - I - 0x007166 01:9156: 88        .byte con_spr_Y + $88   ; 
