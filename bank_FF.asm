@@ -5565,6 +5565,14 @@ tbl_E7A0_spr_colors:
 sub_E7E9_draw_screen:
 ; bzk optimize, A always = 00 when jumped here
 ; same optimize goes for internal subroutines
+    STX ram_0000
+    LDA #$88    ; 0x010010
+    STA $5114
+    JSR sub_0x010010_draw_screen
+    RTS
+
+
+
 C - - - - - 0x01E7F9 07:E7E9: 48        PHA
 C - - - - - 0x01E7FA 07:E7EA: A9 00     LDA #$00
 C - - - - - 0x01E7FC 07:E7EC: 8D 00 20  STA $2000
@@ -8938,7 +8946,8 @@ C - - - - - 0x01FBBF 07:FBAF: D0 F5     BNE bra_FBA6
 C - - - - - 0x01FBC1 07:FBB1: 60        RTS
 
 
-
+.export sub_0x01FBC2_write_palette_to_ppu
+sub_0x01FBC2_write_palette_to_ppu:
 sub_FBB2_write_palette_to_ppu:
 ; A = low for 2006
 ; X = read data counter
