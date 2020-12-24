@@ -4974,11 +4974,11 @@ C - - - - - 0x01E4A2 07:E492: E4 44     CPX ram_0044
 C - - - - - 0x01E4A4 07:E494: F0 0D     BEQ bra_E4A3
 C - - - - - 0x01E4A6 07:E496: A9 F0     LDA #$F0
 bra_E498:
-C - - - - - 0x01E4A8 07:E498: 9D 00 02  STA ram_0200,X
+C - - - - - 0x01E4A8 07:E498: 9D 00 02  STA ram_spr_Y,X
 C - - - - - 0x01E4AB 07:E49B: E8        INX
 C - - - - - 0x01E4AC 07:E49C: E4 44     CPX ram_0044
 C - - - - - 0x01E4AE 07:E49E: D0 F8     BNE bra_E498
-C - - - - - 0x01E4B0 07:E4A0: 9D 00 02  STA ram_0200,X
+C - - - - - 0x01E4B0 07:E4A0: 9D 00 02  STA ram_spr_Y,X
 bra_E4A3:
 C - - - - - 0x01E4B3 07:E4A3: A5 56     LDA ram_0056
 C - - - - - 0x01E4B5 07:E4A5: C5 46     CMP ram_0046
@@ -5109,7 +5109,7 @@ C - - - - - 0x01E57A 07:E56A: 26 5E     ROL ram_005E
 C - - - - - 0x01E57C 07:E56C: 4A        LSR
 C - - - - - 0x01E57D 07:E56D: 18        CLC
 C - - - - - 0x01E57E 07:E56E: 65 4C     ADC ram_004C
-C - - - - - 0x01E580 07:E570: 9D 03 02  STA ram_0203,X
+C - - - - - 0x01E580 07:E570: 9D 03 02  STA ram_spr_X,X
 C - - - - - 0x01E583 07:E573: A9 00     LDA #$00
 C - - - - - 0x01E585 07:E575: 65 4D     ADC ram_004D
 C - - - - - 0x01E587 07:E577: F0 05     BEQ bra_E57E
@@ -5124,7 +5124,7 @@ C - - - - - 0x01E592 07:E582: 26 5E     ROL ram_005E
 C - - - - - 0x01E594 07:E584: 4A        LSR
 C - - - - - 0x01E595 07:E585: 18        CLC
 C - - - - - 0x01E596 07:E586: 65 4E     ADC ram_004E
-C - - - - - 0x01E598 07:E588: 9D 00 02  STA ram_0200,X
+C - - - - - 0x01E598 07:E588: 9D 00 02  STA ram_spr_Y,X
 C - - - - - 0x01E59B 07:E58B: A9 00     LDA #$00
 C - - - - - 0x01E59D 07:E58D: 65 4F     ADC ram_004F
 C - - - - - 0x01E59F 07:E58F: F0 04     BEQ bra_E595
@@ -5138,18 +5138,18 @@ C - - - - - 0x01E5AA 07:E59A: F0 0F     BEQ bra_E5AB
 C - - - - - 0x01E5AC 07:E59C: B1 00     LDA (ram_0000),Y
 C - - - - - 0x01E5AE 07:E59E: 18        CLC
 C - - - - - 0x01E5AF 07:E59F: 69 80     ADC #$80
-C - - - - - 0x01E5B1 07:E5A1: 9D 01 02  STA ram_0201,X
+C - - - - - 0x01E5B1 07:E5A1: 9D 01 02  STA ram_spr_tile,X
 C - - - - - 0x01E5B4 07:E5A4: A5 5E     LDA ram_005E
 C - - - - - 0x01E5B6 07:E5A6: 18        CLC
 C - - - - - 0x01E5B7 07:E5A7: 69 02     ADC #$02
 C - - - - - 0x01E5B9 07:E5A9: D0 07     BNE bra_E5B2
 bra_E5AB:
 C - - - - - 0x01E5BB 07:E5AB: B1 00     LDA (ram_0000),Y
-C - - - - - 0x01E5BD 07:E5AD: 9D 01 02  STA ram_0201,X
+C - - - - - 0x01E5BD 07:E5AD: 9D 01 02  STA ram_spr_tile,X
 C - - - - - 0x01E5C0 07:E5B0: A5 5E     LDA ram_005E
 bra_E5B2:
 C - - - - - 0x01E5C2 07:E5B2: 29 03     AND #$03
-C - - - - - 0x01E5C4 07:E5B4: 9D 02 02  STA ram_0202,X
+C - - - - - 0x01E5C4 07:E5B4: 9D 02 02  STA ram_spr_attr,X
 C - - - - - 0x01E5C7 07:E5B7: 8A        TXA
 C - - - - - 0x01E5C8 07:E5B8: 18        CLC
 C - - - - - 0x01E5C9 07:E5B9: 69 04     ADC #$04
@@ -5177,7 +5177,7 @@ C - - - - - 0x01E5E4 07:E5D4: 85 5F     STA ram_005F
 C - - - - - 0x01E5E6 07:E5D6: A5 4C     LDA ram_004C
 C - - - - - 0x01E5E8 07:E5D8: 38        SEC
 C - - - - - 0x01E5E9 07:E5D9: E5 5F     SBC ram_005F
-C - - - - - 0x01E5EB 07:E5DB: 9D 03 02  STA ram_0203,X
+C - - - - - 0x01E5EB 07:E5DB: 9D 03 02  STA ram_spr_X,X
 C - - - - - 0x01E5EE 07:E5DE: A5 4D     LDA ram_004D
 C - - - - - 0x01E5F0 07:E5E0: E9 00     SBC #$00
 C - - - - - 0x01E5F2 07:E5E2: F0 05     BEQ bra_E5E9
@@ -5192,7 +5192,7 @@ C - - - - - 0x01E5FD 07:E5ED: 26 5E     ROL ram_005E
 C - - - - - 0x01E5FF 07:E5EF: 4A        LSR
 C - - - - - 0x01E600 07:E5F0: 18        CLC
 C - - - - - 0x01E601 07:E5F1: 65 4E     ADC ram_004E
-C - - - - - 0x01E603 07:E5F3: 9D 00 02  STA ram_0200,X
+C - - - - - 0x01E603 07:E5F3: 9D 00 02  STA ram_spr_Y,X
 C - - - - - 0x01E606 07:E5F6: A9 00     LDA #$00
 C - - - - - 0x01E608 07:E5F8: 65 4F     ADC ram_004F
 C - - - - - 0x01E60A 07:E5FA: F0 04     BEQ bra_E600
@@ -5206,19 +5206,19 @@ C - - - - - 0x01E615 07:E605: F0 0F     BEQ bra_E616
 C - - - - - 0x01E617 07:E607: B1 00     LDA (ram_0000),Y
 C - - - - - 0x01E619 07:E609: 18        CLC
 C - - - - - 0x01E61A 07:E60A: 69 80     ADC #$80
-C - - - - - 0x01E61C 07:E60C: 9D 01 02  STA ram_0201,X
+C - - - - - 0x01E61C 07:E60C: 9D 01 02  STA ram_spr_tile,X
 C - - - - - 0x01E61F 07:E60F: A5 5E     LDA ram_005E
 C - - - - - 0x01E621 07:E611: 18        CLC
 C - - - - - 0x01E622 07:E612: 69 02     ADC #$02
 C - - - - - 0x01E624 07:E614: D0 07     BNE bra_E61D
 bra_E616:
 C - - - - - 0x01E626 07:E616: B1 00     LDA (ram_0000),Y
-C - - - - - 0x01E628 07:E618: 9D 01 02  STA ram_0201,X
+C - - - - - 0x01E628 07:E618: 9D 01 02  STA ram_spr_tile,X
 C - - - - - 0x01E62B 07:E61B: A5 5E     LDA ram_005E
 bra_E61D:
 C - - - - - 0x01E62D 07:E61D: 29 03     AND #$03
 C - - - - - 0x01E62F 07:E61F: 09 40     ORA #$40
-C - - - - - 0x01E631 07:E621: 9D 02 02  STA ram_0202,X
+C - - - - - 0x01E631 07:E621: 9D 02 02  STA ram_spr_attr,X
 C - - - - - 0x01E634 07:E624: 8A        TXA
 C - - - - - 0x01E635 07:E625: 18        CLC
 C - - - - - 0x01E636 07:E626: 69 04     ADC #$04
@@ -8911,7 +8911,7 @@ sub_FB8C_hide_all_sprites:
 C - - - - - 0x01FB9C 07:FB8C: A9 F0     LDA #$F0
 C - - - - - 0x01FB9E 07:FB8E: A0 00     LDY #$00
 bra_FB90_loop:
-C - - - - - 0x01FBA0 07:FB90: 99 00 02  STA ram_0200,Y
+C - - - - - 0x01FBA0 07:FB90: 99 00 02  STA ram_spr_Y,Y
 C - - - - - 0x01FBA3 07:FB93: C8        INY
 C - - - - - 0x01FBA4 07:FB94: D0 FA     BNE bra_FB90_loop
 C - - - - - 0x01FBA6 07:FB96: 60        RTS
