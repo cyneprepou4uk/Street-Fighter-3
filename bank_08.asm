@@ -45,6 +45,7 @@ sub_0x010010_draw_screen:
 @loop_write_attributes_1:
     LDA (ram_0002),Y
     STA $2007
+    INY
     DEX
     BNE @loop_write_attributes_1
     LDA #$27
@@ -55,6 +56,7 @@ sub_0x010010_draw_screen:
 @loop_write_attributes_2:
     LDA (ram_0002),Y
     STA $2007
+    INY
     DEX
     BNE @loop_write_attributes_2
 loc_write_palette:
@@ -101,6 +103,7 @@ sub_draw_small_screen:
 @loop_write_attributes:
     LDA (ram_0002),Y
     STA $2007
+    INY
     DEX
     BNE @loop_write_attributes
     RTS
