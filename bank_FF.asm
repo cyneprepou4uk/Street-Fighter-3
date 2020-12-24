@@ -1475,7 +1475,7 @@ loc_CDCA:
 C D 2 - - - 0x01CDDA 07:CDCA: A9 15     LDA #$15
 C - - - - - 0x01CDDC 07:CDCC: 20 40 CE  JSR sub_CE40
 loc_CDCF:
-C D 2 - - - 0x01CDDF 07:CDCF: 20 D2 EC  JSR sub_ECD2
+C D 2 - - - 0x01CDDF 07:CDCF: 20 D2 EC  JSR sub_ECD2_antihacking_flag
 C - - - - - 0x01CDE2 07:CDD2: 60        RTS
 
 
@@ -6273,7 +6273,7 @@ C - - - - - 0x01EBF2 07:EBE2: B9 01 85  LDA tbl_0x012510 + 1,Y
 C - - - - - 0x01EBF5 07:EBE5: 85 07     STA ram_0007
 C - - - - - 0x01EBF7 07:EBE7: BC 0D 03  LDY ram_030D,X
 C - - - - - 0x01EBFA 07:EBEA: C0 FF     CPY #$FF
-C - - - - - 0x01EBFC 07:EBEC: F0 1C     BEQ bra_EC0A
+C - - - - - 0x01EBFC 07:EBEC: F0 1C     BEQ bra_EC0A_antihacking
 C - - - - - 0x01EBFE 07:EBEE: B1 06     LDA (ram_0006),Y
 C - - - - - 0x01EC00 07:EBF0: 85 08     STA ram_0008
 C - - - - - 0x01EC02 07:EBF2: C8        INY
@@ -6283,13 +6283,13 @@ C - - - - - 0x01EC07 07:EBF7: BA        TSX
 C - - - - - 0x01EC08 07:EBF8: BD 07 01  LDA ram_0107,X
 C - - - - - 0x01EC0B 07:EBFB: 38        SEC
 C - - - - - 0x01EC0C 07:EBFC: E5 B6     SBC ram_btn_hold
-C - - - - - 0x01EC0E 07:EBFE: C9 4E     CMP #$4E        ; !!! hacking protection, if A not 4E then ???
-C - - - - - 0x01EC10 07:EC00: D0 08     BNE bra_EC0A
+C - - - - - 0x01EC0E 07:EBFE: C9 4E     CMP #$4E        ; !!! hacking protection, if A != 4E then you can't hit the opponent
+C - - - - - 0x01EC10 07:EC00: D0 08     BNE bra_EC0A_antihacking
 C - - - - - 0x01EC12 07:EC02: A0 00     LDY #$00
 C - - - - - 0x01EC14 07:EC04: B1 08     LDA (ram_0008),Y
 C - - - - - 0x01EC16 07:EC06: 85 1C     STA ram_001C
 C - - - - - 0x01EC18 07:EC08: D0 13     BNE bra_EC1D
-bra_EC0A:
+bra_EC0A_antihacking:
 - - - - - - 0x01EC1A 07:EC0A: A9 00     LDA #$00
 - - - - - - 0x01EC1C 07:EC0C: A6 1D     LDX ram_001D
 - - - - - - 0x01EC1E 07:EC0E: 9D 07 05  STA ram_0507,X
@@ -6408,14 +6408,14 @@ C - - - - - 0x01ECE1 07:ECD1: 60        RTS
 
 
 
-sub_ECD2:
+sub_ECD2_antihacking_flag:
 C - - - - - 0x01ECE2 07:ECD2: 8A        TXA
 C - - - - - 0x01ECE3 07:ECD3: 48        PHA
 C - - - - - 0x01ECE4 07:ECD4: BA        TSX
 C - - - - - 0x01ECE5 07:ECD5: BD 08 01  LDA ram_0108,X
 C - - - - - 0x01ECE8 07:ECD8: 38        SEC
 C - - - - - 0x01ECE9 07:ECD9: E9 18     SBC #$18
-; !!! hacking protection, if A is not 0C then Chun-Li will wipe the floor with your ass
+; !!! hacking protection, if A != 0C then Chun-Li will wipe the floor with your ass
 C - - - - - 0x01ECEB 07:ECDB: 85 45     STA ram_0045
 C - - - - - 0x01ECED 07:ECDD: 68        PLA
 C - - - - - 0x01ECEE 07:ECDE: AA        TAX
