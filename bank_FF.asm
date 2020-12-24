@@ -4368,7 +4368,7 @@ C - - - - - 0x01E0AE 07:E09E: 20 60 E1  JSR sub_E160
 C - - - - - 0x01E0B1 07:E0A1: C9 00     CMP #$00    ; bzk optimize
 C - - - - - 0x01E0B3 07:E0A3: D0 1F     BNE bra_E0C4
 C - - - - - 0x01E0B5 07:E0A5: A9 00     LDA #$00
-C - - - - - 0x01E0B7 07:E0A7: 20 97 FB  JSR sub_FB97
+C - - - - - 0x01E0B7 07:E0A7: 20 97 FB  JSR sub_FB97_clear_nametable
 C - - - - - 0x01E0BA 07:E0AA: A9 0E     LDA #$0E
 C - - - - - 0x01E0BC 07:E0AC: 85 B0     STA ram_00B0
 C - - - - - 0x01E0BE 07:E0AE: A9 05     LDA #$05
@@ -4383,7 +4383,7 @@ C - - - - - 0x01E0CE 07:E0BE: 20 9D FF  JSR sub_FF9D
 C - - - - - 0x01E0D1 07:E0C1: 4C E0 E0  JMP loc_E0E0
 bra_E0C4:
 - - - - - - 0x01E0D4 07:E0C4: A9 00     LDA #$00
-- - - - - - 0x01E0D6 07:E0C6: 20 97 FB  JSR sub_FB97
+- - - - - - 0x01E0D6 07:E0C6: 20 97 FB  JSR sub_FB97_clear_nametable
 - - - - - - 0x01E0D9 07:E0C9: A9 0E     LDA #$0E
 - - - - - - 0x01E0DB 07:E0CB: 85 B0     STA ram_00B0
 - - - - - - 0x01E0DD 07:E0CD: A9 05     LDA #$05
@@ -7715,7 +7715,7 @@ C - - - - - 0x01F4C1 07:F4B1: 20 EE EF  JSR sub_EFEE_clear_0300_03CF
 C - - - - - 0x01F4C4 07:F4B4: A9 02     LDA #con_GM_VS
 C - - - - - 0x01F4C6 07:F4B6: 85 0E     STA ram_current_game_mode
 C - - - - - 0x01F4C8 07:F4B8: A9 00     LDA #$00
-C - - - - - 0x01F4CA 07:F4BA: 20 97 FB  JSR sub_FB97
+C - - - - - 0x01F4CA 07:F4BA: 20 97 FB  JSR sub_FB97_clear_nametable
 C - - - - - 0x01F4CD 07:F4BD: A5 2E     LDA ram_002E
 C - - - - - 0x01F4CF 07:F4BF: D0 07     BNE bra_F4C8
 C - - - - - 0x01F4D3 07:F4C3: A2 0A     LDX #$0A    ; VS screen
@@ -8845,9 +8845,9 @@ C - - - - - 0x01FB5F 07:FB4F: 8D 01 20  STA $2001
 C - - - - - 0x01FB62 07:FB52: D8        CLD
 C - - - - - 0x01FB63 07:FB53: 20 8C FB  JSR sub_FB8C_hide_all_sprites
 C - - - - - 0x01FB66 07:FB56: A9 00     LDA #$00
-C - - - - - 0x01FB68 07:FB58: 20 97 FB  JSR sub_FB97
+C - - - - - 0x01FB68 07:FB58: 20 97 FB  JSR sub_FB97_clear_nametable
 C - - - - - 0x01FB6B 07:FB5B: A9 01     LDA #$01
-C - - - - - 0x01FB6D 07:FB5D: 20 97 FB  JSR sub_FB97
+C - - - - - 0x01FB6D 07:FB5D: 20 97 FB  JSR sub_FB97_clear_nametable
 C - - - - - 0x01FB70 07:FB60: A9 00     LDA #$00
 C - - - - - 0x01FB72 07:FB62: A8        TAY
 bra_FB63:
@@ -8883,7 +8883,8 @@ C - - - - - 0x01FBA6 07:FB96: 60        RTS
 
 
 
-sub_FB97:
+sub_FB97_clear_nametable:
+; A = 00 (2000-23FF) or 01 (2400-27FF)
 C - - - - - 0x01FBA7 07:FB97: 0A        ASL
 C - - - - - 0x01FBA8 07:FB98: 0A        ASL
 C - - - - - 0x01FBA9 07:FB99: 18        CLC
@@ -8892,14 +8893,14 @@ C - - - - - 0x01FBAC 07:FB9C: 8D 06 20  STA $2006
 C - - - - - 0x01FBAF 07:FB9F: A9 00     LDA #$00
 C - - - - - 0x01FBB1 07:FBA1: 8D 06 20  STA $2006
 C - - - - - 0x01FBB4 07:FBA4: A2 20     LDX #$20
-bra_FBA6:
+bra_FBA6_main_loop:
 C - - - - - 0x01FBB6 07:FBA6: A0 20     LDY #$20
-bra_FBA8:
+bra_FBA8_loop:
 C - - - - - 0x01FBB8 07:FBA8: 8D 07 20  STA $2007
 C - - - - - 0x01FBBB 07:FBAB: 88        DEY
-C - - - - - 0x01FBBC 07:FBAC: D0 FA     BNE bra_FBA8
+C - - - - - 0x01FBBC 07:FBAC: D0 FA     BNE bra_FBA8_loop
 C - - - - - 0x01FBBE 07:FBAE: CA        DEX
-C - - - - - 0x01FBBF 07:FBAF: D0 F5     BNE bra_FBA6
+C - - - - - 0x01FBBF 07:FBAF: D0 F5     BNE bra_FBA6_main_loop
 C - - - - - 0x01FBC1 07:FBB1: 60        RTS
 
 
