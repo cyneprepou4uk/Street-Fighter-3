@@ -1016,9 +1016,9 @@ C - - - - - 0x01CA78 07:CA68: 60        RTS
 
 sub_CA69:
 C - - - - - 0x01CA79 07:CA69: 20 4D F8  JSR sub_F84D
-C - - - - - 0x01CA7C 07:CA6C: A5 27     LDA ram_screen
-C - - - - - 0x01CA7E 07:CA6E: 85 0C     STA ram_irq_screen
-C - - - - - 0x01CA80 07:CA70: 20 17 E8  JSR sub_E817_draw_stage_and_hud     ; bzk optimize
+C - - - - - 0x01CA7C 07:CA6C: A5 27     LDX ram_screen
+C - - - - - 0x01CA7E 07:CA6E: 85 0C     STX ram_irq_screen
+                                        JSR sub_E7E9_draw_screen
 C - - - - - 0x01CA83 07:CA73: A5 27     LDA ram_screen
 C - - - - - 0x01CA85 07:CA75: 20 FA F7  JSR sub_F7FA
 C - - - - - 0x01CA88 07:CA78: A4 3B     LDY ram_p1_fighter
@@ -5594,15 +5594,6 @@ bra_E812:
 C - - - - - 0x01E822 07:E812: 68        PLA
 C - - - - - 0x01E823 07:E813: 20 CE FB  JSR sub_FBCE_draw_background
 C - - - - - 0x01E826 07:E816: 60        RTS
-
-
-
-sub_E817_draw_stage_and_hud:
-C - - - - - 0x01E827 07:E817: A6 27     LDX ram_screen
-C - - - - - 0x01E82B 07:E81B: 20 E9 E7  JSR sub_E7E9_draw_screen
-C - - - - - 0x01E82E 07:E81E: A2 09     LDX #$09
-C - - - - - 0x01E832 07:E822: 20 E9 E7  JSR sub_E7E9_draw_screen
-C - - - - - 0x01E835 07:E825: 60        RTS
 
 
 
