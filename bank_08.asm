@@ -11,16 +11,24 @@ sub_0x010010_draw_screen:
     STA $2006
     LDA #$00
     STA $2006
-    CPX #$0A
-    BCC @not_a_small_screen
-    JSR sub_draw_small_screen
-    JMP loc_write_palette
-@not_a_small_screen:    ; it's a stage
-    LDA #< tbl_tiles_screen_big
+    STA ram_0001
+    LDA ram_0000
+    CMP #$0A
+    BCC @it_is_a_stage_1
+    INC ram_0001
+@it_is_a_stage_1:
+    LDA ram_0001
+    ASL
+    TAX
+    LDA tbl_tiles,X
     STA ram_0002
-    LDA #> tbl_tiles_screen_big
+    LDA tbl_tiles + 1,X
     STA ram_0003
     LDX #$08
+    LDA ram_0001
+    BEQ @it_is_a_stage_2
+    LDX #$04
+@it_is_a_stage_2:
     LDY #$00
 @loop_write_tiles:
     LDA (ram_0002),Y
@@ -48,6 +56,8 @@ sub_0x010010_draw_screen:
     INY
     DEX
     BNE @loop_write_attributes_1
+    LDA ram_0001
+    BNE @go_to_palette
     LDA #$27
     STA $2006
     LDA #$C0
@@ -59,7 +69,7 @@ sub_0x010010_draw_screen:
     INY
     DEX
     BNE @loop_write_attributes_2
-loc_write_palette:
+@go_to_palette:
     LDA ram_0000
     ASL
     TAX
@@ -72,49 +82,17 @@ loc_write_palette:
     LDY #$00
     JSR sub_0x01FBC2_write_palette_to_ppu
     RTS
-    
-sub_draw_small_screen:
-    LDA #< tbl_tiles_screen_small
-    STA ram_0002
-    LDA #> tbl_tiles_screen_small
-    STA ram_0003
-    LDX #$04
-    LDY #$00
-@loop_write_tiles:
-    LDA (ram_0002),Y
-    STA $2007
-    INY
-    BNE @loop_write_tiles
-    DEX
-    BNE @loop_write_tiles
-    LDA ram_0000
-    ASL
-    TAX
-    LDA tbl_attributes,X
-    STA ram_0002
-    LDA tbl_attributes + 1,X
-    STA ram_0003
-    LDA #$23
-    STA $2006
-    LDA #$C0
-    STA $2006
-    LDX #$40
-    LDY #$00
-@loop_write_attributes:
-    LDA (ram_0002),Y
-    STA $2007
-    INY
-    DEX
-    BNE @loop_write_attributes
-    RTS
-.endscope
 
 
 
-tbl_tiles_screen_big:       ; stages
+tbl_tiles:
+    .word off_stage_screen
+    .word off_normall_screen
+
+off_stage_screen:
     .incbin "nametable\screen_big.bin"
-
-tbl_tiles_screen_small:     ; other screens
+    
+off_normall_screen:
     .incbin "nametable\screen_small.bin"
 
 
@@ -399,3 +377,4 @@ _palette_16:
     .byte $0F, $05, $15, $26
     .byte $0F, $06, $16, $26
     .byte $0F
+.endscope
