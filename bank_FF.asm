@@ -8057,9 +8057,9 @@ C - - - - - 0x01F732 07:F722: 85 00     STA ram_0000
 C - - - - - 0x01F734 07:F724: A9 F7     LDA #> tbl_F76D
 C - - - - - 0x01F736 07:F726: 4C 2F F7  JMP loc_F72F
 bra_F729:
-C - - - - - 0x01F739 07:F729: A9 82     LDA #$82
+C - - - - - 0x01F739 07:F729: A9 82     LDA #< tbl_F782
 C - - - - - 0x01F73B 07:F72B: 85 00     STA ram_0000
-C - - - - - 0x01F73D 07:F72D: A9 F7     LDA #$F7
+C - - - - - 0x01F73D 07:F72D: A9 F7     LDA #> tbl_F782
 loc_F72F:
 C D 3 - - - 0x01F73F 07:F72F: 85 01     STA ram_0001
 C - - - - - 0x01F741 07:F731: 8A        TXA
@@ -8132,6 +8132,10 @@ tbl_F76D:
 - D 3 - I - 0x01F78F 07:F77F: 01        .byte $01   ; 
 - D 3 - I - 0x01F790 07:F780: 06        .byte $06   ; 
 - D 3 - I - 0x01F791 07:F781: FF        .byte $FF   ; 
+
+
+
+tbl_F782:
 - D 3 - I - 0x01F792 07:F782: 04        .byte $04   ; 
 - D 3 - I - 0x01F793 07:F783: 06        .byte $06   ; 
 - D 3 - I - 0x01F794 07:F784: 02        .byte $02   ; 
