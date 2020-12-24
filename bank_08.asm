@@ -86,14 +86,14 @@ sub_0x010010_draw_screen:
 
 
 tbl_tiles:
-    .word off_stage_screen
-    .word off_normall_screen
+    .word off_screen_stage
+    .word off_screen_normal
 
-off_stage_screen:
-    .incbin "nametable\screen_big.bin"
+off_screen_stage:
+    .incbin "nametable\screen_stage.bin"
     
-off_normall_screen:
-    .incbin "nametable\screen_small.bin"
+off_screen_normal:
+    .incbin "nametable\screen_normal.bin"
 
 
 
