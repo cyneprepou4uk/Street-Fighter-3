@@ -127,496 +127,675 @@ tbl_A072_chr_bank:
 
 
 
+con_attribute_1                 = $00   ; 
+con_attribute_2                 = $00   ; 
+con_spr_cnt                     = $00   ; 
+con_spr_X                       = $00   ; 
+con_spr_Y                       = $00   ; 
+con_spr_T                       = $00   ; tile
+
+
+
 off_80A9_00:
 - D 0 - I - 0x00E0B9 03:80A9: 2C        .byte $2C   ; 
 - D 0 - I - 0x00E0BA 03:80AA: 27        .byte $27   ; 
 - D 0 - I - 0x00E0BB 03:80AB: 11        .byte $11   ; 
 - D 0 - I - 0x00E0BC 03:80AC: 1A        .byte $1A   ; 
-- D 0 - I - 0x00E0BD 03:80AD: 0B        .byte $0B   ; 
-- D 0 - I - 0x00E0BE 03:80AE: 18        .byte $18   ; 
-- D 0 - I - 0x00E0BF 03:80AF: 18        .byte $18   ; 
-- D 0 - I - 0x00E0C0 03:80B0: 04        .byte $04   ; 
-- D 0 - I - 0x00E0C1 03:80B1: 10        .byte $10   ; 
-- D 0 - I - 0x00E0C2 03:80B2: 12        .byte $12   ; 
-- D 0 - I - 0x00E0C3 03:80B3: 03        .byte $03   ; 
-- D 0 - I - 0x00E0C4 03:80B4: 18        .byte $18   ; 
-- D 0 - I - 0x00E0C5 03:80B5: 17        .byte $17   ; 
-- D 0 - I - 0x00E0C6 03:80B6: 00        .byte $00   ; 
-- D 0 - I - 0x00E0C7 03:80B7: A0        .byte $A0   ; 
-- D 0 - I - 0x00E0C8 03:80B8: 1C        .byte $1C   ; 
-- D 0 - I - 0x00E0C9 03:80B9: 14        .byte $14   ; 
-- D 0 - I - 0x00E0CA 03:80BA: 08        .byte $08   ; 
-- D 0 - I - 0x00E0CB 03:80BB: 10        .byte $10   ; 
-- D 0 - I - 0x00E0CC 03:80BC: 04        .byte $04   ; 
-- D 0 - I - 0x00E0CD 03:80BD: 08        .byte $08   ; 
-- D 0 - I - 0x00E0CE 03:80BE: 0C        .byte $0C   ; 
-- D 0 - I - 0x00E0CF 03:80BF: 0C        .byte $0C   ; 
-- D 0 - I - 0x00E0D0 03:80C0: 08        .byte $08   ; 
-- D 0 - I - 0x00E0D1 03:80C1: 0D        .byte $0D   ; 
-- D 0 - I - 0x00E0D2 03:80C2: 18        .byte $18   ; 
-- D 0 - I - 0x00E0D3 03:80C3: 97        .byte $97   ; 
-- D 0 - I - 0x00E0D4 03:80C4: 0F        .byte $0F   ; 
-- D 0 - I - 0x00E0D5 03:80C5: 14        .byte $14   ; 
-- D 0 - I - 0x00E0D6 03:80C6: 10        .byte $10   ; 
-- D 0 - I - 0x00E0D7 03:80C7: 14        .byte $14   ; 
-- D 0 - I - 0x00E0D8 03:80C8: 0F        .byte $0F   ; 
-- D 0 - I - 0x00E0D9 03:80C9: 00        .byte $00   ; 
-- D 0 - I - 0x00E0DA 03:80CA: 09        .byte $09   ; 
-- D 0 - I - 0x00E0DB 03:80CB: 07        .byte $07   ; 
-- D 0 - I - 0x00E0DC 03:80CC: 84        .byte $84   ; 
-- D 0 - I - 0x00E0DD 03:80CD: 08        .byte $08   ; 
-- D 0 - I - 0x00E0DE 03:80CE: 0F        .byte $0F   ; 
-- D 0 - I - 0x00E0DF 03:80CF: 8F        .byte $8F   ; 
-- D 0 - I - 0x00E0E0 03:80D0: 0E        .byte $0E   ; 
-- D 0 - I - 0x00E0E1 03:80D1: 25        .byte $25   ; 
-- D 0 - I - 0x00E0E2 03:80D2: 9F        .byte $9F   ; 
-- D 0 - I - 0x00E0E3 03:80D3: 1B        .byte $1B   ; 
-- D 0 - I - 0x00E0E4 03:80D4: 08        .byte $08   ; 
-- D 0 - I - 0x00E0E5 03:80D5: A0        .byte $A0   ; 
-- D 0 - I - 0x00E0E6 03:80D6: 1D        .byte $1D   ; 
-- D 0 - I - 0x00E0E7 03:80D7: 1E        .byte $1E   ; 
-- D 0 - I - 0x00E0E8 03:80D8: 0E        .byte $0E   ; 
-- D 0 - I - 0x00E0E9 03:80D9: 11        .byte $11   ; 
-- D 0 - I - 0x00E0EA 03:80DA: 0C        .byte $0C   ; 
-- D 0 - I - 0x00E0EB 03:80DB: 10        .byte $10   ; 
-- D 0 - I - 0x00E0EC 03:80DC: 13        .byte $13   ; 
-- D 0 - I - 0x00E0ED 03:80DD: 13        .byte $13   ; 
-- D 0 - I - 0x00E0EE 03:80DE: 18        .byte $18   ; 
-- D 0 - I - 0x00E0EF 03:80DF: 19        .byte $19   ; 
-- D 0 - I - 0x00E0F0 03:80E0: 1D        .byte $1D   ; 
-- D 0 - I - 0x00E0F1 03:80E1: 98        .byte $98   ; 
-- D 0 - I - 0x00E0F2 03:80E2: 1A        .byte $1A   ; 
-- D 0 - I - 0x00E0F3 03:80E3: 1A        .byte $1A   ; 
-- D 0 - I - 0x00E0F4 03:80E4: 90        .byte $90   ; 
-- D 0 - I - 0x00E0F5 03:80E5: 15        .byte $15   ; 
-- D 0 - I - 0x00E0F6 03:80E6: 09        .byte $09   ; 
-- D 0 - I - 0x00E0F7 03:80E7: 20        .byte $20   ; 
-- D 0 - I - 0x00E0F8 03:80E8: 1E        .byte $1E   ; 
-- D 0 - I - 0x00E0F9 03:80E9: 11        .byte $11   ; 
-- D 0 - I - 0x00E0FA 03:80EA: 20        .byte $20   ; 
-- D 0 - I - 0x00E0FB 03:80EB: 20        .byte $20   ; 
-- D 0 - I - 0x00E0FC 03:80EC: 10        .byte $10   ; 
-- D 0 - I - 0x00E0FD 03:80ED: A0        .byte $A0   ; 
-- D 0 - I - 0x00E0FE 03:80EE: 1F        .byte $1F   ; 
-- D 0 - I - 0x00E0FF 03:80EF: 15        .byte $15   ; 
-- D 0 - I - 0x00E100 03:80F0: 80        .byte $80   ; 
-- D 0 - I - 0x00E101 03:80F1: 0A        .byte $0A   ; 
-- D 0 - I - 0x00E102 03:80F2: 17        .byte $17   ; 
-- D 0 - I - 0x00E103 03:80F3: 00        .byte $00   ; 
-- D 0 - I - 0x00E104 03:80F4: 0B        .byte $0B   ; 
-- D 0 - I - 0x00E105 03:80F5: 1F        .byte $1F   ; 
-- D 0 - I - 0x00E106 03:80F6: A0        .byte $A0   ; 
-- D 0 - I - 0x00E107 03:80F7: 21        .byte $21   ; 
-- D 0 - I - 0x00E108 03:80F8: 00        .byte $00   ; 
-- D 0 - I - 0x00E109 03:80F9: 98        .byte $98   ; 
-- D 0 - I - 0x00E10A 03:80FA: 16        .byte $16   ; 
+
+- D 0 - I - 0x00E0BD 03:80AD: 0B        .byte con_spr_X + $0B   ; 
+- D 0 - I - 0x00E0BE 03:80AE: 18        .byte con_spr_Y + $18   ; 
+- D 0 - I - 0x00E0BF 03:80AF: 18        .byte con_spr_T + $18   ; 
+
+- D 0 - I - 0x00E0C0 03:80B0: 04        .byte con_spr_X + $04   ; 
+- D 0 - I - 0x00E0C1 03:80B1: 10        .byte con_spr_Y + $10   ; 
+- D 0 - I - 0x00E0C2 03:80B2: 12        .byte con_spr_T + $12   ; 
+
+- D 0 - I - 0x00E0C3 03:80B3: 03        .byte con_spr_X + $03   ; 
+- D 0 - I - 0x00E0C4 03:80B4: 18        .byte con_spr_Y + $18   ; 
+- D 0 - I - 0x00E0C5 03:80B5: 17        .byte con_spr_T + $17   ; 
+
+- D 0 - I - 0x00E0C6 03:80B6: 00        .byte con_spr_X + $00   ; 
+- D 0 - I - 0x00E0C7 03:80B7: A0        .byte con_spr_Y + $A0   ; 
+- D 0 - I - 0x00E0C8 03:80B8: 1C        .byte con_spr_T + $1C   ; 
+
+- D 0 - I - 0x00E0C9 03:80B9: 14        .byte con_spr_X + $14   ; 
+- D 0 - I - 0x00E0CA 03:80BA: 08        .byte con_spr_Y + $08   ; 
+- D 0 - I - 0x00E0CB 03:80BB: 10        .byte con_spr_T + $10   ; 
+
+- D 0 - I - 0x00E0CC 03:80BC: 04        .byte con_spr_X + $04   ; 
+- D 0 - I - 0x00E0CD 03:80BD: 08        .byte con_spr_Y + $08   ; 
+- D 0 - I - 0x00E0CE 03:80BE: 0C        .byte con_spr_T + $0C   ; 
+
+- D 0 - I - 0x00E0CF 03:80BF: 0C        .byte con_spr_X + $0C   ; 
+- D 0 - I - 0x00E0D0 03:80C0: 08        .byte con_spr_Y + $08   ; 
+- D 0 - I - 0x00E0D1 03:80C1: 0D        .byte con_spr_T + $0D   ; 
+
+- D 0 - I - 0x00E0D2 03:80C2: 18        .byte con_spr_X + $18   ; 
+- D 0 - I - 0x00E0D3 03:80C3: 97        .byte con_spr_Y + $97   ; 
+- D 0 - I - 0x00E0D4 03:80C4: 0F        .byte con_spr_T + $0F   ; 
+
+- D 0 - I - 0x00E0D5 03:80C5: 14        .byte con_spr_X + $14   ; 
+- D 0 - I - 0x00E0D6 03:80C6: 10        .byte con_spr_Y + $10   ; 
+- D 0 - I - 0x00E0D7 03:80C7: 14        .byte con_spr_T + $14   ; 
+
+- D 0 - I - 0x00E0D8 03:80C8: 0F        .byte con_spr_X + $0F   ; 
+- D 0 - I - 0x00E0D9 03:80C9: 00        .byte con_spr_Y + $00   ; 
+- D 0 - I - 0x00E0DA 03:80CA: 09        .byte con_spr_T + $09   ; 
+
+- D 0 - I - 0x00E0DB 03:80CB: 07        .byte con_spr_X + $07   ; 
+- D 0 - I - 0x00E0DC 03:80CC: 84        .byte con_spr_Y + $84   ; 
+- D 0 - I - 0x00E0DD 03:80CD: 08        .byte con_spr_T + $08   ; 
+
+- D 0 - I - 0x00E0DE 03:80CE: 0F        .byte con_spr_X + $0F   ; 
+- D 0 - I - 0x00E0DF 03:80CF: 8F        .byte con_spr_Y + $8F   ; 
+- D 0 - I - 0x00E0E0 03:80D0: 0E        .byte con_spr_T + $0E   ; 
+
+- D 0 - I - 0x00E0E1 03:80D1: 25        .byte con_spr_X + $25   ; 
+- D 0 - I - 0x00E0E2 03:80D2: 9F        .byte con_spr_Y + $9F   ; 
+- D 0 - I - 0x00E0E3 03:80D3: 1B        .byte con_spr_T + $1B   ; 
+
+- D 0 - I - 0x00E0E4 03:80D4: 08        .byte con_spr_X + $08   ; 
+- D 0 - I - 0x00E0E5 03:80D5: A0        .byte con_spr_Y + $A0   ; 
+- D 0 - I - 0x00E0E6 03:80D6: 1D        .byte con_spr_T + $1D   ; 
+
+- D 0 - I - 0x00E0E7 03:80D7: 1E        .byte con_spr_X + $1E   ; 
+- D 0 - I - 0x00E0E8 03:80D8: 0E        .byte con_spr_Y + $0E   ; 
+- D 0 - I - 0x00E0E9 03:80D9: 11        .byte con_spr_T + $11   ; 
+
+- D 0 - I - 0x00E0EA 03:80DA: 0C        .byte con_spr_X + $0C   ; 
+- D 0 - I - 0x00E0EB 03:80DB: 10        .byte con_spr_Y + $10   ; 
+- D 0 - I - 0x00E0EC 03:80DC: 13        .byte con_spr_T + $13   ; 
+
+- D 0 - I - 0x00E0ED 03:80DD: 13        .byte con_spr_X + $13   ; 
+- D 0 - I - 0x00E0EE 03:80DE: 18        .byte con_spr_Y + $18   ; 
+- D 0 - I - 0x00E0EF 03:80DF: 19        .byte con_spr_T + $19   ; 
+
+- D 0 - I - 0x00E0F0 03:80E0: 1D        .byte con_spr_X + $1D   ; 
+- D 0 - I - 0x00E0F1 03:80E1: 98        .byte con_spr_Y + $98   ; 
+- D 0 - I - 0x00E0F2 03:80E2: 1A        .byte con_spr_T + $1A   ; 
+
+- D 0 - I - 0x00E0F3 03:80E3: 1A        .byte con_spr_X + $1A   ; 
+- D 0 - I - 0x00E0F4 03:80E4: 90        .byte con_spr_Y + $90   ; 
+- D 0 - I - 0x00E0F5 03:80E5: 15        .byte con_spr_T + $15   ; 
+
+- D 0 - I - 0x00E0F6 03:80E6: 09        .byte con_spr_X + $09   ; 
+- D 0 - I - 0x00E0F7 03:80E7: 20        .byte con_spr_Y + $20   ; 
+- D 0 - I - 0x00E0F8 03:80E8: 1E        .byte con_spr_T + $1E   ; 
+
+- D 0 - I - 0x00E0F9 03:80E9: 11        .byte con_spr_X + $11   ; 
+- D 0 - I - 0x00E0FA 03:80EA: 20        .byte con_spr_Y + $20   ; 
+- D 0 - I - 0x00E0FB 03:80EB: 20        .byte con_spr_T + $20   ; 
+
+- D 0 - I - 0x00E0FC 03:80EC: 10        .byte con_spr_X + $10   ; 
+- D 0 - I - 0x00E0FD 03:80ED: A0        .byte con_spr_Y + $A0   ; 
+- D 0 - I - 0x00E0FE 03:80EE: 1F        .byte con_spr_T + $1F   ; 
+
+- D 0 - I - 0x00E0FF 03:80EF: 15        .byte con_spr_X + $15   ; 
+- D 0 - I - 0x00E100 03:80F0: 80        .byte con_spr_Y + $80   ; 
+- D 0 - I - 0x00E101 03:80F1: 0A        .byte con_spr_T + $0A   ; 
+
+- D 0 - I - 0x00E102 03:80F2: 17        .byte con_spr_X + $17   ; 
+- D 0 - I - 0x00E103 03:80F3: 00        .byte con_spr_Y + $00   ; 
+- D 0 - I - 0x00E104 03:80F4: 0B        .byte con_spr_T + $0B   ; 
+
+- D 0 - I - 0x00E105 03:80F5: 1F        .byte con_spr_X + $1F   ; 
+- D 0 - I - 0x00E106 03:80F6: A0        .byte con_spr_Y + $A0   ; 
+- D 0 - I - 0x00E107 03:80F7: 21        .byte con_spr_T + $21   ; 
+
+- D 0 - I - 0x00E108 03:80F8: 00        .byte con_spr_X + $00   ; 
+- D 0 - I - 0x00E109 03:80F9: 98        .byte con_spr_Y + $98   ; 
+- D 0 - I - 0x00E10A 03:80FA: 16        .byte con_spr_T + $16   ; 
+
+
+
 off_80FB_01:
 - D 0 - I - 0x00E10B 03:80FB: 2B        .byte $2B   ; 
 - D 0 - I - 0x00E10C 03:80FC: 30        .byte $30   ; 
 - D 0 - I - 0x00E10D 03:80FD: 13        .byte $13   ; 
 - D 0 - I - 0x00E10E 03:80FE: 1C        .byte $1C   ; 
-- D 0 - I - 0x00E10F 03:80FF: 0D        .byte $0D   ; 
-- D 0 - I - 0x00E110 03:8100: 18        .byte $18   ; 
-- D 0 - I - 0x00E111 03:8101: 2A        .byte $2A   ; 
-- D 0 - I - 0x00E112 03:8102: 15        .byte $15   ; 
-- D 0 - I - 0x00E113 03:8103: 18        .byte $18   ; 
-- D 0 - I - 0x00E114 03:8104: 2B        .byte $2B   ; 
-- D 0 - I - 0x00E115 03:8105: 05        .byte $05   ; 
-- D 0 - I - 0x00E116 03:8106: 18        .byte $18   ; 
-- D 0 - I - 0x00E117 03:8107: 29        .byte $29   ; 
-- D 0 - I - 0x00E118 03:8108: 06        .byte $06   ; 
-- D 0 - I - 0x00E119 03:8109: 08        .byte $08   ; 
-- D 0 - I - 0x00E11A 03:810A: 22        .byte $22   ; 
-- D 0 - I - 0x00E11B 03:810B: 16        .byte $16   ; 
-- D 0 - I - 0x00E11C 03:810C: 08        .byte $08   ; 
-- D 0 - I - 0x00E11D 03:810D: 10        .byte $10   ; 
-- D 0 - I - 0x00E11E 03:810E: 05        .byte $05   ; 
-- D 0 - I - 0x00E11F 03:810F: 10        .byte $10   ; 
-- D 0 - I - 0x00E120 03:8110: 25        .byte $25   ; 
-- D 0 - I - 0x00E121 03:8111: 0E        .byte $0E   ; 
-- D 0 - I - 0x00E122 03:8112: 08        .byte $08   ; 
-- D 0 - I - 0x00E123 03:8113: 23        .byte $23   ; 
-- D 0 - I - 0x00E124 03:8114: 1B        .byte $1B   ; 
-- D 0 - I - 0x00E125 03:8115: 9C        .byte $9C   ; 
-- D 0 - I - 0x00E126 03:8116: 2C        .byte $2C   ; 
-- D 0 - I - 0x00E127 03:8117: 00        .byte $00   ; 
-- D 0 - I - 0x00E128 03:8118: A6        .byte $A6   ; 
-- D 0 - I - 0x00E129 03:8119: 2F        .byte $2F   ; 
-- D 0 - I - 0x00E12A 03:811A: 11        .byte $11   ; 
-- D 0 - I - 0x00E12B 03:811B: 00        .byte $00   ; 
-- D 0 - I - 0x00E12C 03:811C: 09        .byte $09   ; 
-- D 0 - I - 0x00E12D 03:811D: 1D        .byte $1D   ; 
-- D 0 - I - 0x00E12E 03:811E: A4        .byte $A4   ; 
-- D 0 - I - 0x00E12F 03:811F: 2D        .byte $2D   ; 
-- D 0 - I - 0x00E130 03:8120: 08        .byte $08   ; 
-- D 0 - I - 0x00E131 03:8121: A5        .byte $A5   ; 
-- D 0 - I - 0x00E132 03:8122: 32        .byte $32   ; 
-- D 0 - I - 0x00E133 03:8123: 23        .byte $23   ; 
-- D 0 - I - 0x00E134 03:8124: A9        .byte $A9   ; 
-- D 0 - I - 0x00E135 03:8125: 36        .byte $36   ; 
-- D 0 - I - 0x00E136 03:8126: 09        .byte $09   ; 
-- D 0 - I - 0x00E137 03:8127: 84        .byte $84   ; 
-- D 0 - I - 0x00E138 03:8128: 08        .byte $08   ; 
-- D 0 - I - 0x00E139 03:8129: 11        .byte $11   ; 
-- D 0 - I - 0x00E13A 03:812A: 8F        .byte $8F   ; 
-- D 0 - I - 0x00E13B 03:812B: 24        .byte $24   ; 
-- D 0 - I - 0x00E13C 03:812C: 0D        .byte $0D   ; 
-- D 0 - I - 0x00E13D 03:812D: 10        .byte $10   ; 
-- D 0 - I - 0x00E13E 03:812E: 26        .byte $26   ; 
-- D 0 - I - 0x00E13F 03:812F: 08        .byte $08   ; 
-- D 0 - I - 0x00E140 03:8130: 20        .byte $20   ; 
-- D 0 - I - 0x00E141 03:8131: 31        .byte $31   ; 
-- D 0 - I - 0x00E142 03:8132: 20        .byte $20   ; 
-- D 0 - I - 0x00E143 03:8133: 0E        .byte $0E   ; 
-- D 0 - I - 0x00E144 03:8134: 11        .byte $11   ; 
-- D 0 - I - 0x00E145 03:8135: 1B        .byte $1B   ; 
-- D 0 - I - 0x00E146 03:8136: 90        .byte $90   ; 
-- D 0 - I - 0x00E147 03:8137: 28        .byte $28   ; 
-- D 0 - I - 0x00E148 03:8138: 15        .byte $15   ; 
-- D 0 - I - 0x00E149 03:8139: 10        .byte $10   ; 
-- D 0 - I - 0x00E14A 03:813A: 27        .byte $27   ; 
-- D 0 - I - 0x00E14B 03:813B: 10        .byte $10   ; 
-- D 0 - I - 0x00E14C 03:813C: A5        .byte $A5   ; 
-- D 0 - I - 0x00E14D 03:813D: 34        .byte $34   ; 
-- D 0 - I - 0x00E14E 03:813E: 10        .byte $10   ; 
-- D 0 - I - 0x00E14F 03:813F: 20        .byte $20   ; 
-- D 0 - I - 0x00E150 03:8140: 33        .byte $33   ; 
-- D 0 - I - 0x00E151 03:8141: 17        .byte $17   ; 
-- D 0 - I - 0x00E152 03:8142: 80        .byte $80   ; 
-- D 0 - I - 0x00E153 03:8143: 0A        .byte $0A   ; 
-- D 0 - I - 0x00E154 03:8144: 19        .byte $19   ; 
-- D 0 - I - 0x00E155 03:8145: 00        .byte $00   ; 
-- D 0 - I - 0x00E156 03:8146: 0B        .byte $0B   ; 
-- D 0 - I - 0x00E157 03:8147: 00        .byte $00   ; 
-- D 0 - I - 0x00E158 03:8148: AE        .byte $AE   ; 
-- D 0 - I - 0x00E159 03:8149: 30        .byte $30   ; 
-- D 0 - I - 0x00E15A 03:814A: 23        .byte $23   ; 
-- D 0 - I - 0x00E15B 03:814B: A1        .byte $A1   ; 
-- D 0 - I - 0x00E15C 03:814C: 35        .byte $35   ; 
-- D 0 - I - 0x00E15D 03:814D: 1D        .byte $1D   ; 
-- D 0 - I - 0x00E15E 03:814E: 18        .byte $18   ; 
-- D 0 - I - 0x00E15F 03:814F: 2E        .byte $2E   ; 
-- D 0 - I - 0x00E160 03:8150: 2B        .byte $2B   ; 
-- D 0 - I - 0x00E161 03:8151: AF        .byte $AF   ; 
-- D 0 - I - 0x00E162 03:8152: 37        .byte $37   ; 
+
+- D 0 - I - 0x00E10F 03:80FF: 0D        .byte con_spr_X + $0D   ; 
+- D 0 - I - 0x00E110 03:8100: 18        .byte con_spr_Y + $18   ; 
+- D 0 - I - 0x00E111 03:8101: 2A        .byte con_spr_T + $2A   ; 
+
+- D 0 - I - 0x00E112 03:8102: 15        .byte con_spr_X + $15   ; 
+- D 0 - I - 0x00E113 03:8103: 18        .byte con_spr_Y + $18   ; 
+- D 0 - I - 0x00E114 03:8104: 2B        .byte con_spr_T + $2B   ; 
+
+- D 0 - I - 0x00E115 03:8105: 05        .byte con_spr_X + $05   ; 
+- D 0 - I - 0x00E116 03:8106: 18        .byte con_spr_Y + $18   ; 
+- D 0 - I - 0x00E117 03:8107: 29        .byte con_spr_T + $29   ; 
+
+- D 0 - I - 0x00E118 03:8108: 06        .byte con_spr_X + $06   ; 
+- D 0 - I - 0x00E119 03:8109: 08        .byte con_spr_Y + $08   ; 
+- D 0 - I - 0x00E11A 03:810A: 22        .byte con_spr_T + $22   ; 
+
+- D 0 - I - 0x00E11B 03:810B: 16        .byte con_spr_X + $16   ; 
+- D 0 - I - 0x00E11C 03:810C: 08        .byte con_spr_Y + $08   ; 
+- D 0 - I - 0x00E11D 03:810D: 10        .byte con_spr_T + $10   ; 
+
+- D 0 - I - 0x00E11E 03:810E: 05        .byte con_spr_X + $05   ; 
+- D 0 - I - 0x00E11F 03:810F: 10        .byte con_spr_Y + $10   ; 
+- D 0 - I - 0x00E120 03:8110: 25        .byte con_spr_T + $25   ; 
+
+- D 0 - I - 0x00E121 03:8111: 0E        .byte con_spr_X + $0E   ; 
+- D 0 - I - 0x00E122 03:8112: 08        .byte con_spr_Y + $08   ; 
+- D 0 - I - 0x00E123 03:8113: 23        .byte con_spr_T + $23   ; 
+
+- D 0 - I - 0x00E124 03:8114: 1B        .byte con_spr_X + $1B   ; 
+- D 0 - I - 0x00E125 03:8115: 9C        .byte con_spr_Y + $9C   ; 
+- D 0 - I - 0x00E126 03:8116: 2C        .byte con_spr_T + $2C   ; 
+
+- D 0 - I - 0x00E127 03:8117: 00        .byte con_spr_X + $00   ; 
+- D 0 - I - 0x00E128 03:8118: A6        .byte con_spr_Y + $A6   ; 
+- D 0 - I - 0x00E129 03:8119: 2F        .byte con_spr_T + $2F   ; 
+
+- D 0 - I - 0x00E12A 03:811A: 11        .byte con_spr_X + $11   ; 
+- D 0 - I - 0x00E12B 03:811B: 00        .byte con_spr_Y + $00   ; 
+- D 0 - I - 0x00E12C 03:811C: 09        .byte con_spr_T + $09   ; 
+
+- D 0 - I - 0x00E12D 03:811D: 1D        .byte con_spr_X + $1D   ; 
+- D 0 - I - 0x00E12E 03:811E: A4        .byte con_spr_Y + $A4   ; 
+- D 0 - I - 0x00E12F 03:811F: 2D        .byte con_spr_T + $2D   ; 
+
+- D 0 - I - 0x00E130 03:8120: 08        .byte con_spr_X + $08   ; 
+- D 0 - I - 0x00E131 03:8121: A5        .byte con_spr_Y + $A5   ; 
+- D 0 - I - 0x00E132 03:8122: 32        .byte con_spr_T + $32   ; 
+
+- D 0 - I - 0x00E133 03:8123: 23        .byte con_spr_X + $23   ; 
+- D 0 - I - 0x00E134 03:8124: A9        .byte con_spr_Y + $A9   ; 
+- D 0 - I - 0x00E135 03:8125: 36        .byte con_spr_T + $36   ; 
+
+- D 0 - I - 0x00E136 03:8126: 09        .byte con_spr_X + $09   ; 
+- D 0 - I - 0x00E137 03:8127: 84        .byte con_spr_Y + $84   ; 
+- D 0 - I - 0x00E138 03:8128: 08        .byte con_spr_T + $08   ; 
+
+- D 0 - I - 0x00E139 03:8129: 11        .byte con_spr_X + $11   ; 
+- D 0 - I - 0x00E13A 03:812A: 8F        .byte con_spr_Y + $8F   ; 
+- D 0 - I - 0x00E13B 03:812B: 24        .byte con_spr_T + $24   ; 
+
+- D 0 - I - 0x00E13C 03:812C: 0D        .byte con_spr_X + $0D   ; 
+- D 0 - I - 0x00E13D 03:812D: 10        .byte con_spr_Y + $10   ; 
+- D 0 - I - 0x00E13E 03:812E: 26        .byte con_spr_T + $26   ; 
+
+- D 0 - I - 0x00E13F 03:812F: 08        .byte con_spr_X + $08   ; 
+- D 0 - I - 0x00E140 03:8130: 20        .byte con_spr_Y + $20   ; 
+- D 0 - I - 0x00E141 03:8131: 31        .byte con_spr_T + $31   ; 
+
+- D 0 - I - 0x00E142 03:8132: 20        .byte con_spr_X + $20   ; 
+- D 0 - I - 0x00E143 03:8133: 0E        .byte con_spr_Y + $0E   ; 
+- D 0 - I - 0x00E144 03:8134: 11        .byte con_spr_T + $11   ; 
+
+- D 0 - I - 0x00E145 03:8135: 1B        .byte con_spr_X + $1B   ; 
+- D 0 - I - 0x00E146 03:8136: 90        .byte con_spr_Y + $90   ; 
+- D 0 - I - 0x00E147 03:8137: 28        .byte con_spr_T + $28   ; 
+
+- D 0 - I - 0x00E148 03:8138: 15        .byte con_spr_X + $15   ; 
+- D 0 - I - 0x00E149 03:8139: 10        .byte con_spr_Y + $10   ; 
+- D 0 - I - 0x00E14A 03:813A: 27        .byte con_spr_T + $27   ; 
+
+- D 0 - I - 0x00E14B 03:813B: 10        .byte con_spr_X + $10   ; 
+- D 0 - I - 0x00E14C 03:813C: A5        .byte con_spr_Y + $A5   ; 
+- D 0 - I - 0x00E14D 03:813D: 34        .byte con_spr_T + $34   ; 
+
+- D 0 - I - 0x00E14E 03:813E: 10        .byte con_spr_X + $10   ; 
+- D 0 - I - 0x00E14F 03:813F: 20        .byte con_spr_Y + $20   ; 
+- D 0 - I - 0x00E150 03:8140: 33        .byte con_spr_T + $33   ; 
+
+- D 0 - I - 0x00E151 03:8141: 17        .byte con_spr_X + $17   ; 
+- D 0 - I - 0x00E152 03:8142: 80        .byte con_spr_Y + $80   ; 
+- D 0 - I - 0x00E153 03:8143: 0A        .byte con_spr_T + $0A   ; 
+
+- D 0 - I - 0x00E154 03:8144: 19        .byte con_spr_X + $19   ; 
+- D 0 - I - 0x00E155 03:8145: 00        .byte con_spr_Y + $00   ; 
+- D 0 - I - 0x00E156 03:8146: 0B        .byte con_spr_T + $0B   ; 
+
+- D 0 - I - 0x00E157 03:8147: 00        .byte con_spr_X + $00   ; 
+- D 0 - I - 0x00E158 03:8148: AE        .byte con_spr_Y + $AE   ; 
+- D 0 - I - 0x00E159 03:8149: 30        .byte con_spr_T + $30   ; 
+
+- D 0 - I - 0x00E15A 03:814A: 23        .byte con_spr_X + $23   ; 
+- D 0 - I - 0x00E15B 03:814B: A1        .byte con_spr_Y + $A1   ; 
+- D 0 - I - 0x00E15C 03:814C: 35        .byte con_spr_T + $35   ; 
+
+- D 0 - I - 0x00E15D 03:814D: 1D        .byte con_spr_X + $1D   ; 
+- D 0 - I - 0x00E15E 03:814E: 18        .byte con_spr_Y + $18   ; 
+- D 0 - I - 0x00E15F 03:814F: 2E        .byte con_spr_T + $2E   ; 
+
+- D 0 - I - 0x00E160 03:8150: 2B        .byte con_spr_X + $2B   ; 
+- D 0 - I - 0x00E161 03:8151: AF        .byte con_spr_Y + $AF   ; 
+- D 0 - I - 0x00E162 03:8152: 37        .byte con_spr_T + $37   ; 
+
+
+
 off_8153_02:
 - D 0 - I - 0x00E163 03:8153: 2D        .byte $2D   ; 
 - D 0 - I - 0x00E164 03:8154: 3F        .byte $3F   ; 
 - - - - - - 0x00E165 03:8155: 14        .byte $14   ; 
 - D 0 - I - 0x00E166 03:8156: 21        .byte $21   ; 
-- D 0 - I - 0x00E167 03:8157: 0F        .byte $0F   ; 
-- D 0 - I - 0x00E168 03:8158: 10        .byte $10   ; 
-- D 0 - I - 0x00E169 03:8159: 41        .byte $41   ; 
-- D 0 - I - 0x00E16A 03:815A: 0F        .byte $0F   ; 
-- D 0 - I - 0x00E16B 03:815B: 20        .byte $20   ; 
-- D 0 - I - 0x00E16C 03:815C: 4B        .byte $4B   ; 
-- D 0 - I - 0x00E16D 03:815D: 17        .byte $17   ; 
-- D 0 - I - 0x00E16E 03:815E: 10        .byte $10   ; 
-- D 0 - I - 0x00E16F 03:815F: 42        .byte $42   ; 
-- D 0 - I - 0x00E170 03:8160: 03        .byte $03   ; 
-- D 0 - I - 0x00E171 03:8161: B0        .byte $B0   ; 
-- D 0 - I - 0x00E172 03:8162: 54        .byte $54   ; 
-- D 0 - I - 0x00E173 03:8163: 07        .byte $07   ; 
-- D 0 - I - 0x00E174 03:8164: 10        .byte $10   ; 
-- D 0 - I - 0x00E175 03:8165: 40        .byte $40   ; 
-- D 0 - I - 0x00E176 03:8166: 1E        .byte $1E   ; 
-- D 0 - I - 0x00E177 03:8167: AB        .byte $AB   ; 
-- D 0 - I - 0x00E178 03:8168: 53        .byte $53   ; 
-- D 0 - I - 0x00E179 03:8169: 00        .byte $00   ; 
-- D 0 - I - 0x00E17A 03:816A: B8        .byte $B8   ; 
-- D 0 - I - 0x00E17B 03:816B: 56        .byte $56   ; 
-- D 0 - I - 0x00E17C 03:816C: 0F        .byte $0F   ; 
-- D 0 - I - 0x00E17D 03:816D: 08        .byte $08   ; 
-- D 0 - I - 0x00E17E 03:816E: 3E        .byte $3E   ; 
-- D 0 - I - 0x00E17F 03:816F: 08        .byte $08   ; 
-- D 0 - I - 0x00E180 03:8170: 18        .byte $18   ; 
-- D 0 - I - 0x00E181 03:8171: 44        .byte $44   ; 
-- D 0 - I - 0x00E182 03:8172: 07        .byte $07   ; 
-- D 0 - I - 0x00E183 03:8173: 20        .byte $20   ; 
-- D 0 - I - 0x00E184 03:8174: 4A        .byte $4A   ; 
-- D 0 - I - 0x00E185 03:8175: 17        .byte $17   ; 
-- D 0 - I - 0x00E186 03:8176: 20        .byte $20   ; 
-- D 0 - I - 0x00E187 03:8177: 4C        .byte $4C   ; 
-- D 0 - I - 0x00E188 03:8178: 15        .byte $15   ; 
-- D 0 - I - 0x00E189 03:8179: 28        .byte $28   ; 
-- D 0 - I - 0x00E18A 03:817A: 51        .byte $51   ; 
-- D 0 - I - 0x00E18B 03:817B: 26        .byte $26   ; 
-- D 0 - I - 0x00E18C 03:817C: B8        .byte $B8   ; 
-- D 0 - I - 0x00E18D 03:817D: 57        .byte $57   ; 
-- D 0 - I - 0x00E18E 03:817E: 05        .byte $05   ; 
-- D 0 - I - 0x00E18F 03:817F: 28        .byte $28   ; 
-- D 0 - I - 0x00E190 03:8180: 4F        .byte $4F   ; 
-- D 0 - I - 0x00E191 03:8181: 20        .byte $20   ; 
-- D 0 - I - 0x00E192 03:8182: B3        .byte $B3   ; 
-- D 0 - I - 0x00E193 03:8183: 2D        .byte $2D   ; 
-- D 0 - I - 0x00E194 03:8184: 17        .byte $17   ; 
-- D 0 - I - 0x00E195 03:8185: 08        .byte $08   ; 
-- D 0 - I - 0x00E196 03:8186: 3F        .byte $3F   ; 
-- D 0 - I - 0x00E197 03:8187: 10        .byte $10   ; 
-- D 0 - I - 0x00E198 03:8188: 18        .byte $18   ; 
-- D 0 - I - 0x00E199 03:8189: 45        .byte $45   ; 
-- D 0 - I - 0x00E19A 03:818A: 1F        .byte $1F   ; 
-- D 0 - I - 0x00E19B 03:818B: 10        .byte $10   ; 
-- D 0 - I - 0x00E19C 03:818C: 43        .byte $43   ; 
-- D 0 - I - 0x00E19D 03:818D: 0D        .byte $0D   ; 
-- D 0 - I - 0x00E19E 03:818E: 28        .byte $28   ; 
-- D 0 - I - 0x00E19F 03:818F: 50        .byte $50   ; 
-- D 0 - I - 0x00E1A0 03:8190: 09        .byte $09   ; 
-- D 0 - I - 0x00E1A1 03:8191: 89        .byte $89   ; 
-- D 0 - I - 0x00E1A2 03:8192: 3D        .byte $3D   ; 
-- D 0 - I - 0x00E1A3 03:8193: 07        .byte $07   ; 
-- D 0 - I - 0x00E1A4 03:8194: 08        .byte $08   ; 
-- D 0 - I - 0x00E1A5 03:8195: 3C        .byte $3C   ; 
-- D 0 - I - 0x00E1A6 03:8196: 20        .byte $20   ; 
-- D 0 - I - 0x00E1A7 03:8197: 18        .byte $18   ; 
-- D 0 - I - 0x00E1A8 03:8198: 48        .byte $48   ; 
-- D 0 - I - 0x00E1A9 03:8199: 13        .byte $13   ; 
-- D 0 - I - 0x00E1AA 03:819A: 98        .byte $98   ; 
-- D 0 - I - 0x00E1AB 03:819B: 46        .byte $46   ; 
-- D 0 - I - 0x00E1AC 03:819C: 1D        .byte $1D   ; 
-- D 0 - I - 0x00E1AD 03:819D: 28        .byte $28   ; 
-- D 0 - I - 0x00E1AE 03:819E: 52        .byte $52   ; 
-- D 0 - I - 0x00E1AF 03:819F: 12        .byte $12   ; 
-- D 0 - I - 0x00E1B0 03:81A0: 00        .byte $00   ; 
-- D 0 - I - 0x00E1B1 03:81A1: 38        .byte $38   ; 
-- D 0 - I - 0x00E1B2 03:81A2: 04        .byte $04   ; 
-- D 0 - I - 0x00E1B3 03:81A3: A8        .byte $A8   ; 
-- D 0 - I - 0x00E1B4 03:81A4: 4E        .byte $4E   ; 
-- D 0 - I - 0x00E1B5 03:81A5: 18        .byte $18   ; 
-- D 0 - I - 0x00E1B6 03:81A6: 18        .byte $18   ; 
-- D 0 - I - 0x00E1B7 03:81A7: 47        .byte $47   ; 
-- D 0 - I - 0x00E1B8 03:81A8: 18        .byte $18   ; 
-- D 0 - I - 0x00E1B9 03:81A9: 87        .byte $87   ; 
-- D 0 - I - 0x00E1BA 03:81AA: 39        .byte $39   ; 
-- D 0 - I - 0x00E1BB 03:81AB: 1F        .byte $1F   ; 
-- D 0 - I - 0x00E1BC 03:81AC: 20        .byte $20   ; 
-- D 0 - I - 0x00E1BD 03:81AD: 4D        .byte $4D   ; 
-- D 0 - I - 0x00E1BE 03:81AE: 22        .byte $22   ; 
-- D 0 - I - 0x00E1BF 03:81AF: 98        .byte $98   ; 
-- D 0 - I - 0x00E1C0 03:81B0: 49        .byte $49   ; 
-- D 0 - I - 0x00E1C1 03:81B1: 1A        .byte $1A   ; 
-- D 0 - I - 0x00E1C2 03:81B2: 00        .byte $00   ; 
-- D 0 - I - 0x00E1C3 03:81B3: 3B        .byte $3B   ; 
-- D 0 - I - 0x00E1C4 03:81B4: 1C        .byte $1C   ; 
-- D 0 - I - 0x00E1C5 03:81B5: 8F        .byte $8F   ; 
-- D 0 - I - 0x00E1C6 03:81B6: 3A        .byte $3A   ; 
-- D 0 - I - 0x00E1C7 03:81B7: 26        .byte $26   ; 
-- D 0 - I - 0x00E1C8 03:81B8: B0        .byte $B0   ; 
-- D 0 - I - 0x00E1C9 03:81B9: 55        .byte $55   ; 
+
+- D 0 - I - 0x00E167 03:8157: 0F        .byte con_spr_X + $0F   ; 
+- D 0 - I - 0x00E168 03:8158: 10        .byte con_spr_Y + $10   ; 
+- D 0 - I - 0x00E169 03:8159: 41        .byte con_spr_T + $41   ; 
+
+- D 0 - I - 0x00E16A 03:815A: 0F        .byte con_spr_X + $0F   ; 
+- D 0 - I - 0x00E16B 03:815B: 20        .byte con_spr_Y + $20   ; 
+- D 0 - I - 0x00E16C 03:815C: 4B        .byte con_spr_T + $4B   ; 
+
+- D 0 - I - 0x00E16D 03:815D: 17        .byte con_spr_X + $17   ; 
+- D 0 - I - 0x00E16E 03:815E: 10        .byte con_spr_Y + $10   ; 
+- D 0 - I - 0x00E16F 03:815F: 42        .byte con_spr_T + $42   ; 
+
+- D 0 - I - 0x00E170 03:8160: 03        .byte con_spr_X + $03   ; 
+- D 0 - I - 0x00E171 03:8161: B0        .byte con_spr_Y + $B0   ; 
+- D 0 - I - 0x00E172 03:8162: 54        .byte con_spr_T + $54   ; 
+
+- D 0 - I - 0x00E173 03:8163: 07        .byte con_spr_X + $07   ; 
+- D 0 - I - 0x00E174 03:8164: 10        .byte con_spr_Y + $10   ; 
+- D 0 - I - 0x00E175 03:8165: 40        .byte con_spr_T + $40   ; 
+
+- D 0 - I - 0x00E176 03:8166: 1E        .byte con_spr_X + $1E   ; 
+- D 0 - I - 0x00E177 03:8167: AB        .byte con_spr_Y + $AB   ; 
+- D 0 - I - 0x00E178 03:8168: 53        .byte con_spr_T + $53   ; 
+
+- D 0 - I - 0x00E179 03:8169: 00        .byte con_spr_X + $00   ; 
+- D 0 - I - 0x00E17A 03:816A: B8        .byte con_spr_Y + $B8   ; 
+- D 0 - I - 0x00E17B 03:816B: 56        .byte con_spr_T + $56   ; 
+
+- D 0 - I - 0x00E17C 03:816C: 0F        .byte con_spr_X + $0F   ; 
+- D 0 - I - 0x00E17D 03:816D: 08        .byte con_spr_Y + $08   ; 
+- D 0 - I - 0x00E17E 03:816E: 3E        .byte con_spr_T + $3E   ; 
+
+- D 0 - I - 0x00E17F 03:816F: 08        .byte con_spr_X + $08   ; 
+- D 0 - I - 0x00E180 03:8170: 18        .byte con_spr_Y + $18   ; 
+- D 0 - I - 0x00E181 03:8171: 44        .byte con_spr_T + $44   ; 
+
+- D 0 - I - 0x00E182 03:8172: 07        .byte con_spr_X + $07   ; 
+- D 0 - I - 0x00E183 03:8173: 20        .byte con_spr_Y + $20   ; 
+- D 0 - I - 0x00E184 03:8174: 4A        .byte con_spr_T + $4A   ; 
+
+- D 0 - I - 0x00E185 03:8175: 17        .byte con_spr_X + $17   ; 
+- D 0 - I - 0x00E186 03:8176: 20        .byte con_spr_Y + $20   ; 
+- D 0 - I - 0x00E187 03:8177: 4C        .byte con_spr_T + $4C   ; 
+
+- D 0 - I - 0x00E188 03:8178: 15        .byte con_spr_X + $15   ; 
+- D 0 - I - 0x00E189 03:8179: 28        .byte con_spr_Y + $28   ; 
+- D 0 - I - 0x00E18A 03:817A: 51        .byte con_spr_T + $51   ; 
+
+- D 0 - I - 0x00E18B 03:817B: 26        .byte con_spr_X + $26   ; 
+- D 0 - I - 0x00E18C 03:817C: B8        .byte con_spr_Y + $B8   ; 
+- D 0 - I - 0x00E18D 03:817D: 57        .byte con_spr_T + $57   ; 
+
+- D 0 - I - 0x00E18E 03:817E: 05        .byte con_spr_X + $05   ; 
+- D 0 - I - 0x00E18F 03:817F: 28        .byte con_spr_Y + $28   ; 
+- D 0 - I - 0x00E190 03:8180: 4F        .byte con_spr_T + $4F   ; 
+
+- D 0 - I - 0x00E191 03:8181: 20        .byte con_spr_X + $20   ; 
+- D 0 - I - 0x00E192 03:8182: B3        .byte con_spr_Y + $B3   ; 
+- D 0 - I - 0x00E193 03:8183: 2D        .byte con_spr_T + $2D   ; 
+
+- D 0 - I - 0x00E194 03:8184: 17        .byte con_spr_X + $17   ; 
+- D 0 - I - 0x00E195 03:8185: 08        .byte con_spr_Y + $08   ; 
+- D 0 - I - 0x00E196 03:8186: 3F        .byte con_spr_T + $3F   ; 
+
+- D 0 - I - 0x00E197 03:8187: 10        .byte con_spr_X + $10   ; 
+- D 0 - I - 0x00E198 03:8188: 18        .byte con_spr_Y + $18   ; 
+- D 0 - I - 0x00E199 03:8189: 45        .byte con_spr_T + $45   ; 
+
+- D 0 - I - 0x00E19A 03:818A: 1F        .byte con_spr_X + $1F   ; 
+- D 0 - I - 0x00E19B 03:818B: 10        .byte con_spr_Y + $10   ; 
+- D 0 - I - 0x00E19C 03:818C: 43        .byte con_spr_T + $43   ; 
+
+- D 0 - I - 0x00E19D 03:818D: 0D        .byte con_spr_X + $0D   ; 
+- D 0 - I - 0x00E19E 03:818E: 28        .byte con_spr_Y + $28   ; 
+- D 0 - I - 0x00E19F 03:818F: 50        .byte con_spr_T + $50   ; 
+
+- D 0 - I - 0x00E1A0 03:8190: 09        .byte con_spr_X + $09   ; 
+- D 0 - I - 0x00E1A1 03:8191: 89        .byte con_spr_Y + $89   ; 
+- D 0 - I - 0x00E1A2 03:8192: 3D        .byte con_spr_T + $3D   ; 
+
+- D 0 - I - 0x00E1A3 03:8193: 07        .byte con_spr_X + $07   ; 
+- D 0 - I - 0x00E1A4 03:8194: 08        .byte con_spr_Y + $08   ; 
+- D 0 - I - 0x00E1A5 03:8195: 3C        .byte con_spr_T + $3C   ; 
+
+- D 0 - I - 0x00E1A6 03:8196: 20        .byte con_spr_X + $20   ; 
+- D 0 - I - 0x00E1A7 03:8197: 18        .byte con_spr_Y + $18   ; 
+- D 0 - I - 0x00E1A8 03:8198: 48        .byte con_spr_T + $48   ; 
+
+- D 0 - I - 0x00E1A9 03:8199: 13        .byte con_spr_X + $13   ; 
+- D 0 - I - 0x00E1AA 03:819A: 98        .byte con_spr_Y + $98   ; 
+- D 0 - I - 0x00E1AB 03:819B: 46        .byte con_spr_T + $46   ; 
+
+- D 0 - I - 0x00E1AC 03:819C: 1D        .byte con_spr_X + $1D   ; 
+- D 0 - I - 0x00E1AD 03:819D: 28        .byte con_spr_Y + $28   ; 
+- D 0 - I - 0x00E1AE 03:819E: 52        .byte con_spr_T + $52   ; 
+
+- D 0 - I - 0x00E1AF 03:819F: 12        .byte con_spr_X + $12   ; 
+- D 0 - I - 0x00E1B0 03:81A0: 00        .byte con_spr_Y + $00   ; 
+- D 0 - I - 0x00E1B1 03:81A1: 38        .byte con_spr_T + $38   ; 
+
+- D 0 - I - 0x00E1B2 03:81A2: 04        .byte con_spr_X + $04   ; 
+- D 0 - I - 0x00E1B3 03:81A3: A8        .byte con_spr_Y + $A8   ; 
+- D 0 - I - 0x00E1B4 03:81A4: 4E        .byte con_spr_T + $4E   ; 
+
+- D 0 - I - 0x00E1B5 03:81A5: 18        .byte con_spr_X + $18   ; 
+- D 0 - I - 0x00E1B6 03:81A6: 18        .byte con_spr_Y + $18   ; 
+- D 0 - I - 0x00E1B7 03:81A7: 47        .byte con_spr_T + $47   ; 
+
+- D 0 - I - 0x00E1B8 03:81A8: 18        .byte con_spr_X + $18   ; 
+- D 0 - I - 0x00E1B9 03:81A9: 87        .byte con_spr_Y + $87   ; 
+- D 0 - I - 0x00E1BA 03:81AA: 39        .byte con_spr_T + $39   ; 
+
+- D 0 - I - 0x00E1BB 03:81AB: 1F        .byte con_spr_X + $1F   ; 
+- D 0 - I - 0x00E1BC 03:81AC: 20        .byte con_spr_Y + $20   ; 
+- D 0 - I - 0x00E1BD 03:81AD: 4D        .byte con_spr_T + $4D   ; 
+
+- D 0 - I - 0x00E1BE 03:81AE: 22        .byte con_spr_X + $22   ; 
+- D 0 - I - 0x00E1BF 03:81AF: 98        .byte con_spr_Y + $98   ; 
+- D 0 - I - 0x00E1C0 03:81B0: 49        .byte con_spr_T + $49   ; 
+
+- D 0 - I - 0x00E1C1 03:81B1: 1A        .byte con_spr_X + $1A   ; 
+- D 0 - I - 0x00E1C2 03:81B2: 00        .byte con_spr_Y + $00   ; 
+- D 0 - I - 0x00E1C3 03:81B3: 3B        .byte con_spr_T + $3B   ; 
+
+- D 0 - I - 0x00E1C4 03:81B4: 1C        .byte con_spr_X + $1C   ; 
+- D 0 - I - 0x00E1C5 03:81B5: 8F        .byte con_spr_Y + $8F   ; 
+- D 0 - I - 0x00E1C6 03:81B6: 3A        .byte con_spr_T + $3A   ; 
+
+- D 0 - I - 0x00E1C7 03:81B7: 26        .byte con_spr_X + $26   ; 
+- D 0 - I - 0x00E1C8 03:81B8: B0        .byte con_spr_Y + $B0   ; 
+- D 0 - I - 0x00E1C9 03:81B9: 55        .byte con_spr_T + $55   ; 
+
+
+
 off_81BA_03:
 - D 0 - I - 0x00E1CA 03:81BA: 2E        .byte $2E   ; 
 - D 0 - I - 0x00E1CB 03:81BB: 3F        .byte $3F   ; 
 - - - - - - 0x00E1CC 03:81BC: 15        .byte $15   ; 
 - D 0 - I - 0x00E1CD 03:81BD: 22        .byte $22   ; 
-- D 0 - I - 0x00E1CE 03:81BE: 0F        .byte $0F   ; 
-- D 0 - I - 0x00E1CF 03:81BF: 20        .byte $20   ; 
-- D 0 - I - 0x00E1D0 03:81C0: 6C        .byte $6C   ; 
-- D 0 - I - 0x00E1D1 03:81C1: 09        .byte $09   ; 
-- D 0 - I - 0x00E1D2 03:81C2: 10        .byte $10   ; 
-- D 0 - I - 0x00E1D3 03:81C3: 61        .byte $61   ; 
-- D 0 - I - 0x00E1D4 03:81C4: 19        .byte $19   ; 
-- D 0 - I - 0x00E1D5 03:81C5: 10        .byte $10   ; 
-- D 0 - I - 0x00E1D6 03:81C6: 64        .byte $64   ; 
-- D 0 - I - 0x00E1D7 03:81C7: 17        .byte $17   ; 
-- D 0 - I - 0x00E1D8 03:81C8: 20        .byte $20   ; 
-- D 0 - I - 0x00E1D9 03:81C9: 6D        .byte $6D   ; 
-- D 0 - I - 0x00E1DA 03:81CA: 10        .byte $10   ; 
-- D 0 - I - 0x00E1DB 03:81CB: 08        .byte $08   ; 
-- D 0 - I - 0x00E1DC 03:81CC: 5D        .byte $5D   ; 
-- D 0 - I - 0x00E1DD 03:81CD: 03        .byte $03   ; 
-- D 0 - I - 0x00E1DE 03:81CE: B0        .byte $B0   ; 
-- D 0 - I - 0x00E1DF 03:81CF: 75        .byte $75   ; 
-- D 0 - I - 0x00E1E0 03:81D0: 12        .byte $12   ; 
-- D 0 - I - 0x00E1E1 03:81D1: 18        .byte $18   ; 
-- D 0 - I - 0x00E1E2 03:81D2: 67        .byte $67   ; 
-- D 0 - I - 0x00E1E3 03:81D3: 1E        .byte $1E   ; 
-- D 0 - I - 0x00E1E4 03:81D4: AB        .byte $AB   ; 
-- D 0 - I - 0x00E1E5 03:81D5: 74        .byte $74   ; 
-- D 0 - I - 0x00E1E6 03:81D6: 00        .byte $00   ; 
-- D 0 - I - 0x00E1E7 03:81D7: B8        .byte $B8   ; 
-- D 0 - I - 0x00E1E8 03:81D8: 76        .byte $76   ; 
-- D 0 - I - 0x00E1E9 03:81D9: 11        .byte $11   ; 
-- D 0 - I - 0x00E1EA 03:81DA: 10        .byte $10   ; 
-- D 0 - I - 0x00E1EB 03:81DB: 62        .byte $62   ; 
-- D 0 - I - 0x00E1EC 03:81DC: 0A        .byte $0A   ; 
-- D 0 - I - 0x00E1ED 03:81DD: 18        .byte $18   ; 
-- D 0 - I - 0x00E1EE 03:81DE: 66        .byte $66   ; 
-- D 0 - I - 0x00E1EF 03:81DF: 18        .byte $18   ; 
-- D 0 - I - 0x00E1F0 03:81E0: 08        .byte $08   ; 
-- D 0 - I - 0x00E1F1 03:81E1: 5E        .byte $5E   ; 
-- D 0 - I - 0x00E1F2 03:81E2: 07        .byte $07   ; 
-- D 0 - I - 0x00E1F3 03:81E3: 20        .byte $20   ; 
-- D 0 - I - 0x00E1F4 03:81E4: 6B        .byte $6B   ; 
-- D 0 - I - 0x00E1F5 03:81E5: 08        .byte $08   ; 
-- D 0 - I - 0x00E1F6 03:81E6: 08        .byte $08   ; 
-- D 0 - I - 0x00E1F7 03:81E7: 5C        .byte $5C   ; 
-- D 0 - I - 0x00E1F8 03:81E8: 05        .byte $05   ; 
-- D 0 - I - 0x00E1F9 03:81E9: 28        .byte $28   ; 
-- D 0 - I - 0x00E1FA 03:81EA: 6F        .byte $6F   ; 
-- D 0 - I - 0x00E1FB 03:81EB: 20        .byte $20   ; 
-- D 0 - I - 0x00E1FC 03:81EC: B3        .byte $B3   ; 
-- D 0 - I - 0x00E1FD 03:81ED: 2D        .byte $2D   ; 
-- D 0 - I - 0x00E1FE 03:81EE: 21        .byte $21   ; 
-- D 0 - I - 0x00E1FF 03:81EF: 10        .byte $10   ; 
-- D 0 - I - 0x00E200 03:81F0: 65        .byte $65   ; 
-- D 0 - I - 0x00E201 03:81F1: 27        .byte $27   ; 
-- D 0 - I - 0x00E202 03:81F2: B8        .byte $B8   ; 
-- D 0 - I - 0x00E203 03:81F3: 77        .byte $77   ; 
-- D 0 - I - 0x00E204 03:81F4: 13        .byte $13   ; 
-- D 0 - I - 0x00E205 03:81F5: 00        .byte $00   ; 
-- D 0 - I - 0x00E206 03:81F6: 59        .byte $59   ; 
-- D 0 - I - 0x00E207 03:81F7: 0D        .byte $0D   ; 
-- D 0 - I - 0x00E208 03:81F8: 28        .byte $28   ; 
-- D 0 - I - 0x00E209 03:81F9: 71        .byte $71   ; 
-- D 0 - I - 0x00E20A 03:81FA: 1D        .byte $1D   ; 
-- D 0 - I - 0x00E20B 03:81FB: 28        .byte $28   ; 
-- D 0 - I - 0x00E20C 03:81FC: 73        .byte $73   ; 
-- D 0 - I - 0x00E20D 03:81FD: 1D        .byte $1D   ; 
-- D 0 - I - 0x00E20E 03:81FE: 88        .byte $88   ; 
-- D 0 - I - 0x00E20F 03:81FF: 5F        .byte $5F   ; 
-- D 0 - I - 0x00E210 03:8200: 22        .byte $22   ; 
-- D 0 - I - 0x00E211 03:8201: 18        .byte $18   ; 
-- D 0 - I - 0x00E212 03:8202: 69        .byte $69   ; 
-- D 0 - I - 0x00E213 03:8203: 0A        .byte $0A   ; 
-- D 0 - I - 0x00E214 03:8204: 87        .byte $87   ; 
-- D 0 - I - 0x00E215 03:8205: 58        .byte $58   ; 
-- D 0 - I - 0x00E216 03:8206: 13        .byte $13   ; 
-- D 0 - I - 0x00E217 03:8207: 94        .byte $94   ; 
-- D 0 - I - 0x00E218 03:8208: 63        .byte $63   ; 
-- D 0 - I - 0x00E219 03:8209: 15        .byte $15   ; 
-- D 0 - I - 0x00E21A 03:820A: 28        .byte $28   ; 
-- D 0 - I - 0x00E21B 03:820B: 72        .byte $72   ; 
-- D 0 - I - 0x00E21C 03:820C: 1A        .byte $1A   ; 
-- D 0 - I - 0x00E21D 03:820D: 18        .byte $18   ; 
-- D 0 - I - 0x00E21E 03:820E: 68        .byte $68   ; 
-- D 0 - I - 0x00E21F 03:820F: 23        .byte $23   ; 
-- D 0 - I - 0x00E220 03:8210: 98        .byte $98   ; 
-- D 0 - I - 0x00E221 03:8211: 6A        .byte $6A   ; 
-- D 0 - I - 0x00E222 03:8212: 05        .byte $05   ; 
-- D 0 - I - 0x00E223 03:8213: A8        .byte $A8   ; 
-- D 0 - I - 0x00E224 03:8214: 70        .byte $70   ; 
-- D 0 - I - 0x00E225 03:8215: 1B        .byte $1B   ; 
-- D 0 - I - 0x00E226 03:8216: 00        .byte $00   ; 
-- D 0 - I - 0x00E227 03:8217: 5B        .byte $5B   ; 
-- D 0 - I - 0x00E228 03:8218: 1F        .byte $1F   ; 
-- D 0 - I - 0x00E229 03:8219: 20        .byte $20   ; 
-- D 0 - I - 0x00E22A 03:821A: 6E        .byte $6E   ; 
-- D 0 - I - 0x00E22B 03:821B: 20        .byte $20   ; 
-- D 0 - I - 0x00E22C 03:821C: 08        .byte $08   ; 
-- D 0 - I - 0x00E22D 03:821D: 60        .byte $60   ; 
-- D 0 - I - 0x00E22E 03:821E: 26        .byte $26   ; 
-- D 0 - I - 0x00E22F 03:821F: B0        .byte $B0   ; 
-- D 0 - I - 0x00E230 03:8220: 35        .byte $35   ; 
-- D 0 - I - 0x00E231 03:8221: 19        .byte $19   ; 
-- D 0 - I - 0x00E232 03:8222: 80        .byte $80   ; 
-- D 0 - I - 0x00E233 03:8223: 5A        .byte $5A   ; 
+
+- D 0 - I - 0x00E1CE 03:81BE: 0F        .byte con_spr_X + $0F   ; 
+- D 0 - I - 0x00E1CF 03:81BF: 20        .byte con_spr_Y + $20   ; 
+- D 0 - I - 0x00E1D0 03:81C0: 6C        .byte con_spr_T + $6C   ; 
+
+- D 0 - I - 0x00E1D1 03:81C1: 09        .byte con_spr_X + $09   ; 
+- D 0 - I - 0x00E1D2 03:81C2: 10        .byte con_spr_Y + $10   ; 
+- D 0 - I - 0x00E1D3 03:81C3: 61        .byte con_spr_T + $61   ; 
+
+- D 0 - I - 0x00E1D4 03:81C4: 19        .byte con_spr_X + $19   ; 
+- D 0 - I - 0x00E1D5 03:81C5: 10        .byte con_spr_Y + $10   ; 
+- D 0 - I - 0x00E1D6 03:81C6: 64        .byte con_spr_T + $64   ; 
+
+- D 0 - I - 0x00E1D7 03:81C7: 17        .byte con_spr_X + $17   ; 
+- D 0 - I - 0x00E1D8 03:81C8: 20        .byte con_spr_Y + $20   ; 
+- D 0 - I - 0x00E1D9 03:81C9: 6D        .byte con_spr_T + $6D   ; 
+
+- D 0 - I - 0x00E1DA 03:81CA: 10        .byte con_spr_X + $10   ; 
+- D 0 - I - 0x00E1DB 03:81CB: 08        .byte con_spr_Y + $08   ; 
+- D 0 - I - 0x00E1DC 03:81CC: 5D        .byte con_spr_T + $5D   ; 
+
+- D 0 - I - 0x00E1DD 03:81CD: 03        .byte con_spr_X + $03   ; 
+- D 0 - I - 0x00E1DE 03:81CE: B0        .byte con_spr_Y + $B0   ; 
+- D 0 - I - 0x00E1DF 03:81CF: 75        .byte con_spr_T + $75   ; 
+
+- D 0 - I - 0x00E1E0 03:81D0: 12        .byte con_spr_X + $12   ; 
+- D 0 - I - 0x00E1E1 03:81D1: 18        .byte con_spr_Y + $18   ; 
+- D 0 - I - 0x00E1E2 03:81D2: 67        .byte con_spr_T + $67   ; 
+
+- D 0 - I - 0x00E1E3 03:81D3: 1E        .byte con_spr_X + $1E   ; 
+- D 0 - I - 0x00E1E4 03:81D4: AB        .byte con_spr_Y + $AB   ; 
+- D 0 - I - 0x00E1E5 03:81D5: 74        .byte con_spr_T + $74   ; 
+
+- D 0 - I - 0x00E1E6 03:81D6: 00        .byte con_spr_X + $00   ; 
+- D 0 - I - 0x00E1E7 03:81D7: B8        .byte con_spr_Y + $B8   ; 
+- D 0 - I - 0x00E1E8 03:81D8: 76        .byte con_spr_T + $76   ; 
+
+- D 0 - I - 0x00E1E9 03:81D9: 11        .byte con_spr_X + $11   ; 
+- D 0 - I - 0x00E1EA 03:81DA: 10        .byte con_spr_Y + $10   ; 
+- D 0 - I - 0x00E1EB 03:81DB: 62        .byte con_spr_T + $62   ; 
+
+- D 0 - I - 0x00E1EC 03:81DC: 0A        .byte con_spr_X + $0A   ; 
+- D 0 - I - 0x00E1ED 03:81DD: 18        .byte con_spr_Y + $18   ; 
+- D 0 - I - 0x00E1EE 03:81DE: 66        .byte con_spr_T + $66   ; 
+
+- D 0 - I - 0x00E1EF 03:81DF: 18        .byte con_spr_X + $18   ; 
+- D 0 - I - 0x00E1F0 03:81E0: 08        .byte con_spr_Y + $08   ; 
+- D 0 - I - 0x00E1F1 03:81E1: 5E        .byte con_spr_T + $5E   ; 
+
+- D 0 - I - 0x00E1F2 03:81E2: 07        .byte con_spr_X + $07   ; 
+- D 0 - I - 0x00E1F3 03:81E3: 20        .byte con_spr_Y + $20   ; 
+- D 0 - I - 0x00E1F4 03:81E4: 6B        .byte con_spr_T + $6B   ; 
+
+- D 0 - I - 0x00E1F5 03:81E5: 08        .byte con_spr_X + $08   ; 
+- D 0 - I - 0x00E1F6 03:81E6: 08        .byte con_spr_Y + $08   ; 
+- D 0 - I - 0x00E1F7 03:81E7: 5C        .byte con_spr_T + $5C   ; 
+
+- D 0 - I - 0x00E1F8 03:81E8: 05        .byte con_spr_X + $05   ; 
+- D 0 - I - 0x00E1F9 03:81E9: 28        .byte con_spr_Y + $28   ; 
+- D 0 - I - 0x00E1FA 03:81EA: 6F        .byte con_spr_T + $6F   ; 
+
+- D 0 - I - 0x00E1FB 03:81EB: 20        .byte con_spr_X + $20   ; 
+- D 0 - I - 0x00E1FC 03:81EC: B3        .byte con_spr_Y + $B3   ; 
+- D 0 - I - 0x00E1FD 03:81ED: 2D        .byte con_spr_T + $2D   ; 
+
+- D 0 - I - 0x00E1FE 03:81EE: 21        .byte con_spr_X + $21   ; 
+- D 0 - I - 0x00E1FF 03:81EF: 10        .byte con_spr_Y + $10   ; 
+- D 0 - I - 0x00E200 03:81F0: 65        .byte con_spr_T + $65   ; 
+
+- D 0 - I - 0x00E201 03:81F1: 27        .byte con_spr_X + $27   ; 
+- D 0 - I - 0x00E202 03:81F2: B8        .byte con_spr_Y + $B8   ; 
+- D 0 - I - 0x00E203 03:81F3: 77        .byte con_spr_T + $77   ; 
+
+- D 0 - I - 0x00E204 03:81F4: 13        .byte con_spr_X + $13   ; 
+- D 0 - I - 0x00E205 03:81F5: 00        .byte con_spr_Y + $00   ; 
+- D 0 - I - 0x00E206 03:81F6: 59        .byte con_spr_T + $59   ; 
+
+- D 0 - I - 0x00E207 03:81F7: 0D        .byte con_spr_X + $0D   ; 
+- D 0 - I - 0x00E208 03:81F8: 28        .byte con_spr_Y + $28   ; 
+- D 0 - I - 0x00E209 03:81F9: 71        .byte con_spr_T + $71   ; 
+
+- D 0 - I - 0x00E20A 03:81FA: 1D        .byte con_spr_X + $1D   ; 
+- D 0 - I - 0x00E20B 03:81FB: 28        .byte con_spr_Y + $28   ; 
+- D 0 - I - 0x00E20C 03:81FC: 73        .byte con_spr_T + $73   ; 
+
+- D 0 - I - 0x00E20D 03:81FD: 1D        .byte con_spr_X + $1D   ; 
+- D 0 - I - 0x00E20E 03:81FE: 88        .byte con_spr_Y + $88   ; 
+- D 0 - I - 0x00E20F 03:81FF: 5F        .byte con_spr_T + $5F   ; 
+
+- D 0 - I - 0x00E210 03:8200: 22        .byte con_spr_X + $22   ; 
+- D 0 - I - 0x00E211 03:8201: 18        .byte con_spr_Y + $18   ; 
+- D 0 - I - 0x00E212 03:8202: 69        .byte con_spr_T + $69   ; 
+
+- D 0 - I - 0x00E213 03:8203: 0A        .byte con_spr_X + $0A   ; 
+- D 0 - I - 0x00E214 03:8204: 87        .byte con_spr_Y + $87   ; 
+- D 0 - I - 0x00E215 03:8205: 58        .byte con_spr_T + $58   ; 
+
+- D 0 - I - 0x00E216 03:8206: 13        .byte con_spr_X + $13   ; 
+- D 0 - I - 0x00E217 03:8207: 94        .byte con_spr_Y + $94   ; 
+- D 0 - I - 0x00E218 03:8208: 63        .byte con_spr_T + $63   ; 
+
+- D 0 - I - 0x00E219 03:8209: 15        .byte con_spr_X + $15   ; 
+- D 0 - I - 0x00E21A 03:820A: 28        .byte con_spr_Y + $28   ; 
+- D 0 - I - 0x00E21B 03:820B: 72        .byte con_spr_T + $72   ; 
+
+- D 0 - I - 0x00E21C 03:820C: 1A        .byte con_spr_X + $1A   ; 
+- D 0 - I - 0x00E21D 03:820D: 18        .byte con_spr_Y + $18   ; 
+- D 0 - I - 0x00E21E 03:820E: 68        .byte con_spr_T + $68   ; 
+
+- D 0 - I - 0x00E21F 03:820F: 23        .byte con_spr_X + $23   ; 
+- D 0 - I - 0x00E220 03:8210: 98        .byte con_spr_Y + $98   ; 
+- D 0 - I - 0x00E221 03:8211: 6A        .byte con_spr_T + $6A   ; 
+
+- D 0 - I - 0x00E222 03:8212: 05        .byte con_spr_X + $05   ; 
+- D 0 - I - 0x00E223 03:8213: A8        .byte con_spr_Y + $A8   ; 
+- D 0 - I - 0x00E224 03:8214: 70        .byte con_spr_T + $70   ; 
+
+- D 0 - I - 0x00E225 03:8215: 1B        .byte con_spr_X + $1B   ; 
+- D 0 - I - 0x00E226 03:8216: 00        .byte con_spr_Y + $00   ; 
+- D 0 - I - 0x00E227 03:8217: 5B        .byte con_spr_T + $5B   ; 
+
+- D 0 - I - 0x00E228 03:8218: 1F        .byte con_spr_X + $1F   ; 
+- D 0 - I - 0x00E229 03:8219: 20        .byte con_spr_Y + $20   ; 
+- D 0 - I - 0x00E22A 03:821A: 6E        .byte con_spr_T + $6E   ; 
+
+- D 0 - I - 0x00E22B 03:821B: 20        .byte con_spr_X + $20   ; 
+- D 0 - I - 0x00E22C 03:821C: 08        .byte con_spr_Y + $08   ; 
+- D 0 - I - 0x00E22D 03:821D: 60        .byte con_spr_T + $60   ; 
+
+- D 0 - I - 0x00E22E 03:821E: 26        .byte con_spr_X + $26   ; 
+- D 0 - I - 0x00E22F 03:821F: B0        .byte con_spr_Y + $B0   ; 
+- D 0 - I - 0x00E230 03:8220: 35        .byte con_spr_T + $35   ; 
+
+- D 0 - I - 0x00E231 03:8221: 19        .byte con_spr_X + $19   ; 
+- D 0 - I - 0x00E232 03:8222: 80        .byte con_spr_Y + $80   ; 
+- D 0 - I - 0x00E233 03:8223: 5A        .byte con_spr_T + $5A   ; 
+
+
+
 off_8224_04:
 - D 0 - I - 0x00E234 03:8224: 2D        .byte $2D   ; 
 - D 0 - I - 0x00E235 03:8225: 3F        .byte $3F   ; 
 - - - - - - 0x00E236 03:8226: 18        .byte $18   ; 
 - D 0 - I - 0x00E237 03:8227: 22        .byte $22   ; 
-- D 0 - I - 0x00E238 03:8228: 10        .byte $10   ; 
-- D 0 - I - 0x00E239 03:8229: 20        .byte $20   ; 
-- D 0 - I - 0x00E23A 03:822A: 1C        .byte $1C   ; 
-- D 0 - I - 0x00E23B 03:822B: 18        .byte $18   ; 
-- D 0 - I - 0x00E23C 03:822C: 20        .byte $20   ; 
-- D 0 - I - 0x00E23D 03:822D: 1D        .byte $1D   ; 
-- D 0 - I - 0x00E23E 03:822E: 0C        .byte $0C   ; 
-- D 0 - I - 0x00E23F 03:822F: 10        .byte $10   ; 
-- D 0 - I - 0x00E240 03:8230: 11        .byte $11   ; 
-- D 0 - I - 0x00E241 03:8231: 1C        .byte $1C   ; 
-- D 0 - I - 0x00E242 03:8232: 10        .byte $10   ; 
-- D 0 - I - 0x00E243 03:8233: 14        .byte $14   ; 
-- D 0 - I - 0x00E244 03:8234: 13        .byte $13   ; 
-- D 0 - I - 0x00E245 03:8235: 08        .byte $08   ; 
-- D 0 - I - 0x00E246 03:8236: 0D        .byte $0D   ; 
-- D 0 - I - 0x00E247 03:8237: 15        .byte $15   ; 
-- D 0 - I - 0x00E248 03:8238: 18        .byte $18   ; 
-- D 0 - I - 0x00E249 03:8239: 18        .byte $18   ; 
-- D 0 - I - 0x00E24A 03:823A: 22        .byte $22   ; 
-- D 0 - I - 0x00E24B 03:823B: B0        .byte $B0   ; 
-- D 0 - I - 0x00E24C 03:823C: 27        .byte $27   ; 
-- D 0 - I - 0x00E24D 03:823D: 04        .byte $04   ; 
-- D 0 - I - 0x00E24E 03:823E: B0        .byte $B0   ; 
-- D 0 - I - 0x00E24F 03:823F: 25        .byte $25   ; 
-- D 0 - I - 0x00E250 03:8240: 00        .byte $00   ; 
-- D 0 - I - 0x00E251 03:8241: B8        .byte $B8   ; 
-- D 0 - I - 0x00E252 03:8242: 28        .byte $28   ; 
-- D 0 - I - 0x00E253 03:8243: 0D        .byte $0D   ; 
-- D 0 - I - 0x00E254 03:8244: 18        .byte $18   ; 
-- D 0 - I - 0x00E255 03:8245: 17        .byte $17   ; 
-- D 0 - I - 0x00E256 03:8246: 26        .byte $26   ; 
-- D 0 - I - 0x00E257 03:8247: B8        .byte $B8   ; 
-- D 0 - I - 0x00E258 03:8248: 29        .byte $29   ; 
-- D 0 - I - 0x00E259 03:8249: 0B        .byte $0B   ; 
-- D 0 - I - 0x00E25A 03:824A: 08        .byte $08   ; 
-- D 0 - I - 0x00E25B 03:824B: 0C        .byte $0C   ; 
-- D 0 - I - 0x00E25C 03:824C: 1B        .byte $1B   ; 
-- D 0 - I - 0x00E25D 03:824D: 08        .byte $08   ; 
-- D 0 - I - 0x00E25E 03:824E: 0E        .byte $0E   ; 
-- D 0 - I - 0x00E25F 03:824F: 07        .byte $07   ; 
-- D 0 - I - 0x00E260 03:8250: 28        .byte $28   ; 
-- D 0 - I - 0x00E261 03:8251: 1F        .byte $1F   ; 
-- D 0 - I - 0x00E262 03:8252: 16        .byte $16   ; 
-- D 0 - I - 0x00E263 03:8253: 00        .byte $00   ; 
-- D 0 - I - 0x00E264 03:8254: 09        .byte $09   ; 
-- D 0 - I - 0x00E265 03:8255: 24        .byte $24   ; 
-- D 0 - I - 0x00E266 03:8256: 10        .byte $10   ; 
-- D 0 - I - 0x00E267 03:8257: 15        .byte $15   ; 
-- D 0 - I - 0x00E268 03:8258: 14        .byte $14   ; 
-- D 0 - I - 0x00E269 03:8259: 10        .byte $10   ; 
-- D 0 - I - 0x00E26A 03:825A: 12        .byte $12   ; 
-- D 0 - I - 0x00E26B 03:825B: 08        .byte $08   ; 
-- D 0 - I - 0x00E26C 03:825C: 20        .byte $20   ; 
-- D 0 - I - 0x00E26D 03:825D: 1B        .byte $1B   ; 
-- D 0 - I - 0x00E26E 03:825E: 16        .byte $16   ; 
-- D 0 - I - 0x00E26F 03:825F: 93        .byte $93   ; 
-- D 0 - I - 0x00E270 03:8260: 13        .byte $13   ; 
-- D 0 - I - 0x00E271 03:8261: 0F        .byte $0F   ; 
-- D 0 - I - 0x00E272 03:8262: 28        .byte $28   ; 
-- D 0 - I - 0x00E273 03:8263: 21        .byte $21   ; 
-- D 0 - I - 0x00E274 03:8264: 18        .byte $18   ; 
-- D 0 - I - 0x00E275 03:8265: 28        .byte $28   ; 
-- D 0 - I - 0x00E276 03:8266: 22        .byte $22   ; 
-- D 0 - I - 0x00E277 03:8267: 21        .byte $21   ; 
-- D 0 - I - 0x00E278 03:8268: A8        .byte $A8   ; 
-- D 0 - I - 0x00E279 03:8269: 24        .byte $24   ; 
-- D 0 - I - 0x00E27A 03:826A: 0C        .byte $0C   ; 
-- D 0 - I - 0x00E27B 03:826B: 86        .byte $86   ; 
-- D 0 - I - 0x00E27C 03:826C: 08        .byte $08   ; 
-- D 0 - I - 0x00E27D 03:826D: 20        .byte $20   ; 
-- D 0 - I - 0x00E27E 03:826E: 88        .byte $88   ; 
-- D 0 - I - 0x00E27F 03:826F: 0F        .byte $0F   ; 
-- D 0 - I - 0x00E280 03:8270: 20        .byte $20   ; 
-- D 0 - I - 0x00E281 03:8271: 28        .byte $28   ; 
-- D 0 - I - 0x00E282 03:8272: 23        .byte $23   ; 
-- D 0 - I - 0x00E283 03:8273: 25        .byte $25   ; 
-- D 0 - I - 0x00E284 03:8274: 18        .byte $18   ; 
-- D 0 - I - 0x00E285 03:8275: 1A        .byte $1A   ; 
-- D 0 - I - 0x00E286 03:8276: 1D        .byte $1D   ; 
-- D 0 - I - 0x00E287 03:8277: 18        .byte $18   ; 
-- D 0 - I - 0x00E288 03:8278: 19        .byte $19   ; 
-- D 0 - I - 0x00E289 03:8279: 1E        .byte $1E   ; 
-- D 0 - I - 0x00E28A 03:827A: 00        .byte $00   ; 
-- D 0 - I - 0x00E28B 03:827B: 0B        .byte $0B   ; 
-- D 0 - I - 0x00E28C 03:827C: 20        .byte $20   ; 
-- D 0 - I - 0x00E28D 03:827D: 20        .byte $20   ; 
-- D 0 - I - 0x00E28E 03:827E: 1E        .byte $1E   ; 
-- D 0 - I - 0x00E28F 03:827F: 07        .byte $07   ; 
-- D 0 - I - 0x00E290 03:8280: A8        .byte $A8   ; 
-- D 0 - I - 0x00E291 03:8281: 20        .byte $20   ; 
-- D 0 - I - 0x00E292 03:8282: FF        .byte $FF   ; 
-- D 0 - I - 0x00E293 03:8283: FF        .byte $FF   ; 
-- - - - - - 0x00E294 03:8284: FF        .byte $FF   ; 
-- D 0 - I - 0x00E295 03:8285: FF        .byte $FF   ; 
-- D 0 - I - 0x00E296 03:8286: FF        .byte $FF   ; 
-- - - - - - 0x00E297 03:8287: FF        .byte $FF   ; 
-- D 0 - I - 0x00E298 03:8288: FF        .byte $FF   ; 
-- D 0 - I - 0x00E299 03:8289: FF        .byte $FF   ; 
-- - - - - - 0x00E29A 03:828A: FF        .byte $FF   ; 
-- D 0 - I - 0x00E29B 03:828B: FF        .byte $FF   ; 
-- D 0 - I - 0x00E29C 03:828C: FF        .byte $FF   ; 
-- - - - - - 0x00E29D 03:828D: FF        .byte $FF   ; 
+
+- D 0 - I - 0x00E238 03:8228: 10        .byte con_spr_X + $10   ; 
+- D 0 - I - 0x00E239 03:8229: 20        .byte con_spr_Y + $20   ; 
+- D 0 - I - 0x00E23A 03:822A: 1C        .byte con_spr_T + $1C   ; 
+
+- D 0 - I - 0x00E23B 03:822B: 18        .byte con_spr_X + $18   ; 
+- D 0 - I - 0x00E23C 03:822C: 20        .byte con_spr_Y + $20   ; 
+- D 0 - I - 0x00E23D 03:822D: 1D        .byte con_spr_T + $1D   ; 
+
+- D 0 - I - 0x00E23E 03:822E: 0C        .byte con_spr_X + $0C   ; 
+- D 0 - I - 0x00E23F 03:822F: 10        .byte con_spr_Y + $10   ; 
+- D 0 - I - 0x00E240 03:8230: 11        .byte con_spr_T + $11   ; 
+
+- D 0 - I - 0x00E241 03:8231: 1C        .byte con_spr_X + $1C   ; 
+- D 0 - I - 0x00E242 03:8232: 10        .byte con_spr_Y + $10   ; 
+- D 0 - I - 0x00E243 03:8233: 14        .byte con_spr_T + $14   ; 
+
+- D 0 - I - 0x00E244 03:8234: 13        .byte con_spr_X + $13   ; 
+- D 0 - I - 0x00E245 03:8235: 08        .byte con_spr_Y + $08   ; 
+- D 0 - I - 0x00E246 03:8236: 0D        .byte con_spr_T + $0D   ; 
+
+- D 0 - I - 0x00E247 03:8237: 15        .byte con_spr_X + $15   ; 
+- D 0 - I - 0x00E248 03:8238: 18        .byte con_spr_Y + $18   ; 
+- D 0 - I - 0x00E249 03:8239: 18        .byte con_spr_T + $18   ; 
+
+- D 0 - I - 0x00E24A 03:823A: 22        .byte con_spr_X + $22   ; 
+- D 0 - I - 0x00E24B 03:823B: B0        .byte con_spr_Y + $B0   ; 
+- D 0 - I - 0x00E24C 03:823C: 27        .byte con_spr_T + $27   ; 
+
+- D 0 - I - 0x00E24D 03:823D: 04        .byte con_spr_X + $04   ; 
+- D 0 - I - 0x00E24E 03:823E: B0        .byte con_spr_Y + $B0   ; 
+- D 0 - I - 0x00E24F 03:823F: 25        .byte con_spr_T + $25   ; 
+
+- D 0 - I - 0x00E250 03:8240: 00        .byte con_spr_X + $00   ; 
+- D 0 - I - 0x00E251 03:8241: B8        .byte con_spr_Y + $B8   ; 
+- D 0 - I - 0x00E252 03:8242: 28        .byte con_spr_T + $28   ; 
+
+- D 0 - I - 0x00E253 03:8243: 0D        .byte con_spr_X + $0D   ; 
+- D 0 - I - 0x00E254 03:8244: 18        .byte con_spr_Y + $18   ; 
+- D 0 - I - 0x00E255 03:8245: 17        .byte con_spr_T + $17   ; 
+
+- D 0 - I - 0x00E256 03:8246: 26        .byte con_spr_X + $26   ; 
+- D 0 - I - 0x00E257 03:8247: B8        .byte con_spr_Y + $B8   ; 
+- D 0 - I - 0x00E258 03:8248: 29        .byte con_spr_T + $29   ; 
+
+- D 0 - I - 0x00E259 03:8249: 0B        .byte con_spr_X + $0B   ; 
+- D 0 - I - 0x00E25A 03:824A: 08        .byte con_spr_Y + $08   ; 
+- D 0 - I - 0x00E25B 03:824B: 0C        .byte con_spr_T + $0C   ; 
+
+- D 0 - I - 0x00E25C 03:824C: 1B        .byte con_spr_X + $1B   ; 
+- D 0 - I - 0x00E25D 03:824D: 08        .byte con_spr_Y + $08   ; 
+- D 0 - I - 0x00E25E 03:824E: 0E        .byte con_spr_T + $0E   ; 
+
+- D 0 - I - 0x00E25F 03:824F: 07        .byte con_spr_X + $07   ; 
+- D 0 - I - 0x00E260 03:8250: 28        .byte con_spr_Y + $28   ; 
+- D 0 - I - 0x00E261 03:8251: 1F        .byte con_spr_T + $1F   ; 
+
+- D 0 - I - 0x00E262 03:8252: 16        .byte con_spr_X + $16   ; 
+- D 0 - I - 0x00E263 03:8253: 00        .byte con_spr_Y + $00   ; 
+- D 0 - I - 0x00E264 03:8254: 09        .byte con_spr_T + $09   ; 
+
+- D 0 - I - 0x00E265 03:8255: 24        .byte con_spr_X + $24   ; 
+- D 0 - I - 0x00E266 03:8256: 10        .byte con_spr_Y + $10   ; 
+- D 0 - I - 0x00E267 03:8257: 15        .byte con_spr_T + $15   ; 
+
+- D 0 - I - 0x00E268 03:8258: 14        .byte con_spr_X + $14   ; 
+- D 0 - I - 0x00E269 03:8259: 10        .byte con_spr_Y + $10   ; 
+- D 0 - I - 0x00E26A 03:825A: 12        .byte con_spr_T + $12   ; 
+
+- D 0 - I - 0x00E26B 03:825B: 08        .byte con_spr_X + $08   ; 
+- D 0 - I - 0x00E26C 03:825C: 20        .byte con_spr_Y + $20   ; 
+- D 0 - I - 0x00E26D 03:825D: 1B        .byte con_spr_T + $1B   ; 
+
+- D 0 - I - 0x00E26E 03:825E: 16        .byte con_spr_X + $16   ; 
+- D 0 - I - 0x00E26F 03:825F: 93        .byte con_spr_Y + $93   ; 
+- D 0 - I - 0x00E270 03:8260: 13        .byte con_spr_T + $13   ; 
+
+- D 0 - I - 0x00E271 03:8261: 0F        .byte con_spr_X + $0F   ; 
+- D 0 - I - 0x00E272 03:8262: 28        .byte con_spr_Y + $28   ; 
+- D 0 - I - 0x00E273 03:8263: 21        .byte con_spr_T + $21   ; 
+
+- D 0 - I - 0x00E274 03:8264: 18        .byte con_spr_X + $18   ; 
+- D 0 - I - 0x00E275 03:8265: 28        .byte con_spr_Y + $28   ; 
+- D 0 - I - 0x00E276 03:8266: 22        .byte con_spr_T + $22   ; 
+
+- D 0 - I - 0x00E277 03:8267: 21        .byte con_spr_X + $21   ; 
+- D 0 - I - 0x00E278 03:8268: A8        .byte con_spr_Y + $A8   ; 
+- D 0 - I - 0x00E279 03:8269: 24        .byte con_spr_T + $24   ; 
+
+- D 0 - I - 0x00E27A 03:826A: 0C        .byte con_spr_X + $0C   ; 
+- D 0 - I - 0x00E27B 03:826B: 86        .byte con_spr_Y + $86   ; 
+- D 0 - I - 0x00E27C 03:826C: 08        .byte con_spr_T + $08   ; 
+
+- D 0 - I - 0x00E27D 03:826D: 20        .byte con_spr_X + $20   ; 
+- D 0 - I - 0x00E27E 03:826E: 88        .byte con_spr_Y + $88   ; 
+- D 0 - I - 0x00E27F 03:826F: 0F        .byte con_spr_T + $0F   ; 
+
+- D 0 - I - 0x00E280 03:8270: 20        .byte con_spr_X + $20   ; 
+- D 0 - I - 0x00E281 03:8271: 28        .byte con_spr_Y + $28   ; 
+- D 0 - I - 0x00E282 03:8272: 23        .byte con_spr_T + $23   ; 
+
+- D 0 - I - 0x00E283 03:8273: 25        .byte con_spr_X + $25   ; 
+- D 0 - I - 0x00E284 03:8274: 18        .byte con_spr_Y + $18   ; 
+- D 0 - I - 0x00E285 03:8275: 1A        .byte con_spr_T + $1A   ; 
+
+- D 0 - I - 0x00E286 03:8276: 1D        .byte con_spr_X + $1D   ; 
+- D 0 - I - 0x00E287 03:8277: 18        .byte con_spr_Y + $18   ; 
+- D 0 - I - 0x00E288 03:8278: 19        .byte con_spr_T + $19   ; 
+
+- D 0 - I - 0x00E289 03:8279: 1E        .byte con_spr_X + $1E   ; 
+- D 0 - I - 0x00E28A 03:827A: 00        .byte con_spr_Y + $00   ; 
+- D 0 - I - 0x00E28B 03:827B: 0B        .byte con_spr_T + $0B   ; 
+
+- D 0 - I - 0x00E28C 03:827C: 20        .byte con_spr_X + $20   ; 
+- D 0 - I - 0x00E28D 03:827D: 20        .byte con_spr_Y + $20   ; 
+- D 0 - I - 0x00E28E 03:827E: 1E        .byte con_spr_T + $1E   ; 
+
+- D 0 - I - 0x00E28F 03:827F: 07        .byte con_spr_X + $07   ; 
+- D 0 - I - 0x00E290 03:8280: A8        .byte con_spr_Y + $A8   ; 
+- D 0 - I - 0x00E291 03:8281: 20        .byte con_spr_T + $20   ; 
+
+- D 0 - I - 0x00E292 03:8282: FF        .byte con_spr_X + $FF   ; 
+- D 0 - I - 0x00E293 03:8283: FF        .byte con_spr_Y + $FF   ; 
+- - - - - - 0x00E294 03:8284: FF        .byte con_spr_T + $FF   ; 
+
+- D 0 - I - 0x00E295 03:8285: FF        .byte con_spr_X + $FF   ; 
+- D 0 - I - 0x00E296 03:8286: FF        .byte con_spr_Y + $FF   ; 
+- - - - - - 0x00E297 03:8287: FF        .byte con_spr_T + $FF   ; 
+
+- D 0 - I - 0x00E298 03:8288: FF        .byte con_spr_X + $FF   ; 
+- D 0 - I - 0x00E299 03:8289: FF        .byte con_spr_Y + $FF   ; 
+- - - - - - 0x00E29A 03:828A: FF        .byte con_spr_T + $FF   ; 
+
+- D 0 - I - 0x00E29B 03:828B: FF        .byte con_spr_X + $FF   ; 
+- D 0 - I - 0x00E29C 03:828C: FF        .byte con_spr_Y + $FF   ; 
+- - - - - - 0x00E29D 03:828D: FF        .byte con_spr_T + $FF   ; 
+
+
+; bzk unused
 - - - - - - 0x00E29E 03:828E: FF        .byte $FF   ; 
 - - - - - - 0x00E29F 03:828F: FF        .byte $FF   ; 
 - - - - - - 0x00E2A0 03:8290: FF        .byte $FF   ; 

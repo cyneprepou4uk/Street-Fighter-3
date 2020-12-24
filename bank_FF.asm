@@ -5101,7 +5101,7 @@ C - - - - - 0x01E56F 07:E55F: 85 45     STA ram_0045
 loc_E561:
 C - - - - - 0x01E571 07:E561: A5 50     LDA ram_0050
 C - - - - - 0x01E573 07:E563: 29 40     AND #$40
-C - - - - - 0x01E575 07:E565: D0 67     BNE bra_E5CE
+C - - - - - 0x01E575 07:E565: D0 67     BNE bra_E5CE_reading_table_loop
 bra_E567_reading_table_loop:
 C - - - - - 0x01E577 07:E567: B1 00     LDA (ram_0000),Y
 C - - - - - 0x01E579 07:E569: 0A        ASL
@@ -5168,7 +5168,7 @@ C - - - - - 0x01E5DB 07:E5CB: 86 43     STX ram_0043
 bra_E5CD_RTS:
 loc_E5CD_RTS:
 C - - - - - 0x01E5DD 07:E5CD: 60        RTS
-bra_E5CE:
+bra_E5CE_reading_table_loop:
 C - - - - - 0x01E5DE 07:E5CE: B1 00     LDA (ram_0000),Y
 C - - - - - 0x01E5E0 07:E5D0: 0A        ASL
 C - - - - - 0x01E5E1 07:E5D1: 26 5E     ROL ram_005E
@@ -5228,7 +5228,7 @@ C - - - - - 0x01E63C 07:E62C: AA        TAX
 loc_E62D:
 C D 3 - - - 0x01E63D 07:E62D: C8        INY
 C - - - - - 0x01E63E 07:E62E: C6 5D     DEC ram_005D
-C - - - - - 0x01E640 07:E630: D0 9C     BNE bra_E5CE
+C - - - - - 0x01E640 07:E630: D0 9C     BNE bra_E5CE_reading_table_loop
 C - - - - - 0x01E642 07:E632: F0 91     BEQ bra_E5C5
 
 
