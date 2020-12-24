@@ -1170,6 +1170,7 @@ off_8224_04:
 
 
 ; reading from 0x01E859
+; don't move until have fixed offset
 - - - - - - 0x00E410 03:A400: 16 A4     .word _player_A416_00           ; placeholder
 - - - - - - 0x00E412 03:A402: 16 A4     .word _player_A416_01           ; placeholder
 - - - - - - 0x00E414 03:A404: 16 A4     .word _player_A416_02           ; placeholder

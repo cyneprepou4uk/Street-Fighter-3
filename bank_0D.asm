@@ -1032,6 +1032,7 @@
 
 
 ; reading from 0x01E859
+; don't move until have fixed offset
 - D 1 - - - 0x01A410 06:A400: 16 A4     .word _player_A416_00_Chun_Li
 - D 1 - - - 0x01A412 06:A402: 91 B0     .word _player_B091_01_Ryu_Ken
 - D 1 - - - 0x01A414 06:A404: 8D AA     .word _player_AA8D_02_Guile
