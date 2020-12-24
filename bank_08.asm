@@ -5,6 +5,7 @@
 
 .export tbl_0x010010_screens
 tbl_0x010010_screens:
+; stage
 - D 0 - I - 0x010010 04:8000: 51 80     .word off_8051_00               ; 
 - D 0 - I - 0x010012 04:8002: 6D 83     .word off_836D_01               ; 
 - D 0 - I - 0x010014 04:8004: 92 85     .word off_8592_02               ; 
@@ -14,11 +15,13 @@ tbl_0x010010_screens:
 - D 0 - I - 0x01001C 04:800C: DB 92     .word off_92DB_06               ; 
 - D 0 - I - 0x01001E 04:800E: E7 95     .word off_95E7_07               ; 
 - D 0 - I - 0x010020 04:8010: 1D 99     .word off_991D_08               ; 
-- D 0 - I - 0x010022 04:8012: 2E 80     .word off_802E_09               ; 
+
+- D 0 - I - 0x010022 04:8012: 2E 80     .word off_802E_09               ; HUD
 - D 0 - I - 0x010024 04:8014: 00 A0     .word off_0x012010_0A + $2000   ; VS
 - D 0 - I - 0x010026 04:8016: 3F A0     .word off_0x01204F_0B + $2000   ; player select
 - D 0 - - - 0x010028 04:8018: C7 A2     .word off_0x0122D7_0C + $2000   ; title
 - D 0 - I - 0x01002A 04:801A: D6 A3     .word off_0x0123E6_0D + $2000   ; continue
+; endings
 - D 0 - I - 0x01002C 04:801C: 5F 9C     .word off_9C5F_0E               ; 
 - D 0 - I - 0x01002E 04:801E: 2A 9D     .word off_9D2A_0F               ; 
 - D 0 - I - 0x010030 04:8020: DA 9D     .word off_9DDA_10               ; 
