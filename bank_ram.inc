@@ -9,7 +9,7 @@
 ; 02 - Guile
 ; 03 - Blanka
 ; 04 - Dhalsim
-; 05 - doesn't exist
+; 05 - unused or Ken
 ; 06 - Balrog
 ; 07 - Sagat
 ; 08 - Vega
