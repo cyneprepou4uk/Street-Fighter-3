@@ -1,7 +1,7 @@
 .segment "BANK_0B"
 .include "copy_bank_ram.inc"
 .include "copy_bank_val.inc"
-; 0x016010-0x01800F
+; 0x016010-0x01A00F
 
 .export sub_0x016010
 sub_0x016010:
