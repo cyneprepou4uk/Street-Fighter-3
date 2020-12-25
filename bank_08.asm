@@ -35,6 +35,7 @@ sub_0x010010_draw_screen:
     STA $2007
     INY
     BNE @loop_write_tiles
+    INC ram_0003
     DEX
     BNE @loop_write_tiles
     LDA ram_0000
