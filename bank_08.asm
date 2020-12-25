@@ -100,31 +100,31 @@ off_screen_normal:
 
 tbl_attributes:
 ; stages
-    .word _attributes_00     ; 
-    .word _attributes_01     ; 
-    .word _attributes_02     ; 
-    .word _attributes_03     ; 
-    .word _attributes_04     ; 
-    .word _attributes_05     ; 
-    .word _attributes_06     ; 
-    .word _attributes_07     ; 
-    .word _attributes_08     ; 
+    .word _attributes_00     ; India (Dhalsim)
+    .word _attributes_01     ; Thailand (Sagat)
+    .word _attributes_02     ; Thailand (Vega)
+    .word _attributes_03     ; USA (Guile)
+    .word _attributes_04     ; USA (Ken)
+    .word _attributes_05     ; Japan (Ryu)
+    .word _attributes_06     ; Spain (Balrog)
+    .word _attributes_07     ; Brazil (Blanka)
+    .word _attributes_08     ; China (Chun-Li)
 ; misc
     .word _attributes_09     ; HUD (unused)
-    .word _attributes_0A     ; VS
+    .word _attributes_0A     ; VS and defeat
     .word _attributes_0B     ; player select
     .word _attributes_0C     ; title
     .word _attributes_0D     ; continue
 ; endings
-    .word _attributes_0E     ; 
-    .word _attributes_0F     ; 
-    .word _attributes_10     ; 
-    .word _attributes_11     ; 
-    .word _attributes_12     ; 
-    .word _attributes_13     ; 
-    .word _attributes_14     ; 
-    .word _attributes_15     ; 
-    .word _attributes_16     ; 
+    .word _attributes_0E     ; Chun-Li
+    .word _attributes_0F     ; Ryu
+    .word _attributes_10     ; Guile
+    .word _attributes_11     ; Blanka
+    .word _attributes_12     ; Dhalsim
+    .word _attributes_13     ; Ken
+    .word _attributes_14     ; Balrog
+    .word _attributes_15     ; Sagat
+    .word _attributes_16     ; Vega
 
 _attributes_00:
     .incbin "background\attributes_stage_Dhalsim.bin"
