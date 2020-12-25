@@ -489,13 +489,26 @@ _screen_08:
     .byte con_enough_for_now
 
 _screen_09:
-    .byte con_chr_bank + $A2
-    .byte con_next_scanline + $D0
-    
-    .byte con_chr_bank + $A4
+; used to be A2-A5
+    .byte con_chr_bank + $FF
+    .byte con_next_scanline + $08
+    .byte con_chr_bank + $87
+    .byte con_next_scanline + $28
+    .byte con_chr_bank + $88
+    .byte con_next_scanline + $48
+    .byte con_chr_bank + $89
+    .byte con_next_scanline + $68
+    .byte con_chr_bank + $8A
+    .byte con_next_scanline + $88
+    .byte con_chr_bank + $8B
+    .byte con_next_scanline + $A8
+    .byte con_chr_bank + $8C
+    .byte con_next_scanline + $C8
+    .byte con_chr_bank + $8D
     .byte con_enough_for_now
 
 _screen_0A:
+; used to be D4-D7
     .byte con_chr_bank + $FF
     .byte con_next_scanline + $08
     .byte con_chr_bank + $80
@@ -511,8 +524,6 @@ _screen_0A:
     .byte con_chr_bank + $85
     .byte con_next_scanline + $C8
     .byte con_chr_bank + $86
-    .byte con_next_scanline + $E8
-    .byte con_chr_bank + $87
     .byte con_enough_for_now
 
 _screen_0B:
