@@ -138,7 +138,7 @@ C - - - - - 0x01C13D 07:C12D: 0A        ASL
 C - - - - - 0x01C13E 07:C12E: 0A        ASL
 C - - - - - 0x01C13F 07:C12F: 18        CLC
 C - - - - - 0x01C140 07:C130: 65 DE     ADC ram_00DE
-C - - - - - 0x01C142 07:C132: A4 0D     LDY ram_000D
+C - - - - - 0x01C142 07:C132: A4 0D     LDY ram_level
 C - - - - - 0x01C144 07:C134: 79 B3 C9  ADC tbl_C9B3,Y
 C - - - - - 0x01C147 07:C137: 20 E0 EC  JSR sub_ECE0
 C - - - - - 0x01C14A 07:C13A: A9 1E     LDA #$1E
@@ -902,7 +902,7 @@ C - - - - - 0x01C828 07:C818: D0 FA     BNE bra_C814_infinite_loop
 C - - - - - 0x01C82A 07:C81A: 4C 59 C7  JMP loc_C759
 bra_C81D:
 C - - - - - 0x01C82D 07:C81D: A9 00     LDA #$00
-C - - - - - 0x01C82F 07:C81F: 85 0D     STA ram_000D
+C - - - - - 0x01C82F 07:C81F: 85 0D     STA ram_level
 C - - - - - 0x01C831 07:C821: 8D 1E 05  STA ram_051E
 C - - - - - 0x01C834 07:C824: A9 01     LDA #$01
 C - - - - - 0x01C836 07:C826: 8D 4E 05  STA ram_054E
@@ -1022,7 +1022,7 @@ C - - - - - 0x01C8FA 07:C8EA: 8D 40 03  STA ram_0340
 loc_C8ED:
 C D 2 - - - 0x01C8FD 07:C8ED: A9 01     LDA #$01
 C - - - - - 0x01C8FF 07:C8EF: 20 F2 FC  JSR sub_FCF2_artificial_delay
-C - - - - - 0x01C902 07:C8F2: A6 0D     LDX ram_000D
+C - - - - - 0x01C902 07:C8F2: A6 0D     LDX ram_level
 C - - - - - 0x01C904 07:C8F4: BD B3 C9  LDA tbl_C9B3,X
 C - - - - - 0x01C907 07:C8F7: 85 3B     STA ram_p1_fighter
 C - - - - - 0x01C909 07:C8F9: 85 3C     STA ram_p2_fighter
@@ -1080,8 +1080,8 @@ C - - - - - 0x01C974 07:C964: D0 05     BNE bra_C96B
 C - - - - - 0x01C976 07:C966: AD 4E 05  LDA ram_054E
 C - - - - - 0x01C979 07:C969: F0 22     BEQ bra_C98D_game_not_finished_yet
 bra_C96B:
-C - - - - - 0x01C97B 07:C96B: E6 0D     INC ram_000D
-C - - - - - 0x01C97D 07:C96D: A5 0D     LDA ram_000D
+C - - - - - 0x01C97B 07:C96B: E6 0D     INC ram_level
+C - - - - - 0x01C97D 07:C96D: A5 0D     LDA ram_level
 C - - - - - 0x01C97F 07:C96F: 29 01     AND #$01
 C - - - - - 0x01C981 07:C971: D0 08     BNE bra_C97B
 C - - - - - 0x01C983 07:C973: A5 CA     LDA ram_difficulty
@@ -1089,7 +1089,7 @@ C - - - - - 0x01C985 07:C975: C9 05     CMP #$05
 C - - - - - 0x01C987 07:C977: B0 02     BCS bra_C97B
 C - - - - - 0x01C989 07:C979: E6 CA     INC ram_difficulty
 bra_C97B:
-C - - - - - 0x01C98B 07:C97B: A5 0D     LDA ram_000D
+C - - - - - 0x01C98B 07:C97B: A5 0D     LDA ram_level
 C - - - - - 0x01C98D 07:C97D: C9 09     CMP #$09
 C - - - - - 0x01C98F 07:C97F: 90 0C     BCC bra_C98D_game_not_finished_yet
 C - - - - - 0x01C991 07:C981: 20 DE C9  JSR sub_C9DE_select_final_cutscene
