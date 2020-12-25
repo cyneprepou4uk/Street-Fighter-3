@@ -91,10 +91,10 @@ tbl_tiles:
     .word off_screen_normal
 
 off_screen_stage:
-    .incbin "nametable\screen_stage.bin"
+    .incbin "background\screen_stage.bin"
     
 off_screen_normal:
-    .incbin "nametable\screen_normal.bin"
+    .incbin "background\screen_normal.bin"
 
 
 
@@ -127,71 +127,71 @@ tbl_attributes:
     .word _attributes_16     ; 
 
 _attributes_00:
-    .incbin "nametable\attributes_stage_Dhalsim.bin"
+    .incbin "background\attributes_stage_Dhalsim.bin"
 
 _attributes_01:
-    .incbin "nametable\attributes_stage_Sagat.bin"
+    .incbin "background\attributes_stage_Sagat.bin"
 
 _attributes_02:
-    .incbin "nametable\attributes_stage_Vega.bin"
+    .incbin "background\attributes_stage_Vega.bin"
 
 _attributes_03:
-    .incbin "nametable\attributes_stage_Guile.bin"
+    .incbin "background\attributes_stage_Guile.bin"
 
 _attributes_04:
-    .incbin "nametable\attributes_stage_Ken.bin"
+    .incbin "background\attributes_stage_Ken.bin"
 
 _attributes_05:
-    .incbin "nametable\attributes_stage_Ryu.bin"
+    .incbin "background\attributes_stage_Ryu.bin"
 
 _attributes_06:
-    .incbin "nametable\attributes_stage_Balrog.bin"
+    .incbin "background\attributes_stage_Balrog.bin"
 
 _attributes_07:
-    .incbin "nametable\attributes_stage_Blanka.bin"
+    .incbin "background\attributes_stage_Blanka.bin"
 
 _attributes_08:
-    .incbin "nametable\attributes_stage_Chun_Li.bin"
+    .incbin "background\attributes_stage_Chun_Li.bin"
 
 _attributes_09:
 _attributes_0A:
-    .incbin "nametable\attributes_screen_VS.bin"
+    .incbin "background\attributes_screen_VS.bin"
 
 _attributes_0B:
-    .incbin "nametable\attributes_screen_player_select.bin"
+    .incbin "background\attributes_screen_player_select.bin"
 
 _attributes_0C:
-    .incbin "nametable\attributes_screen_title.bin"
+    .incbin "background\attributes_screen_title.bin"
 
 _attributes_0D:
-    .incbin "nametable\attributes_screen_continue.bin"
+    .incbin "background\attributes_screen_continue.bin"
 
 _attributes_0E:
-    .incbin "nametable\attributes_ending_Chun_Li.bin"
+    .incbin "background\attributes_ending_Chun_Li.bin"
 
 _attributes_0F:
-    .incbin "nametable\attributes_ending_Ryu.bin"
+    .incbin "background\attributes_ending_Ryu.bin"
 
 _attributes_10:
-    .incbin "nametable\attributes_ending_Guile.bin"
+    .incbin "background\attributes_ending_Guile.bin"
 
 _attributes_11:
-    .incbin "nametable\attributes_ending_Blanka.bin"
+    .incbin "background\attributes_ending_Blanka.bin"
 
 _attributes_12:
-    .incbin "nametable\attributes_ending_Dhalsim.bin"
+    .incbin "background\attributes_ending_Dhalsim.bin"
 
 _attributes_13:
-    .incbin "nametable\attributes_ending_Ken.bin"
+    .incbin "background\attributes_ending_Ken.bin"
 
 _attributes_14:
-    .incbin "nametable\attributes_ending_Balrog.bin"
+    .incbin "background\attributes_ending_Balrog.bin"
 
 _attributes_15:
-    .incbin "nametable\attributes_ending_Sagat.bin"
+    .incbin "background\attributes_ending_Sagat.bin"
 
 _attributes_16:
-    .incbin "nametable\attributes_ending_Vega.bin"
+    .incbin "background\attributes_ending_Vega.bin"
 
 
 
@@ -225,157 +225,69 @@ tbl_palette:
     .word _palette_16     ; Vega
 
 _palette_00:
-    .byte $0C, $05, $27, $30
-    .byte $0C, $1C, $2C, $28
-    .byte $0C, $05, $15, $28
-    .byte $0C, $1C, $2C, $0F
-    .byte $0C
+    .incbin "background\palette_stage_Dhalsim.bin"
 
 _palette_01:
-    .byte $0F, $05, $28, $30
-    .byte $0F, $0A, $2C, $1C
-    .byte $0F, $06, $16, $1C
-    .byte $0F, $16, $2C, $1C
-    .byte $0F
+    .incbin "background\palette_stage_Sagat.bin"
 
 _palette_02:
-    .byte $0F, $05, $28, $30
-    .byte $0F, $0A, $19, $16
-    .byte $0F, $11, $16, $27
-    .byte $0F, $11, $00, $10
-    .byte $0F
+    .incbin "background\palette_stage_Vega.bin"
 
 _palette_03:
-    .byte $0F, $05, $27, $30
-    .byte $0F, $02, $00, $10
-    .byte $0F, $30, $1C, $2C
-    .byte $0F, $0C, $1C, $2C
-    .byte $0F
+    .incbin "background\palette_stage_Guile.bin"
 
 _palette_04:
-    .byte $0F, $05, $28, $30
-    .byte $0F, $14, $25, $35
-    .byte $0F, $1B, $2B, $14
-    .byte $0F, $11, $21, $31
-    .byte $0F
+    .incbin "background\palette_stage_Ken.bin"
 
 _palette_05:
-    .byte $0F, $05, $27, $30
-    .byte $0F, $06, $16, $26
-    .byte $0F, $0C, $1C, $2C
-    .byte $0F, $08, $18, $28
-    .byte $0F
+    .incbin "background\palette_stage_Ryu.bin"
 
 _palette_06:
-    .byte $0F, $05, $27, $30
-    .byte $0F, $0B, $1B, $2C
-    .byte $0F, $07, $16, $26
-    .byte $0F, $0C, $1C, $2C
-    .byte $0F
+    .incbin "background\palette_stage_Balrog.bin"
 
 _palette_07:
-    .byte $0F, $06, $27, $30
-    .byte $0F, $08, $18, $11
-    .byte $0F, $0B, $1B, $11
-    .byte $0F, $08, $18, $28
-    .byte $0F
+    .incbin "background\palette_stage_Blanka.bin"
 
 _palette_08:
-    .byte $0F, $05, $27, $30
-    .byte $0F, $0B, $1B, $3B
-    .byte $0F, $00, $10, $20
-    .byte $0F, $06, $16, $26
-    .byte $0F
+    .incbin "background\palette_stage_Chun_Li.bin"
 
 _palette_09:
 _palette_0A:
-    .byte $0F, $08, $28, $15
-    .byte $0F, $00, $00, $00
-    .byte $0F, $00, $00, $00
-    .byte $0F, $00, $00, $00
-    .byte $0F
+    .incbin "background\palette_screen_VS.bin"
 
 _palette_0B:
-    .byte $0F, $08, $17, $30
-    .byte $0F, $07, $16, $26
-    .byte $0F, $06, $17, $28
-    .byte $0F, $16, $27, $11
-    .byte $0F
+    .incbin "background\palette_screen_player_select.bin"
 
 _palette_0C:
-    .byte $0E, $30, $17, $00
-    .byte $0E, $30, $37, $00
-    .byte $0E, $27, $37, $00
-    .byte $0E, $27, $17, $00
-    .byte $3F
+    .incbin "background\palette_screen_title.bin"
 
 _palette_0D:
-    .byte $0F, $06, $16, $26
-    .byte $0F, $00, $00, $00
-    .byte $0F, $00, $00, $00
-    .byte $0F, $00, $00, $00
-    .byte $0F
+    .incbin "background\palette_screen_continue.bin"
 
 _palette_0E:
-    .byte $0F, $11, $21, $31
-    .byte $0F, $16, $26, $30
-    .byte $0F, $11, $26, $16
-    .byte $0F, $11, $26, $30
-    .byte $0F
+    .incbin "background\palette_ending_Chun_Li.bin"
 
 _palette_0F:
-    .byte $0F, $1B, $06, $16
-    .byte $0F, $06, $16, $26
-    .byte $0F, $1B, $16, $26
-    .byte $0F, $06, $0A, $1B
-    .byte $0F
+    .incbin "background\palette_ending_Ryu.bin"
 
 _palette_10:
-    .byte $0F, $11, $28, $16
-    .byte $0F, $28, $26, $16
-    .byte $0F, $11, $28, $26
-    .byte $0F, $11, $26, $16
-    .byte $0F
+    .incbin "background\palette_ending_Guile.bin"
 
 _palette_11:
-    .byte $0F, $11, $21, $31
-    .byte $0F, $16, $27, $38
-    .byte $0F, $23, $27, $16
-    .byte $0F, $23, $27, $16
-    .byte $0F
+    .incbin "background\palette_ending_Blanka.bin"
 
 _palette_12:
-    .byte $0F, $11, $21, $30
-    .byte $0F, $14, $25, $36
-    .byte $0F, $26, $28, $30
-    .byte $0F, $16, $26, $30
-    .byte $0F
+    .incbin "background\palette_ending_Dhalsim.bin"
 
 _palette_13:
-    .byte $0F, $11, $28, $16
-    .byte $0F, $28, $26, $16
-    .byte $0F, $11, $28, $26
-    .byte $0F, $11, $26, $16
-    .byte $0F
+    .incbin "background\palette_ending_Ken.bin"
 
 _palette_14:
-    .byte $0F, $07, $17, $27
-    .byte $0F, $3F, $3F, $3F
-    .byte $0F, $3F, $3F, $3F
-    .byte $0F, $3F, $3F, $3F
-    .byte $0F
+    .incbin "background\palette_ending_Balrog.bin"
 
-_palette_15:    
-    .byte $0F, $08, $26, $30
-    .byte $0F, $00, $0B, $2D
-    .byte $0F, $02, $12, $30
-    .byte $0F, $06, $16, $26
-    .byte $0F
+_palette_15:
+    .incbin "background\palette_ending_Sagat.bin"
 
 _palette_16:
-    .byte $0F, $08, $26, $30
-    .byte $0F, $01, $11, $30
-    .byte $0F, $05, $15, $26
-    .byte $0F, $06, $16, $26
-    .byte $0F
+    .incbin "background\palette_ending_Vega.bin"
 .endscope
