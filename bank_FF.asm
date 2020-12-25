@@ -294,7 +294,7 @@ vec_C66B_IRQ_handler:
     PHA
     TYA
     PHA
-    LDX #$12
+    LDX #$13
 @garbage_loop:  ; for getting rid of artifacts
     DEX
     BNE @garbage_loop
@@ -346,10 +346,6 @@ vec_C66B_IRQ_handler:
     LDA (ram_0002),Y
     STA $5129
     STA $5121
-    CLC
-    ADC #$01
-    STA $512B
-    STA $5123
     INY
     LDA (ram_0002),Y
     CMP #$FF
@@ -500,10 +496,23 @@ _screen_09:
     .byte con_enough_for_now
 
 _screen_0A:
-    .byte con_chr_bank + $D4
+    .byte con_chr_bank + $FF
+    .byte con_next_scanline + $08
+    .byte con_chr_bank + $80
+    .byte con_next_scanline + $28
+    .byte con_chr_bank + $81
+    .byte con_next_scanline + $48
+    .byte con_chr_bank + $82
+    .byte con_next_scanline + $68
+    .byte con_chr_bank + $83
+    .byte con_next_scanline + $88
+    .byte con_chr_bank + $84
     .byte con_next_scanline + $A8
-    
-    .byte con_chr_bank + $D6
+    .byte con_chr_bank + $85
+    .byte con_next_scanline + $C8
+    .byte con_chr_bank + $86
+    .byte con_next_scanline + $E8
+    .byte con_chr_bank + $87
     .byte con_enough_for_now
 
 _screen_0B:
@@ -3159,8 +3168,8 @@ C - - - - - 0x01D96B 07:D95B: 85 0F     STA ram_irq_scanline_flag
                                         STA ram_irq_data_index
                                         LDA #$80
                                         STA $5204   ; enable irq for this frame
-                                        LDA #$04
-                                        STA $5203   ; first irq trigger will happen at 4th scanline
+                                        LDA #$02
+                                        STA $5203   ; first irq trigger will happen at 2nd scanline
 C - - - - - 0x01D97A 07:D96A: 58        CLI
 C - - - - - 0x01D97B 07:D96B: 60        RTS
 
