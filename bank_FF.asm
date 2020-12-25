@@ -294,20 +294,16 @@ vec_C66B_IRQ_handler:
     PHA
     TYA
     PHA
-    LDX #$13
+    LDX #$15
 @garbage_loop:  ; for getting rid of artifacts
     DEX
     BNE @garbage_loop
     INC ram_irq_scanline_flag
     LDA ram_current_game_mode
     CMP #con_GM_debug
-    BNE @check_other_mods
+    BNE @not_debug_mode
     JMP loc_debug_irq_test
-@check_other_mods:
-    CMP #con_GM_VS
-    BEQ @exit_irq
-    CMP #con_GM_ending
-    BEQ @exit_irq
+@not_debug_mode:
     LDA ram_irq_scanline_flag
     CMP #$01
     BNE @skip
@@ -402,6 +398,7 @@ tbl_scanline_data:
     .word _screen_09    ; player select
     .word _screen_0A    ; title
     .word _screen_0B    ; continue
+    .word _screen_0C    ; VS
 
 con_chr_bank            = $00   ; what bank do you want right now
 con_next_scanline       = $00   ; where exactly do you want to switch banks next time
@@ -489,7 +486,6 @@ _screen_08:
     .byte con_enough_for_now
 
 _screen_09:
-; used to be A2-A5
     .byte con_chr_bank + $FF
     .byte con_next_scanline + $08
     .byte con_chr_bank + $87
@@ -531,6 +527,24 @@ _screen_0B:
     .byte con_next_scanline + $D8
     
     .byte con_chr_bank + $BE
+    .byte con_enough_for_now
+
+_screen_0C:
+    .byte con_chr_bank + $FF
+    .byte con_next_scanline + $08
+    .byte con_chr_bank + $8E
+    .byte con_next_scanline + $28
+    .byte con_chr_bank + $8F
+    .byte con_next_scanline + $48
+    .byte con_chr_bank + $90
+    .byte con_next_scanline + $68
+    .byte con_chr_bank + $91
+    .byte con_next_scanline + $88
+    .byte con_chr_bank + $92
+    .byte con_next_scanline + $A8
+    .byte con_chr_bank + $93
+    .byte con_next_scanline + $C8
+    .byte con_chr_bank + $94
     .byte con_enough_for_now
 .endscope
 
@@ -7734,6 +7748,8 @@ C - - - - - 0x01F4BE 07:F4AE: 20 3B F9  JSR sub_F93B
 C - - - - - 0x01F4C1 07:F4B1: 20 EE EF  JSR sub_EFEE_clear_0300_03CF
 C - - - - - 0x01F4C4 07:F4B4: A9 02     LDA #con_GM_VS
 C - - - - - 0x01F4C6 07:F4B6: 85 0E     STA ram_current_game_mode
+                                        LDA #$0C
+                                        STA ram_irq_screen
 C - - - - - 0x01F4C8 07:F4B8: A9 00     LDA #$00
 C - - - - - 0x01F4CA 07:F4BA: 20 97 FB  JSR sub_FB97_clear_nametable
 C - - - - - 0x01F4CD 07:F4BD: A5 2E     LDA ram_002E
