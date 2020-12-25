@@ -324,7 +324,7 @@ vec_C66B_IRQ_handler:
     LDA ram_current_game_mode
     CMP #con_GM_gameplay
     BNE @do_not_scroll
-    LDA ram_0039
+    LDA ram_camera_X
     STA $2005
     LDA #$00
     STA $2005
@@ -1297,7 +1297,7 @@ C - - - - - 0x01CAD1 07:CAC1: 85 3D     STA ram_003D
 C - - - - - 0x01CAD3 07:CAC3: A9 63     LDA #$63
 C - - - - - 0x01CAD5 07:CAC5: 85 3E     STA ram_game_time
 C - - - - - 0x01CAD7 07:CAC7: A9 3F     LDA #$3F
-C - - - - - 0x01CAD9 07:CAC9: 85 39     STA ram_0039
+C - - - - - 0x01CAD9 07:CAC9: 85 39     STA ram_camera_X
 C - - - - - 0x01CADB 07:CACB: 20 F6 CA  JSR sub_CAF6
 C - - - - - 0x01CADE 07:CACE: 20 D0 FC  JSR sub_FCD0
 C - - - - - 0x01CAE1 07:CAD1: A9 B4     LDA #$B4
@@ -8573,7 +8573,7 @@ C - - - - - 0x01F88F 07:F87F: 20 93 F8  JSR sub_F893
 bra_F882:
 C - - - - - 0x01F892 07:F882: 68        PLA
 C - - - - - 0x01F893 07:F883: 85 BA     STA ram_00BA
-C - - - - - 0x01F895 07:F885: A5 39     LDA ram_0039
+C - - - - - 0x01F895 07:F885: A5 39     LDA ram_camera_X
 C - - - - - 0x01F897 07:F887: 18        CLC
 C - - - - - 0x01F898 07:F888: 65 3A     ADC ram_003A
 C - - - - - 0x01F89A 07:F88A: C9 7F     CMP #$7F
@@ -8637,10 +8637,10 @@ sub_F8E1:
 C - - - - - 0x01F8F1 07:F8E1: 20 07 FA  JSR sub_FA07
 C - - - - - 0x01F8F4 07:F8E4: A5 3A     LDA ram_003A
 C - - - - - 0x01F8F6 07:F8E6: F0 07     BEQ bra_F8EF_RTS
-C - - - - - 0x01F8F8 07:F8E8: A5 39     LDA ram_0039
+C - - - - - 0x01F8F8 07:F8E8: A5 39     LDA ram_camera_X
 C - - - - - 0x01F8FA 07:F8EA: 18        CLC
 C - - - - - 0x01F8FB 07:F8EB: 65 3A     ADC ram_003A
-C - - - - - 0x01F8FD 07:F8ED: 85 39     STA ram_0039
+C - - - - - 0x01F8FD 07:F8ED: 85 39     STA ram_camera_X
 bra_F8EF_RTS:
 C - - - - - 0x01F8FF 07:F8EF: 60        RTS
 
