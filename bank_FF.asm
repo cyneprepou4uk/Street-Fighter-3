@@ -489,13 +489,31 @@ _screen_07:
     .byte con_enough_for_now
 
 _screen_08:
-    .byte con_chr_bank + $F8
+    .byte con_chr_bank + $00
+    .byte con_next_scanline + $38
+    .byte con_chr_bank + $01
+    .byte con_next_scanline + $48
+    .byte con_chr_bank + $02
+    .byte con_next_scanline + $58
+    .byte con_chr_bank + $03
     .byte con_next_scanline + $68
-    
-    .byte con_chr_bank + $FA
+    .byte con_chr_bank + $04
+    .byte con_next_scanline + $78
+    .byte con_chr_bank + $05
+    .byte con_next_scanline + $88
+    .byte con_chr_bank + $06
+    .byte con_next_scanline + $98
+    .byte con_chr_bank + $07
+    .byte con_next_scanline + $A8
+    .byte con_chr_bank + $08
+    .byte con_next_scanline + $B8
+    .byte con_chr_bank + $09
     .byte con_next_scanline + $C8
-    
-    .byte con_chr_bank + $FC
+    .byte con_chr_bank + $0A
+    .byte con_next_scanline + $D8
+    .byte con_chr_bank + $0B
+    .byte con_next_scanline + $E8
+    .byte con_chr_bank + $0C
     .byte con_enough_for_now
 
 _screen_09:
