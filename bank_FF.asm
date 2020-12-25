@@ -869,7 +869,7 @@ C - - - - - 0x01C94D 07:C93D: BD 0E 05  LDA ram_050E,X
 C - - - - - 0x01C950 07:C940: F0 14     BEQ bra_C956
 C - - - - - 0x01C952 07:C942: A5 CB     LDA ram_credits
 C - - - - - 0x01C954 07:C944: F0 0F     BEQ bra_C955_RTS
-C - - - - - 0x01C956 07:C946: 20 4A F5  JSR sub_F54A
+C - - - - - 0x01C956 07:C946: 20 4A F5  JSR sub_F54A_draw_continue_screen
 C - - - - - 0x01C959 07:C949: A5 7E     LDA ram_007E
 C - - - - - 0x01C95B 07:C94B: F0 08     BEQ bra_C955_RTS
 C - - - - - 0x01C95D 07:C94D: C6 CB     DEC ram_credits
@@ -3036,7 +3036,7 @@ C - - - - - 0x01D86A 07:D85A: A9 00     LDA #$00
 C - - - - - 0x01D86C 07:D85C: 85 AE     STA ram_00AE
 C - - - - - 0x01D86E 07:D85E: A9 00     LDA #$00
 C - - - - - 0x01D870 07:D860: 85 AF     STA ram_00AF
-C - - - - - 0x01D872 07:D862: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01D872 07:D862: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01D875 07:D865: A5 3E     LDA ram_game_time
 C - - - - - 0x01D877 07:D867: 85 A5     STA ram_00A5
 C - - - - - 0x01D879 07:D869: A9 00     LDA #$00
@@ -3052,7 +3052,7 @@ C - - - - - 0x01D88C 07:D87C: A9 AA     LDA #$AA
 C - - - - - 0x01D88E 07:D87E: 85 AE     STA ram_00AE
 C - - - - - 0x01D890 07:D880: A9 00     LDA #$00
 C - - - - - 0x01D892 07:D882: 85 AF     STA ram_00AF
-C - - - - - 0x01D894 07:D884: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01D894 07:D884: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01D897 07:D887: 20 E8 D8  JSR sub_D8E8_set_scroll_to_0
 C - - - - - 0x01D89A 07:D88A: A5 16     LDA ram_0016
 C - - - - - 0x01D89C 07:D88C: 8D 01 20  STA $2001
@@ -3076,7 +3076,7 @@ C - - - - - 0x01D8BD 07:D8AD: A9 00     LDA #$00
 C - - - - - 0x01D8BF 07:D8AF: 85 AE     STA ram_00AE
 C - - - - - 0x01D8C1 07:D8B1: A9 00     LDA #$00
 C - - - - - 0x01D8C3 07:D8B3: 85 AF     STA ram_00AF
-C - - - - - 0x01D8C5 07:D8B5: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01D8C5 07:D8B5: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01D8C8 07:D8B8: 4C D2 D8  JMP loc_D8D2
 bra_D8BB:
 C - - - - - 0x01D8CB 07:D8BB: A9 03     LDA #$03
@@ -3089,7 +3089,7 @@ C - - - - - 0x01D8D7 07:D8C7: A9 E3     LDA #< tbl_D8E3
 C - - - - - 0x01D8D9 07:D8C9: 85 AE     STA ram_00AE
 C - - - - - 0x01D8DB 07:D8CB: A9 D8     LDA #> tbl_D8E3
 C - - - - - 0x01D8DD 07:D8CD: 85 AF     STA ram_00AF
-C - - - - - 0x01D8DF 07:D8CF: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01D8DF 07:D8CF: 20 9D FF  JSR sub_FF9D_write_to_ppu
 loc_D8D2:
 C D 2 - - - 0x01D8E2 07:D8D2: 20 E8 D8  JSR sub_D8E8_set_scroll_to_0
 C - - - - - 0x01D8E5 07:D8D5: 20 25 FD  JSR sub_FD25
@@ -3990,7 +3990,7 @@ C - - - - - 0x01DE55 07:DE45: A9 AD     LDA #< tbl_DEAD
 C - - - - - 0x01DE57 07:DE47: 85 AE     STA ram_00AE
 C - - - - - 0x01DE59 07:DE49: A9 DE     LDA #> tbl_DEAD
 C - - - - - 0x01DE5B 07:DE4B: 85 AF     STA ram_00AF
-C - - - - - 0x01DE5D 07:DE4D: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01DE5D 07:DE4D: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01DE60 07:DE50: 4C 8A DE  JMP loc_DE8A
 bra_DE53:
 - - - - - - 0x01DE63 07:DE53: A5 D5     LDA ram_00D5
@@ -4003,7 +4003,7 @@ bra_DE53:
 - - - - - - 0x01DE71 07:DE61: 85 AE     STA ram_00AE
 - - - - - - 0x01DE73 07:DE63: A9 DE     LDA #> tbl_DEBF
 - - - - - - 0x01DE75 07:DE65: 85 AF     STA ram_00AF
-- - - - - - 0x01DE77 07:DE67: 20 9D FF  JSR sub_FF9D
+- - - - - - 0x01DE77 07:DE67: 20 9D FF  JSR sub_FF9D_write_to_ppu
 - - - - - - 0x01DE7A 07:DE6A: 84 A5     STY ram_00A5
 - - - - - - 0x01DE7C 07:DE6C: A9 00     LDA #$00
 - - - - - - 0x01DE7E 07:DE6E: 85 A6     STA ram_00A6
@@ -4018,7 +4018,7 @@ bra_DE53:
 - - - - - - 0x01DE91 07:DE81: 85 AE     STA ram_00AE
 - - - - - - 0x01DE93 07:DE83: A9 00     LDA #$00
 - - - - - - 0x01DE95 07:DE85: 85 AF     STA ram_00AF
-- - - - - - 0x01DE97 07:DE87: 20 9D FF  JSR sub_FF9D
+- - - - - - 0x01DE97 07:DE87: 20 9D FF  JSR sub_FF9D_write_to_ppu
 loc_DE8A:
 C D 2 - - - 0x01DE9A 07:DE8A: 86 A5     STX ram_00A5
 C - - - - - 0x01DE9C 07:DE8C: A9 00     LDA #$00
@@ -4034,7 +4034,7 @@ C - - - - - 0x01DEAF 07:DE9F: A9 AB     LDA #$AB
 C - - - - - 0x01DEB1 07:DEA1: 85 AE     STA ram_00AE
 C - - - - - 0x01DEB3 07:DEA3: A9 00     LDA #$00
 C - - - - - 0x01DEB5 07:DEA5: 85 AF     STA ram_00AF
-C - - - - - 0x01DEB7 07:DEA7: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01DEB7 07:DEA7: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01DEBA 07:DEAA: 60        RTS
 
 
@@ -4161,7 +4161,7 @@ C - - - - - 0x01DF28 07:DF18: D0 1A     BNE bra_DF34
 - - - - - - 0x01DF38 07:DF28: 85 AE     STA ram_00AE
 - - - - - - 0x01DF3A 07:DF2A: A9 DF     LDA #> tbl_DF90
 - - - - - - 0x01DF3C 07:DF2C: 85 AF     STA ram_00AF
-- - - - - - 0x01DF3E 07:DF2E: 20 9D FF  JSR sub_FF9D
+- - - - - - 0x01DF3E 07:DF2E: 20 9D FF  JSR sub_FF9D_write_to_ppu
 - - - - - - 0x01DF41 07:DF31: 4C 6B DF  JMP loc_DF6B
 bra_DF34:
 C - - - - - 0x01DF44 07:DF34: A5 D5     LDA ram_00D5
@@ -4174,7 +4174,7 @@ C - - - - - 0x01DF50 07:DF40: A9 A2     LDA #< tbl_DFA2
 C - - - - - 0x01DF52 07:DF42: 85 AE     STA ram_00AE
 C - - - - - 0x01DF54 07:DF44: A9 DF     LDA #> tbl_DFA2
 C - - - - - 0x01DF56 07:DF46: 85 AF     STA ram_00AF
-C - - - - - 0x01DF58 07:DF48: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01DF58 07:DF48: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01DF5B 07:DF4B: 84 A5     STY ram_00A5
 C - - - - - 0x01DF5D 07:DF4D: A9 00     LDA #$00
 C - - - - - 0x01DF5F 07:DF4F: 85 A6     STA ram_00A6
@@ -4189,7 +4189,7 @@ C - - - - - 0x01DF70 07:DF60: A9 A9     LDA #$A9
 C - - - - - 0x01DF72 07:DF62: 85 AE     STA ram_00AE
 C - - - - - 0x01DF74 07:DF64: A9 00     LDA #$00
 C - - - - - 0x01DF76 07:DF66: 85 AF     STA ram_00AF
-C - - - - - 0x01DF78 07:DF68: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01DF78 07:DF68: 20 9D FF  JSR sub_FF9D_write_to_ppu
 loc_DF6B:
 C - - - - - 0x01DF7B 07:DF6B: 86 A5     STX ram_00A5
 C - - - - - 0x01DF7D 07:DF6D: A9 00     LDA #$00
@@ -4205,7 +4205,7 @@ C - - - - - 0x01DF90 07:DF80: A9 AB     LDA #$AB
 C - - - - - 0x01DF92 07:DF82: 85 AE     STA ram_00AE
 C - - - - - 0x01DF94 07:DF84: A9 00     LDA #$00
 C - - - - - 0x01DF96 07:DF86: 85 AF     STA ram_00AF
-C - - - - - 0x01DF98 07:DF88: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01DF98 07:DF88: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01DF9B 07:DF8B: 60        RTS
 
 
@@ -4276,7 +4276,7 @@ C - - - - - 0x01DFD5 07:DFC5: A9 E9     LDA #< tbl_DFE9
 C - - - - - 0x01DFD7 07:DFC7: 85 AE     STA ram_00AE
 C - - - - - 0x01DFD9 07:DFC9: A9 DF     LDA #> tbl_DFE9
 C - - - - - 0x01DFDB 07:DFCB: 85 AF     STA ram_00AF
-C - - - - - 0x01DFDD 07:DFCD: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01DFDD 07:DFCD: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01DFE0 07:DFD0: 60        RTS
 bra_DFD1:
 - - - - - - 0x01DFE1 07:DFD1: A9 11     LDA #$11
@@ -4289,7 +4289,7 @@ bra_DFD1:
 - - - - - - 0x01DFEF 07:DFDF: 85 AE     STA ram_00AE
 - - - - - - 0x01DFF1 07:DFE1: A9 DF     LDA #> tbl_DFFB
 - - - - - - 0x01DFF3 07:DFE3: 85 AF     STA ram_00AF
-- - - - - - 0x01DFF5 07:DFE5: 20 9D FF  JSR sub_FF9D
+- - - - - - 0x01DFF5 07:DFE5: 20 9D FF  JSR sub_FF9D_write_to_ppu
 - - - - - - 0x01DFF8 07:DFE8: 60        RTS
 
 
@@ -4416,7 +4416,7 @@ C - - - - - 0x01E0C6 07:E0B6: A9 3B     LDA #< tbl_E13B
 C - - - - - 0x01E0C8 07:E0B8: 85 AE     STA ram_00AE
 C - - - - - 0x01E0CA 07:E0BA: A9 E1     LDA #> tbl_E13B
 C - - - - - 0x01E0CC 07:E0BC: 85 AF     STA ram_00AF
-C - - - - - 0x01E0CE 07:E0BE: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01E0CE 07:E0BE: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01E0D1 07:E0C1: 4C E0 E0  JMP loc_E0E0
 bra_E0C4:
 - - - - - - 0x01E0D4 07:E0C4: A9 00     LDA #$00
@@ -4431,7 +4431,7 @@ bra_E0C4:
 - - - - - - 0x01E0E7 07:E0D7: 85 AE     STA ram_00AE
 - - - - - - 0x01E0E9 07:E0D9: A9 E1     LDA #> tbl_E14D
 - - - - - - 0x01E0EB 07:E0DB: 85 AF     STA ram_00AF
-- - - - - - 0x01E0ED 07:E0DD: 20 9D FF  JSR sub_FF9D
+- - - - - - 0x01E0ED 07:E0DD: 20 9D FF  JSR sub_FF9D_write_to_ppu
 loc_E0E0:
 C D 3 - - - 0x01E0F0 07:E0E0: A5 D4     LDA ram_00D4
 C - - - - - 0x01E0F2 07:E0E2: D0 1A     BNE bra_E0FE
@@ -4445,7 +4445,7 @@ C - - - - - 0x01E0F2 07:E0E2: D0 1A     BNE bra_E0FE
 - - - - - - 0x01E102 07:E0F2: 85 AE     STA ram_00AE
 - - - - - - 0x01E104 07:E0F4: A9 E1     LDA #> tbl_E116
 - - - - - - 0x01E106 07:E0F6: 85 AF     STA ram_00AF
-- - - - - - 0x01E108 07:E0F8: 20 9D FF  JSR sub_FF9D
+- - - - - - 0x01E108 07:E0F8: 20 9D FF  JSR sub_FF9D_write_to_ppu
 - - - - - - 0x01E10B 07:E0FB: 4C 15 E1  JMP loc_E115_RTS
 bra_E0FE:
 C - - - - - 0x01E10E 07:E0FE: A9 0F     LDA #$0F
@@ -4458,7 +4458,7 @@ C - - - - - 0x01E11A 07:E10A: A9 28     LDA #< tbl_E128
 C - - - - - 0x01E11C 07:E10C: 85 AE     STA ram_00AE
 C - - - - - 0x01E11E 07:E10E: A9 E1     LDA #> tbl_E128
 C - - - - - 0x01E120 07:E110: 85 AF     STA ram_00AF
-C - - - - - 0x01E122 07:E112: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01E122 07:E112: 20 9D FF  JSR sub_FF9D_write_to_ppu
 loc_E115_RTS:
 C - - - - - 0x01E125 07:E115: 60        RTS
 
@@ -7080,7 +7080,7 @@ C - - - - - 0x01F093 07:F083: 85 AE     STA ram_00AE
 C - - - - - 0x01F095 07:F085: 85 AF     STA ram_00AF
 C - - - - - 0x01F097 07:F087: A9 20     LDA #$20
 C - - - - - 0x01F099 07:F089: 85 B2     STA ram_00B2
-C - - - - - 0x01F09B 07:F08B: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01F09B 07:F08B: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01F09E 07:F08E: 60        RTS
 
 
@@ -7224,7 +7224,7 @@ C - - - - - 0x01F161 07:F151: A9 00     LDA #$00
 C - - - - - 0x01F163 07:F153: 85 AF     STA ram_00AF
 C - - - - - 0x01F165 07:F155: A9 06     LDA #$06
 C - - - - - 0x01F167 07:F157: 85 B2     STA ram_00B2
-C - - - - - 0x01F169 07:F159: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01F169 07:F159: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01F16C 07:F15C: 68        PLA
 C - - - - - 0x01F16D 07:F15D: A8        TAY
 C - - - - - 0x01F16E 07:F15E: 60        RTS
@@ -7293,7 +7293,7 @@ C - - - - - 0x01F1CF 07:F1BF: A9 00     LDA #$00
 C - - - - - 0x01F1D1 07:F1C1: 85 AE     STA ram_00AE
 C - - - - - 0x01F1D3 07:F1C3: A9 00     LDA #$00
 C - - - - - 0x01F1D5 07:F1C5: 85 AF     STA ram_00AF
-C - - - - - 0x01F1D7 07:F1C7: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01F1D7 07:F1C7: 20 9D FF  JSR sub_FF9D_write_to_ppu
 bra_F1CA:
 C - - - - - 0x01F1DA 07:F1CA: 4C E0 F2  JMP loc_F2E0
 bra_F1CD:
@@ -7309,7 +7309,7 @@ C - - - - - 0x01F1ED 07:F1DD: A9 EC     LDA #< tbl_F2EC
 C - - - - - 0x01F1EF 07:F1DF: 85 AE     STA ram_00AE
 C - - - - - 0x01F1F1 07:F1E1: A9 F2     LDA #> tbl_F2EC
 C - - - - - 0x01F1F3 07:F1E3: 85 AF     STA ram_00AF
-C - - - - - 0x01F1F5 07:F1E5: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01F1F5 07:F1E5: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01F1F8 07:F1E8: A5 3E     LDA ram_game_time
 C - - - - - 0x01F1FA 07:F1EA: 85 A5     STA ram_00A5
 C - - - - - 0x01F1FC 07:F1EC: A9 00     LDA #$00
@@ -7325,7 +7325,7 @@ C - - - - - 0x01F20F 07:F1FF: A9 AA     LDA #$AA
 C - - - - - 0x01F211 07:F201: 85 AE     STA ram_00AE
 C - - - - - 0x01F213 07:F203: A9 00     LDA #$00
 C - - - - - 0x01F215 07:F205: 85 AF     STA ram_00AF
-C - - - - - 0x01F217 07:F207: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01F217 07:F207: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01F21A 07:F20A: 4C E0 F2  JMP loc_F2E0
 bra_F20D:
 C - - - - - 0x01F21D 07:F20D: C9 06     CMP #$06
@@ -7346,7 +7346,7 @@ C - - - - - 0x01F239 07:F229: A9 F5     LDA #< tbl_F2F5
 C - - - - - 0x01F23B 07:F22B: 85 AE     STA ram_00AE
 C - - - - - 0x01F23D 07:F22D: A9 F2     LDA #> tbl_F2F5
 C - - - - - 0x01F23F 07:F22F: 85 AF     STA ram_00AF
-C - - - - - 0x01F241 07:F231: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01F241 07:F231: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01F244 07:F234: A9 C8     LDA #$C8
 C - - - - - 0x01F246 07:F236: 85 7A     STA ram_007A
 C - - - - - 0x01F248 07:F238: D0 17     BNE bra_F251
@@ -7361,7 +7361,7 @@ C - - - - - 0x01F256 07:F246: A9 F0     LDA #< tbl_F2F0
 C - - - - - 0x01F258 07:F248: 85 AE     STA ram_00AE
 C - - - - - 0x01F25A 07:F24A: A9 F2     LDA #> tbl_F2F0
 C - - - - - 0x01F25C 07:F24C: 85 AF     STA ram_00AF
-C - - - - - 0x01F25E 07:F24E: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01F25E 07:F24E: 20 9D FF  JSR sub_FF9D_write_to_ppu
 bra_F251:
 C - - - - - 0x01F261 07:F251: A5 7A     LDA ram_007A
 C - - - - - 0x01F263 07:F253: 85 A5     STA ram_00A5
@@ -7378,7 +7378,7 @@ C - - - - - 0x01F278 07:F268: A9 A9     LDA #$A9
 C - - - - - 0x01F27A 07:F26A: 85 AE     STA ram_00AE
 C - - - - - 0x01F27C 07:F26C: A9 00     LDA #$00
 C - - - - - 0x01F27E 07:F26E: 85 AF     STA ram_00AF
-C - - - - - 0x01F280 07:F270: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01F280 07:F270: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01F283 07:F273: A5 7A     LDA ram_007A
 C - - - - - 0x01F285 07:F275: 18        CLC
 C - - - - - 0x01F286 07:F276: 65 3E     ADC ram_game_time
@@ -7400,7 +7400,7 @@ C - - - - - 0x01F2A3 07:F293: A9 FC     LDA #< tbl_F2FC
 C - - - - - 0x01F2A5 07:F295: 85 AE     STA ram_00AE
 C - - - - - 0x01F2A7 07:F297: A9 F2     LDA #> tbl_F2FC
 C - - - - - 0x01F2A9 07:F299: 85 AF     STA ram_00AF
-C - - - - - 0x01F2AB 07:F29B: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01F2AB 07:F29B: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01F2AE 07:F29E: A5 7A     LDA ram_007A
 C - - - - - 0x01F2B0 07:F2A0: 85 A5     STA ram_00A5
 C - - - - - 0x01F2B2 07:F2A2: A5 7B     LDA ram_007B
@@ -7416,7 +7416,7 @@ C - - - - - 0x01F2C5 07:F2B5: A9 A9     LDA #$A9
 C - - - - - 0x01F2C7 07:F2B7: 85 AE     STA ram_00AE
 C - - - - - 0x01F2C9 07:F2B9: A9 00     LDA #$00
 C - - - - - 0x01F2CB 07:F2BB: 85 AF     STA ram_00AF
-C - - - - - 0x01F2CD 07:F2BD: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01F2CD 07:F2BD: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01F2D0 07:F2C0: A9 78     LDA #$78
 C - - - - - 0x01F2D2 07:F2C2: 85 10     STA ram_0010
 C - - - - - 0x01F2D4 07:F2C4: 4C E0 F2  JMP loc_F2E0
@@ -7537,7 +7537,7 @@ C - - - - - 0x01F36E 07:F35E: A9 A9     LDA #$A9
 C - - - - - 0x01F370 07:F360: 85 AE     STA ram_00AE
 C - - - - - 0x01F372 07:F362: A9 00     LDA #$00
 C - - - - - 0x01F374 07:F364: 85 AF     STA ram_00AF
-C - - - - - 0x01F376 07:F366: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01F376 07:F366: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01F379 07:F369: A9 28     LDA #$28
 C - - - - - 0x01F37B 07:F36B: 20 E9 F7  JSR sub_F7E9
 C - - - - - 0x01F37E 07:F36E: 60        RTS
@@ -7832,7 +7832,7 @@ C - - - - - 0x01F559 07:F549: 60        RTS
 
 
 
-sub_F54A:
+sub_F54A_draw_continue_screen:
 C - - - - - 0x01F55A 07:F54A: 20 4D F8  JSR sub_F84D
 C - - - - - 0x01F55D 07:F54D: 20 3B F9  JSR sub_F93B
 C - - - - - 0x01F560 07:F550: 20 EE EF  JSR sub_EFEE_clear_0300_03CF
@@ -7846,11 +7846,11 @@ C - - - - - 0x01F572 07:F562: A9 0B     LDA #$0B
 C - - - - - 0x01F574 07:F564: 85 B1     STA ram_00B1
 C - - - - - 0x01F576 07:F566: A9 06     LDA #$06
 C - - - - - 0x01F578 07:F568: 85 B2     STA ram_00B2
-C - - - - - 0x01F57A 07:F56A: A9 09     LDA #< tbl_F609
+C - - - - - 0x01F57A 07:F56A: A9 09     LDA #< tbl_F609_text_credit
 C - - - - - 0x01F57C 07:F56C: 85 AE     STA ram_00AE
-C - - - - - 0x01F57E 07:F56E: A9 F6     LDA #> tbl_F609
+C - - - - - 0x01F57E 07:F56E: A9 F6     LDA #> tbl_F609_text_credit
 C - - - - - 0x01F580 07:F570: 85 AF     STA ram_00AF
-C - - - - - 0x01F582 07:F572: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01F582 07:F572: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01F585 07:F575: A5 CB     LDA ram_credits
 C - - - - - 0x01F587 07:F577: 85 A5     STA ram_00A5
 C - - - - - 0x01F589 07:F579: A9 00     LDA #$00
@@ -7866,7 +7866,7 @@ C - - - - - 0x01F59C 07:F58C: A9 AB     LDA #$AB
 C - - - - - 0x01F59E 07:F58E: 85 AE     STA ram_00AE
 C - - - - - 0x01F5A0 07:F590: A9 00     LDA #$00
 C - - - - - 0x01F5A2 07:F592: 85 AF     STA ram_00AF
-C - - - - - 0x01F5A4 07:F594: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01F5A4 07:F594: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01F5A7 07:F597: A9 0B     LDA #$0B
 C - - - - - 0x01F5A9 07:F599: 85 0C     STA ram_irq_screen
 C - - - - - 0x01F5AB 07:F59B: A9 3A     LDA #$8A    ; 0x014010
@@ -7927,7 +7927,7 @@ C - - - - - 0x01F618 07:F608: 60        RTS
 
 
 
-tbl_F609:
+tbl_F609_text_credit:
 - D 3 - I - 0x01F619 07:F609: 43        .byte $43   ; 
 - D 3 - I - 0x01F61A 07:F60A: 52        .byte $52   ; 
 - D 3 - I - 0x01F61B 07:F60B: 45        .byte $45   ; 
@@ -8220,7 +8220,7 @@ C - - - - - 0x01F7C8 07:F7B8: A9 AA     LDA #$AA
 C - - - - - 0x01F7CA 07:F7BA: 85 AE     STA ram_00AE
 C - - - - - 0x01F7CC 07:F7BC: A9 00     LDA #$00
 C - - - - - 0x01F7CE 07:F7BE: 85 AF     STA ram_00AF
-C - - - - - 0x01F7D0 07:F7C0: 20 9D FF  JSR sub_FF9D
+C - - - - - 0x01F7D0 07:F7C0: 20 9D FF  JSR sub_FF9D_write_to_ppu
 bra_F7C3_RTS:
 C - - - - - 0x01F7D3 07:F7C3: 60        RTS
 
@@ -9603,7 +9603,7 @@ tbl_FF8C:
 
 
 
-sub_FF9D:
+sub_FF9D_write_to_ppu:
 C - - - - - 0x01FFAD 07:FF9D: 98        TYA
 C - - - - - 0x01FFAE 07:FF9E: 48        PHA
 C - - - - - 0x01FFAF 07:FF9F: A9 00     LDA #$00
