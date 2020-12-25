@@ -2874,14 +2874,6 @@ C - - - - - 0x01D733 07:D723: 40        RTI
 
 
 sub_D724:
-                                        LDA #$00
-                                        STA $5130
-C - - - - - 0x01D734 07:D724: A9 BE     LDA #$BE
-C - - - - - 0x01D736 07:D726: 8D 00 60  STA $5129
-                                        STA $5121
-C - - - - - 0x01D739 07:D729: A9 BF     LDA #$BF
-C - - - - - 0x01D73B 07:D72B: 8D 01 60  STA $512B
-                                        STA $5123
 C - - - - - 0x01D73E 07:D72E: A5 C6     LDA ram_00C6
 C - - - - - 0x01D740 07:D730: F0 09     BEQ bra_D73B
 C - - - - - 0x01D742 07:D732: A5 72     LDA ram_0072
@@ -8899,6 +8891,13 @@ C - - - - - 0x01FB66 07:FB56: A9 00     LDA #$00
 C - - - - - 0x01FB68 07:FB58: 20 97 FB  JSR sub_FB97_clear_nametable
 C - - - - - 0x01FB6B 07:FB5B: A9 01     LDA #$01
 C - - - - - 0x01FB6D 07:FB5D: 20 97 FB  JSR sub_FB97_clear_nametable
+                                        LDA #$01
+                                        STA $5130
+                                        LDA #$FF
+                                        STA $512B
+                                        STA $5123
+                                        LDA #$00
+                                        STA $5130
 C - - - - - 0x01FB70 07:FB60: A9 00     LDA #$00
 C - - - - - 0x01FB72 07:FB62: A8        TAY
 bra_FB63:
