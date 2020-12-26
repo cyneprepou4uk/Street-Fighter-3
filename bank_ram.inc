@@ -15,6 +15,37 @@
 ; 08 - Vega
 
 
+
+; file CHR_ROM.chr
+; 
+; 80000-85FFF = stage Chun-Li
+; 86000-8BFFF = stage Ryu
+; 8C000-91FFF = stage Guile
+; 92000-97FFF = stage Dhalsim
+; 98000-9DFFF = stage Blanka
+; 9E000-A3FFF = stage Ken
+; A4000-A9FFF = stage Balrog
+; AA000-AFFFF = stage Sagat
+; B0000-B5FFF = stage Vega
+; 
+; C0000-C37FF = title
+; C3800-C6FFF = player select
+; C7000-CA7FF = VS
+; CA800-CDFFF = continue
+; CE000-D17FF = defeat (same as VS but without VS logo and someone's face beaten)
+; 
+; D1800-D4FFF = ending Chun-Li
+; D5000-D87FF = ending Ryu
+; D8800-DBFFF = ending Guile
+; DC000-DF7FF = ending Blanka
+; DF800-E2FFF = ending Dhalsim
+; E3000-E67FF = ending Ken
+; E6800-E9FFF = ending Balrog
+; EA000-ED7FF = ending Sagat
+; ED800-F0FFF = ending Vega
+
+
+
 ; RAM
 ; ($indirect) <?>
 ; ($indirect,X) <?>
