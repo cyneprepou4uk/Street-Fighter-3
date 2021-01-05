@@ -7011,12 +7011,13 @@ C - - - - - 0x01F08C 07:F07C: 60        RTS
 
 sub_F07D_clear_nmt_for_lower_hud:
 .scope
+    TYA
+    PHA
+    LDA ram_hud_height
     ASL
     ASL
     TAX
     BIT $2002
-    TYA
-    PHA
     LDA tbl_ppu - $10,X
     STA $2006
     LDA tbl_ppu - $10 + 1,X
@@ -7217,7 +7218,6 @@ C - - - - - 0x01F182 07:F172: A5 2D     LDA ram_hud_height
 C - - - - - 0x01F184 07:F174: C9 08     CMP #$08
 C - - - - - 0x01F186 07:F176: B0 12     BCS bra_F18A
 C - - - - - 0x01F188 07:F178: E6 2D     INC ram_hud_height
-C - - - - - 0x01F18A 07:F17A: A5 2D     LDA ram_hud_height
 C - - - - - 0x01F194 07:F184: 20 7D F0  JSR sub_F07D_clear_nmt_for_lower_hud
 C - - - - - 0x01F197 07:F187: 4C E0 F2  JMP loc_F2E0
 bra_F18A:
