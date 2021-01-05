@@ -5536,6 +5536,8 @@ tbl_E7A0_spr_colors:
 
 sub_E7E9_draw_screen:
     STX ram_0000
+    LDA #$00
+    STA ram_camera_X
     LDA #$88    ; 0x010010
     STA $5114
     JSR sub_0x010010_draw_screen
