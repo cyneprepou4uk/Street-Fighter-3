@@ -294,7 +294,7 @@ vec_C66B_IRQ_handler:
     PHA
     TYA
     PHA
-    LDX #$04
+    LDX #$06
 @garbage_loop:  ; for getting rid of artifacts
     DEX
     BNE @garbage_loop
