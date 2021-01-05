@@ -319,7 +319,7 @@ vec_C66B_IRQ_handler:
     LDA ram_current_game_mode
     CMP #con_GM_gameplay
     BNE @do_not_scroll
-    LDA ram_camera_X
+    LDA ram_copy_camera_X
     STA $2005
     LDA #$00
     STA $2005
@@ -3513,6 +3513,8 @@ sub_D959_turn_IRQ_on:
 C - - - - - 0x01D969 07:D959: A9 00     LDA #$00
 C - - - - - 0x01D96B 07:D95B: 85 0F     STA ram_irq_scanline_flag
                                         STA ram_irq_data_index
+                                        LDA ram_camera_X
+                                        STA ram_copy_camera_X   ; copy scroll position from previous frame
                                         LDA #$80
                                         STA $5204   ; enable irq for this frame
                                         LDA #$02
