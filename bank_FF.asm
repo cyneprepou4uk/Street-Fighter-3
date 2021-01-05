@@ -294,16 +294,11 @@ vec_C66B_IRQ_handler:
     PHA
     TYA
     PHA
-    LDX #$15
+    LDX #$16
 @garbage_loop:  ; for getting rid of artifacts
     DEX
     BNE @garbage_loop
     INC ram_irq_scanline_flag
-    LDA ram_current_game_mode
-    CMP #con_GM_debug
-    BNE @not_debug_mode
-    JMP loc_debug_irq_test
-@not_debug_mode:
     LDA ram_irq_scanline_flag
     CMP #$01
     BNE @skip
@@ -354,7 +349,6 @@ vec_C66B_IRQ_handler:
     INY
     STY ram_irq_data_index
 @exit_irq:
-loc_exit_irq:
     LDA #$00
     STA $5130
     PLA
@@ -363,27 +357,6 @@ loc_exit_irq:
     TAX
     PLA
     RTI
-
-loc_debug_irq_test:
-    LDA ram_irq_scanline_flag
-    CMP #$01
-    BNE @its_time
-    LDA #$98
-    STA $5203
-    LDA #$80
-    STA $5204
-    JMP loc_exit_irq
-@its_time:
-    LDA #$C0
-    STA $5129
-    STA $5121
-    LDA #$C2
-    STA $512B
-    STA $5123
-    LDA #$80
-    STA $2005
-    STA $2005
-    JMP loc_exit_irq
 
 tbl_scanline_data:
 ; stages
