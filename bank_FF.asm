@@ -298,7 +298,7 @@ vec_C66B_IRQ_handler:
 @garbage_loop:  ; for getting rid of artifacts
     DEX
     BNE @garbage_loop
-    LDA ram_irq_scanline_flag
+    LDA ram_irq_counter
     BNE @skip_irq_setup     ; this is the first irq trigger on this frame
     LDA ram_irq_screen
     ASL
@@ -313,7 +313,7 @@ vec_C66B_IRQ_handler:
     LDA tbl_irq_setup + 3,X
     STA ram_irq_trigger_limit
 @skip_irq_setup:
-    LDA ram_irq_scanline_flag
+    LDA ram_irq_counter
     TAX
     CMP ram_irq_trigger_limit
     BCS @exit_irq    ; no more irq and chr bank swapping on this frame
@@ -361,7 +361,7 @@ vec_C66B_IRQ_handler:
 @exit_irq:
     LDA #$00    ; high bit for other chr banks
     STA $5130
-    INC ram_irq_scanline_flag
+    INC ram_irq_counter
     PLA
     TAY
     PLA
@@ -3071,7 +3071,7 @@ C - - - - - 0x01D919 07:D909: A9 01     LDA #$01
 C - - - - - 0x01D91B 07:D90B: 85 CD     STA ram_00CD
 C - - - - - 0x01D91D 07:D90D: A2 50     LDX #$50
 C - - - - - 0x01D91F 07:D90F: 20 E5 FF  JSR sub_FFE5_garbage_loop_for_IRQ
-C - - - - - 0x01D922 07:D912: A5 0F     LDA ram_irq_scanline_flag
+C - - - - - 0x01D922 07:D912: A5 0F     LDA ram_irq_counter
 C - - - - - 0x01D924 07:D914: D0 04     BNE bra_D91A_RTS
 C - - - - - 0x01D926 07:D916: A9 00     LDA #$00
 C - - - - - 0x01D928 07:D918: 85 CD     STA ram_00CD
@@ -3125,7 +3125,7 @@ C - - - - - 0x01D968 07:D958: 60        RTS
 
 sub_D959_turn_IRQ_on:
 C - - - - - 0x01D969 07:D959: A9 00     LDA #$00
-C - - - - - 0x01D96B 07:D95B: 85 0F     STA ram_irq_scanline_flag
+C - - - - - 0x01D96B 07:D95B: 85 0F     STA ram_irq_counter
                                         STA ram_irq_data_index
                                         LDA ram_camera_X
                                         STA ram_copy_camera_X   ; copy scroll position from previous frame
