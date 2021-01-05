@@ -29,7 +29,7 @@ ca65 -U -l -g copy_bank_0D.asm
 ca65 -U -l -g copy_bank_FF.asm
 
 :: assemble code into binaries
-ld65 -C ld65.cfg --dbgfile _debug.txt ^
+ld65 -C ld65.cfg -o PRG_ROM.bin --dbgfile _debug.txt ^
     copy_bank_00.o ^
     copy_bank_01.o ^
     copy_bank_02.o ^
@@ -45,31 +45,13 @@ ld65 -C ld65.cfg --dbgfile _debug.txt ^
     copy_bank_0D.o ^
     copy_bank_FF.o
 
-:: join binaries, header and chr into a common ROM
-copy /B header.bin + ^
-    copy_bank_00.bin + ^
-    copy_bank_01.bin + ^
-    copy_bank_02.bin + ^
-    copy_bank_03.bin + ^
-    copy_bank_04.bin + ^
-    copy_bank_05.bin + ^
-    copy_bank_06.bin + ^
-    copy_bank_07.bin + ^
-    copy_bank_08.bin + ^
-    copy_bank_09.bin + ^
-    copy_bank_0A.bin + ^
-    copy_bank_0B.bin + ^
-    copy_bank_0D.bin + ^
-    copy_bank_FF.bin + CHR_ROM.chr !sf3.nes
-
-:: delete leftover garbage and copies
-del *.o + copy_*.bin + copy_*.asm + copy_*.inc + temp_*.asm + temp_*.inc
+copy /B header.bin + PRG_ROM.bin + CHR_ROM.chr !sf3.nes
 
 :: join listing files into a single file
 copy /A copy_*.lst _listing.txt
 
-:: delete listing copies
-del copy_*.lst
+:: delete leftover garbage and copies
+del *.o + PRG_ROM.bin + copy_*
 
 :: create a copy of .nl file for original ROM
 if exist SF3_original.nes (copy !sf3.nes.ram.nl SF3_original.nes.ram.nl)
