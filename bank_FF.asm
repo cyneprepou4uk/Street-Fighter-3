@@ -2966,9 +2966,9 @@ C - - - - - 0x01D862 07:D852: A9 0E     LDA #$0E
 C - - - - - 0x01D864 07:D854: 85 B1     STA ram_00B1
 C - - - - - 0x01D866 07:D856: A9 05     LDA #$05
 C - - - - - 0x01D868 07:D858: 85 B2     STA ram_00B2
-C - - - - - 0x01D86A 07:D85A: A9 00     LDA #$00
+C - - - - - 0x01D86A 07:D85A: A9 00     LDA #< tbl_D8E4_clear_pause_txt
 C - - - - - 0x01D86C 07:D85C: 85 AE     STA ram_00AE
-C - - - - - 0x01D86E 07:D85E: A9 00     LDA #$00
+C - - - - - 0x01D86E 07:D85E: A9 00     LDA #> tbl_D8E4_clear_pause_txt
 C - - - - - 0x01D870 07:D860: 85 AF     STA ram_00AF
 C - - - - - 0x01D872 07:D862: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01D875 07:D865: A5 3E     LDA ram_game_time
@@ -3006,9 +3006,9 @@ C - - - - - 0x01D8B5 07:D8A5: A9 0E     LDA #$0E
 C - - - - - 0x01D8B7 07:D8A7: 85 B1     STA ram_00B1
 C - - - - - 0x01D8B9 07:D8A9: A9 05     LDA #$05
 C - - - - - 0x01D8BB 07:D8AB: 85 B2     STA ram_00B2
-C - - - - - 0x01D8BD 07:D8AD: A9 00     LDA #$00
+C - - - - - 0x01D8BD 07:D8AD: A9 00     LDA #< tbl_D8E4_clear_pause_txt
 C - - - - - 0x01D8BF 07:D8AF: 85 AE     STA ram_00AE
-C - - - - - 0x01D8C1 07:D8B1: A9 00     LDA #$00
+C - - - - - 0x01D8C1 07:D8B1: A9 00     LDA #> tbl_D8E4_clear_pause_txt
 C - - - - - 0x01D8C3 07:D8B3: 85 AF     STA ram_00AF
 C - - - - - 0x01D8C5 07:D8B5: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01D8C8 07:D8B8: 4C D2 D8  JMP loc_D8D2
@@ -3019,9 +3019,9 @@ C - - - - - 0x01D8CF 07:D8BF: A9 0E     LDA #$0E
 C - - - - - 0x01D8D1 07:D8C1: 85 B1     STA ram_00B1
 C - - - - - 0x01D8D3 07:D8C3: A9 05     LDA #$05
 C - - - - - 0x01D8D5 07:D8C5: 85 B2     STA ram_00B2
-C - - - - - 0x01D8D7 07:D8C7: A9 E3     LDA #< tbl_D8E3
+C - - - - - 0x01D8D7 07:D8C7: A9 E3     LDA #< tbl_D8E3_pause_txt
 C - - - - - 0x01D8D9 07:D8C9: 85 AE     STA ram_00AE
-C - - - - - 0x01D8DB 07:D8CB: A9 D8     LDA #> tbl_D8E3
+C - - - - - 0x01D8DB 07:D8CB: A9 D8     LDA #> tbl_D8E3_pause_txt
 C - - - - - 0x01D8DD 07:D8CD: 85 AF     STA ram_00AF
 C - - - - - 0x01D8DF 07:D8CF: 20 9D FF  JSR sub_FF9D_write_to_ppu
 loc_D8D2:
@@ -3037,12 +3037,11 @@ C - - - - - 0x01D8F2 07:D8E2: 60        RTS
 
 
 
-tbl_D8E3:
-- D 2 - I - 0x01D8F3 07:D8E3: 50        .byte $50   ; 
-- D 2 - I - 0x01D8F4 07:D8E4: 41        .byte $41   ; 
-- D 2 - I - 0x01D8F5 07:D8E5: 55        .byte $55   ; 
-- D 2 - I - 0x01D8F6 07:D8E6: 53        .byte $53   ; 
-- D 2 - I - 0x01D8F7 07:D8E7: 45        .byte $45   ; 
+tbl_D8E3_pause_txt:
+    .byte $50, $41, $55, $53, $45
+
+tbl_D8E4_clear_pause_txt:
+    .byte $00, $00, $00, $00, $00
 
 
 
