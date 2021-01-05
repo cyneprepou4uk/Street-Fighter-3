@@ -294,63 +294,74 @@ vec_C66B_IRQ_handler:
     PHA
     TYA
     PHA
-    LDX #$16
+    LDX #$04
 @garbage_loop:  ; for getting rid of artifacts
     DEX
     BNE @garbage_loop
-    INC ram_irq_scanline_flag
     LDA ram_irq_scanline_flag
-    CMP #$01
-    BNE @skip
-    LDA ram_current_game_mode
-    CMP #con_GM_gameplay
-    BNE @skip
-    LDA ram_hud_height
-    ASL
-    ASL
-    ASL
-    CLC
-    ADC #$06
-    STA $5203   ; set scanline
-    LDA #$80
-    STA $5204   ; enable irq again
-    BNE @exit_irq
-@skip:
-    LDA ram_current_game_mode
-    CMP #con_GM_gameplay
-    BNE @do_not_scroll
-    LDA ram_copy_camera_X
-    STA $2005
-    LDA #$00
-    STA $2005
-@do_not_scroll:
+    BNE @skip_irq_setup     ; this is the first irq trigger on this frame
     LDA ram_irq_screen
     ASL
+    ASL
     TAX
-    LDA tbl_scanline_data,X
-    STA ram_0002
-    LDA tbl_scanline_data + 1,X
-    STA ram_0003
-    LDY ram_irq_data_index
-    LDA #$01
+    LDA tbl_irq_setup,X
+    STA ram_irq_next_bank
+    LDA tbl_irq_setup + 1,X
+    STA ram_irq_next_line
+    LDA tbl_irq_setup + 2,X
+    STA ram_irq_lines_interval
+    LDA tbl_irq_setup + 3,X
+    STA ram_irq_trigger_limit
+@skip_irq_setup:
+    LDA ram_irq_scanline_flag
+    TAX
+    CMP ram_irq_trigger_limit
+    BCS @exit_irq    ; no more irq and chr bank swapping on this frame
+    TXA     ; update Z flag
+    BNE @swap_banks
+    LDA ram_current_game_mode
+    CMP #con_GM_gameplay
+    BNE @swap_banks
+    LDA #$20 - 1
+    LDX ram_hud_height
+    CPX #$08
+    BNE @skip_40    ; while hud is not fully drawn, pretend that it's still small
+    LDA #$40 - 1
+@skip_40:
+    STA $5203   ; set scanline
+    LDX #$80
+    STX $5204   ; enable irq again
+    CMP ram_irq_next_line
+    BCC @exit_irq       ; check will fail if hud is fully drawn
+    LDA ram_irq_next_line
+    CLC
+    ADC ram_irq_lines_interval
+    STA ram_irq_next_line       ; correct next line
+    DEC ram_irq_trigger_limit   ; correct limit (not really nesessary)
+    INC ram_irq_next_bank       ; correct bank
+    BNE @exit_irq   ; jump
+@swap_banks:
+    LDA #$01    ; high bit for irq chr banks
     STA $5130
-    LDA (ram_0002),Y
+    LDA ram_irq_next_bank
     STA $5129
     STA $5121
-    INY
-    LDA (ram_0002),Y
-    CMP #$FF
-    BEQ @exit_irq
-    SEC
-    SBC #$02
-    STA $5203   ; set scanline
-    LDA #$80
-    STA $5204   ; enable irq again
-    INY
-    STY ram_irq_data_index
-@exit_irq:
+    INC ram_irq_next_bank   ; prepare next bank
+    LDA ram_copy_camera_X   ; set scroll
+    STA $2005
     LDA #$00
+    STA $2005
+    LDA ram_irq_next_line
+    STA $5203   ; set scanline
+    LDX #$80
+    STX $5204   ; enable irq again
+    CLC
+    ADC ram_irq_lines_interval
+    STA ram_irq_next_line   ; prepare next line
+@exit_irq:
+    LDA #$00    ; high bit for other chr banks
     STA $5130
+    INC ram_irq_scanline_flag
     PLA
     TAY
     PLA
@@ -358,523 +369,127 @@ vec_C66B_IRQ_handler:
     PLA
     RTI
 
-tbl_scanline_data:
+tbl_irq_setup:
 ; stages
-    .word _screen_00    ; India (Dhalsim)
-    .word _screen_01    ; Thailand (Sagat)
-    .word _screen_02    ; Thailand (Vega)
-    .word _screen_03    ; USA (Guile)
-    .word _screen_04    ; USA (Ken)
-    .word _screen_05    ; Japan (Ryu)
-    .word _screen_06    ; Spain (Balrog)
-    .word _screen_07    ; Brazil (Blanka)
-    .word _screen_08    ; China (Chun-Li)
+; 00 India (Dhalsim)
+    .byte $24       ; next bank
+    .byte $38 - 1   ; next line (must be less by 1 then actual value)
+    .byte $10       ; interval between lines
+    .byte $0C + 1   ; swap counter (must be higher by 1 then actual value)
+; 01 Thailand (Sagat)
+    .byte $54       ; 
+    .byte $38 - 1   ; 
+    .byte $10       ; 
+    .byte $0C + 1   ; 
+; 02 Thailand (Vega)
+    .byte $60       ; 
+    .byte $38 - 1   ; 
+    .byte $10       ; 
+    .byte $0C + 1   ; 
+; 03 USA (Guile)
+    .byte $18       ; 
+    .byte $38 - 1   ; 
+    .byte $10       ; 
+    .byte $0C + 1   ; 
+; 04 USA (Ken)
+    .byte $3C       ; 
+    .byte $38 - 1   ; 
+    .byte $10       ; 
+    .byte $0C + 1   ; 
+; 05 Japan (Ryu)
+    .byte $0C       ; 
+    .byte $38 - 1   ; 
+    .byte $10       ; 
+    .byte $0C + 1   ; 
+; 06 Spain (Balrog)
+    .byte $48       ; 
+    .byte $38 - 1   ; 
+    .byte $10       ; 
+    .byte $0C + 1   ; 
+; 07 Brazil (Blanka)
+    .byte $30       ; 
+    .byte $38 - 1   ; 
+    .byte $10       ; 
+    .byte $0C + 1   ; 
+; 08 China (Chun-Li)
+    .byte $00       ; 
+    .byte $38 - 1   ; 
+    .byte $10       ; 
+    .byte $0C + 1   ; 
+
 ; misc
-    .word _screen_09    ; player select
-    .word _screen_0A    ; title
-    .word _screen_0B    ; continue
-    .word _screen_0C    ; VS
-    .word _screen_0D    ; defeat
+; 09 player select
+    .byte $87       ; 
+    .byte $28 - 1   ; 
+    .byte $20       ; 
+    .byte $07 + 1   ; 
+; 0A title
+    .byte $80       ; 
+    .byte $28 - 1   ; 
+    .byte $20       ; 
+    .byte $07 + 1   ; 
+; 0B continue
+    .byte $95       ; 
+    .byte $28 - 1   ; 
+    .byte $20       ; 
+    .byte $07 + 1   ; 
+; 0C VS
+    .byte $8E       ; 
+    .byte $28 - 1   ; 
+    .byte $20       ; 
+    .byte $07 + 1   ; 
+; 0D defeat
+    .byte $9C       ; 
+    .byte $28       ; 
+    .byte $20       ; 
+    .byte $07 + 1   ; 
+
 ; endings
-    .word _screen_0E    ; Chun-Li
-    .word _screen_0F    ; Ryu
-    .word _screen_10    ; Guile
-    .word _screen_11    ; Blanka
-    .word _screen_12    ; Dhalsim
-    .word _screen_13    ; Ken
-    .word _screen_14    ; Balrog
-    .word _screen_15    ; Sagat
-    .word _screen_16    ; Vega
-
-con_chr_bank            = $00   ; what bank do you want right now
-con_next_scanline       = $00   ; where exactly do you want to switch banks next time
-con_enough_for_now      = $FF   ; final bankswitching until the next frame
-
-_screen_00:
-    .byte con_chr_bank + $24
-    .byte con_next_scanline + $38
-    .byte con_chr_bank + $25
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $26
-    .byte con_next_scanline + $58
-    .byte con_chr_bank + $27
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $28
-    .byte con_next_scanline + $78
-    .byte con_chr_bank + $29
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $2A
-    .byte con_next_scanline + $98
-    .byte con_chr_bank + $2B
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $2C
-    .byte con_next_scanline + $B8
-    .byte con_chr_bank + $2D
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $2E
-    .byte con_next_scanline + $D8
-    .byte con_chr_bank + $2F
-    .byte con_enough_for_now
-
-_screen_01:
-    .byte con_chr_bank + $54
-    .byte con_next_scanline + $38
-    .byte con_chr_bank + $55
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $56
-    .byte con_next_scanline + $58
-    .byte con_chr_bank + $57
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $58
-    .byte con_next_scanline + $78
-    .byte con_chr_bank + $59
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $5A
-    .byte con_next_scanline + $98
-    .byte con_chr_bank + $5B
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $5C
-    .byte con_next_scanline + $B8
-    .byte con_chr_bank + $5D
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $5E
-    .byte con_next_scanline + $D8
-    .byte con_chr_bank + $5F
-    .byte con_enough_for_now
-
-_screen_02:
-    .byte con_chr_bank + $60
-    .byte con_next_scanline + $38
-    .byte con_chr_bank + $61
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $62
-    .byte con_next_scanline + $58
-    .byte con_chr_bank + $63
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $64
-    .byte con_next_scanline + $78
-    .byte con_chr_bank + $65
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $66
-    .byte con_next_scanline + $98
-    .byte con_chr_bank + $67
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $68
-    .byte con_next_scanline + $B8
-    .byte con_chr_bank + $69
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $6A
-    .byte con_next_scanline + $D8
-    .byte con_chr_bank + $6B
-    .byte con_enough_for_now
-
-_screen_03:
-    .byte con_chr_bank + $18
-    .byte con_next_scanline + $38
-    .byte con_chr_bank + $19
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $1A
-    .byte con_next_scanline + $58
-    .byte con_chr_bank + $1B
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $1C
-    .byte con_next_scanline + $78
-    .byte con_chr_bank + $1D
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $1E
-    .byte con_next_scanline + $98
-    .byte con_chr_bank + $1F
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $20
-    .byte con_next_scanline + $B8
-    .byte con_chr_bank + $21
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $22
-    .byte con_next_scanline + $D8
-    .byte con_chr_bank + $23
-    .byte con_enough_for_now
-
-_screen_04:
-    .byte con_chr_bank + $3C
-    .byte con_next_scanline + $38
-    .byte con_chr_bank + $3D
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $3E
-    .byte con_next_scanline + $58
-    .byte con_chr_bank + $3F
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $40
-    .byte con_next_scanline + $78
-    .byte con_chr_bank + $41
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $42
-    .byte con_next_scanline + $98
-    .byte con_chr_bank + $43
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $44
-    .byte con_next_scanline + $B8
-    .byte con_chr_bank + $45
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $46
-    .byte con_next_scanline + $D8
-    .byte con_chr_bank + $47
-    .byte con_enough_for_now
-
-_screen_05:
-    .byte con_chr_bank + $0C
-    .byte con_next_scanline + $38
-    .byte con_chr_bank + $0D
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $0E
-    .byte con_next_scanline + $58
-    .byte con_chr_bank + $0F
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $10
-    .byte con_next_scanline + $78
-    .byte con_chr_bank + $11
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $12
-    .byte con_next_scanline + $98
-    .byte con_chr_bank + $13
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $14
-    .byte con_next_scanline + $B8
-    .byte con_chr_bank + $15
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $16
-    .byte con_next_scanline + $D8
-    .byte con_chr_bank + $17
-    .byte con_enough_for_now
-
-_screen_06:
-    .byte con_chr_bank + $48
-    .byte con_next_scanline + $38
-    .byte con_chr_bank + $49
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $4A
-    .byte con_next_scanline + $58
-    .byte con_chr_bank + $4B
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $4C
-    .byte con_next_scanline + $78
-    .byte con_chr_bank + $4D
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $4E
-    .byte con_next_scanline + $98
-    .byte con_chr_bank + $4F
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $50
-    .byte con_next_scanline + $B8
-    .byte con_chr_bank + $51
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $52
-    .byte con_next_scanline + $D8
-    .byte con_chr_bank + $53
-    .byte con_enough_for_now
-
-_screen_07:
-    .byte con_chr_bank + $30
-    .byte con_next_scanline + $38
-    .byte con_chr_bank + $31
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $32
-    .byte con_next_scanline + $58
-    .byte con_chr_bank + $33
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $34
-    .byte con_next_scanline + $78
-    .byte con_chr_bank + $35
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $36
-    .byte con_next_scanline + $98
-    .byte con_chr_bank + $37
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $38
-    .byte con_next_scanline + $B8
-    .byte con_chr_bank + $39
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $3A
-    .byte con_next_scanline + $D8
-    .byte con_chr_bank + $3B
-    .byte con_enough_for_now
-
-_screen_08:
-    .byte con_chr_bank + $00
-    .byte con_next_scanline + $38
-    .byte con_chr_bank + $01
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $02
-    .byte con_next_scanline + $58
-    .byte con_chr_bank + $03
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $04
-    .byte con_next_scanline + $78
-    .byte con_chr_bank + $05
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $06
-    .byte con_next_scanline + $98
-    .byte con_chr_bank + $07
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $08
-    .byte con_next_scanline + $B8
-    .byte con_chr_bank + $09
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $0A
-    .byte con_next_scanline + $D8
-    .byte con_chr_bank + $0B
-    .byte con_enough_for_now
-
-_screen_09:
-    .byte con_chr_bank + $FF
-    .byte con_next_scanline + $08
-    .byte con_chr_bank + $87
-    .byte con_next_scanline + $28
-    .byte con_chr_bank + $88
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $89
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $8A
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $8B
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $8C
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $8D
-    .byte con_enough_for_now
-
-_screen_0A:
-    .byte con_chr_bank + $FF
-    .byte con_next_scanline + $08
-    .byte con_chr_bank + $80
-    .byte con_next_scanline + $28
-    .byte con_chr_bank + $81
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $82
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $83
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $84
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $85
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $86
-    .byte con_enough_for_now
-
-_screen_0B:
-    .byte con_chr_bank + $FF
-    .byte con_next_scanline + $08
-    .byte con_chr_bank + $95
-    .byte con_next_scanline + $28
-    .byte con_chr_bank + $96
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $97
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $98
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $99
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $9A
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $9B
-    .byte con_enough_for_now
-
-_screen_0C:
-    .byte con_chr_bank + $FF
-    .byte con_next_scanline + $08
-    .byte con_chr_bank + $8E
-    .byte con_next_scanline + $28
-    .byte con_chr_bank + $8F
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $90
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $91
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $92
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $93
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $94
-    .byte con_enough_for_now
-
-_screen_0D:
-    .byte con_chr_bank + $FF
-    .byte con_next_scanline + $08
-    .byte con_chr_bank + $9C
-    .byte con_next_scanline + $28
-    .byte con_chr_bank + $9D
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $9E
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $9F
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $A0
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $A1
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $A2
-    .byte con_enough_for_now
-
-_screen_0E:
-    .byte con_chr_bank + $FF
-    .byte con_next_scanline + $08
-    .byte con_chr_bank + $A3
-    .byte con_next_scanline + $28
-    .byte con_chr_bank + $A4
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $A5
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $A6
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $A7
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $A8
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $A9
-    .byte con_enough_for_now
-
-_screen_0F:
-    .byte con_chr_bank + $FF
-    .byte con_next_scanline + $08
-    .byte con_chr_bank + $AA
-    .byte con_next_scanline + $28
-    .byte con_chr_bank + $AB
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $AC
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $AD
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $AE
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $AF
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $B0
-    .byte con_enough_for_now
-
-_screen_10:
-    .byte con_chr_bank + $FF
-    .byte con_next_scanline + $08
-    .byte con_chr_bank + $B1
-    .byte con_next_scanline + $28
-    .byte con_chr_bank + $B2
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $B3
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $B4
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $B5
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $B6
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $B7
-    .byte con_enough_for_now
-
-_screen_11:
-    .byte con_chr_bank + $FF
-    .byte con_next_scanline + $08
-    .byte con_chr_bank + $B8
-    .byte con_next_scanline + $28
-    .byte con_chr_bank + $B9
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $BA
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $BB
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $BC
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $BD
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $BE
-    .byte con_enough_for_now
-
-_screen_12:
-    .byte con_chr_bank + $FF
-    .byte con_next_scanline + $08
-    .byte con_chr_bank + $BF
-    .byte con_next_scanline + $28
-    .byte con_chr_bank + $C0
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $C1
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $C2
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $C3
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $C4
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $C5
-    .byte con_enough_for_now
-
-_screen_13:
-    .byte con_chr_bank + $FF
-    .byte con_next_scanline + $08
-    .byte con_chr_bank + $C6
-    .byte con_next_scanline + $28
-    .byte con_chr_bank + $C7
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $C8
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $C9
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $CA
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $CB
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $CC
-    .byte con_enough_for_now
-
-_screen_14:
-    .byte con_chr_bank + $FF
-    .byte con_next_scanline + $08
-    .byte con_chr_bank + $CD
-    .byte con_next_scanline + $28
-    .byte con_chr_bank + $CE
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $CF
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $D0
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $D1
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $D2
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $D3
-    .byte con_enough_for_now
-
-_screen_15:
-    .byte con_chr_bank + $FF
-    .byte con_next_scanline + $08
-    .byte con_chr_bank + $D4
-    .byte con_next_scanline + $28
-    .byte con_chr_bank + $D5
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $D6
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $D7
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $D8
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $D9
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $DA
-    .byte con_enough_for_now
-
-_screen_16:
-    .byte con_chr_bank + $FF
-    .byte con_next_scanline + $08
-    .byte con_chr_bank + $DB
-    .byte con_next_scanline + $28
-    .byte con_chr_bank + $DC
-    .byte con_next_scanline + $48
-    .byte con_chr_bank + $DD
-    .byte con_next_scanline + $68
-    .byte con_chr_bank + $DE
-    .byte con_next_scanline + $88
-    .byte con_chr_bank + $DF
-    .byte con_next_scanline + $A8
-    .byte con_chr_bank + $E0
-    .byte con_next_scanline + $C8
-    .byte con_chr_bank + $E1
-    .byte con_enough_for_now
+; 0E Chun-Li
+    .byte $A3       ; 
+    .byte $28 - 1   ; 
+    .byte $20       ; 
+    .byte $07 + 1   ; 
+; 0F Ryu
+    .byte $AA       ; 
+    .byte $28 - 1   ; 
+    .byte $20       ; 
+    .byte $07 + 1   ; 
+; 10 Guile
+    .byte $B1       ; 
+    .byte $28 - 1   ; 
+    .byte $20       ; 
+    .byte $07 + 1   ; 
+; 11 Blanka
+    .byte $B8       ; 
+    .byte $28 - 1   ; 
+    .byte $20       ; 
+    .byte $07 + 1   ; 
+; 12 Dhalsim
+    .byte $BF       ; 
+    .byte $28 - 1   ; 
+    .byte $20       ; 
+    .byte $07 + 1   ; 
+; 13 Ken
+    .byte $C6       ; 
+    .byte $28 - 1   ; 
+    .byte $20       ; 
+    .byte $07 + 1   ; 
+; 14 Balrog
+    .byte $CD       ; 
+    .byte $28 - 1   ; 
+    .byte $20       ; 
+    .byte $07 + 1   ; 
+; 15 Sagat
+    .byte $D4       ; 
+    .byte $28 - 1   ; 
+    .byte $20       ; 
+    .byte $07 + 1   ; 
+; 16 Vega
+    .byte $DB       ; 
+    .byte $28 - 1   ; 
+    .byte $20       ; 
+    .byte $07 + 1   ; 
 .endscope
 
 
@@ -7393,16 +7008,44 @@ C - - - - - 0x01F08C 07:F07C: 60        RTS
 
 
 
-sub_F07D:
-C - - - - - 0x01F08D 07:F07D: 85 B0     STA ram_00B0
-C - - - - - 0x01F08F 07:F07F: A9 00     LDA #$00
-C - - - - - 0x01F091 07:F081: 85 B1     STA ram_00B1
-C - - - - - 0x01F093 07:F083: 85 AE     STA ram_00AE
-C - - - - - 0x01F095 07:F085: 85 AF     STA ram_00AF
-C - - - - - 0x01F097 07:F087: A9 20     LDA #$20
-C - - - - - 0x01F099 07:F089: 85 B2     STA ram_00B2
-C - - - - - 0x01F09B 07:F08B: 20 9D FF  JSR sub_FF9D_write_to_ppu
-C - - - - - 0x01F09E 07:F08E: 60        RTS
+sub_F07D_clear_nmt_for_lower_hud:
+.scope
+    ASL
+    ASL
+    TAX
+    BIT $2002
+    TYA
+    PHA
+    LDA tbl_ppu - $10,X
+    STA $2006
+    LDA tbl_ppu - $10 + 1,X
+    STA $2006
+    JSR sub_clear_line    ; 1st nametable
+    LDA tbl_ppu - $10 + 2,X
+    STA $2006
+    LDA tbl_ppu - $10 + 3,X
+    STA $2006
+    JSR sub_clear_line    ; 2nd nametable
+    PLA
+    TAY
+    RTS
+    
+sub_clear_line:
+    LDY #$20
+    LDA #$80
+@loop:
+    STA $2007
+    DEY
+    BNE @loop
+    RTS
+    
+tbl_ppu:
+    .dbyt $2080, $2480  ; 04
+    .dbyt $20A0, $24A0  ; 05
+    .dbyt $20C0, $24C0  ; 06
+    .dbyt $20E0, $24E0  ; 07
+    .dbyt $2100, $2500  ; 08
+.endscope
 
 
 
@@ -7574,12 +7217,7 @@ C - - - - - 0x01F184 07:F174: C9 08     CMP #$08
 C - - - - - 0x01F186 07:F176: B0 12     BCS bra_F18A
 C - - - - - 0x01F188 07:F178: E6 2D     INC ram_hud_height
 C - - - - - 0x01F18A 07:F17A: A5 2D     LDA ram_hud_height
-C - - - - - 0x01F18C 07:F17C: 48        PHA
-C - - - - - 0x01F18D 07:F17D: 20 7D F0  JSR sub_F07D
-C - - - - - 0x01F190 07:F180: 68        PLA
-C - - - - - 0x01F191 07:F181: 18        CLC
-C - - - - - 0x01F192 07:F182: 69 20     ADC #$20
-C - - - - - 0x01F194 07:F184: 20 7D F0  JSR sub_F07D
+C - - - - - 0x01F194 07:F184: 20 7D F0  JSR sub_F07D_clear_nmt_for_lower_hud
 C - - - - - 0x01F197 07:F187: 4C E0 F2  JMP loc_F2E0
 bra_F18A:
 C - - - - - 0x01F19A 07:F18A: E6 72     INC ram_0072
@@ -7603,7 +7241,6 @@ C - - - - - 0x01F1BB 07:F1AB: D0 1D     BNE bra_F1CA
 bra_F1AD:
 C - - - - - 0x01F1BD 07:F1AD: C9 04     CMP #$04
 C - - - - - 0x01F1BF 07:F1AF: D0 1C     BNE bra_F1CD
-C - - - - - 0x01F1C1 07:F1B1: C6 2D     DEC ram_hud_height
 C - - - - - 0x01F1C3 07:F1B3: A9 1E     LDA #$1E
 C - - - - - 0x01F1C5 07:F1B5: 85 B0     STA ram_00B0
 C - - - - - 0x01F1C7 07:F1B7: A9 00     LDA #$00
