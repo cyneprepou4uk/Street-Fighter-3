@@ -7005,44 +7005,15 @@ C - - - - - 0x01F08C 07:F07C: 60        RTS
 
 
 sub_F07D_clear_nmt_for_lower_hud:
-.scope
-    TYA
-    PHA
-    LDA ram_hud_height
-    ASL
-    ASL
-    TAX
-    BIT $2002
-    LDA tbl_ppu - $10,X
-    STA $2006
-    LDA tbl_ppu - $10 + 1,X
-    STA $2006
-    JSR sub_clear_line    ; 1st nametable
-    LDA tbl_ppu - $10 + 2,X
-    STA $2006
-    LDA tbl_ppu - $10 + 3,X
-    STA $2006
-    JSR sub_clear_line    ; 2nd nametable
-    PLA
-    TAY
-    RTS
-    
-sub_clear_line:
-    LDY #$20
-    LDA #$00
-@loop:
-    STA $2007
-    DEY
-    BNE @loop
-    RTS
-    
-tbl_ppu:
-    .dbyt $2080, $2480  ; 04
-    .dbyt $20A0, $24A0  ; 05
-    .dbyt $20C0, $24C0  ; 06
-    .dbyt $20E0, $24E0  ; 07
-    .dbyt $2100, $2500  ; 08
-.endscope
+C - - - - - 0x01F08D 07:F07D: 85 B0     STA ram_00B0
+C - - - - - 0x01F08F 07:F07F: A9 00     LDA #$00
+C - - - - - 0x01F091 07:F081: 85 B1     STA ram_00B1
+C - - - - - 0x01F093 07:F083: 85 AE     STA ram_00AE
+C - - - - - 0x01F095 07:F085: 85 AF     STA ram_00AF
+C - - - - - 0x01F097 07:F087: A9 20     LDA #$20
+C - - - - - 0x01F099 07:F089: 85 B2     STA ram_00B2
+C - - - - - 0x01F09B 07:F08B: 20 9D FF  JSR sub_FF9D_write_to_ppu
+C - - - - - 0x01F09E 07:F08E: 60        RTS
 
 
 
@@ -7213,7 +7184,13 @@ C - - - - - 0x01F182 07:F172: A5 2D     LDA ram_hud_height
 C - - - - - 0x01F184 07:F174: C9 08     CMP #$08
 C - - - - - 0x01F186 07:F176: B0 12     BCS bra_F18A
 C - - - - - 0x01F188 07:F178: E6 2D     INC ram_hud_height
+C - - - - - 0x01F18A 07:F17A: A5 2D     LDA ram_hud_height
+C - - - - - 0x01F18C 07:F17C: 48        PHA
 C - - - - - 0x01F194 07:F184: 20 7D F0  JSR sub_F07D_clear_nmt_for_lower_hud
+C - - - - - 0x01F190 07:F180: 68        PLA
+C - - - - - 0x01F191 07:F181: 18        CLC
+C - - - - - 0x01F192 07:F182: 69 20     ADC #$20
+C - - - - - 0x01F194 07:F184: 20 7D F0  JSR sub_F07D
 C - - - - - 0x01F197 07:F187: 4C E0 F2  JMP loc_F2E0
 bra_F18A:
 C - - - - - 0x01F19A 07:F18A: E6 72     INC ram_0072
