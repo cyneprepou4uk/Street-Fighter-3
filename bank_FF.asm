@@ -1135,20 +1135,28 @@ tbl_names_txt:
 
 _name_00_Chun_Li:
     .byte "CHUN", $00, "LI"
+    
 _name_01_Ryu:
     .byte "RYU"
+    
 _name_02_Guile:
     .byte "GUILE"
+    
 _name_03_Blanka:
     .byte "BLANKA"
+    
 _name_04_Dhalsim:
     .byte "DHALSIM"
+    
 _name_05_Ken:
     .byte "KEN"
+    
 _name_06_Balrog:
     .byte "BALROG"
+    
 _name_07_Sagat:
     .byte "SAGAT"
+    
 _name_08_Vega:
     .byte "VEGA"
 .endscope
@@ -5405,9 +5413,9 @@ C - - - - - 0x01E6F0 07:E6E0: 8A        TXA
 C - - - - - 0x01E6F1 07:E6E1: 48        PHA
 C - - - - - 0x01E6F2 07:E6E2: A9 11     LDA #$11
 C - - - - - 0x01E6F4 07:E6E4: E0 10     CPX #$10
-C - - - - - 0x01E6F6 07:E6E6: F0 02     BEQ bra_E6EA
+C - - - - - 0x01E6F6 07:E6E6: F0 02     BEQ bra_E6EA_it_is_1p
 C - - - - - 0x01E6F8 07:E6E8: A9 19     LDA #$19
-bra_E6EA:
+bra_E6EA_it_is_1p:
 C - - - - - 0x01E6FA 07:E6EA: A2 07     LDX #$07
 C - - - - - 0x01E6FC 07:E6EC: 20 B2 FB  JSR sub_FBB2_write_palette_to_ppu
 C - - - - - 0x01E6FF 07:E6EF: 68        PLA
@@ -5417,151 +5425,26 @@ C - - - - - 0x01E701 07:E6F1: 60        RTS
 
 
 tbl_E6F2_spr_colors:
-; 8 bytes in a line
-- - - - - - 0x01E702 07:E6F2: 1A        .byte $1A   ; 
-- D 3 - I - 0x01E703 07:E6F3: 07        .byte $07   ; 
-- D 3 - I - 0x01E704 07:E6F4: 17        .byte $17   ; 
-- D 3 - I - 0x01E705 07:E6F5: 36        .byte $36   ; 
-- D 3 - I - 0x01E706 07:E6F6: 00        .byte $00   ; 
-- D 3 - I - 0x01E707 07:E6F7: 0D        .byte $0D   ; 
-- D 3 - I - 0x01E708 07:E6F8: 11        .byte $11   ; 
-- D 3 - I - 0x01E709 07:E6F9: 31        .byte $31   ; 
-- - - - - - 0x01E70A 07:E6FA: 1A        .byte $1A   ; 
-- D 3 - I - 0x01E70B 07:E6FB: 06        .byte $06   ; 
-- D 3 - I - 0x01E70C 07:E6FC: 17        .byte $17   ; 
-- D 3 - I - 0x01E70D 07:E6FD: 36        .byte $36   ; 
-- D 3 - I - 0x01E70E 07:E6FE: 00        .byte $00   ; 
-- D 3 - I - 0x01E70F 07:E6FF: 0F        .byte $0F   ; 
-- D 3 - I - 0x01E710 07:E700: 00        .byte $00   ; 
-- D 3 - I - 0x01E711 07:E701: 30        .byte $30   ; 
-- - - - - - 0x01E712 07:E702: 1A        .byte $1A   ; 
-- D 3 - I - 0x01E713 07:E703: 07        .byte $07   ; 
-- D 3 - I - 0x01E714 07:E704: 26        .byte $26   ; 
-- D 3 - I - 0x01E715 07:E705: 37        .byte $37   ; 
-- D 3 - I - 0x01E716 07:E706: 00        .byte $00   ; 
-- D 3 - I - 0x01E717 07:E707: 0D        .byte $0D   ; 
-- D 3 - I - 0x01E718 07:E708: 09        .byte $09   ; 
-- D 3 - I - 0x01E719 07:E709: 27        .byte $27   ; 
-- - - - - - 0x01E71A 07:E70A: 1A        .byte $1A   ; 
-- D 3 - I - 0x01E71B 07:E70B: 0F        .byte $0F   ; 
-- D 3 - I - 0x01E71C 07:E70C: 06        .byte $06   ; 
-- D 3 - I - 0x01E71D 07:E70D: 27        .byte $27   ; 
-- D 3 - I - 0x01E71E 07:E70E: 00        .byte $00   ; 
-- D 3 - I - 0x01E71F 07:E70F: 06        .byte $06   ; 
-- D 3 - I - 0x01E720 07:E710: 27        .byte $27   ; 
-- D 3 - I - 0x01E721 07:E711: 37        .byte $37   ; 
-- - - - - - 0x01E722 07:E712: 00        .byte $00   ; 
-- D 3 - I - 0x01E723 07:E713: 05        .byte $05   ; 
-- D 3 - I - 0x01E724 07:E714: 16        .byte $16   ; 
-- D 3 - I - 0x01E725 07:E715: 26        .byte $26   ; 
-- D 3 - I - 0x01E726 07:E716: 00        .byte $00   ; 
-- D 3 - I - 0x01E727 07:E717: 0F        .byte $0F   ; 
-- D 3 - I - 0x01E728 07:E718: 27        .byte $27   ; 
-- D 3 - I - 0x01E729 07:E719: 30        .byte $30   ; 
-- - - - - - 0x01E72A 07:E71A: 00        .byte $00   ; 
-- D 3 - I - 0x01E72B 07:E71B: 06        .byte $06   ; 
-- D 3 - I - 0x01E72C 07:E71C: 17        .byte $17   ; 
-- D 3 - I - 0x01E72D 07:E71D: 36        .byte $36   ; 
-- D 3 - I - 0x01E72E 07:E71E: 00        .byte $00   ; 
-- D 3 - I - 0x01E72F 07:E71F: 0F        .byte $0F   ; 
-- D 3 - I - 0x01E730 07:E720: 05        .byte $05   ; 
-- D 3 - I - 0x01E731 07:E721: 15        .byte $15   ; 
-- - - - - - 0x01E732 07:E722: 00        .byte $00   ; 
-- D 3 - I - 0x01E733 07:E723: 07        .byte $07   ; 
-- D 3 - I - 0x01E734 07:E724: 26        .byte $26   ; 
-- D 3 - I - 0x01E735 07:E725: 37        .byte $37   ; 
-- D 3 - I - 0x01E736 07:E726: 00        .byte $00   ; 
-- D 3 - I - 0x01E737 07:E727: 02        .byte $02   ; 
-- D 3 - I - 0x01E738 07:E728: 1C        .byte $1C   ; 
-- D 3 - I - 0x01E739 07:E729: 28        .byte $28   ; 
-- - - - - - 0x01E73A 07:E72A: 00        .byte $00   ; 
-- D 3 - I - 0x01E73B 07:E72B: 06        .byte $06   ; 
-- D 3 - I - 0x01E73C 07:E72C: 26        .byte $26   ; 
-- D 3 - I - 0x01E73D 07:E72D: 36        .byte $36   ; 
-- D 3 - I - 0x01E73E 07:E72E: 00        .byte $00   ; 
-- D 3 - I - 0x01E73F 07:E72F: 01        .byte $01   ; 
-- D 3 - I - 0x01E740 07:E730: 12        .byte $12   ; 
-- D 3 - I - 0x01E741 07:E731: 15        .byte $15   ; 
-- - - - - - 0x01E742 07:E732: 00        .byte $00   ; 
-- D 3 - I - 0x01E743 07:E733: 0F        .byte $0F   ; 
-- D 3 - I - 0x01E744 07:E734: 15        .byte $15   ; 
-- D 3 - I - 0x01E745 07:E735: 26        .byte $26   ; 
-- D 3 - I - 0x01E746 07:E736: 00        .byte $00   ; 
-- D 3 - I - 0x01E747 07:E737: 0C        .byte $0C   ; 
-- D 3 - I - 0x01E748 07:E738: 1C        .byte $1C   ; 
-- D 3 - I - 0x01E749 07:E739: 3C        .byte $3C   ; 
-- - - - - - 0x01E74A 07:E73A: 00        .byte $00   ; 
-- D 3 - I - 0x01E74B 07:E73B: 07        .byte $07   ; 
-- D 3 - I - 0x01E74C 07:E73C: 17        .byte $17   ; 
-- D 3 - I - 0x01E74D 07:E73D: 36        .byte $36   ; 
-- D 3 - I - 0x01E74E 07:E73E: 00        .byte $00   ; 
-- D 3 - I - 0x01E74F 07:E73F: 0D        .byte $0D   ; 
-- D 3 - I - 0x01E750 07:E740: 15        .byte $15   ; 
-- D 3 - I - 0x01E751 07:E741: 25        .byte $25   ; 
-- - - - - - 0x01E752 07:E742: 00        .byte $00   ; 
-- D 3 - I - 0x01E753 07:E743: 06        .byte $06   ; 
-- D 3 - I - 0x01E754 07:E744: 17        .byte $17   ; 
-- D 3 - I - 0x01E755 07:E745: 36        .byte $36   ; 
-- D 3 - I - 0x01E756 07:E746: 00        .byte $00   ; 
-- D 3 - I - 0x01E757 07:E747: 0F        .byte $0F   ; 
-- D 3 - I - 0x01E758 07:E748: 0C        .byte $0C   ; 
-- D 3 - I - 0x01E759 07:E749: 1C        .byte $1C   ; 
-- - - - - - 0x01E75A 07:E74A: 00        .byte $00   ; 
-- D 3 - I - 0x01E75B 07:E74B: 07        .byte $07   ; 
-- D 3 - I - 0x01E75C 07:E74C: 26        .byte $26   ; 
-- D 3 - I - 0x01E75D 07:E74D: 37        .byte $37   ; 
-- D 3 - I - 0x01E75E 07:E74E: 00        .byte $00   ; 
-- D 3 - I - 0x01E75F 07:E74F: 0D        .byte $0D   ; 
-- D 3 - I - 0x01E760 07:E750: 16        .byte $16   ; 
-- D 3 - I - 0x01E761 07:E751: 27        .byte $27   ; 
-- - - - - - 0x01E762 07:E752: 00        .byte $00   ; 
-- D 3 - I - 0x01E763 07:E753: 0F        .byte $0F   ; 
-- D 3 - I - 0x01E764 07:E754: 06        .byte $06   ; 
-- D 3 - I - 0x01E765 07:E755: 21        .byte $21   ; 
-- D 3 - I - 0x01E766 07:E756: 00        .byte $00   ; 
-- D 3 - I - 0x01E767 07:E757: 06        .byte $06   ; 
-- D 3 - I - 0x01E768 07:E758: 21        .byte $21   ; 
-- D 3 - I - 0x01E769 07:E759: 37        .byte $37   ; 
-- - - - - - 0x01E76A 07:E75A: 00        .byte $00   ; 
-- D 3 - I - 0x01E76B 07:E75B: 05        .byte $05   ; 
-- D 3 - I - 0x01E76C 07:E75C: 16        .byte $16   ; 
-- D 3 - I - 0x01E76D 07:E75D: 26        .byte $26   ; 
-- D 3 - I - 0x01E76E 07:E75E: 00        .byte $00   ; 
-- D 3 - I - 0x01E76F 07:E75F: 0F        .byte $0F   ; 
-- D 3 - I - 0x01E770 07:E760: 13        .byte $13   ; 
-- D 3 - I - 0x01E771 07:E761: 33        .byte $33   ; 
-- - - - - - 0x01E772 07:E762: 00        .byte $00   ; 
-- D 3 - I - 0x01E773 07:E763: 06        .byte $06   ; 
-- D 3 - I - 0x01E774 07:E764: 17        .byte $17   ; 
-- D 3 - I - 0x01E775 07:E765: 36        .byte $36   ; 
-- D 3 - I - 0x01E776 07:E766: 00        .byte $00   ; 
-- D 3 - I - 0x01E777 07:E767: 0F        .byte $0F   ; 
-- D 3 - I - 0x01E778 07:E768: 02        .byte $02   ; 
-- D 3 - I - 0x01E779 07:E769: 12        .byte $12   ; 
-- - - - - - 0x01E77A 07:E76A: 00        .byte $00   ; 
-- D 3 - I - 0x01E77B 07:E76B: 07        .byte $07   ; 
-- D 3 - I - 0x01E77C 07:E76C: 26        .byte $26   ; 
-- D 3 - I - 0x01E77D 07:E76D: 37        .byte $37   ; 
-- D 3 - I - 0x01E77E 07:E76E: 00        .byte $00   ; 
-- D 3 - I - 0x01E77F 07:E76F: 09        .byte $09   ; 
-- D 3 - I - 0x01E780 07:E770: 19        .byte $19   ; 
-- D 3 - I - 0x01E781 07:E771: 29        .byte $29   ; 
-- - - - - - 0x01E782 07:E772: 00        .byte $00   ; 
-- D 3 - I - 0x01E783 07:E773: 06        .byte $06   ; 
-- D 3 - I - 0x01E784 07:E774: 26        .byte $26   ; 
-- D 3 - I - 0x01E785 07:E775: 36        .byte $36   ; 
-- D 3 - I - 0x01E786 07:E776: 00        .byte $00   ; 
-- D 3 - I - 0x01E787 07:E777: 0D        .byte $0D   ; 
-- D 3 - I - 0x01E788 07:E778: 19        .byte $19   ; 
-- D 3 - I - 0x01E789 07:E779: 15        .byte $15   ; 
-- - - - - - 0x01E78A 07:E77A: 00        .byte $00   ; 
-- D 3 - I - 0x01E78B 07:E77B: 0F        .byte $0F   ; 
-- D 3 - I - 0x01E78C 07:E77C: 1B        .byte $1B   ; 
-- D 3 - I - 0x01E78D 07:E77D: 26        .byte $26   ; 
-- D 3 - I - 0x01E78E 07:E77E: 00        .byte $00   ; 
-- D 3 - I - 0x01E78F 07:E77F: 06        .byte $06   ; 
-- D 3 - I - 0x01E790 07:E780: 16        .byte $16   ; 
-- D 3 - I - 0x01E791 07:E781: 27        .byte $27   ; 
+; 8 bytes for a fighter, 1st byte is unused
+    .incbin "sprites\palette_Chun_Li_1p.bin"
+    .incbin "sprites\palette_Ryu_1p.bin"
+    .incbin "sprites\palette_Guile_1p.bin"
+    .incbin "sprites\palette_Blanka_1p.bin"
+    .incbin "sprites\palette_Dhalsim_1p.bin"
+    .incbin "sprites\palette_Ken_1p.bin"
+    .incbin "sprites\palette_Balrog_1p.bin"
+    .incbin "sprites\palette_Sagat_1p.bin"
+    .incbin "sprites\palette_Vega_1p.bin"
+    
+    .incbin "sprites\palette_Chun_Li_2p.bin"
+    .incbin "sprites\palette_Ryu_2p.bin"
+    .incbin "sprites\palette_Guile_2p.bin"
+    .incbin "sprites\palette_Blanka_2p.bin"
+    .incbin "sprites\palette_Dhalsim_2p.bin"
+    .incbin "sprites\palette_Ken_2p.bin"
+    .incbin "sprites\palette_Balrog_2p.bin"
+    .incbin "sprites\palette_Sagat_2p.bin"
+    .incbin "sprites\palette_Vega_2p.bin"
 
 
 
