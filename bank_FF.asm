@@ -5435,7 +5435,7 @@ tbl_E6F2_spr_colors:
     .incbin "sprites\palette_player_Balrog_1p.bin"
     .incbin "sprites\palette_player_Sagat_1p.bin"
     .incbin "sprites\palette_player_Vega_1p.bin"
-    
+; colors for p2 if same fighters
     .incbin "sprites\palette_player_Chun_Li_2p.bin"
     .incbin "sprites\palette_player_Ryu_2p.bin"
     .incbin "sprites\palette_player_Guile_2p.bin"
@@ -5472,25 +5472,25 @@ C - - - - - 0x01E7AF 07:E79F: 60        RTS
 
 
 tbl_E7A0_spr_colors:
-- D 3 - I - 0x01E7B0 07:E7A0: 0F        .byte $0F, $12, $26, $36   ; 00
-- D 3 - I - 0x01E7B4 07:E7A4: 0F        .byte $0F, $16, $26, $30   ; 01
-- D 3 - I - 0x01E7B8 07:E7A8: 0F        .byte $0F, $18, $27, $36   ; 02
-- D 3 - I - 0x01E7BC 07:E7AC: 0F        .byte $0F, $06, $27, $37   ; 03
-- D 3 - I - 0x01E7C0 07:E7B0: 0F        .byte $0F, $17, $27, $36   ; 04
-- D 3 - I - 0x01E7C4 07:E7B4: 0F        .byte $0F, $16, $27, $37   ; 05
-- D 3 - I - 0x01E7C8 07:E7B8: 0F        .byte $0F, $1C, $2C, $3C   ; 06
-- D 3 - I - 0x01E7CC 07:E7BC: 0F        .byte $0F, $16, $26, $36   ; 07
-- D 3 - I - 0x01E7D0 07:E7C0: 0F        .byte $0F, $15, $26, $36   ; 08
+    .incbin "sprites\palette_picture_Chun_Li_1p.bin"
+    .incbin "sprites\palette_picture_Ryu_1p.bin"
+    .incbin "sprites\palette_picture_Guile_1p.bin"
+    .incbin "sprites\palette_picture_Blanka_1p.bin"
+    .incbin "sprites\palette_picture_Dhalsim_1p.bin"
+    .incbin "sprites\palette_picture_Ken_1p.bin"
+    .incbin "sprites\palette_picture_Balrog_1p.bin"
+    .incbin "sprites\palette_picture_Sagat_1p.bin"
+    .incbin "sprites\palette_picture_Vega_1p.bin"
 ; colors for p2 if same fighters
-- D 3 - I - 0x01E7D4 07:E7C4: 0F        .byte $0F, $16, $26, $36   ; 09 (00)
-- D 3 - I - 0x01E7D8 07:E7C8: 0F        .byte $0F, $16, $27, $2C   ; 0A (01)
-- D 3 - I - 0x01E7DC 07:E7CC: 0F        .byte $0F, $16, $27, $36   ; 0B (02)
-- D 3 - I - 0x01E7E0 07:E7D0: 0F        .byte $0F, $06, $22, $32   ; 0C (03)
-- D 3 - I - 0x01E7E4 07:E7D4: 0F        .byte $0F, $13, $23, $33   ; 0D (04)
-- D 3 - I - 0x01E7E8 07:E7D8: 0F        .byte $0F, $12, $27, $37   ; 0E (05)
-- D 3 - I - 0x01E7EC 07:E7DC: 0F        .byte $0F, $1B, $2B, $3B   ; 0F (06)
-- D 3 - I - 0x01E7F0 07:E7E0: 0F        .byte $0F, $05, $26, $36   ; 10 (07)
-- D 3 - I - 0x01E7F4 07:E7E4: 0F        .byte $0F, $19, $26, $36   ; 11 (08)
+    .incbin "sprites\palette_picture_Chun_Li_2p.bin"
+    .incbin "sprites\palette_picture_Ryu_2p.bin"
+    .incbin "sprites\palette_picture_Guile_2p.bin"
+    .incbin "sprites\palette_picture_Blanka_2p.bin"
+    .incbin "sprites\palette_picture_Dhalsim_2p.bin"
+    .incbin "sprites\palette_picture_Ken_2p.bin"
+    .incbin "sprites\palette_picture_Balrog_2p.bin"
+    .incbin "sprites\palette_picture_Sagat_2p.bin"
+    .incbin "sprites\palette_picture_Vega_2p.bin"
 
 
 
