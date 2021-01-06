@@ -1022,6 +1022,7 @@ C - - - - - 0x01CAB0 07:CAA0: 20 31 F1  JSR sub_F131_print_points
 C - - - - - 0x01CAB3 07:CAA3: A9 02     LDA #$02
 C - - - - - 0x01CAB5 07:CAA5: 85 73     STA ram_0073
 C - - - - - 0x01CAB7 07:CAA7: 20 31 F1  JSR sub_F131_print_points
+                                        JSR sub_CAF5_print_names
 C - - - - - 0x01CABA 07:CAAA: 20 F0 F8  JSR sub_F8F0
 C - - - - - 0x01CABD 07:CAAD: A9 00     LDA #$00
 C - - - - - 0x01CABF 07:CAAF: 85 72     STA ram_0072
@@ -1069,6 +1070,88 @@ tbl_CAEC:
 - D 2 - - - 0x01CB02 07:CAF2: 16        .byte $16   ; 06
 - D 2 - - - 0x01CB03 07:CAF3: 18        .byte $18   ; 07
 - D 2 - - - 0x01CB04 07:CAF4: 28        .byte $28   ; 08
+
+
+
+sub_CAF5_print_names:
+.scope
+    TYA
+    PHA
+    CLV         ; 1p flag V = 0
+    LDA ram_p1_fighter
+    JSR sub_print_name
+    LDA #$7F
+    CLC
+    ADC #$01    ; 2p flag V = 1
+    LDA ram_p2_fighter
+    JSR sub_print_name
+    PLA
+    TAY
+    RTS
+    
+sub_print_name:
+    TAX
+    ASL
+    TAY
+    LDA #$03        ; 03 * 20 + 04 = 64 (2064)
+    STA ram_00B0
+    LDA #$04
+    BVC @it_is_p1
+    LDA #$1C
+    SEC
+    SBC tbl_names_length,X
+@it_is_p1:
+    STA ram_00B1
+    LDA tbl_names_txt,Y
+    STA ram_00AE
+    LDA tbl_names_txt + 1,Y
+    STA ram_00AF
+    LDA tbl_names_length,X
+    STA ram_00B2
+    JSR sub_FF9D_write_to_ppu
+    RTS
+    
+tbl_names_length:
+    .byte $07   ; 00 Chun-Li
+    .byte $03   ; 01 Ryu
+    .byte $05   ; 02 Guile
+    .byte $06   ; 03 Blanka
+    .byte $07   ; 04 Dhalsim
+    .byte $03   ; 05 Ken
+    .byte $06   ; 06 Balrog
+    .byte $05   ; 07 Sagat
+    .byte $04   ; 08 Vega
+    
+tbl_names_txt:
+    .word _name_00_Chun_Li
+    .word _name_01_Ryu
+    .word _name_02_Guile
+    .word _name_03_Blanka
+    .word _name_04_Dhalsim
+    .word _name_05_Ken
+    .word _name_06_Balrog
+    .word _name_07_Sagat
+    .word _name_08_Vega
+
+_name_00_Chun_Li:
+    .byte "CHUN", $00, "LI"
+_name_01_Ryu:
+    .byte "RYU"
+_name_02_Guile:
+    .byte "GUILE"
+_name_03_Blanka:
+    .byte "BLANKA"
+_name_04_Dhalsim:
+    .byte "DHALSIM"
+_name_05_Ken:
+    .byte "KEN"
+_name_06_Balrog:
+    .byte "BALROG"
+_name_07_Sagat:
+    .byte "SAGAT"
+_name_08_Vega:
+    .byte "VEGA"
+.endscope
 
 
 
@@ -9538,7 +9621,7 @@ C - - - - - 0x01FFAD 07:FF9D: 98        TYA
 C - - - - - 0x01FFAE 07:FF9E: 48        PHA
 C - - - - - 0x01FFAF 07:FF9F: A9 00     LDA #$00
 C - - - - - 0x01FFB1 07:FFA1: 85 B3     STA ram_00B3
-C - - - - - 0x01FFB3 07:FFA3: A5 B0     LDA ram_00B0
+C - - - - - 0x01FFB3 07:FFA3: A5 B0     LDA ram_00B0    ; multiply 00B0 by 20h and store in 00B3
 C - - - - - 0x01FFB5 07:FFA5: 0A        ASL
 C - - - - - 0x01FFB6 07:FFA6: 0A        ASL
 C - - - - - 0x01FFB7 07:FFA7: 0A        ASL
@@ -9548,7 +9631,7 @@ C - - - - - 0x01FFBB 07:FFAB: 26 B3     ROL ram_00B3
 C - - - - - 0x01FFBD 07:FFAD: 0A        ASL
 C - - - - - 0x01FFBE 07:FFAE: 26 B3     ROL ram_00B3
 C - - - - - 0x01FFC0 07:FFB0: 18        CLC
-C - - - - - 0x01FFC1 07:FFB1: 65 B1     ADC ram_00B1
+C - - - - - 0x01FFC1 07:FFB1: 65 B1     ADC ram_00B1    ; add 00B1
 C - - - - - 0x01FFC3 07:FFB3: 48        PHA
 C - - - - - 0x01FFC4 07:FFB4: A5 B3     LDA ram_00B3
 C - - - - - 0x01FFC6 07:FFB6: 09 20     ORA #$20
