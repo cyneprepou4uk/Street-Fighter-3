@@ -5426,25 +5426,25 @@ C - - - - - 0x01E701 07:E6F1: 60        RTS
 
 tbl_E6F2_spr_colors:
 ; 8 bytes for a fighter, 1st byte is unused
-    .incbin "sprites\palette_Chun_Li_1p.bin"
-    .incbin "sprites\palette_Ryu_1p.bin"
-    .incbin "sprites\palette_Guile_1p.bin"
-    .incbin "sprites\palette_Blanka_1p.bin"
-    .incbin "sprites\palette_Dhalsim_1p.bin"
-    .incbin "sprites\palette_Ken_1p.bin"
-    .incbin "sprites\palette_Balrog_1p.bin"
-    .incbin "sprites\palette_Sagat_1p.bin"
-    .incbin "sprites\palette_Vega_1p.bin"
+    .incbin "sprites\palette_player_Chun_Li_1p.bin"
+    .incbin "sprites\palette_player_Ryu_1p.bin"
+    .incbin "sprites\palette_player_Guile_1p.bin"
+    .incbin "sprites\palette_player_Blanka_1p.bin"
+    .incbin "sprites\palette_player_Dhalsim_1p.bin"
+    .incbin "sprites\palette_player_Ken_1p.bin"
+    .incbin "sprites\palette_player_Balrog_1p.bin"
+    .incbin "sprites\palette_player_Sagat_1p.bin"
+    .incbin "sprites\palette_player_Vega_1p.bin"
     
-    .incbin "sprites\palette_Chun_Li_2p.bin"
-    .incbin "sprites\palette_Ryu_2p.bin"
-    .incbin "sprites\palette_Guile_2p.bin"
-    .incbin "sprites\palette_Blanka_2p.bin"
-    .incbin "sprites\palette_Dhalsim_2p.bin"
-    .incbin "sprites\palette_Ken_2p.bin"
-    .incbin "sprites\palette_Balrog_2p.bin"
-    .incbin "sprites\palette_Sagat_2p.bin"
-    .incbin "sprites\palette_Vega_2p.bin"
+    .incbin "sprites\palette_player_Chun_Li_2p.bin"
+    .incbin "sprites\palette_player_Ryu_2p.bin"
+    .incbin "sprites\palette_player_Guile_2p.bin"
+    .incbin "sprites\palette_player_Blanka_2p.bin"
+    .incbin "sprites\palette_player_Dhalsim_2p.bin"
+    .incbin "sprites\palette_player_Ken_2p.bin"
+    .incbin "sprites\palette_player_Balrog_2p.bin"
+    .incbin "sprites\palette_player_Sagat_2p.bin"
+    .incbin "sprites\palette_player_Vega_2p.bin"
 
 
 
