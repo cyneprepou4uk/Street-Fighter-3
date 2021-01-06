@@ -9640,24 +9640,24 @@ C - - - - - 0x01FFCB 07:FFBB: 68        PLA
 C - - - - - 0x01FFCC 07:FFBC: 8D 06 20  STA $2006
 C - - - - - 0x01FFCF 07:FFBF: A0 00     LDY #$00
 C - - - - - 0x01FFD1 07:FFC1: A5 AE     LDA ram_00AE
-C - - - - - 0x01FFD3 07:FFC3: D0 04     BNE bra_FFC9
+C - - - - - 0x01FFD3 07:FFC3: D0 04     BNE bra_FFC9_loop
 C - - - - - 0x01FFD5 07:FFC5: A5 AF     LDA ram_00AF
-C - - - - - 0x01FFD7 07:FFC7: F0 0F     BEQ bra_FFD8
-bra_FFC9:
+C - - - - - 0x01FFD7 07:FFC7: F0 0F     BEQ bra_FFD8        ; if both bytes 00, then fill with 00, otherwise it's an indirect pointer
+bra_FFC9_loop:
 C - - - - - 0x01FFD9 07:FFC9: B1 AE     LDA (ram_00AE),Y
 C - - - - - 0x01FFDE 07:FFCE: 8D 07 20  STA $2007
 C - - - - - 0x01FFE1 07:FFD1: C8        INY
 C - - - - - 0x01FFE2 07:FFD2: C4 B2     CPY ram_00B2
-C - - - - - 0x01FFE4 07:FFD4: D0 F3     BNE bra_FFC9
-C - - - - - 0x01FFE6 07:FFD6: F0 0A     BEQ bra_FFE2
-bra_FFD8:
+C - - - - - 0x01FFE4 07:FFD4: D0 F3     BNE bra_FFC9_loop
+C - - - - - 0x01FFE6 07:FFD6: F0 0A     BEQ bra_FFE2_exit
+bra_FFD8:   ; bzk optimize
 C - - - - - 0x01FFE8 07:FFD8: A9 00     LDA #$00
-bra_FFDA:
+bra_FFDA_loop:
 C - - - - - 0x01FFEA 07:FFDA: 8D 07 20  STA $2007
 C - - - - - 0x01FFED 07:FFDD: C8        INY
 C - - - - - 0x01FFEE 07:FFDE: C4 B2     CPY ram_00B2
-C - - - - - 0x01FFF0 07:FFE0: D0 F8     BNE bra_FFDA
-bra_FFE2:
+C - - - - - 0x01FFF0 07:FFE0: D0 F8     BNE bra_FFDA_loop
+bra_FFE2_exit:
 C - - - - - 0x01FFF2 07:FFE2: 68        PLA
 C - - - - - 0x01FFF3 07:FFE3: A8        TAY
 C - - - - - 0x01FFF4 07:FFE4: 60        RTS
