@@ -1015,13 +1015,13 @@ C - - - - - 0x01CAA1 07:CA91: 85 AC     STA ram_00AC
 C - - - - - 0x01CAA3 07:CA93: 85 AD     STA ram_00AD
 C - - - - - 0x01CAA5 07:CA95: A9 00     LDA #$00
 C - - - - - 0x01CAA7 07:CA97: 85 73     STA ram_0073
-C - - - - - 0x01CAA9 07:CA99: 20 31 F1  JSR sub_F131
+C - - - - - 0x01CAA9 07:CA99: 20 31 F1  JSR sub_F131_print_points
 C - - - - - 0x01CAAC 07:CA9C: A9 01     LDA #$01
 C - - - - - 0x01CAAE 07:CA9E: 85 73     STA ram_0073
-C - - - - - 0x01CAB0 07:CAA0: 20 31 F1  JSR sub_F131
+C - - - - - 0x01CAB0 07:CAA0: 20 31 F1  JSR sub_F131_print_points
 C - - - - - 0x01CAB3 07:CAA3: A9 02     LDA #$02
 C - - - - - 0x01CAB5 07:CAA5: 85 73     STA ram_0073
-C - - - - - 0x01CAB7 07:CAA7: 20 31 F1  JSR sub_F131
+C - - - - - 0x01CAB7 07:CAA7: 20 31 F1  JSR sub_F131_print_points
 C - - - - - 0x01CABA 07:CAAA: 20 F0 F8  JSR sub_F8F0
 C - - - - - 0x01CABD 07:CAAD: A9 00     LDA #$00
 C - - - - - 0x01CABF 07:CAAF: 85 72     STA ram_0072
@@ -2844,7 +2844,7 @@ C - - - - - 0x01D77B 07:D76B: 60        RTS
 bra_D76C:
 C - - - - - 0x01D77C 07:D76C: A5 7D     LDA ram_007D
 C - - - - - 0x01D77E 07:D76E: F0 09     BEQ bra_D779
-C - - - - - 0x01D780 07:D770: 20 31 F1  JSR sub_F131
+C - - - - - 0x01D780 07:D770: 20 31 F1  JSR sub_F131_print_points
 C - - - - - 0x01D783 07:D773: A9 00     LDA #$00
 C - - - - - 0x01D785 07:D775: 85 7D     STA ram_007D
 C - - - - - 0x01D787 07:D777: F0 1A     BEQ bra_D793
@@ -7135,7 +7135,7 @@ C - - - - - 0x01F128 07:F118: 60        RTS
 
 
 
-sub_F131:
+sub_F131_print_points:
 C - - - - - 0x01F141 07:F131: 98        TYA
 C - - - - - 0x01F142 07:F132: 48        PHA
 C - - - - - 0x01F143 07:F133: A5 73     LDA ram_0073
@@ -7476,7 +7476,7 @@ bra_F36F:
 C - - - - - 0x01F37F 07:F36F: 8A        TXA
 C - - - - - 0x01F380 07:F370: 4A        LSR
 C - - - - - 0x01F381 07:F371: 85 73     STA ram_0073
-C - - - - - 0x01F383 07:F373: 20 31 F1  JSR sub_F131
+C - - - - - 0x01F383 07:F373: 20 31 F1  JSR sub_F131_print_points
 C - - - - - 0x01F386 07:F376: C6 72     DEC ram_0072
 C - - - - - 0x01F388 07:F378: C6 72     DEC ram_0072
 C - - - - - 0x01F38A 07:F37A: 60        RTS
