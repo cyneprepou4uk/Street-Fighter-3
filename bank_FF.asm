@@ -3036,7 +3036,7 @@ bra_D8E2:
 C - - - - - 0x01D8F2 07:D8E2: 60        RTS
 
 tbl_D8E3_pause_txt:
-    .text "PAUSE"
+    .byte "PAUSE"
 
 
 
@@ -7190,7 +7190,7 @@ C - - - - - 0x01F194 07:F184: 20 7D F0  JSR sub_F07D_clear_nmt_for_lower_hud
 C - - - - - 0x01F190 07:F180: 68        PLA
 C - - - - - 0x01F191 07:F181: 18        CLC
 C - - - - - 0x01F192 07:F182: 69 20     ADC #$20
-C - - - - - 0x01F194 07:F184: 20 7D F0  JSR sub_F07D
+C - - - - - 0x01F194 07:F184: 20 7D F0  JSR sub_F07D_clear_nmt_for_lower_hud
 C - - - - - 0x01F197 07:F187: 4C E0 F2  JMP loc_F2E0
 bra_F18A:
 C - - - - - 0x01F19A 07:F18A: E6 72     INC ram_0072
