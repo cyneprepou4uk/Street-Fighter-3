@@ -344,8 +344,8 @@ vec_C66B_IRQ_handler:
     LDA #$01    ; high bit for irq chr banks
     STA $5130
     LDA ram_irq_next_bank
-    STA $5129
-    STA $5121
+    STA $512B
+    STA $5123
     INC ram_irq_next_bank   ; prepare next bank
     LDA ram_copy_camera_X   ; set scroll
     STA $2005
@@ -2966,9 +2966,9 @@ C - - - - - 0x01D862 07:D852: A9 0E     LDA #$0E
 C - - - - - 0x01D864 07:D854: 85 B1     STA ram_00B1
 C - - - - - 0x01D866 07:D856: A9 05     LDA #$05
 C - - - - - 0x01D868 07:D858: 85 B2     STA ram_00B2
-C - - - - - 0x01D86A 07:D85A: A9 00     LDA #< tbl_D8E4_clear_pause_txt
+C - - - - - 0x01D86A 07:D85A: A9 00     LDA #$00
 C - - - - - 0x01D86C 07:D85C: 85 AE     STA ram_00AE
-C - - - - - 0x01D86E 07:D85E: A9 00     LDA #> tbl_D8E4_clear_pause_txt
+C - - - - - 0x01D86E 07:D85E: A9 00     LDA #$00
 C - - - - - 0x01D870 07:D860: 85 AF     STA ram_00AF
 C - - - - - 0x01D872 07:D862: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01D875 07:D865: A5 3E     LDA ram_game_time
@@ -3006,9 +3006,9 @@ C - - - - - 0x01D8B5 07:D8A5: A9 0E     LDA #$0E
 C - - - - - 0x01D8B7 07:D8A7: 85 B1     STA ram_00B1
 C - - - - - 0x01D8B9 07:D8A9: A9 05     LDA #$05
 C - - - - - 0x01D8BB 07:D8AB: 85 B2     STA ram_00B2
-C - - - - - 0x01D8BD 07:D8AD: A9 00     LDA #< tbl_D8E4_clear_pause_txt
+C - - - - - 0x01D8BD 07:D8AD: A9 00     LDA #$00
 C - - - - - 0x01D8BF 07:D8AF: 85 AE     STA ram_00AE
-C - - - - - 0x01D8C1 07:D8B1: A9 00     LDA #> tbl_D8E4_clear_pause_txt
+C - - - - - 0x01D8C1 07:D8B1: A9 00     LDA #$00
 C - - - - - 0x01D8C3 07:D8B3: 85 AF     STA ram_00AF
 C - - - - - 0x01D8C5 07:D8B5: 20 9D FF  JSR sub_FF9D_write_to_ppu
 C - - - - - 0x01D8C8 07:D8B8: 4C D2 D8  JMP loc_D8D2
@@ -3035,13 +3035,8 @@ C - - - - - 0x01D8F0 07:D8E0: 85 FB     STA ram_pause_flag
 bra_D8E2:
 C - - - - - 0x01D8F2 07:D8E2: 60        RTS
 
-
-
 tbl_D8E3_pause_txt:
-    .byte $50, $41, $55, $53, $45
-
-tbl_D8E4_clear_pause_txt:
-    .byte $00, $00, $00, $00, $00
+    .text "PAUSE"
 
 
 
@@ -6011,7 +6006,7 @@ C - - - - - 0x01EAB3 07:EAA3: 4A        LSR
 C - - - - - 0x01EAB4 07:EAA4: 4A        LSR
 C - - - - - 0x01EAB5 07:EAA5: 4A        LSR
 C - - - - - 0x01EAB6 07:EAA6: AA        TAX
-C - - - - - 0x01EAB7 07:EAA7: A9 82     LDA #$82
+C - - - - - 0x01EAB7 07:EAA7: A9 82     LDA #$02
 loc_EAA9:
 C D 3 - - - 0x01EAB9 07:EAA9: E0 00     CPX #$00
 C - - - - - 0x01EABB 07:EAAB: F0 07     BEQ bra_EAB4
@@ -6023,7 +6018,7 @@ C - - - - - 0x01EAC4 07:EAB4: A5 62     LDA ram_p1_hud_hp
 C - - - - - 0x01EAC6 07:EAB6: 29 07     AND #$07
 C - - - - - 0x01EAC8 07:EAB8: F0 06     BEQ bra_EAC0
 C - - - - - 0x01EACA 07:EABA: 18        CLC
-C - - - - - 0x01EACB 07:EABB: 69 82     ADC #$82
+C - - - - - 0x01EACB 07:EABB: 69 82     ADC #$02
 C - - - - - 0x01EACD 07:EABD: 8D 07 20  STA $2007
 bra_EAC0:
 C - - - - - 0x01EAD0 07:EAC0: A5 62     LDA ram_p1_hud_hp
@@ -6031,7 +6026,7 @@ C - - - - - 0x01EAD2 07:EAC2: 4A        LSR
 C - - - - - 0x01EAD3 07:EAC3: 4A        LSR
 C - - - - - 0x01EAD4 07:EAC4: 4A        LSR
 C - - - - - 0x01EAD5 07:EAC5: AA        TAX
-C - - - - - 0x01EAD6 07:EAC6: A9 8A     LDA #$8A
+C - - - - - 0x01EAD6 07:EAC6: A9 8A     LDA #$0A
 loc_EAC8:
 C D 3 - - - 0x01EAD8 07:EAC8: E0 00     CPX #$00
 C - - - - - 0x01EADA 07:EACA: F0 07     BEQ bra_EAD3_check_p2
@@ -6054,7 +6049,7 @@ C - - - - - 0x01EAFC 07:EAEC: 4A        LSR
 C - - - - - 0x01EAFD 07:EAED: 4A        LSR
 C - - - - - 0x01EAFE 07:EAEE: 4A        LSR
 C - - - - - 0x01EAFF 07:EAEF: AA        TAX
-C - - - - - 0x01EB00 07:EAF0: A9 8A     LDA #$8A
+C - - - - - 0x01EB00 07:EAF0: A9 8A     LDA #$0A
 loc_EAF2:
 C D 3 - - - 0x01EB02 07:EAF2: E0 00     CPX #$00
 C - - - - - 0x01EB04 07:EAF4: F0 07     BEQ bra_EAFD
@@ -6066,7 +6061,7 @@ C - - - - - 0x01EB0D 07:EAFD: A5 63     LDA ram_p2_hud_hp
 C - - - - - 0x01EB0F 07:EAFF: 29 07     AND #$07
 C - - - - - 0x01EB11 07:EB01: F0 06     BEQ bra_EB09
 C - - - - - 0x01EB13 07:EB03: 18        CLC
-C - - - - - 0x01EB14 07:EB04: 69 8A     ADC #$8A
+C - - - - - 0x01EB14 07:EB04: 69 8A     ADC #$0A
 C - - - - - 0x01EB16 07:EB06: 8D 07 20  STA $2007
 bra_EB09:
 C - - - - - 0x01EB19 07:EB09: A9 58     LDA #$58
@@ -6076,7 +6071,7 @@ C - - - - - 0x01EB1E 07:EB0E: 4A        LSR
 C - - - - - 0x01EB1F 07:EB0F: 4A        LSR
 C - - - - - 0x01EB20 07:EB10: 4A        LSR
 C - - - - - 0x01EB21 07:EB11: AA        TAX
-C - - - - - 0x01EB22 07:EB12: A9 82     LDA #$82
+C - - - - - 0x01EB22 07:EB12: A9 82     LDA #$02
 loc_EB14:
 C D 3 - - - 0x01EB24 07:EB14: E0 00     CPX #$00
 C - - - - - 0x01EB26 07:EB16: F0 07     BEQ bra_EB1F
@@ -7034,7 +7029,7 @@ sub_F07D_clear_nmt_for_lower_hud:
     
 sub_clear_line:
     LDY #$20
-    LDA #$80
+    LDA #$00
 @loop:
     STA $2007
     DEY
@@ -8448,9 +8443,9 @@ C - - - - - 0x01F939 07:F929: 68        PLA
 C - - - - - 0x01F93A 07:F92A: 18        CLC
 C - - - - - 0x01F93B 07:F92B: 69 40     ADC #$40
 C - - - - - 0x01F93D 07:F92D: 8D 06 20  STA $2006
-C - - - - - 0x01F940 07:F930: A9 AD     LDA #$AD
+C - - - - - 0x01F940 07:F930: A9 AD     LDA #$2D
 C - - - - - 0x01F942 07:F932: 8D 07 20  STA $2007
-C - - - - - 0x01F945 07:F935: A9 AE     LDA #$AE
+C - - - - - 0x01F945 07:F935: A9 AE     LDA #$2E
 C - - - - - 0x01F947 07:F937: 8D 07 20  STA $2007
 C - - - - - 0x01F94A 07:F93A: 60        RTS
 
@@ -8852,8 +8847,8 @@ C - - - - - 0x01FB6D 07:FB5D: 20 97 FB  JSR sub_FB97_clear_nametable
                                         LDA #$01
                                         STA $5130
                                         LDA #$FF
-                                        STA $512B
-                                        STA $5123
+                                        STA $5129
+                                        STA $5121
                                         LDA #$00
                                         STA $5130
 C - - - - - 0x01FB70 07:FB60: A9 00     LDA #$00
@@ -9590,8 +9585,6 @@ C - - - - - 0x01FFD5 07:FFC5: A5 AF     LDA ram_00AF
 C - - - - - 0x01FFD7 07:FFC7: F0 0F     BEQ bra_FFD8
 bra_FFC9:
 C - - - - - 0x01FFD9 07:FFC9: B1 AE     LDA (ram_00AE),Y
-C - - - - - 0x01FFDB 07:FFCB: 18        CLC
-C - - - - - 0x01FFDC 07:FFCC: 69 80     ADC #$80
 C - - - - - 0x01FFDE 07:FFCE: 8D 07 20  STA $2007
 C - - - - - 0x01FFE1 07:FFD1: C8        INY
 C - - - - - 0x01FFE2 07:FFD2: C4 B2     CPY ram_00B2
